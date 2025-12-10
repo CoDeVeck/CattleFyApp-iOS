@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		5775913E2EE615DC00D8A2DD /* Exceptions for "CattleFyApp" folder in "CattleFyApp" target */ = {
+		B71DD0AC2EE7512E006473DD /* Exceptions for "CattleFyApp" folder in "CattleFyApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				App/Info.plist,
@@ -24,7 +24,7 @@
 		5775912B2EE615DA00D8A2DD /* CattleFyApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				5775913E2EE615DC00D8A2DD /* Exceptions for "CattleFyApp" folder in "CattleFyApp" target */,
+				B71DD0AC2EE7512E006473DD /* Exceptions for "CattleFyApp" folder in "CattleFyApp" target */,
 			);
 			path = CattleFyApp;
 			sourceTree = "<group>";
@@ -146,7 +146,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CattleFyApp/Info.plist;
+				INFOPLIST_FILE = CattleFyApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -173,7 +173,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CattleFyApp/Info.plist;
+				INFOPLIST_FILE = CattleFyApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
