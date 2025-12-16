@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5kZ-7o-jgB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L9h-N4-Asy">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
@@ -109,9 +109,6 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <state key="normal" title="Iniciar Sesión"/>
-                                <connections>
-                                    <action selector="iniciarButtonTapped:" destination="L9h-N4-Asy" eventType="touchUpInside" id="rNV-W9-vsU"/>
-                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Cv2-EI-fqg">
                                 <rect key="frame" x="40" y="150" width="313" height="130"/>
@@ -140,9 +137,6 @@
                                 <state key="normal" title="¿Olvidaste tu contraseña? Crea una cuenta">
                                     <color key="titleColor" red="0.2325609501" green="0.45609716039999998" blue="0.026106079340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="mEF-lc-dlg" kind="show" id="LuC-Jc-DQJ"/>
-                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCM-Pt-icb">
                                 <rect key="frame" x="30" y="507" width="51" height="31"/>
@@ -189,16 +183,10 @@
                             <constraint firstItem="forgotPasswordButton" firstAttribute="top" secondItem="loginButton" secondAttribute="bottom" constant="30" id="xOR-yh-Sfj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WNv-Tm-l3N"/>
-                    <connections>
-                        <outlet property="emailTextField" destination="loginEmail" id="nx6-gn-gva"/>
-                        <outlet property="inicarButton" destination="loginButton" id="Jq5-Va-nl8"/>
-                        <outlet property="passwordTextField" destination="loginPassword" id="rB0-bV-DW3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iw9-6W-aZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1704.5801526717557" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="-2631.2977099236641" y="-35.211267605633807"/>
         </scene>
         <!--Registro View Controller-->
         <scene sceneID="I3Y-Vp-KNq">
@@ -216,9 +204,6 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <state key="normal" title="Registrarse"/>
-                                <connections>
-                                    <action selector="registarButtonTapped:" destination="mEF-lc-dlg" eventType="touchUpInside" id="t6F-5U-NLT"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="registroCancelButton">
                                 <rect key="frame" x="20" y="779" width="353" height="35"/>
@@ -271,8 +256,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa tu contraseña" translatesAutoresizingMaskIntoConstraints="NO" id="registroPassword">
-                                <rect key="frame" x="20" y="500" width="353" height="35"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa tu contraseña" translatesAutoresizingMaskIntoConstraints="NO" id="registroPassword">
+                                <rect key="frame" x="20" y="501" width="353" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="qxX-is-wvQ"/>
                                 </constraints>
@@ -407,22 +392,10 @@
                             <constraint firstItem="registroPassword" firstAttribute="top" secondItem="1Zv-up-n7j" secondAttribute="bottom" constant="6" id="zve-Pf-P69"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tma-5P-g5G"/>
-                    <connections>
-                        <outlet property="apellidoMaTextField" destination="registroApellidoM" id="mqA-LU-3R4"/>
-                        <outlet property="apellidoPaTextField" destination="registroApellidoP" id="5z0-L4-n23"/>
-                        <outlet property="correoTextField" destination="registroCorreo" id="GLe-Rr-1zN"/>
-                        <outlet property="dniTextField" destination="registroDNI" id="JLq-6C-fTm"/>
-                        <outlet property="generoPicker" destination="BhH-BD-yMA" id="4J3-FI-QZH"/>
-                        <outlet property="nombreTextField" destination="registroNombres" id="44n-DN-8o7"/>
-                        <outlet property="passwordTextField" destination="registroPassword" id="q3k-GW-eRY"/>
-                        <outlet property="registrarButton" destination="registroButton" id="ygw-L4-5K4"/>
-                        <outlet property="telefonoTextField" destination="registroTelefono" id="O85-39-Ber"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOF-W6-vem" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-942.74809160305335" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="-1869.4656488549617" y="-35.211267605633807"/>
         </scene>
         <!--Seleccion De Granja View Controller-->
         <scene sceneID="CZX-ED-Tkg">
@@ -545,7 +518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPF-Nb-df4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-156.4885496183206" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="-1083.206106870229" y="-35.211267605633807"/>
         </scene>
         <!--Crear Nuevo Lote View Controller-->
         <scene sceneID="xxN-zZ-tIv">
@@ -698,7 +671,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iaY-Od-USe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1341.2213740458014" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="414.50381679389312" y="-35.211267605633807"/>
         </scene>
         <!--Registrar Alimentacion Lote View Controller-->
         <scene sceneID="UjW-kS-GiH">
@@ -1171,7 +1144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0m-7P-l9K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2075.5725190839694" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="1148.854961832061" y="-35.211267605633807"/>
         </scene>
         <!--Registro Sanitario Masivo View Controller-->
         <scene sceneID="ydv-Rs-b8p">
@@ -1242,19 +1215,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paso 1: Selección de Lote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bD4-PE-uoU">
-                                <rect key="frame" x="20" y="140" width="353" height="34"/>
+                                <rect key="frame" x="20" y="140" width="346" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione Lote a tratar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2l-5H-EYH">
-                                <rect key="frame" x="20" y="184" width="353" height="21"/>
+                                <rect key="frame" x="20" y="184" width="346" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97C-kl-sJi">
-                                <rect key="frame" x="20" y="225" width="353" height="50"/>
+                                <rect key="frame" x="20" y="225" width="346" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="fJG-hk-ZJq"/>
@@ -1269,7 +1242,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xJ-DN-nyF">
-                                <rect key="frame" x="20" y="295" width="353" height="50"/>
+                                <rect key="frame" x="20" y="295" width="346" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="74a-ls-9Di"/>
@@ -1284,13 +1257,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animales vivos: 24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRx-bO-WSN">
-                                <rect key="frame" x="20" y="365" width="353" height="21"/>
+                                <rect key="frame" x="20" y="365" width="346" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucr-jY-QcZ">
-                                <rect key="frame" x="20" y="729.66666666666663" width="353" height="34.333333333333371"/>
+                                <rect key="frame" x="20" y="729.66666666666663" width="346" height="34.333333333333371"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -1338,7 +1311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lry-vq-iuR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3095.419847328244" y="-16.197183098591552"/>
+            <point key="canvasLocation" x="2168.7022900763359" y="-16.197183098591552"/>
         </scene>
         <!--Registro Sanitario Masivo Pt2 View Controller-->
         <scene sceneID="Nd4-kD-xvo">
@@ -1574,7 +1547,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbe-sC-P9k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3858.7786259541981" y="-4.2253521126760569"/>
+            <point key="canvasLocation" x="2932.06106870229" y="-4.2253521126760569"/>
         </scene>
         <!--Registro Sanitario Masivo Pt3 View Controller-->
         <scene sceneID="Y3y-uI-vAh">
@@ -1828,7 +1801,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="daR-vm-CcI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4692.3664122137407" y="-4.2253521126760569"/>
+            <point key="canvasLocation" x="3765.6488549618321" y="-4.2253521126760569"/>
         </scene>
         <!--Traslado Animales Masivo View Controller-->
         <scene sceneID="K41-Y9-eTB">
@@ -1961,7 +1934,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKm-je-Flk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6234.3511450381675" y="5.6338028169014089"/>
+            <point key="canvasLocation" x="5307.6335877862593" y="5.6338028169014089"/>
         </scene>
         <!--Traslado Animales Masivo Pt2 View Controller-->
         <scene sceneID="OXy-fV-cok">
@@ -2054,7 +2027,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jfr-Ld-O7A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6985.4961832061063" y="5.6338028169014089"/>
+            <point key="canvasLocation" x="6058.7786259541981" y="5.6338028169014089"/>
         </scene>
         <!--Traslado Animales Masivo Pt3 View Controller-->
         <scene sceneID="g8F-yM-nyV">
@@ -2147,7 +2120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0d-qZ-Mlp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7701.5267175572517" y="5.6338028169014089"/>
+            <point key="canvasLocation" x="6775" y="6"/>
         </scene>
         <!--Traslado Animales Masivo Pt4 View Controller-->
         <scene sceneID="oDM-bq-ouc">
@@ -2345,7 +2318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdE-TF-KXX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8417.5572519083962" y="5.6338028169014089"/>
+            <point key="canvasLocation" x="7490.8396946564881" y="5.6338028169014089"/>
         </scene>
         <!--Creacion De Granja View Controller-->
         <scene sceneID="SCY-um-OAY">
@@ -2672,24 +2645,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCM-zv-urW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3631" y="610"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dbF-8O-TC5">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5kZ-7o-jgB" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qrx-pg-ANQ">
-                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="L9h-N4-Asy" kind="relationship" relationship="rootViewController" id="a3H-Aq-nmm"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rIN-gq-j4h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2631.2977099236641" y="-35.211267605633807"/>
         </scene>
     </scenes>
     <resources>
