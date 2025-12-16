@@ -58,8 +58,8 @@ class LoginViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         guard let inicioVC = storyboard.instantiateViewController(
-            withIdentifier: "CrearNuevoLoteViewController"
-        ) as? CrearNuevoLoteViewController else {
+            withIdentifier: "RegistrarAlimentacionLoteViewController"
+        ) as? RegistrarAlimentacionLoteViewController else {
             print("Error: No se pudo castear InicioViewController")
             mostrarAlerta(mensaje: "Error al cargar la pantalla principal")
             return

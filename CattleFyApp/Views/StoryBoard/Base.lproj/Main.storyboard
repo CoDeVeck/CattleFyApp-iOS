@@ -713,7 +713,7 @@
         <!--Registrar Alimentacion Lote View Controller-->
         <scene sceneID="UjW-kS-GiH">
             <objects>
-                <viewController id="Fen-m0-YYR" customClass="RegistrarAlimentacionLoteViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrarAlimentacionLoteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fen-m0-YYR" customClass="RegistrarAlimentacionLoteViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Bj-ig-MUU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -763,12 +763,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZS4-DJ-aJ6">
-                                <rect key="frame" x="20" y="466.33333333333331" width="57" height="34"/>
+                                <rect key="frame" x="20" y="466.33333333333331" width="120" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="ooE-ob-3hw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="S/. 0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MAD-oS-FzG">
-                                <rect key="frame" x="295.33333333333331" y="466.33333333333331" width="77.666666666666686" height="34"/>
+                                <rect key="frame" x="253" y="466.33333333333331" width="120" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="bFM-gP-p5Y"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -793,6 +799,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Guardar">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="guardarButtonTapped:" destination="Fen-m0-YYR" eventType="touchUpInside" id="Iaz-Fc-AY3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctV-FQ-7Ti">
                                 <rect key="frame" x="20" y="705.66666666666663" width="371" height="35"/>
@@ -844,6 +853,15 @@
                             <constraint firstItem="70g-2c-gGS" firstAttribute="top" secondItem="0Zn-56-pL7" secondAttribute="bottom" constant="50" id="znu-km-kQR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calculoLabel" destination="0Zn-56-pL7" id="ldY-U8-tvq"/>
+                        <outlet property="cantidadTextField" destination="ZS4-DJ-aJ6" id="68A-Q6-ujr"/>
+                        <outlet property="costoTextField" destination="MAD-oS-FzG" id="KiE-1r-JEc"/>
+                        <outlet property="dietaTextField" destination="ypv-E8-75c" id="QII-cF-61s"/>
+                        <outlet property="fechaDatePicker" destination="oH5-h1-eij" id="j2I-j2-EvB"/>
+                        <outlet property="guardarButton" destination="70g-2c-gGS" id="6ps-MK-Fm3"/>
+                        <outlet property="lotesPicker" destination="DXN-VI-lmw" id="Yz1-xZ-irN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Lo-hi-vVu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1263,19 +1281,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paso 1: Selección de Lote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bD4-PE-uoU">
-                                <rect key="frame" x="20" y="140" width="346" height="34"/>
+                                <rect key="frame" x="20" y="140" width="353" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione Lote a tratar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2l-5H-EYH">
-                                <rect key="frame" x="20" y="184" width="346" height="21"/>
+                                <rect key="frame" x="20" y="184" width="353" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97C-kl-sJi">
-                                <rect key="frame" x="20" y="225" width="346" height="50"/>
+                                <rect key="frame" x="20" y="225" width="353" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="fJG-hk-ZJq"/>
@@ -1290,7 +1308,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xJ-DN-nyF">
-                                <rect key="frame" x="20" y="295" width="346" height="50"/>
+                                <rect key="frame" x="20" y="295" width="353" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="74a-ls-9Di"/>
@@ -1305,13 +1323,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animales vivos: 24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRx-bO-WSN">
-                                <rect key="frame" x="20" y="365" width="346" height="21"/>
+                                <rect key="frame" x="20" y="365" width="353" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucr-jY-QcZ">
-                                <rect key="frame" x="20" y="729.66666666666663" width="346" height="34.333333333333371"/>
+                                <rect key="frame" x="20" y="729.66666666666663" width="353" height="34.333333333333371"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
