@@ -74,12 +74,4 @@ class RegistroViewController: UIViewController {
             }
         }
     }
-    
-    func mostrarAlerta(mensaje: String, completion: (() -> Void)? = nil) {
-            let alert = UIAlertController(title: "Aviso", message: mensaje, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
-                completion?()
-            })
-            present(alert, animated: true)
-        }
 }

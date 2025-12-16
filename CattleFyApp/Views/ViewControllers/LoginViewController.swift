@@ -53,11 +53,13 @@ class LoginViewController: UIViewController {
     func navegarAHome() {
         print("Iniciando navegación a Home...")
         
-        let storyboard = UIStoryboard(name: "FarmFlow", bundle: nil)
+        // Si usan el storyboard de FarmFlow dejen ese nombre si en caso esta en Main como el mio cambienlo
+        // En el inicioVC Cambien por su controlador que quieran probar y ponganle su identificador
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         guard let inicioVC = storyboard.instantiateViewController(
-            withIdentifier: "InicioViewController"
-        ) as? InicioViewController else {
+            withIdentifier: "CrearNuevoLoteViewController"
+        ) as? CrearNuevoLoteViewController else {
             print("Error: No se pudo castear InicioViewController")
             mostrarAlerta(mensaje: "Error al cargar la pantalla principal")
             return
@@ -65,7 +67,6 @@ class LoginViewController: UIViewController {
         
         print("InicioViewController cargado correctamente desde FarmFlow")
         
-        // Obtener la ventana actual
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first else {
             print("Error: No se pudo obtener la ventana")
@@ -87,11 +88,4 @@ class LoginViewController: UIViewController {
             print("Navegación completada exitosamente")
         })
     }
-        
-        func mostrarAlerta(mensaje: String) {
-            let alert = UIAlertController(title: "Aviso", message: mensaje, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            present(alert, animated: true)
-        }
-    
 }

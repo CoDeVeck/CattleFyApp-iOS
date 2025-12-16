@@ -550,7 +550,7 @@
         <!--Crear Nuevo Lote View Controller-->
         <scene sceneID="xxN-zZ-tIv">
             <objects>
-                <viewController id="xzv-Ja-VZB" customClass="CrearNuevoLoteViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CrearNuevoLoteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xzv-Ja-VZB" customClass="CrearNuevoLoteViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sh7-qo-h08">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -651,6 +651,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Siguiente">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="siguienteButtonTapped:" destination="xzv-Ja-VZB" eventType="touchUpInside" id="xdr-Pi-47R"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UPK-ma-unc"/>
@@ -695,10 +698,17 @@
                             <constraint firstItem="N5K-JZ-f9V" firstAttribute="leading" secondItem="UPK-ma-unc" secondAttribute="leading" constant="20" id="z1i-As-nnb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="capacidadTextField" destination="R9Q-LD-mLO" id="fVk-Ue-gYz"/>
+                        <outlet property="categoriaPicker" destination="iiN-VO-3or" id="wzu-k5-28d"/>
+                        <outlet property="especiesPicker" destination="Ss5-pg-dj7" id="4zT-hk-WgS"/>
+                        <outlet property="nombreTextField" destination="8eG-SQ-o8U" id="Zo2-vb-Y9I"/>
+                        <outlet property="siguienteButton" destination="Huw-HV-zne" id="4BN-wg-WA0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iaY-Od-USe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1341.2213740458014" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="1260" y="-35"/>
         </scene>
         <!--Registrar Alimentacion Lote View Controller-->
         <scene sceneID="UjW-kS-GiH">
@@ -1030,7 +1040,7 @@
         <!--Crear Nuevo Lote Pt2 View Controller-->
         <scene sceneID="oD9-wX-ekS">
             <objects>
-                <viewController id="vbD-Xq-NXw" customClass="CrearNuevoLotePt2ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CrearNuevoLotePt2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vbD-Xq-NXw" customClass="CrearNuevoLotePt2ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jre-MT-Pff">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1123,6 +1133,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Crear Lote">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="crearButtonTapped:" destination="vbD-Xq-NXw" eventType="touchUpInside" id="bjJ-oC-Zjw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FfB-9h-yha"/>
@@ -1168,6 +1181,14 @@
                             <constraint firstAttribute="trailing" secondItem="0t3-GZ-Dgb" secondAttribute="trailing" constant="20" id="zse-Kv-Wf4"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Rwl-8o-Gbq"/>
+                    <connections>
+                        <outlet property="capacidadMaxima" destination="0t3-GZ-Dgb" id="pCm-wS-DSw"/>
+                        <outlet property="categoriaNombre" destination="r3C-Mi-zRj" id="vFZ-8I-KgH"/>
+                        <outlet property="crearButton" destination="o7r-ic-ktb" id="ffd-d8-Xkg"/>
+                        <outlet property="especieNombre" destination="s1Y-wT-kD0" id="Qxl-1o-Zj0"/>
+                        <outlet property="nombreLote" destination="b3L-aj-MG0" id="QGt-hl-vVW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0m-7P-l9K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1242,19 +1263,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paso 1: Selección de Lote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bD4-PE-uoU">
-                                <rect key="frame" x="20" y="140" width="353" height="34"/>
+                                <rect key="frame" x="20" y="140" width="346" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione Lote a tratar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2l-5H-EYH">
-                                <rect key="frame" x="20" y="184" width="353" height="21"/>
+                                <rect key="frame" x="20" y="184" width="346" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97C-kl-sJi">
-                                <rect key="frame" x="20" y="225" width="353" height="50"/>
+                                <rect key="frame" x="20" y="225" width="346" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="fJG-hk-ZJq"/>
@@ -1269,7 +1290,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xJ-DN-nyF">
-                                <rect key="frame" x="20" y="295" width="353" height="50"/>
+                                <rect key="frame" x="20" y="295" width="346" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="74a-ls-9Di"/>
@@ -1284,13 +1305,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animales vivos: 24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRx-bO-WSN">
-                                <rect key="frame" x="20" y="365" width="353" height="21"/>
+                                <rect key="frame" x="20" y="365" width="346" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucr-jY-QcZ">
-                                <rect key="frame" x="20" y="729.66666666666663" width="353" height="34.333333333333371"/>
+                                <rect key="frame" x="20" y="729.66666666666663" width="346" height="34.333333333333371"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
