@@ -188,7 +188,6 @@ class RegistrarAlimentacionLoteViewController: UIViewController {
         costoTextField.text = ""
         calculoLabel.text = "S/ 0.00"
         
-        // Recargar fecha actual
         fechaActual = Date()
         mostrarFechaActual()
     }

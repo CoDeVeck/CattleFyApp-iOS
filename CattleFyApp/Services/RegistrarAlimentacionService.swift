@@ -15,6 +15,67 @@ class RegistroAlimentacionService {
         return UserDefaults.standard.string(forKey: "authToken")
     }
     
+    func obtenerHistorialAlimentacion(completion: @escaping (Result<[RegistrarAlimentacionHistorialDTO], Error>) -> Void) {
+        guard let token = getAuthToken() else {
+            completion(.failure(NSError(
+                domain: "", code: 401,
+                userInfo: [NSLocalizedDescriptionKey: "No hay sesión activa"]
+            )))
+            return
+        }
+
+        guard let url = URL(string: "\(Constants.baseURL)registrarAlimentacion/listHistorial") else {
+            completion(.failure(NSError(
+                domain: "", code: -1,
+                userInfo: [NSLocalizedDescriptionKey: "URL inválida"]
+            )))
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(.failure(NSError(
+                    domain: "", code: -1,
+                    userInfo: [NSLocalizedDescriptionKey: "Respuesta inválida"]
+                )))
+                return
+            }
+
+            guard httpResponse.statusCode == 200 else {
+                completion(.failure(NSError(
+                    domain: "", code: httpResponse.statusCode,
+                    userInfo: [NSLocalizedDescriptionKey: "Error HTTP: \(httpResponse.statusCode)"]
+                )))
+                return
+            }
+
+            guard let data = data else {
+                completion(.failure(NSError(
+                    domain: "", code: -1,
+                    userInfo: [NSLocalizedDescriptionKey: "No hay datos"]
+                )))
+                return
+            }
+
+            do {
+                let historial = try JSONDecoder().decode([RegistrarAlimentacionHistorialDTO].self, from: data)
+                completion(.success(historial))
+            } catch {
+                completion(.failure(error))
+            }
+        }.resume()
+    }
+
     func registrarAlimentacion(
         request: RegistroAlimentacionRequestDTO,
         completion: @escaping (Result<RegistroAlimentacionResponse, Error>) -> Void
