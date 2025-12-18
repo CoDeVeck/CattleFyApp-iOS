@@ -16,6 +16,54 @@ class LoteService {
         return UserDefaults.standard.string(forKey: "authToken")
     }
     
+    func obtenerLotesSimples(completion: @escaping (Result<[LoteSimpleDTO], Error>) -> Void) {
+        guard let token = getAuthToken() else {
+            completion(.failure(NSError(
+                domain: "", code: 401,
+                userInfo: [NSLocalizedDescriptionKey: "No hay sesión activa"]
+            )))
+            return
+        }
+
+        guard let url = URL(string: "\(Constants.baseURL)lotes/list-simple") else {
+            completion(.failure(NSError(
+                domain: "", code: -1,
+                userInfo: [NSLocalizedDescriptionKey: "URL inválida"]
+            )))
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = data else {
+                completion(.failure(NSError(
+                    domain: "", code: -1,
+                    userInfo: [NSLocalizedDescriptionKey: "No hay datos"]
+                )))
+                return
+            }
+
+            do {
+                let resultado = try JSONDecoder().decode(ResultadoResponse<[LoteSimpleDTO]>.self, from: data)
+                if resultado.valor, let lotes = resultado.data{
+                    completion(.success(lotes))
+                } else {
+                    completion(.failure(NSError(domain: "", code: -1)))
+                }
+            } catch {
+                completion(.failure(error))
+            }
+        }.resume()
+    }
+    
     // MARK: - Crear Lote (POST /create)
     func crearLote(request: LoteRequest, completion: @escaping (Result<LoteResponse, Error>) -> Void) {
         guard let token = getAuthToken() else {
@@ -86,7 +134,7 @@ class LoteService {
                 let resultado = try JSONDecoder().decode(ResultadoResponse<LoteResponse>.self, from: data)
                 
                 if resultado.valor, let loteData = resultado.data {
-                    print("✅ Lote creado exitosamente: \(loteData.nombre)")
+                    print("Lote creado exitosamente: \(loteData.nombre)")
                     completion(.success(loteData))
                 } else {
                     let errorMsg = resultado.mensaje
@@ -98,7 +146,7 @@ class LoteService {
                 }
 
             } catch {
-                print("❌ Error al decodificar: \(error)")
+                print("Error al decodificar: \(error)")
                 completion(.failure(error))
             }
         }.resume()
