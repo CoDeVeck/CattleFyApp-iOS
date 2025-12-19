@@ -9,6 +9,100 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="FJe-0K-wS7">
+            <objects>
+                <viewController id="PIZ-xR-RuX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mpx-vR-c0Z">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J20-M6-dAN">
+                                <rect key="frame" x="0.0" y="418" width="393" height="434"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pln-Ri-8uh">
+                                        <rect key="frame" x="15" y="30" width="370" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Animal #ANI-000001 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0n-Nb-fWg">
+                                                <rect key="frame" x="74" y="17" width="288" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="pawprint.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZLE-Wi-bjO">
+                                                <rect key="frame" x="8" y="6.6666666666666288" width="60" height="54.000000000000185"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="31p-Rj-Ghq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="J20-M6-dAN" firstAttribute="leading" secondItem="31p-Rj-Ghq" secondAttribute="leading" id="FWH-Mc-AU6"/>
+                            <constraint firstItem="J20-M6-dAN" firstAttribute="top" secondItem="31p-Rj-Ghq" secondAttribute="top" constant="300" id="Ngi-L0-V7p"/>
+                            <constraint firstAttribute="bottom" secondItem="J20-M6-dAN" secondAttribute="bottom" id="fsG-b9-tz1"/>
+                            <constraint firstItem="31p-Rj-Ghq" firstAttribute="trailing" secondItem="J20-M6-dAN" secondAttribute="trailing" id="q63-X9-ctJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h35-PB-NJ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="696.94656488549617" y="-713.38028169014092"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SsF-Pn-v8y">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iy5-RN-kE2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="ddn-Su-NuA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5U6-eA-ZN3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndl-yo-vii">
+                                <rect key="frame" x="0.0" y="418" width="393" height="434"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H10-Ci-aDs">
+                                        <rect key="frame" x="15" y="27" width="370" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lote #LOT-000001 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hL0-20-kXb">
+                                                <rect key="frame" x="88" y="17" width="260" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="rectangle.split.3x3.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wYb-8A-Q64">
+                                                <rect key="frame" x="8" y="-1.3333333333333712" width="72" height="73"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="p48-ye-RI9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ndl-yo-vii" firstAttribute="top" secondItem="p48-ye-RI9" secondAttribute="top" constant="300" id="BRr-NI-fKe"/>
+                            <constraint firstAttribute="bottom" secondItem="ndl-yo-vii" secondAttribute="bottom" id="Kgp-aL-aKL"/>
+                            <constraint firstItem="ndl-yo-vii" firstAttribute="trailing" secondItem="p48-ye-RI9" secondAttribute="trailing" id="Nc1-z0-7t3"/>
+                            <constraint firstItem="ndl-yo-vii" firstAttribute="leading" secondItem="p48-ye-RI9" secondAttribute="leading" id="imF-UE-5ya"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1383.9694656488548" y="-708.45070422535218"/>
+        </scene>
         <!--Inicio View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -1946,7 +2040,7 @@
                                                     <constraint firstItem="card-peso" firstAttribute="top" secondItem="card-sexo" secondAttribute="top" id="r4-top-align"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Padres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-padres-title">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sanitario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-padres-title">
                                                 <rect key="frame" x="16" y="621" width="361" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <nil key="textColor"/>
@@ -1972,7 +2066,7 @@
                                                     <constraint firstAttribute="height" constant="150" id="tbl-ganancia-h"/>
                                                 </constraints>
                                             </tableView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tratamientos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-tratamientos-title">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movilidad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-tratamientos-title">
                                                 <rect key="frame" x="16" y="1019" width="361" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <nil key="textColor"/>
@@ -2001,7 +2095,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="12"/>
+                                                                <integer key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -2018,12 +2112,12 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="12"/>
+                                                                <integer key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-trasladar">
-                                                        <rect key="frame" x="0.0" y="68" width="112.66666666666667" height="56"/>
+                                                        <rect key="frame" x="0.0" y="68" width="174.66666666666666" height="56"/>
                                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="56" id="btn-trasladar-h"/>
@@ -2035,12 +2129,12 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="12"/>
+                                                                <integer key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-muerte">
-                                                        <rect key="frame" x="124.33333333333334" y="68" width="112.66666666666666" height="56"/>
+                                                        <rect key="frame" x="186.33333333333337" y="68" width="174.66666666666663" height="56"/>
                                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="56" id="btn-muerte-h"/>
@@ -2052,34 +2146,17 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="12"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-vender">
-                                                        <rect key="frame" x="248.33333333333329" y="68" width="112.66666666666666" height="56"/>
-                                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="56" id="btn-vender-h"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                        <state key="normal" title="Vender">
-                                                            <color key="titleColor" systemColor="labelColor"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="12"/>
+                                                                <integer key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="btn-muerte" secondAttribute="trailing" id="Bbk-mE-AHQ"/>
                                                     <constraint firstAttribute="height" constant="170" id="bottom-actions-h"/>
                                                     <constraint firstItem="btn-muerte" firstAttribute="leading" secondItem="btn-trasladar" secondAttribute="trailing" constant="11.5" id="btn-muerte-lead"/>
                                                     <constraint firstItem="btn-muerte" firstAttribute="top" secondItem="btn-aplicar-tratamiento" secondAttribute="bottom" constant="12" id="btn-muerte-top"/>
-                                                    <constraint firstItem="btn-muerte" firstAttribute="width" secondItem="btn-vender" secondAttribute="width" id="btn-muerte-vender-width"/>
                                                     <constraint firstItem="btn-registrar-peso" firstAttribute="leading" secondItem="bottom-actions" secondAttribute="leading" id="btn-peso-lead"/>
                                                     <constraint firstItem="btn-registrar-peso" firstAttribute="top" secondItem="bottom-actions" secondAttribute="top" id="btn-peso-top"/>
                                                     <constraint firstItem="btn-registrar-peso" firstAttribute="width" secondItem="btn-aplicar-tratamiento" secondAttribute="width" id="btn-peso-tratamiento-width"/>
@@ -2089,9 +2166,6 @@
                                                     <constraint firstItem="btn-aplicar-tratamiento" firstAttribute="leading" secondItem="btn-registrar-peso" secondAttribute="trailing" constant="17" id="btn-tratamiento-lead"/>
                                                     <constraint firstItem="btn-aplicar-tratamiento" firstAttribute="top" secondItem="bottom-actions" secondAttribute="top" id="btn-tratamiento-top"/>
                                                     <constraint firstAttribute="trailing" secondItem="btn-aplicar-tratamiento" secondAttribute="trailing" id="btn-tratamiento-trail"/>
-                                                    <constraint firstItem="btn-vender" firstAttribute="leading" secondItem="btn-muerte" secondAttribute="trailing" constant="11.5" id="btn-vender-lead"/>
-                                                    <constraint firstItem="btn-vender" firstAttribute="top" secondItem="btn-aplicar-tratamiento" secondAttribute="bottom" constant="12" id="btn-vender-top"/>
-                                                    <constraint firstAttribute="trailing" secondItem="btn-vender" secondAttribute="trailing" id="btn-vender-trail"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -5663,11 +5737,13 @@
         <image name="m.circle.fill" catalog="system" width="128" height="123"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="pawprint.circle.fill" catalog="system" width="128" height="123"/>
         <image name="pawprint.fill" catalog="system" width="128" height="112"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="photo.circle.fill" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="rectangle.split.3x3.fill" catalog="system" width="128" height="93"/>
         <image name="scalemass" catalog="system" width="128" height="121"/>
         <image name="scalemass.fill" catalog="system" width="128" height="121"/>
         <image name="stethoscope.circle.fill" catalog="system" width="128" height="123"/>
