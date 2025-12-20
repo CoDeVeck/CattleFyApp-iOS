@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "FarmFlow", bundle: nil)
         let vc = storyboard.instantiateInitialViewController()!
 
         window.rootViewController = vc
