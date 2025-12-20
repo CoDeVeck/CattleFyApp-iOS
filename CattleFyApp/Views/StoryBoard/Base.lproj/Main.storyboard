@@ -504,8 +504,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="seleccionEmptyStateView">
                                 <rect key="frame" x="64" y="316" width="265" height="220"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="seleccionEmptyIcon">
-                                        <rect key="frame" x="92.666666666666657" y="0.0" width="80" height="80"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light.beacon.min.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="seleccionEmptyIcon">
+                                        <rect key="frame" x="92.666666666666657" y="1" width="80" height="77.333333333333329"/>
                                         <color key="tintColor" red="0.20000000000000001" green="0.5" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="sGC-ei-h"/>
@@ -1674,7 +1674,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sv-stepper-p2">
-                                <rect key="frame" x="19" y="173" width="153" height="4"/>
+                                <rect key="frame" x="120" y="173" width="153" height="4"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="st1-done-step">
                                         <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="4"/>
@@ -1697,12 +1697,12 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Tipo de protocolo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-proto-title">
-                                <rect key="frame" x="20" y="209" width="150.66666666666666" height="21.666666666666657"/>
+                                <rect key="frame" x="20" y="209" width="353" height="21.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sc-protocolo-step2">
-                                <rect key="frame" x="20" y="246.66666666666663" width="357" height="45"/>
+                                <rect key="frame" x="20" y="246.66666666666663" width="559.33333333333337" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="four-song-2"/>
                                 </constraints>
@@ -1727,19 +1727,19 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sv-row-step2">
-                                <rect key="frame" x="20" y="411" width="353.33333333333331" height="201.33333333333337"/>
+                                <rect key="frame" x="20" y="410.99999999999994" width="353.33333333333331" height="211.33333333333331"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" id="col-d-s2">
-                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="191.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="201.33333333333334"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="scaleToFill" text="Dosis aplicada" lineBreakMode="tailTruncation" id="ld-s2">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="149.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="159.33333333333334"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ej: 10 ml" id="td-s2">
-                                                <rect key="frame" x="0.0" y="157.33333333333334" width="166.66666666666666" height="34"/>
+                                                <rect key="frame" x="0.0" y="167.33333333333334" width="166.66666666666666" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="four-song-4"/>
@@ -1750,16 +1750,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" id="col-c-s2">
-                                        <rect key="frame" x="186.66666666666669" y="0.0" width="166.66666666666669" height="191.33333333333334"/>
+                                        <rect key="frame" x="186.66666666666669" y="0.0" width="166.66666666666669" height="201.33333333333334"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="scaleToFill" text="Costo unitario" lineBreakMode="tailTruncation" id="lc-s2">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="149.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="159.33333333333334"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ 0.00" id="tc-s2">
-                                                <rect key="frame" x="0.0" y="157.33333333333334" width="166.66666666666666" height="34"/>
+                                                <rect key="frame" x="0.0" y="167.33333333333334" width="166.66666666666666" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="four-song-5"/>
@@ -1772,18 +1772,18 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Fecha de aplicación" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-date-s2">
-                                <rect key="frame" x="20" y="636.33333333333337" width="149.33333333333334" height="19.333333333333371"/>
+                                <rect key="frame" x="20" y="646.33333333333337" width="149.33333333333334" height="19.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="dp-fecha-s2">
-                                <rect key="frame" x="20" y="663.66666666666663" width="150.66666666666666" height="50"/>
+                                <rect key="frame" x="20" y="673.66666666666663" width="353" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="four-song-6"/>
                                 </constraints>
                                 <locale key="locale" localeIdentifier="es_ES"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-next-s2">
-                                <rect key="frame" x="16" y="708" width="158.66666666666666" height="56"/>
+                                <rect key="frame" x="16" y="708" width="361" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="four-song-7"/>
                                 </constraints>
@@ -3089,8 +3089,8 @@ YW5hLnJvamFzQGVtYWlsLmNvbRERERERA
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s5q-pf-DM7">
-                                <rect key="frame" x="133" y="151" width="128" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="s5q-pf-DM7">
+                                <rect key="frame" x="133" y="151.66666666666666" width="128" height="126.66666666666671"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="NG4-s8-WQT"/>
                                 </constraints>
@@ -3440,7 +3440,7 @@ YW5hLnJvamFzQGVtYWlsLmNvbRERERERA
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hwa-tw-n6W"/>
+        <segue reference="Zym-zC-aTc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="353" height="222"/>
@@ -3449,7 +3449,9 @@ YW5hLnJvamFzQGVtYWlsLmNvbRERERERA
         <image name="Vaca" width="170.66667175292969" height="170.66667175292969"/>
         <image name="arrow.right" catalog="system" width="128" height="95"/>
         <image name="cross.case.fill" catalog="system" width="128" height="100"/>
+        <image name="light.beacon.min.fill" catalog="system" width="128" height="106"/>
         <image name="medical.thermometer.fill" catalog="system" width="128" height="120"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
         <systemColor name="groupTableViewBackgroundColor">
