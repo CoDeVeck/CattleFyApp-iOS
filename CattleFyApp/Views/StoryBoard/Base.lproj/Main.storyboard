@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AL5-La-3n5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sBA-ze-OSW">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1209,6 +1210,292 @@
             </objects>
             <point key="canvasLocation" x="2075.5725190839694" y="-35.211267605633807"/>
         </scene>
+        <!--Aplicación Sanitaria-->
+        <scene sceneID="mVl-Qe-RbC">
+            <objects>
+                <viewController id="sBA-ze-OSW" customClass="RegistroSanitarioViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AlT-zQ-V3b">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione el tipo de aplicación" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oM7-wL-4RA">
+                                <rect key="frame" x="30" y="235" width="333" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E0w-NX-6Mx">
+                                <rect key="frame" x="74" y="323" width="245" height="147"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="147" id="cNC-NA-rCV"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" imagePlacement="top" title="Aplicación Individual" subtitle="Para un animal especifico" imagePadding="10" titlePadding="15">
+                                    <imageReference key="image" image="medical.thermometer.fill" catalog="system" symbolScale="large"/>
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="22"/>
+                                    <fontDescription key="subtitleFontDescription" type="system" weight="medium" pointSize="19"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="nKx-sf-CHH" kind="show" id="s98-Y9-9sO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j4V-Ge-1bn">
+                                <rect key="frame" x="74" y="513" width="245" height="147"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="147" id="0mg-xz-9Cs"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" imagePlacement="top" title="Aplicación Masiva" subtitle="Para todo un lote" imagePadding="10" titlePadding="15">
+                                    <imageReference key="image" image="cross.case.fill" catalog="system" symbolScale="large"/>
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="22"/>
+                                    <fontDescription key="subtitleFontDescription" type="system" weight="medium" pointSize="19"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Hzm-tg-sVz" kind="show" id="emt-zv-uFJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JSL-am-6Ed"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j4V-Ge-1bn" firstAttribute="top" secondItem="E0w-NX-6Mx" secondAttribute="bottom" constant="43" id="99X-IP-lnV"/>
+                            <constraint firstItem="JSL-am-6Ed" firstAttribute="trailing" secondItem="j4V-Ge-1bn" secondAttribute="trailing" constant="74" id="Aqc-I4-QbK"/>
+                            <constraint firstItem="E0w-NX-6Mx" firstAttribute="top" secondItem="oM7-wL-4RA" secondAttribute="bottom" constant="28" id="Erk-au-3Sq"/>
+                            <constraint firstItem="E0w-NX-6Mx" firstAttribute="leading" secondItem="JSL-am-6Ed" secondAttribute="leading" constant="74" id="PGI-5A-1pm"/>
+                            <constraint firstItem="oM7-wL-4RA" firstAttribute="top" secondItem="JSL-am-6Ed" secondAttribute="top" constant="73" id="VAQ-dM-Bp2"/>
+                            <constraint firstItem="JSL-am-6Ed" firstAttribute="bottom" secondItem="j4V-Ge-1bn" secondAttribute="bottom" constant="124" id="ZVl-AV-IsI"/>
+                            <constraint firstItem="j4V-Ge-1bn" firstAttribute="leading" secondItem="JSL-am-6Ed" secondAttribute="leading" constant="74" id="dFc-0f-9Dp"/>
+                            <constraint firstItem="oM7-wL-4RA" firstAttribute="leading" secondItem="JSL-am-6Ed" secondAttribute="leading" constant="30" id="i37-43-a7t"/>
+                            <constraint firstItem="JSL-am-6Ed" firstAttribute="trailing" secondItem="E0w-NX-6Mx" secondAttribute="trailing" constant="74" id="lhm-Rr-gzU"/>
+                            <constraint firstItem="JSL-am-6Ed" firstAttribute="trailing" secondItem="oM7-wL-4RA" secondAttribute="trailing" constant="30" id="zp3-nc-xxW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Aplicación Sanitaria" id="9gx-Oq-0jt">
+                        <barButtonItem key="backBarButtonItem" title="Atrás" id="AY5-yf-tLC"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lEy-TO-fbg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3635.8778625954196" y="-880.28169014084517"/>
+        </scene>
+        <!--Registro Sanitario Individual-->
+        <scene sceneID="9xP-M8-kBg">
+            <objects>
+                <viewController id="nKx-sf-CHH" customClass="RegistroSanitarioAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Ih-6g-har">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sv-stepper">
+                                <rect key="frame" x="120" y="173" width="153" height="4"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="step1-active">
+                                        <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="step2-off">
+                                        <rect key="frame" x="53.666666666666671" y="0.0" width="45.666666666666671" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="step3-off">
+                                        <rect key="frame" x="107.33333333333333" y="0.0" width="45.666666666666671" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="h-step"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Paso 1: Identificar Animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofh-RE-9si">
+                                <rect key="frame" x="16" y="209" width="361" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Escanea el código QR en el arete del animal o búscalo manualmente." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9M-Jm-nlm">
+                                <rect key="frame" x="16" y="250.66666666666666" width="361" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWq-LK-HnM">
+                                <rect key="frame" x="16" y="315.33333333333331" width="361" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="h-scan"/>
+                                </constraints>
+                                <buttonConfiguration key="configuration" style="filled" image="qrcode.viewfinder" catalog="system" title="Escanear QR del animal" imagePadding="10" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                    <color key="baseBackgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v-manual-search">
+                                <rect key="frame" x="16" y="395.33333333333331" width="361" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Buscar por QR/Arete manualmente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-q">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                        <color key="textColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Código..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="txt-code">
+                                        <rect key="frame" x="0.0" y="25" width="86.333333333333329" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="h-t"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-search">
+                                        <rect key="frame" x="98.333333333333343" y="25" width="262.66666666666663" height="44"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Buscar" cornerStyle="medium">
+                                            <color key="baseBackgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="h-m-v"/>
+                                    <constraint firstItem="lbl-q" firstAttribute="top" secondItem="v-manual-search" secondAttribute="top" id="q1"/>
+                                    <constraint firstItem="lbl-q" firstAttribute="leading" secondItem="v-manual-search" secondAttribute="leading" id="q2"/>
+                                    <constraint firstAttribute="trailing" secondItem="lbl-q" secondAttribute="trailing" id="q3"/>
+                                    <constraint firstItem="txt-code" firstAttribute="top" secondItem="lbl-q" secondAttribute="bottom" constant="8" id="q4"/>
+                                    <constraint firstItem="txt-code" firstAttribute="leading" secondItem="v-manual-search" secondAttribute="leading" id="q5"/>
+                                    <constraint firstItem="btn-search" firstAttribute="leading" secondItem="txt-code" secondAttribute="trailing" constant="12" id="q6"/>
+                                    <constraint firstItem="btn-search" firstAttribute="centerY" secondItem="txt-code" secondAttribute="centerY" id="q7"/>
+                                    <constraint firstItem="btn-search" firstAttribute="height" secondItem="txt-code" secondAttribute="height" id="q8"/>
+                                    <constraint firstAttribute="trailing" secondItem="btn-search" secondAttribute="trailing" id="q9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v-animal-card">
+                                <rect key="frame" x="16" y="499.33333333333326" width="361" height="160"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Animal Identificado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-c-t">
+                                        <rect key="frame" x="16" y="16.000000000000057" width="138" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="img-a">
+                                        <rect key="frame" x="16" y="47.666666666666714" width="90" height="87"/>
+                                        <color key="tintColor" systemColor="systemGray4Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="h-i"/>
+                                            <constraint firstAttribute="width" constant="90" id="w-i"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sv-d">
+                                        <rect key="frame" x="122" y="48.333333333333307" width="223" height="85.333333333333314"/>
+                                        <subviews>
+                                            <label opaque="NO" contentMode="scaleToFill" text="QR/Arete: 78B42" lineBreakMode="tailTruncation" id="d1">
+                                                <rect key="frame" x="0.0" y="0.0" width="223" height="21.333333333333332"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="scaleToFill" text="Especie: Bovino" lineBreakMode="tailTruncation" id="d2">
+                                                <rect key="frame" x="0.0" y="21.333333333333336" width="223" height="21.333333333333336"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="scaleToFill" text="Lote: Lote 03" lineBreakMode="tailTruncation" id="d3">
+                                                <rect key="frame" x="0.0" y="42.666666666666664" width="223" height="21.333333333333336"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="scaleToFill" text="Raza: Angus" lineBreakMode="tailTruncation" id="d4">
+                                                <rect key="frame" x="0.0" y="64" width="223" height="21.333333333333329"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lbl-c-t" secondAttribute="trailing" constant="20" symbolic="YES" id="adw-pO-MLb"/>
+                                    <constraint firstItem="lbl-c-t" firstAttribute="top" secondItem="v-animal-card" secondAttribute="top" constant="16" id="c1"/>
+                                    <constraint firstItem="lbl-c-t" firstAttribute="leading" secondItem="v-animal-card" secondAttribute="leading" constant="16" id="c2"/>
+                                    <constraint firstItem="img-a" firstAttribute="top" secondItem="lbl-c-t" secondAttribute="bottom" constant="12" id="c3"/>
+                                    <constraint firstItem="img-a" firstAttribute="leading" secondItem="v-animal-card" secondAttribute="leading" constant="16" id="c4"/>
+                                    <constraint firstItem="sv-d" firstAttribute="leading" secondItem="img-a" secondAttribute="trailing" constant="16" id="c5"/>
+                                    <constraint firstItem="sv-d" firstAttribute="centerY" secondItem="img-a" secondAttribute="centerY" id="c6"/>
+                                    <constraint firstAttribute="trailing" secondItem="sv-d" secondAttribute="trailing" constant="16" id="c7"/>
+                                    <constraint firstAttribute="height" constant="160" id="h-c"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5Z-Bm-kKp">
+                                <rect key="frame" x="16" y="708" width="361" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="h-f"/>
+                                </constraints>
+                                <buttonConfiguration key="configuration" style="filled" image="arrow.right" catalog="system" imagePlacement="trailing" title="Siguiente" imagePadding="10" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="baseBackgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Cr6-WB-qrY" kind="show" id="urs-kJ-XK2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1kS-Ie-yu1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1kS-Ie-yu1" firstAttribute="trailing" secondItem="Ofh-RE-9si" secondAttribute="trailing" constant="16" id="x1"/>
+                            <constraint firstItem="v-animal-card" firstAttribute="trailing" secondItem="pWq-LK-HnM" secondAttribute="trailing" id="x10"/>
+                            <constraint firstItem="k5Z-Bm-kKp" firstAttribute="leading" secondItem="pWq-LK-HnM" secondAttribute="leading" id="x11"/>
+                            <constraint firstItem="k5Z-Bm-kKp" firstAttribute="trailing" secondItem="pWq-LK-HnM" secondAttribute="trailing" id="x12"/>
+                            <constraint firstItem="Ofh-RE-9si" firstAttribute="leading" secondItem="1kS-Ie-yu1" secondAttribute="leading" constant="16" id="x2"/>
+                            <constraint firstItem="m9M-Jm-nlm" firstAttribute="leading" secondItem="Ofh-RE-9si" secondAttribute="leading" id="x3"/>
+                            <constraint firstItem="m9M-Jm-nlm" firstAttribute="trailing" secondItem="Ofh-RE-9si" secondAttribute="trailing" id="x4"/>
+                            <constraint firstItem="pWq-LK-HnM" firstAttribute="leading" secondItem="1kS-Ie-yu1" secondAttribute="leading" constant="16" id="x5"/>
+                            <constraint firstItem="1kS-Ie-yu1" firstAttribute="trailing" secondItem="pWq-LK-HnM" secondAttribute="trailing" constant="16" id="x6"/>
+                            <constraint firstItem="v-manual-search" firstAttribute="leading" secondItem="pWq-LK-HnM" secondAttribute="leading" id="x7"/>
+                            <constraint firstItem="v-manual-search" firstAttribute="trailing" secondItem="pWq-LK-HnM" secondAttribute="trailing" id="x8"/>
+                            <constraint firstItem="v-animal-card" firstAttribute="leading" secondItem="pWq-LK-HnM" secondAttribute="leading" id="x9"/>
+                            <constraint firstItem="sv-stepper" firstAttribute="top" secondItem="1kS-Ie-yu1" secondAttribute="top" constant="11" id="y1"/>
+                            <constraint firstItem="sv-stepper" firstAttribute="centerX" secondItem="8Ih-6g-har" secondAttribute="centerX" id="y2"/>
+                            <constraint firstItem="Ofh-RE-9si" firstAttribute="top" secondItem="sv-stepper" secondAttribute="bottom" constant="32" id="y3"/>
+                            <constraint firstItem="m9M-Jm-nlm" firstAttribute="top" secondItem="Ofh-RE-9si" secondAttribute="bottom" constant="8" id="y4"/>
+                            <constraint firstItem="pWq-LK-HnM" firstAttribute="top" secondItem="m9M-Jm-nlm" secondAttribute="bottom" constant="24" id="y5"/>
+                            <constraint firstItem="v-manual-search" firstAttribute="top" secondItem="pWq-LK-HnM" secondAttribute="bottom" constant="24" id="y6"/>
+                            <constraint firstItem="v-animal-card" firstAttribute="top" secondItem="v-manual-search" secondAttribute="bottom" constant="24" id="y7"/>
+                            <constraint firstItem="1kS-Ie-yu1" firstAttribute="bottom" secondItem="k5Z-Bm-kKp" secondAttribute="bottom" constant="20" id="y8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Registro Sanitario Individual" id="DFC-u1-jrf">
+                        <barButtonItem key="backBarButtonItem" title="Atrás" id="HPO-5I-oqb"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QOV-j0-wzF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3311" y="-161"/>
+        </scene>
         <!--Registro Sanitario Masivo View Controller-->
         <scene sceneID="ydv-Rs-b8p">
             <objects>
@@ -1317,6 +1604,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="siguenteButtonTapped:" destination="Hzm-tg-sVz" eventType="touchUpInside" id="dWC-Hp-eOI"/>
+                                    <segue destination="1dP-wR-JQT" kind="show" id="14R-nS-vl3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O Seleccionar Manualmente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0L-zh-wff">
@@ -1367,6 +1655,7 @@
                             <constraint firstItem="0F1-DI-Sse" firstAttribute="leading" secondItem="Ti6-xC-Gh4" secondAttribute="leading" constant="20" id="yCG-Re-EYr"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6AK-bC-Qpv"/>
                     <connections>
                         <outlet property="lotesPickerView" destination="0F1-DI-Sse" id="prG-45-H1C"/>
                         <outlet property="siguienteButton" destination="ucr-jY-QcZ" id="O8W-ng-1rF"/>
@@ -1374,7 +1663,177 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lry-vq-iuR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3095.419847328244" y="-16.197183098591552"/>
+            <point key="canvasLocation" x="4117" y="-160"/>
+        </scene>
+        <!--Registro Sanitario Individual-->
+        <scene sceneID="V9B-rC-cBx">
+            <objects>
+                <viewController id="Cr6-WB-qrY" customClass="RegistroSanitarioAnimal2ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u9I-Ad-oSG">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sv-stepper-p2">
+                                <rect key="frame" x="19" y="173" width="153" height="4"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="st1-done-step">
+                                        <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="st2-active-step">
+                                        <rect key="frame" x="53.666666666666671" y="0.0" width="45.666666666666671" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="st3-off-step">
+                                        <rect key="frame" x="107.33333333333333" y="0.0" width="45.666666666666671" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="four-song-1"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Tipo de protocolo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-proto-title">
+                                <rect key="frame" x="20" y="209" width="150.66666666666666" height="21.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sc-protocolo-step2">
+                                <rect key="frame" x="20" y="246.66666666666663" width="357" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="four-song-2"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Vacuna"/>
+                                    <segment title="Tratamiento"/>
+                                    <segment title="Diagnóstico"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nombre del producto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-prod-step2">
+                                <rect key="frame" x="20" y="315.66666666666669" width="161" height="19.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar producto" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="txt-prod-step2">
+                                <rect key="frame" x="20" y="343" width="135.33333333333334" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="four-song-3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sv-row-step2">
+                                <rect key="frame" x="20" y="411" width="353.33333333333331" height="201.33333333333337"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" id="col-d-s2">
+                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="191.33333333333334"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" contentMode="scaleToFill" text="Dosis aplicada" lineBreakMode="tailTruncation" id="ld-s2">
+                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="149.33333333333334"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ej: 10 ml" id="td-s2">
+                                                <rect key="frame" x="0.0" y="157.33333333333334" width="166.66666666666666" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="four-song-4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" id="col-c-s2">
+                                        <rect key="frame" x="186.66666666666669" y="0.0" width="166.66666666666669" height="191.33333333333334"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" contentMode="scaleToFill" text="Costo unitario" lineBreakMode="tailTruncation" id="lc-s2">
+                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="149.33333333333334"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ 0.00" id="tc-s2">
+                                                <rect key="frame" x="0.0" y="157.33333333333334" width="166.66666666666666" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="four-song-5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Fecha de aplicación" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-date-s2">
+                                <rect key="frame" x="20" y="636.33333333333337" width="149.33333333333334" height="19.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="dp-fecha-s2">
+                                <rect key="frame" x="20" y="663.66666666666663" width="150.66666666666666" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="four-song-6"/>
+                                </constraints>
+                                <locale key="locale" localeIdentifier="es_ES"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-next-s2">
+                                <rect key="frame" x="16" y="708" width="158.66666666666666" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="four-song-7"/>
+                                </constraints>
+                                <buttonConfiguration key="configuration" style="filled" title="Siguiente" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="baseBackgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="5iC-Td-oPR" kind="show" id="Tew-fM-nxG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pCv-Yu-oep"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pCv-Yu-oep" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lbl-prod-step2" secondAttribute="trailing" symbolic="YES" id="WM2-UI-H4u"/>
+                            <constraint firstItem="pCv-Yu-oep" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="txt-prod-step2" secondAttribute="trailing" symbolic="YES" id="WSK-UO-Glo"/>
+                            <constraint firstItem="lbl-proto-title" firstAttribute="top" secondItem="sv-stepper-p2" secondAttribute="bottom" constant="32" id="four-song-10"/>
+                            <constraint firstItem="sc-protocolo-step2" firstAttribute="top" secondItem="lbl-proto-title" secondAttribute="bottom" constant="16" id="four-song-11"/>
+                            <constraint firstItem="lbl-prod-step2" firstAttribute="top" secondItem="sc-protocolo-step2" secondAttribute="bottom" constant="25" id="four-song-12"/>
+                            <constraint firstItem="txt-prod-step2" firstAttribute="top" secondItem="lbl-prod-step2" secondAttribute="bottom" constant="8" id="four-song-13"/>
+                            <constraint firstItem="sv-row-step2" firstAttribute="top" secondItem="txt-prod-step2" secondAttribute="bottom" constant="24" id="four-song-14"/>
+                            <constraint firstItem="lbl-date-s2" firstAttribute="top" secondItem="sv-row-step2" secondAttribute="bottom" constant="24" id="four-song-15"/>
+                            <constraint firstItem="dp-fecha-s2" firstAttribute="top" secondItem="lbl-date-s2" secondAttribute="bottom" constant="8" id="four-song-16"/>
+                            <constraint firstItem="pCv-Yu-oep" firstAttribute="bottom" secondItem="btn-next-s2" secondAttribute="bottom" constant="20" id="four-song-17"/>
+                            <constraint firstItem="pCv-Yu-oep" firstAttribute="trailing" secondItem="lbl-proto-title" secondAttribute="trailing" constant="20" id="four-song-18"/>
+                            <constraint firstItem="lbl-proto-title" firstAttribute="leading" secondItem="pCv-Yu-oep" secondAttribute="leading" constant="20" id="four-song-19"/>
+                            <constraint firstItem="sc-protocolo-step2" firstAttribute="leading" secondItem="lbl-proto-title" secondAttribute="leading" id="four-song-20"/>
+                            <constraint firstItem="sc-protocolo-step2" firstAttribute="trailing" secondItem="lbl-proto-title" secondAttribute="trailing" constant="206.33333333333334" id="four-song-21"/>
+                            <constraint firstItem="lbl-prod-step2" firstAttribute="leading" secondItem="lbl-proto-title" secondAttribute="leading" id="four-song-22"/>
+                            <constraint firstItem="txt-prod-step2" firstAttribute="leading" secondItem="lbl-proto-title" secondAttribute="leading" id="four-song-23"/>
+                            <constraint firstItem="sv-row-step2" firstAttribute="leading" secondItem="lbl-proto-title" secondAttribute="leading" id="four-song-25"/>
+                            <constraint firstItem="sv-row-step2" firstAttribute="trailing" secondItem="lbl-proto-title" secondAttribute="trailing" id="four-song-26"/>
+                            <constraint firstItem="lbl-date-s2" firstAttribute="leading" secondItem="lbl-proto-title" secondAttribute="leading" id="four-song-27"/>
+                            <constraint firstItem="dp-fecha-s2" firstAttribute="leading" secondItem="lbl-proto-title" secondAttribute="leading" id="four-song-28"/>
+                            <constraint firstItem="dp-fecha-s2" firstAttribute="trailing" secondItem="lbl-proto-title" secondAttribute="trailing" id="four-song-29"/>
+                            <constraint firstItem="btn-next-s2" firstAttribute="leading" secondItem="pCv-Yu-oep" secondAttribute="leading" constant="16" id="four-song-30"/>
+                            <constraint firstItem="pCv-Yu-oep" firstAttribute="trailing" secondItem="btn-next-s2" secondAttribute="trailing" constant="16" id="four-song-31"/>
+                            <constraint firstItem="sv-stepper-p2" firstAttribute="top" secondItem="pCv-Yu-oep" secondAttribute="top" constant="11" id="four-song-8"/>
+                            <constraint firstItem="sv-stepper-p2" firstAttribute="centerX" secondItem="u9I-Ad-oSG" secondAttribute="centerX" id="four-song-9"/>
+                            <constraint firstItem="pCv-Yu-oep" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lbl-date-s2" secondAttribute="trailing" symbolic="YES" id="g2b-RD-1Oe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Registro Sanitario Individual" id="BVl-YJ-LGT">
+                        <barButtonItem key="backBarButtonItem" title="Atrás" id="Hos-Zc-kZO"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z5d-sk-cq1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3310.6870229007632" y="527.46478873239437"/>
         </scene>
         <!--Registro Sanitario Masivo Pt2 View Controller-->
         <scene sceneID="Nd4-kD-xvo">
@@ -1548,6 +2007,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="siguienteButtonTapped:" destination="1dP-wR-JQT" eventType="touchUpInside" id="RbT-bt-qsd"/>
+                                    <segue destination="3Fn-Um-oms" kind="show" id="CSl-ES-Zgc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1615,6 +2075,7 @@
                             <constraint firstAttribute="trailing" secondItem="DqV-A7-rtz" secondAttribute="trailing" constant="20" id="z6V-MW-ubd"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="60r-Mi-aiY"/>
                     <connections>
                         <outlet property="animalesTextField" destination="TOw-0C-HHP" id="YXk-dL-Z6K"/>
                         <outlet property="costoTotalTextField" destination="jOc-rO-Xac" id="2sN-s0-xg4"/>
@@ -1628,7 +2089,226 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbe-sC-P9k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3858.7786259541981" y="-4.2253521126760569"/>
+            <point key="canvasLocation" x="4117" y="525"/>
+        </scene>
+        <!--Registro Sanitario Individual-->
+        <scene sceneID="IzX-wb-S84">
+            <objects>
+                <viewController id="5iC-Td-oPR" customClass="RegistroSanitarioAnimal3ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dAF-We-yqk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sv-stepper-p3">
+                                <rect key="frame" x="120" y="173" width="153" height="4"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="st1-fin">
+                                        <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="st2-fin">
+                                        <rect key="frame" x="53.666666666666671" y="0.0" width="45.666666666666671" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="st3-active">
+                                        <rect key="frame" x="107.33333333333333" y="0.0" width="45.666666666666671" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="four-song-101"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Resumen del Registro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-summary-title">
+                                <rect key="frame" x="20" y="209" width="353" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" white="0.14999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v-card-summary">
+                                <rect key="frame" x="16" y="266.66666666666669" width="361" height="280.00000000000006"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="sv-table-data">
+                                        <rect key="frame" x="16" y="16" width="329" height="248"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" id="row1">
+                                                <rect key="frame" x="0.0" y="0.0" width="329" height="40.666666666666664"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="Animal (Código QR)" lineBreakMode="tailTruncation" id="l1-key">
+                                                        <rect key="frame" x="0.0" y="10" width="151" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    </label>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="ANI-00001" textAlignment="right" lineBreakMode="tailTruncation" id="l1-val">
+                                                        <rect key="frame" x="229" y="10" width="100" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </label>
+                                                    <view alpha="0.20000000000000001" contentMode="scaleToFill" id="sep1">
+                                                        <rect key="frame" x="0.0" y="40" width="329" height="1"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" systemColor="separatorColor"/>
+                                                    </view>
+                                                </subviews>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="row2">
+                                                <rect key="frame" x="0.0" y="41.666666666666657" width="329" height="40.333333333333343"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="Protocolo" lineBreakMode="tailTruncation" id="l2-key">
+                                                        <rect key="frame" x="0.0" y="10" width="100" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    </label>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="Vacunación Fiebre Aftosa" textAlignment="right" lineBreakMode="tailTruncation" id="l2-val">
+                                                        <rect key="frame" x="129" y="10" width="200" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </label>
+                                                    <view alpha="0.20000000000000001" contentMode="scaleToFill" id="sep2">
+                                                        <rect key="frame" x="0.0" y="40" width="329" height="1"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" systemColor="separatorColor"/>
+                                                    </view>
+                                                </subviews>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="row3">
+                                                <rect key="frame" x="0.0" y="83" width="329" height="40.666666666666657"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="Producto" lineBreakMode="tailTruncation" id="l3-key">
+                                                        <rect key="frame" x="0.0" y="10" width="100" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    </label>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="Aftogen Oleo" textAlignment="right" lineBreakMode="tailTruncation" id="l3-val">
+                                                        <rect key="frame" x="200" y="10" width="129" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </label>
+                                                    <view alpha="0.20000000000000001" contentMode="scaleToFill" id="sep3">
+                                                        <rect key="frame" x="0.0" y="40" width="329" height="1"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" systemColor="separatorColor"/>
+                                                    </view>
+                                                </subviews>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="row4">
+                                                <rect key="frame" x="0.0" y="124.66666666666667" width="329" height="40.333333333333329"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="Dosis" lineBreakMode="tailTruncation" id="l4-key">
+                                                        <rect key="frame" x="0.0" y="10" width="100" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    </label>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="5 ml" textAlignment="right" lineBreakMode="tailTruncation" id="l4-val">
+                                                        <rect key="frame" x="229" y="10" width="100" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </label>
+                                                    <view alpha="0.20000000000000001" contentMode="scaleToFill" id="sep4">
+                                                        <rect key="frame" x="0.0" y="40" width="329" height="1"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" systemColor="separatorColor"/>
+                                                    </view>
+                                                </subviews>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="row5">
+                                                <rect key="frame" x="0.0" y="166" width="329" height="40.666666666666657"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="Costo Unitario" lineBreakMode="tailTruncation" id="l5-key">
+                                                        <rect key="frame" x="0.0" y="10" width="100" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    </label>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="$15.00" textAlignment="right" lineBreakMode="tailTruncation" id="l5-val">
+                                                        <rect key="frame" x="229" y="10" width="100" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </label>
+                                                    <view alpha="0.20000000000000001" contentMode="scaleToFill" id="sep5">
+                                                        <rect key="frame" x="0.0" y="40" width="329" height="1"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" systemColor="separatorColor"/>
+                                                    </view>
+                                                </subviews>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="row6">
+                                                <rect key="frame" x="0.0" y="207.66666666666666" width="329" height="40.333333333333343"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="Fecha de Aplicación" lineBreakMode="tailTruncation" id="l6-key">
+                                                        <rect key="frame" x="0.0" y="10" width="150" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    </label>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="24/10/2024" textAlignment="right" lineBreakMode="tailTruncation" id="l6-val">
+                                                        <rect key="frame" x="179" y="10" width="150" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="four-song-102"/>
+                                    <constraint firstItem="sv-table-data" firstAttribute="top" secondItem="v-card-summary" secondAttribute="top" constant="16" id="four-song-103"/>
+                                    <constraint firstItem="sv-table-data" firstAttribute="leading" secondItem="v-card-summary" secondAttribute="leading" constant="16" id="four-song-104"/>
+                                    <constraint firstAttribute="trailing" secondItem="sv-table-data" secondAttribute="trailing" constant="16" id="four-song-105"/>
+                                    <constraint firstAttribute="bottom" secondItem="sv-table-data" secondAttribute="bottom" constant="16" id="four-song-106"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-final-register">
+                                <rect key="frame" x="16" y="708" width="361" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="four-song-107"/>
+                                </constraints>
+                                <buttonConfiguration key="configuration" style="filled" title="Registrar Tratamiento" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="baseBackgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KCG-01-9I5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sv-stepper-p3" firstAttribute="top" secondItem="KCG-01-9I5" secondAttribute="top" constant="11" id="four-song-108"/>
+                            <constraint firstItem="sv-stepper-p3" firstAttribute="centerX" secondItem="dAF-We-yqk" secondAttribute="centerX" id="four-song-109"/>
+                            <constraint firstItem="lbl-summary-title" firstAttribute="top" secondItem="sv-stepper-p3" secondAttribute="bottom" constant="32" id="four-song-110"/>
+                            <constraint firstItem="v-card-summary" firstAttribute="top" secondItem="lbl-summary-title" secondAttribute="bottom" constant="24" id="four-song-111"/>
+                            <constraint firstItem="KCG-01-9I5" firstAttribute="bottom" secondItem="btn-final-register" secondAttribute="bottom" constant="20" id="four-song-112"/>
+                            <constraint firstItem="lbl-summary-title" firstAttribute="leading" secondItem="KCG-01-9I5" secondAttribute="leading" constant="20" id="four-song-113"/>
+                            <constraint firstItem="KCG-01-9I5" firstAttribute="trailing" secondItem="lbl-summary-title" secondAttribute="trailing" constant="20" id="four-song-114"/>
+                            <constraint firstItem="v-card-summary" firstAttribute="leading" secondItem="KCG-01-9I5" secondAttribute="leading" constant="16" id="four-song-115"/>
+                            <constraint firstItem="KCG-01-9I5" firstAttribute="trailing" secondItem="v-card-summary" secondAttribute="trailing" constant="16" id="four-song-116"/>
+                            <constraint firstItem="btn-final-register" firstAttribute="leading" secondItem="KCG-01-9I5" secondAttribute="leading" constant="16" id="four-song-117"/>
+                            <constraint firstItem="KCG-01-9I5" firstAttribute="trailing" secondItem="btn-final-register" secondAttribute="trailing" constant="16" id="four-song-118"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Registro Sanitario Individual" id="azo-Ju-KZI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uys-9Q-BKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3289" y="1337"/>
         </scene>
         <!--Registro Sanitario Masivo Pt3 View Controller-->
         <scene sceneID="Y3y-uI-vAh">
@@ -1887,6 +2567,7 @@
                             <constraint firstItem="TQA-rV-Oz2" firstAttribute="leading" secondItem="pBM-uB-Qh0" secondAttribute="leading" constant="20" id="zgW-Af-9sN"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="qAf-4M-RYq"/>
                     <connections>
                         <outlet property="animalesLabel" destination="hNl-e6-9KJ" id="tqy-wh-jbh"/>
                         <outlet property="costoLabel" destination="Ybr-ec-ybZ" id="fhd-uo-ZZT"/>
@@ -1901,7 +2582,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="daR-vm-CcI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4692.3664122137407" y="-4.2253521126760569"/>
+            <point key="canvasLocation" x="4118" y="1204"/>
         </scene>
         <!--Creacion De Granja View Controller-->
         <scene sceneID="SCY-um-OAY">
@@ -2739,15 +3420,38 @@ YW5hLnJvamFzQGVtYWlsLmNvbRERERERA
             </objects>
             <point key="canvasLocation" x="7750" y="668"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SWe-v0-LWA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bgF-L7-NDJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Iwm-bv-lgz">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sBA-ze-OSW" kind="relationship" relationship="rootViewController" id="AvL-4z-ycU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Sw-ZG-s2X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2668" y="-1099"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zym-zC-aTc"/>
+        <segue reference="Hwa-tw-n6W"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="353" height="222"/>
         <image name="QR-mano" width="170.66667175292969" height="170.66667175292969"/>
         <image name="Reportes-tablero" width="170.66667175292969" height="170.66667175292969"/>
         <image name="Vaca" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="arrow.right" catalog="system" width="128" height="95"/>
+        <image name="cross.case.fill" catalog="system" width="128" height="100"/>
+        <image name="medical.thermometer.fill" catalog="system" width="128" height="120"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -2755,37 +3459,46 @@ YW5hLnJvamFzQGVtYWlsLmNvbRERERERA
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
