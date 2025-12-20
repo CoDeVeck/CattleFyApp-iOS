@@ -53,7 +53,7 @@ class RegistroSanitarioMasivoViewController: UIViewController {
 
             var data = RegistroSanitarioUIData()
             data.idLote = lote.loteId
-
+            data.animalesTratados = lote.cantidadAnimales
             datosVC.registroData = data
             
             navigationController?.pushViewController(datosVC, animated: true)

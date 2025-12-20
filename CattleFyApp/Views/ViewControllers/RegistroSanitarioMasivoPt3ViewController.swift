@@ -85,6 +85,10 @@ class RegistroSanitarioMasivoPt3ViewController: UIViewController {
             mostrarAlerta(titulo: "Error", mensaje: "No se pudo obtener el ID del lote")
             return
         }
+        guard let cantidadAnimales = registroData.animalesTratados else{
+            mostrarAlerta(titulo: "Error", mensaje:"No se pudo obtener los animales tratados")
+            return
+        }
         
         let request = RegistroSanitarioRequest(
             qrLote: nil,
@@ -95,7 +99,7 @@ class RegistroSanitarioMasivoPt3ViewController: UIViewController {
             nombreProducto: registroData.nombreProducto,
             costoPorDosis: registroData.costoPorDosis,
             cantidadDosis: registroData.cantidadDosis,
-            animalesTratados: registroData.animalesTratados
+            animalesTratados: cantidadAnimales
         )
         
         // Mostrar loading

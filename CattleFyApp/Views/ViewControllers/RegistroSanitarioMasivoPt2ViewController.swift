@@ -36,9 +36,15 @@ class RegistroSanitarioMasivoPt2ViewController: UIViewController {
         protocoloPickerView.dataSource = self
         fechaAplicacionPicker.datePickerMode = .date
         fechaAplicacionPicker.isUserInteractionEnabled = false
+        animalesTextField.isUserInteractionEnabled = false
+        animalesTextField.backgroundColor = UIColor.systemGray6
+        if let cantidadAnimales = registroData.animalesTratados {
+            animalesTextField.text = "\(cantidadAnimales)"
+        }
         dosisTextField.addTarget(self, action: #selector(actualizarCostoTotal), for: .editingChanged)
         animalesTextField.addTarget(self, action: #selector(actualizarCostoTotal), for: .editingChanged)
         costoUnitTextField.addTarget(self, action: #selector(actualizarCostoTotal), for: .editingChanged)
+        actualizarCostoTotal()
     }
     
     @objc private func actualizarCostoTotal() {
