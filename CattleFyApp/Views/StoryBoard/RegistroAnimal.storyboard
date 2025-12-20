@@ -97,10 +97,25 @@
             </objects>
             <point key="canvasLocation" x="19" y="-27"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="CXl-Mc-IX4">
+            <objects>
+                <viewController id="qQ9-Vt-3Uf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="waf-WD-uyX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gtc-iZ-kPD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gz4-WE-PZD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3127" y="-4"/>
+        </scene>
         <!--Registrar Compra Animal-->
         <scene sceneID="SPv-5m-IkT">
             <objects>
-                <viewController id="nT0-JJ-r8T" sceneMemberID="viewController">
+                <viewController id="nT0-JJ-r8T" customClass="RegistroCompraAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Xl-PI-kbZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -326,7 +341,7 @@
         <!--Registrar Nuevo Animal-->
         <scene sceneID="iQp-6Z-6h7">
             <objects>
-                <viewController id="4KO-DV-QBa" sceneMemberID="viewController">
+                <viewController id="4KO-DV-QBa" customClass="RegistroCompraAnimal2ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K0W-ti-wBe">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -484,7 +499,7 @@
         <!--Registrar Nuevo Animal-->
         <scene sceneID="sUu-Jt-wnu">
             <objects>
-                <viewController id="QZA-8V-xJF" sceneMemberID="viewController">
+                <viewController id="QZA-8V-xJF" customClass="RegistroCompraAnimal3ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4cc-q2-ago">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -751,48 +766,364 @@
             </objects>
             <point key="canvasLocation" x="-361" y="2143"/>
         </scene>
-        <!--View Controller-->
+        <!--Registrar Nacimiento-->
         <scene sceneID="c7V-Lg-N6o">
             <objects>
-                <viewController id="cS3-eQ-kAt" sceneMemberID="viewController">
+                <viewController id="cS3-eQ-kAt" customClass="RegistroNacimientoAnimal3ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2kn-tq-YwZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Paso 3 de 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-step-3">
+                                <rect key="frame" x="16" y="178" width="77.666666666666671" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="pb-final-step">
+                                <rect key="frame" x="16" y="203" width="361" height="4"/>
+                                <color key="progressTintColor" systemColor="systemGreenColor"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Confirmación" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-confirm-title">
+                                <rect key="frame" x="16" y="223" width="107" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v-summary-card">
+                                <rect key="frame" x="16" y="263.33333333333331" width="361" height="359.99999999999994"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Resumen de la Cría" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-resumen-header">
+                                        <rect key="frame" x="98.333333333333329" y="20" width="164.33333333333337" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="img-placeholder">
+                                        <rect key="frame" x="110.66666666666669" y="59.333333333333343" width="140" height="87"/>
+                                        <color key="backgroundColor" red="0.85098039215686272" green="0.91764705882352937" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="h-img"/>
+                                            <constraint firstAttribute="width" constant="140" id="w-img"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sv-data-rows">
+                                        <rect key="frame" x="20" y="167.66666666666669" width="321" height="172.33333333333331"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" id="row-1">
+                                                <rect key="frame" x="0.0" y="0.0" width="321" height="75.333333333333329"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Fecha de nacimiento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="75.333333333333329"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="24/07/2024" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v1">
+                                                        <rect key="frame" x="232.33333333333334" y="0.0" width="88.666666666666657" height="75.333333333333329"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" id="row-2">
+                                                <rect key="frame" x="0.0" y="87.333333333333329" width="321" height="20.333333333333329"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Peso al nacer" lineBreakMode="tailTruncation" id="l2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="102" height="20.333333333333332"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="1.5 kg" lineBreakMode="tailTruncation" id="v2">
+                                                        <rect key="frame" x="277" y="0.0" width="44" height="20.333333333333332"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" id="row-3">
+                                                <rect key="frame" x="0.0" y="119.66666666666667" width="321" height="20.333333333333329"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Sexo" lineBreakMode="tailTruncation" id="l3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="37.333333333333336" height="20.333333333333332"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Macho" lineBreakMode="tailTruncation" id="v3">
+                                                        <rect key="frame" x="269.33333333333331" y="0.0" width="51.666666666666686" height="20.333333333333332"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" id="row-4">
+                                                <rect key="frame" x="0.0" y="152" width="321" height="20.333333333333343"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Especie" lineBreakMode="tailTruncation" id="l4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="59.666666666666664" height="20.333333333333332"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Porcino" lineBreakMode="tailTruncation" id="v4">
+                                                        <rect key="frame" x="263.33333333333331" y="0.0" width="57.666666666666686" height="20.333333333333332"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92941176470588238" green="0.96862745098039216" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="lbl-resumen-header" firstAttribute="top" secondItem="v-summary-card" secondAttribute="top" constant="20" id="c1"/>
+                                    <constraint firstItem="lbl-resumen-header" firstAttribute="centerX" secondItem="v-summary-card" secondAttribute="centerX" id="c2"/>
+                                    <constraint firstItem="img-placeholder" firstAttribute="top" secondItem="lbl-resumen-header" secondAttribute="bottom" constant="16" id="c3"/>
+                                    <constraint firstItem="img-placeholder" firstAttribute="centerX" secondItem="v-summary-card" secondAttribute="centerX" id="c4"/>
+                                    <constraint firstItem="sv-data-rows" firstAttribute="top" secondItem="img-placeholder" secondAttribute="bottom" constant="20" id="c5"/>
+                                    <constraint firstAttribute="trailing" secondItem="sv-data-rows" secondAttribute="trailing" constant="20" id="c6"/>
+                                    <constraint firstItem="sv-data-rows" firstAttribute="leading" secondItem="v-summary-card" secondAttribute="leading" constant="20" id="c7"/>
+                                    <constraint firstAttribute="height" constant="360" id="h-card"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v-info-box">
+                                <rect key="frame" x="16" y="639.33333333333337" width="361" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="info.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="img-info">
+                                        <rect key="frame" x="16" y="16.666666666666664" width="24" height="22.666666666666664"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="h-i"/>
+                                            <constraint firstAttribute="width" constant="24" id="w-i"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="La cría queda automáticamente en el mismo lote que la madre:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-info-txt">
+                                        <rect key="frame" x="52" y="15.999999999999996" width="293" height="33.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Lote de Parición 03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-lote-val">
+                                        <rect key="frame" x="52" y="53.666666666666629" width="125" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92941176470588238" green="0.96862745098039216" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="h-info"/>
+                                    <constraint firstItem="img-info" firstAttribute="top" secondItem="v-info-box" secondAttribute="top" constant="16" id="i1"/>
+                                    <constraint firstItem="img-info" firstAttribute="leading" secondItem="v-info-box" secondAttribute="leading" constant="16" id="i2"/>
+                                    <constraint firstItem="lbl-info-txt" firstAttribute="top" secondItem="v-info-box" secondAttribute="top" constant="16" id="i3"/>
+                                    <constraint firstItem="lbl-info-txt" firstAttribute="leading" secondItem="img-info" secondAttribute="trailing" constant="12" id="i4"/>
+                                    <constraint firstAttribute="trailing" secondItem="lbl-info-txt" secondAttribute="trailing" constant="16" id="i5"/>
+                                    <constraint firstItem="lbl-lote-val" firstAttribute="top" secondItem="lbl-info-txt" secondAttribute="bottom" constant="4" id="i6"/>
+                                    <constraint firstItem="lbl-lote-val" firstAttribute="leading" secondItem="lbl-info-txt" secondAttribute="leading" id="i7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-register-final">
+                                <rect key="frame" x="16" y="714" width="361" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="h-btn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Registrar Nacimiento" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="xAL-Ru-EJs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lbl-step-3" firstAttribute="top" secondItem="xAL-Ru-EJs" secondAttribute="top" constant="16" id="v-1"/>
+                            <constraint firstItem="xAL-Ru-EJs" firstAttribute="trailing" secondItem="v-summary-card" secondAttribute="trailing" constant="16" id="v-10"/>
+                            <constraint firstItem="v-info-box" firstAttribute="top" secondItem="v-summary-card" secondAttribute="bottom" constant="16" id="v-11"/>
+                            <constraint firstItem="v-info-box" firstAttribute="leading" secondItem="v-summary-card" secondAttribute="leading" id="v-12"/>
+                            <constraint firstItem="v-info-box" firstAttribute="trailing" secondItem="v-summary-card" secondAttribute="trailing" id="v-13"/>
+                            <constraint firstItem="xAL-Ru-EJs" firstAttribute="bottom" secondItem="btn-register-final" secondAttribute="bottom" constant="20" id="v-14"/>
+                            <constraint firstItem="btn-register-final" firstAttribute="leading" secondItem="xAL-Ru-EJs" secondAttribute="leading" constant="16" id="v-15"/>
+                            <constraint firstItem="xAL-Ru-EJs" firstAttribute="trailing" secondItem="btn-register-final" secondAttribute="trailing" constant="16" id="v-16"/>
+                            <constraint firstItem="lbl-step-3" firstAttribute="leading" secondItem="xAL-Ru-EJs" secondAttribute="leading" constant="16" id="v-2"/>
+                            <constraint firstItem="pb-final-step" firstAttribute="top" secondItem="lbl-step-3" secondAttribute="bottom" constant="8" id="v-3"/>
+                            <constraint firstItem="pb-final-step" firstAttribute="leading" secondItem="xAL-Ru-EJs" secondAttribute="leading" constant="16" id="v-4"/>
+                            <constraint firstItem="xAL-Ru-EJs" firstAttribute="trailing" secondItem="pb-final-step" secondAttribute="trailing" constant="16" id="v-5"/>
+                            <constraint firstItem="lbl-confirm-title" firstAttribute="top" secondItem="pb-final-step" secondAttribute="bottom" constant="16" id="v-6"/>
+                            <constraint firstItem="lbl-confirm-title" firstAttribute="leading" secondItem="lbl-step-3" secondAttribute="leading" id="v-7"/>
+                            <constraint firstItem="v-summary-card" firstAttribute="top" secondItem="lbl-confirm-title" secondAttribute="bottom" constant="20" id="v-8"/>
+                            <constraint firstItem="v-summary-card" firstAttribute="leading" secondItem="xAL-Ru-EJs" secondAttribute="leading" constant="16" id="v-9"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Registrar Nacimiento" id="OHC-zU-Ps8">
+                        <barButtonItem key="backBarButtonItem" title="Atrás" id="4cw-Iy-kM1"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L3H-9S-nZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="422" y="2143"/>
         </scene>
-        <!--Registrar nuevo nacimiento-->
+        <!--Registrar Nacimiento Animal-->
         <scene sceneID="SWi-8v-Bz1">
             <objects>
-                <viewController id="Hiw-dx-5R1" sceneMemberID="viewController">
+                <viewController id="Hiw-dx-5R1" customClass="RegistroNacimientoAnimal2ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nzI-J5-Mz7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Paso 2 de 3: Datos del animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-step-v2">
+                                <rect key="frame" x="16" y="178" width="361" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.6600000262260437" translatesAutoresizingMaskIntoConstraints="NO" id="pb-main-v2">
+                                <rect key="frame" x="16" y="203" width="361" height="4"/>
+                                <color key="progressTintColor" systemColor="systemGreenColor"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-next-3">
+                                <rect key="frame" x="16" y="223" width="361" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="h-btn-v3"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="camera.fill" catalog="system" title="Tomar foto del animal" imagePadding="10">
+                                    <backgroundConfiguration key="background">
+                                        <color key="strokeColor" systemColor="systemGreenColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" systemColor="systemGreenColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="img-main-v2">
+                                <rect key="frame" x="16" y="279" width="361" height="160"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="h-img-v2"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Fecha de nacimiento:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-date-v2">
+                                <rect key="frame" x="16" y="455" width="361" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <nil key="textColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="dp-main-v2">
+                                <rect key="frame" x="16" y="480" width="220" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="h-dp-v2"/>
+                                </constraints>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Peso (Kg):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-w-v2">
+                                <rect key="frame" x="16" y="536" width="361" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <nil key="textColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ej: 35" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tf-main-v2">
+                                <rect key="frame" x="16" y="561" width="361" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="h-tf-v2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sc-main-v2">
+                                <rect key="frame" x="16" y="646" width="361" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="h-sc-v2"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Hembra"/>
+                                    <segment title="Macho"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-next-2">
+                                <rect key="frame" x="20" y="719" width="353" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="h-next-v2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Siguiente">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="cS3-eQ-kAt" kind="show" id="nNo-XP-hR3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHY-wA-vZG">
+                                <rect key="frame" x="16" y="617" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="oNH-9P-Fkj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nHY-wA-vZG" firstAttribute="leading" secondItem="oNH-9P-Fkj" secondAttribute="leading" constant="16" id="SNX-z3-qdE"/>
+                            <constraint firstItem="oNH-9P-Fkj" firstAttribute="trailing" secondItem="nHY-wA-vZG" secondAttribute="trailing" constant="335" id="gi5-Xm-HQE"/>
+                            <constraint firstItem="oNH-9P-Fkj" firstAttribute="trailing" secondItem="lbl-step-v2" secondAttribute="trailing" constant="16" id="h2-1"/>
+                            <constraint firstItem="lbl-date-v2" firstAttribute="trailing" secondItem="lbl-step-v2" secondAttribute="trailing" id="h2-10"/>
+                            <constraint firstItem="dp-main-v2" firstAttribute="leading" secondItem="lbl-step-v2" secondAttribute="leading" id="h2-11"/>
+                            <constraint firstItem="dp-main-v2" firstAttribute="trailing" secondItem="lbl-step-v2" secondAttribute="trailing" constant="-141" id="h2-12"/>
+                            <constraint firstItem="lbl-w-v2" firstAttribute="leading" secondItem="lbl-step-v2" secondAttribute="leading" id="h2-13"/>
+                            <constraint firstItem="lbl-w-v2" firstAttribute="trailing" secondItem="lbl-step-v2" secondAttribute="trailing" id="h2-14"/>
+                            <constraint firstItem="tf-main-v2" firstAttribute="leading" secondItem="lbl-step-v2" secondAttribute="leading" id="h2-15"/>
+                            <constraint firstItem="tf-main-v2" firstAttribute="trailing" secondItem="lbl-step-v2" secondAttribute="trailing" id="h2-16"/>
+                            <constraint firstItem="sc-main-v2" firstAttribute="leading" secondItem="lbl-step-v2" secondAttribute="leading" id="h2-17"/>
+                            <constraint firstItem="sc-main-v2" firstAttribute="trailing" secondItem="lbl-step-v2" secondAttribute="trailing" id="h2-18"/>
+                            <constraint firstItem="oNH-9P-Fkj" firstAttribute="bottom" secondItem="btn-next-2" secondAttribute="bottom" constant="20" id="h2-19"/>
+                            <constraint firstItem="lbl-step-v2" firstAttribute="leading" secondItem="oNH-9P-Fkj" secondAttribute="leading" constant="16" id="h2-2"/>
+                            <constraint firstItem="btn-next-2" firstAttribute="leading" secondItem="oNH-9P-Fkj" secondAttribute="leading" constant="20" id="h2-20"/>
+                            <constraint firstItem="oNH-9P-Fkj" firstAttribute="trailing" secondItem="btn-next-2" secondAttribute="trailing" constant="20" id="h2-21"/>
+                            <constraint firstItem="pb-main-v2" firstAttribute="leading" secondItem="lbl-step-v2" secondAttribute="leading" id="h2-3"/>
+                            <constraint firstItem="pb-main-v2" firstAttribute="trailing" secondItem="lbl-step-v2" secondAttribute="trailing" id="h2-4"/>
+                            <constraint firstItem="btn-next-3" firstAttribute="leading" secondItem="lbl-step-v2" secondAttribute="leading" id="h2-5"/>
+                            <constraint firstItem="btn-next-3" firstAttribute="trailing" secondItem="lbl-step-v2" secondAttribute="trailing" id="h2-6"/>
+                            <constraint firstItem="img-main-v2" firstAttribute="leading" secondItem="lbl-step-v2" secondAttribute="leading" id="h2-7"/>
+                            <constraint firstItem="img-main-v2" firstAttribute="trailing" secondItem="lbl-step-v2" secondAttribute="trailing" id="h2-8"/>
+                            <constraint firstItem="lbl-date-v2" firstAttribute="leading" secondItem="lbl-step-v2" secondAttribute="leading" id="h2-9"/>
+                            <constraint firstItem="nHY-wA-vZG" firstAttribute="top" secondItem="tf-main-v2" secondAttribute="bottom" constant="11" id="mKZ-RH-ISv"/>
+                            <constraint firstItem="lbl-step-v2" firstAttribute="top" secondItem="oNH-9P-Fkj" secondAttribute="top" constant="16" id="v2-1"/>
+                            <constraint firstItem="pb-main-v2" firstAttribute="top" secondItem="lbl-step-v2" secondAttribute="bottom" constant="8" id="v2-2"/>
+                            <constraint firstItem="btn-next-3" firstAttribute="top" secondItem="pb-main-v2" secondAttribute="bottom" constant="16" id="v2-3"/>
+                            <constraint firstItem="img-main-v2" firstAttribute="top" secondItem="btn-next-3" secondAttribute="bottom" constant="12" id="v2-4"/>
+                            <constraint firstItem="lbl-date-v2" firstAttribute="top" secondItem="img-main-v2" secondAttribute="bottom" constant="16" id="v2-5"/>
+                            <constraint firstItem="dp-main-v2" firstAttribute="top" secondItem="lbl-date-v2" secondAttribute="bottom" constant="8" id="v2-6"/>
+                            <constraint firstItem="lbl-w-v2" firstAttribute="top" secondItem="dp-main-v2" secondAttribute="bottom" constant="16" id="v2-7"/>
+                            <constraint firstItem="tf-main-v2" firstAttribute="top" secondItem="lbl-w-v2" secondAttribute="bottom" constant="8" id="v2-8"/>
+                            <constraint firstItem="sc-main-v2" firstAttribute="top" secondItem="tf-main-v2" secondAttribute="bottom" constant="40" id="v2-9"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Registrar nuevo nacimiento" id="WX5-sT-fs0">
-                        <barButtonItem key="backBarButtonItem" title="Atrás" id="yoF-Ut-yza"/>
+                    <navigationItem key="navigationItem" title="Registrar Nacimiento Animal" id="eh2-HN-njv">
+                        <barButtonItem key="backBarButtonItem" title="Atrás" id="ST0-Vz-BKl"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a3w-K2-Gqo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="563" y="1399"/>
+            <point key="canvasLocation" x="394.6564885496183" y="1414.7887323943662"/>
         </scene>
         <!--Registrar Nacimiento Animal-->
         <scene sceneID="Uzu-H3-yEp">
             <objects>
-                <viewController id="Gb3-S9-5Oe" sceneMemberID="viewController">
+                <viewController id="Gb3-S9-5Oe" customClass="RegistroNacimientoAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FjJ-Y0-jS5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Paso 1 de 3: Identificación Madre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-step-header">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paso 1 de 3: Identificación Madre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-step-header">
                                 <rect key="frame" x="16" y="178" width="361" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -843,8 +1174,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Datos de la Madre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-mother-data-title">
-                                <rect key="frame" x="16" y="427" width="154" height="21.666666666666686"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos de la Madre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-mother-data-title">
+                                <rect key="frame" x="16" y="427" width="361" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                             </label>
@@ -858,12 +1189,12 @@
                                             <constraint firstAttribute="width" constant="80" id="w-cow-img"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ID: 1138" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-cow-id">
-                                        <rect key="frame" x="112" y="24" width="191" height="28.666666666666671"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID: 1138" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-cow-id">
+                                        <rect key="frame" x="112" y="24" width="187" height="28.666666666666671"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <nil key="textColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Escaneado correctamente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-status">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escaneado correctamente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-status">
                                         <rect key="frame" x="112.00000000000001" y="54.666666666666686" width="169.33333333333337" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -886,13 +1217,11 @@
                                                         <rect key="frame" x="14.000000000000007" y="8.0000000000000018" width="102.66666666666669" height="27.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                                         <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOT-000001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykh-Cn-yc0">
                                                         <rect key="frame" x="14.000000000000007" y="44" width="122.66666666666669" height="23"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -912,13 +1241,11 @@
                                                         <rect key="frame" x="13.999999999999993" y="9.9999999999999982" width="122.33333333333331" height="25.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                                         <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="54.3 Kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p3-yf-vWh">
                                                         <rect key="frame" x="13.999999999999993" y="44" width="122.33333333333331" height="23"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -939,7 +1266,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.92941176470588238" green="0.96862745098039216" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="img-status-check" firstAttribute="leading" secondItem="lbl-cow-id" secondAttribute="trailing" constant="12" id="check-lead-id"/>
+                                    <constraint firstItem="img-status-check" firstAttribute="leading" secondItem="lbl-cow-id" secondAttribute="trailing" constant="16" id="check-lead-id"/>
                                     <constraint firstItem="img-status-check" firstAttribute="top" secondItem="v-data-card" secondAttribute="top" constant="24" id="check-top-m"/>
                                     <constraint firstAttribute="trailing" secondItem="img-status-check" secondAttribute="trailing" constant="16" id="check-trail"/>
                                     <constraint firstAttribute="height" constant="220" id="h-data-card"/>
@@ -959,10 +1286,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-next">
-                                <rect key="frame" x="20" y="714" width="353" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-next-4">
+                                <rect key="frame" x="20" y="713.66666666666663" width="353" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="h-btn-next"/>
+                                    <constraint firstAttribute="height" constant="50" id="6I8-Jb-3eP"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Siguiente">
@@ -970,22 +1297,22 @@
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Hiw-dx-5R1" kind="show" id="D8m-fJ-O47"/>
+                                    <segue destination="Hiw-dx-5R1" kind="show" id="k0s-DI-7wt"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZrZ-xL-WOp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZrZ-xL-WOp" firstAttribute="bottom" secondItem="btn-next" secondAttribute="bottom" constant="10" id="btn-bottom-safe"/>
-                            <constraint firstItem="btn-next" firstAttribute="leading" secondItem="ZrZ-xL-WOp" secondAttribute="leading" constant="20" id="btn-lead-safe"/>
-                            <constraint firstItem="ZrZ-xL-WOp" firstAttribute="trailing" secondItem="btn-next" secondAttribute="trailing" constant="20" id="btn-trail-safe"/>
+                            <constraint firstItem="ZrZ-xL-WOp" firstAttribute="trailing" secondItem="btn-next-4" secondAttribute="trailing" constant="20" id="2xw-0w-TnT"/>
+                            <constraint firstItem="btn-next-4" firstAttribute="top" secondItem="v-data-card" secondAttribute="bottom" constant="35" id="58P-6p-Xpa"/>
                             <constraint firstItem="v-data-card" firstAttribute="leading" secondItem="ZrZ-xL-WOp" secondAttribute="leading" constant="16" id="card-lead"/>
                             <constraint firstItem="v-data-card" firstAttribute="top" secondItem="lbl-mother-data-title" secondAttribute="bottom" constant="10" id="card-top-title"/>
                             <constraint firstItem="ZrZ-xL-WOp" firstAttribute="trailing" secondItem="v-data-card" secondAttribute="trailing" constant="16" id="card-trail"/>
                             <constraint firstItem="lbl-step-header" firstAttribute="leading" secondItem="ZrZ-xL-WOp" secondAttribute="leading" constant="16" id="h-lead"/>
                             <constraint firstItem="lbl-step-header" firstAttribute="top" secondItem="ZrZ-xL-WOp" secondAttribute="top" constant="16" id="h-top"/>
                             <constraint firstItem="ZrZ-xL-WOp" firstAttribute="trailing" secondItem="lbl-step-header" secondAttribute="trailing" constant="16" id="h-trail"/>
+                            <constraint firstItem="btn-next-4" firstAttribute="leading" secondItem="ZrZ-xL-WOp" secondAttribute="leading" constant="20" id="hAi-Hb-gOF"/>
                             <constraint firstItem="pb-step-progress" firstAttribute="leading" secondItem="lbl-step-header" secondAttribute="leading" id="pb-align-lead"/>
                             <constraint firstItem="pb-step-progress" firstAttribute="trailing" secondItem="lbl-step-header" secondAttribute="trailing" id="pb-align-trail"/>
                             <constraint firstItem="pb-step-progress" firstAttribute="top" secondItem="lbl-step-header" secondAttribute="bottom" constant="8" id="pb-top-lbl"/>
@@ -994,6 +1321,7 @@
                             <constraint firstItem="ZrZ-xL-WOp" firstAttribute="trailing" secondItem="v-qr-card" secondAttribute="trailing" constant="16" id="qr-trail"/>
                             <constraint firstItem="lbl-mother-data-title" firstAttribute="leading" secondItem="ZrZ-xL-WOp" secondAttribute="leading" constant="16" id="title-lead-3"/>
                             <constraint firstItem="lbl-mother-data-title" firstAttribute="top" secondItem="v-qr-card" secondAttribute="bottom" constant="20" id="title-top-qr"/>
+                            <constraint firstItem="ZrZ-xL-WOp" firstAttribute="trailing" secondItem="lbl-mother-data-title" secondAttribute="trailing" constant="16" id="title-trail-3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Registrar Nacimiento Animal" id="kUA-kr-RU7">
@@ -1002,7 +1330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ji-cm-6Uc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="563" y="685"/>
+            <point key="canvasLocation" x="378" y="677"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Fi-Is-GvZ">
@@ -1027,6 +1355,7 @@
         <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="info.circle.fill" catalog="system" width="128" height="123"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
         <image name="waveform.path.ecg" catalog="system" width="128" height="125"/>
@@ -1038,6 +1367,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
