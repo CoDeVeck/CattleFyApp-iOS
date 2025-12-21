@@ -57,9 +57,11 @@ class RegistroCompraAnimal3ViewController: UIViewController {
             return
         }
         
+        var origen: String = "Compra"
+        
         // Convertir RegistroAnimalData a AnimalRequest
         let animalRequest = AnimalRequest(
-            origen: data.origen,
+            origen: origen,
             idLote: data.idLote,
             codigoQrMadre: data.codigoQrMadre,
             idEspecie: data.idEspecie,
@@ -74,7 +76,7 @@ class RegistroCompraAnimal3ViewController: UIViewController {
         activityIndicator.startAnimating()
         
         // Registrar el animal
-        AnimalService.shared.registrarAnimal(
+        AnimalesService.shared.registrarAnimal(
             animal: animalRequest,
             imagen: data.imagen
         ) { [weak self] result in
@@ -118,7 +120,7 @@ class RegistroCompraAnimal3ViewController: UIViewController {
     
     private func navegarAListadoAnimales() {
         // Navegar al listado de animales del lote
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "FarmFlow", bundle: nil)
         if let listadoVC = storyboard.instantiateViewController(
             withIdentifier: "ListadoAnimalesDeLoteViewController"
         ) as? ListadoAnimalesDeLoteViewController {

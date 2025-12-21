@@ -33,7 +33,7 @@ class VistaPreviaAnimalViewController: UIViewController {
 
             animalCodigoLabel.text = "Buscando..."
 
-            AnimalService.shared.obtenerAnimalPorQR(qrAnimal: codigoQR) { [weak self] result in
+            AnimalesService.shared.obtenerAnimalPorQR(qrAnimal: codigoQR) { [weak self] result in
                 DispatchQueue.main.async {
                     guard let self = self else { return }
 

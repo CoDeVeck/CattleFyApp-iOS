@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 
-class AnimalService {
+class AnimalesService {
 
-    static let shared = AnimalService()
-    private init() {}
+    static let shared = AnimalesService()
+    public init() {}
 
     // MARK: - Token
 
@@ -142,137 +142,146 @@ class AnimalService {
     }
 
     // MARK: - Registrar Animal con Imagen
-       func registrarAnimal(
-           animal: AnimalRequest,
-           imagen: UIImage?,
-           completion: @escaping (Result<AnimalResponse, Error>) -> Void
-       ) {
-           guard let url = URL(string: "\(Constants.baseURL)animales/registrar") else {
-               completion(.failure(NSError(
-                   domain: "", code: -1,
-                   userInfo: [NSLocalizedDescriptionKey: "URL inválida"]
-               )))
-               return
-           }
-           
-           guard let token = getAuthToken() else {
-               completion(.failure(NSError(
-                   domain: "", code: 401,
-                   userInfo: [NSLocalizedDescriptionKey: "No hay sesión activa"]
-               )))
-               return
-           }
-           
-           let boundary = "Boundary-\(UUID().uuidString)"
-           
-           var request = URLRequest(url: url)
-           request.httpMethod = "POST"
-           request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-           request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-           
-           // AQUÍ está la llamada al método privado - debe estar dentro de la clase
-           request.httpBody = crearMultipartBody(
-               animal: animal,
-               imagen: imagen,
-               boundary: boundary
-           )
-           
-           URLSession.shared.dataTask(with: request) { data, response, error in
-               if let error = error {
-                   completion(.failure(error))
-                   return
-               }
-               
-               guard let httpResponse = response as? HTTPURLResponse else {
-                   completion(.failure(NSError(
-                       domain: "", code: -1,
-                       userInfo: [NSLocalizedDescriptionKey: "Respuesta inválida"]
-                   )))
-                   return
-               }
-               
-               guard let data = data else {
-                   completion(.failure(NSError(
-                       domain: "", code: -1,
-                       userInfo: [NSLocalizedDescriptionKey: "No hay datos en la respuesta"]
-                   )))
-                   return
-               }
-               
-               if httpResponse.statusCode == 500 {
-                   let errorMessage = String(data: data, encoding: .utf8) ?? "Error interno del servidor"
-                   completion(.failure(NSError(
-                       domain: "", code: 500,
-                       userInfo: [NSLocalizedDescriptionKey: errorMessage]
-                   )))
-                   return
-               }
-               
-               guard (200...299).contains(httpResponse.statusCode) else {
-                   let errorMessage = String(data: data, encoding: .utf8) ?? "Error desconocido"
-                   completion(.failure(NSError(
-                       domain: "", code: httpResponse.statusCode,
-                       userInfo: [NSLocalizedDescriptionKey: errorMessage]
-                   )))
-                   return
-               }
-               
-               do {
-                   let animalResponse = try JSONDecoder().decode(AnimalResponse.self, from: data)
-                   completion(.success(animalResponse))
-               } catch {
-                   print("Error al decodificar: \(error)")
-                   completion(.failure(NSError(
-                       domain: "", code: -1,
-                       userInfo: [NSLocalizedDescriptionKey: "Error al procesar la respuesta del servidor"]
-                   )))
-               }
-           }.resume()
-       }
-       
-       // MARK: - Crear Body Multipart (DEBE ESTAR DENTRO DE LA CLASE)
-       private func crearMultipartBody(
-           animal: AnimalRequest,
-           imagen: UIImage?,
-           boundary: String
-       ) -> Data {
-           var body = Data()
-           
-           body.appendFormField(name: "origen", value: animal.origen, boundary: boundary)
-           body.appendFormField(name: "idLote", value: "\(animal.idLote)", boundary: boundary)
-           
-           if let codigoQrMadre = animal.codigoQrMadre, !codigoQrMadre.isEmpty {
-               body.appendFormField(name: "codigoQrMadre", value: codigoQrMadre, boundary: boundary)
-           }
-           
-           body.appendFormField(name: "idEspecie", value: "\(animal.idEspecie)", boundary: boundary)
-           body.appendFormField(name: "fechaNacimiento", value: animal.fechaNacimiento, boundary: boundary)
-           body.appendFormField(name: "sexo", value: animal.sexo, boundary: boundary)
-           
-           if let peso = animal.peso {
-               body.appendFormField(name: "peso", value: "\(peso)", boundary: boundary)
-           }
-           
-           if let precioCompra = animal.precioCompra {
-               body.appendFormField(name: "precioCompra", value: "\(precioCompra)", boundary: boundary)
-           }
-           
-           if let imagen = imagen,
-              let imageData = imagen.jpegData(compressionQuality: 0.8) {
-               body.appendFormFile(
-                   name: "imagen",
-                   filename: "animal_\(Date().timeIntervalSince1970).jpg",
-                   mimeType: "image/jpeg",
-                   fileData: imageData,
-                   boundary: boundary
-               )
-           }
-           
-           body.append("--\(boundary)--\r\n")
-           
-           return body
-       }
-    
+    func registrarAnimal(
+        animal: AnimalRequest,
+        imagen: UIImage?,
+        completion: @escaping (Result<AnimalResponse, Error>) -> Void
+    ) {
+        guard let url = URL(string: "\(Constants.baseURL)animales/registrar") else {
+            completion(.failure(NSError(
+                domain: "", code: -1,
+                userInfo: [NSLocalizedDescriptionKey: "URL inválida"]
+            )))
+            return
+        }
+        
+        guard let token = getAuthToken() else {
+            completion(.failure(NSError(
+                domain: "", code: 401,
+                userInfo: [NSLocalizedDescriptionKey: "No hay sesión activa"]
+            )))
+            return
+        }
+        
+        let boundary = "Boundary-\(UUID().uuidString)"
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+        request.httpBody = crearMultipartBody(
+            animal: animal,
+            imagen: imagen,
+            boundary: boundary
+        )
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(.failure(NSError(
+                    domain: "", code: -1,
+                    userInfo: [NSLocalizedDescriptionKey: "Respuesta inválida"]
+                )))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(NSError(
+                    domain: "", code: -1,
+                    userInfo: [NSLocalizedDescriptionKey: "No hay datos en la respuesta"]
+                )))
+                return
+            }
+            
+            if httpResponse.statusCode == 500 {
+                let errorMessage = String(data: data, encoding: .utf8) ?? "Error interno del servidor"
+                completion(.failure(NSError(
+                    domain: "", code: 500,
+                    userInfo: [NSLocalizedDescriptionKey: errorMessage]
+                )))
+                return
+            }
+            
+            guard (200...299).contains(httpResponse.statusCode) else {
+                let errorMessage = String(data: data, encoding: .utf8) ?? "Error desconocido"
+                completion(.failure(NSError(
+                    domain: "", code: httpResponse.statusCode,
+                    userInfo: [NSLocalizedDescriptionKey: errorMessage]
+                )))
+                return
+            }
+            
+            do {
+                let animalResponse = try JSONDecoder().decode(AnimalResponse.self, from: data)
+                completion(.success(animalResponse))
+            } catch {
+                print("Error al decodificar: \(error)")
+                completion(.failure(NSError(
+                    domain: "", code: -1,
+                    userInfo: [NSLocalizedDescriptionKey: "Error al procesar la respuesta del servidor"]
+                )))
+            }
+        }.resume()
+    }
+
+    // MARK: - Crear Body Multipart
+    private func crearMultipartBody(
+        animal: AnimalRequest,
+        imagen: UIImage?,
+        boundary: String
+    ) -> Data {
+        var body = Data()
+        
+        // Campo obligatorio: origen
+        body.appendFormField(name: "origen", value: animal.origen, boundary: boundary)
+        
+        // Campos condicionales según el origen
+        if animal.origen == "Compra" {
+            // FLUJO COMPRA: Se envían idLote, idEspecie y precioCompra
+            body.appendFormField(name: "idLote", value: "\(animal.idLote)", boundary: boundary)
+            body.appendFormField(name: "idEspecie", value: "\(animal.idEspecie)", boundary: boundary)
+            
+            if let precioCompra = animal.precioCompra {
+                body.appendFormField(name: "precioCompra", value: "\(precioCompra)", boundary: boundary)
+            }
+        }
+        // FLUJO NACIMIENTO: NO se envían idLote, idEspecie ni precioCompra
+        
+        // Campos opcionales comunes a ambos flujos
+        if let codigoQrMadre = animal.codigoQrMadre, !codigoQrMadre.isEmpty {
+            body.appendFormField(name: "codigoQrMadre", value: codigoQrMadre, boundary: boundary)
+        }
+        
+        // Campos obligatorios comunes
+        body.appendFormField(name: "fechaNacimiento", value: animal.fechaNacimiento, boundary: boundary)
+        body.appendFormField(name: "sexo", value: animal.sexo, boundary: boundary)
+        
+        // Campo opcional: peso
+        if let peso = animal.peso {
+            body.appendFormField(name: "peso", value: "\(peso)", boundary: boundary)
+        }
+        
+        // Imagen (común a ambos flujos)
+        if let imagen = imagen,
+           let imageData = imagen.jpegData(compressionQuality: 0.8) {
+            body.appendFormFile(
+                name: "imagen",
+                filename: "animal_\(Date().timeIntervalSince1970).jpg",
+                mimeType: "image/jpeg",
+                fileData: imageData,
+                boundary: boundary
+            )
+        }
+        
+        body.append("--\(boundary)--\r\n")
+        
+        return body
+    }
     // MARK: - POST registrar peso
 
     func registrarPeso(

@@ -9,6 +9,16 @@ import UIKit
 
 class ListadoAnimalesDeLoteViewController: UIViewController {
 
+    
+    @IBOutlet weak var buscadorCodigoQRAnimal: UISearchBar!
+    
+    @IBOutlet weak var tablaAnimales: UITableView!
+    
+    // Idnetifier de la celda: celdaAnimal
+    // Al darle un tap gesture recognizer que rediriga a la vista DetalleAnimaViewController
+    // Foto del animal, codigo QR, peso y estado (Vivo)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
