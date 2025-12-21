@@ -41,41 +41,35 @@ class ReporteService{
         let urlString = "\(Constants.baseURL)registroProduccion/loteGranja/1"
         
         guard let url = URL(string: urlString) else {
-            print("❌ URL inválida: \(urlString)")
             completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
             return
         }
         
-        print("🌐 Fetching Lotes: \(url.absoluteString)")
+        print("Fetching Lotes: \(url.absoluteString)")
         
         let request = crearRequestAutenticado(url: url)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                print("❌ Network error: \(error.localizedDescription)")
                 completion(.failure(error))
                 return
             }
-            
-            // ⭐ AGREGAR LOG DEL STATUS CODE
+       
             if let httpResponse = response as? HTTPURLResponse {
-                print("📊 Status Code para lotes: \(httpResponse.statusCode)")
+                print("Status Code para lotes: \(httpResponse.statusCode)")
             }
             
             guard let httpResponse = response as? HTTPURLResponse else {
-                print("❌ Invalid response")
+         
                 completion(.failure(NSError(domain: "Invalid response", code: -1, userInfo: nil)))
                 return
             }
             
             guard (200...299).contains(httpResponse.statusCode) else {
-                print("❌ HTTP Error: \(httpResponse.statusCode)")
                 
                 // ⭐ SI ES 403, IMPRIMIR MÁS INFO
                 if httpResponse.statusCode == 403 {
-                    print("⚠️ Error 403 Forbidden - El token no tiene permisos para acceder a esta granja")
                     if let data = data, let errorString = String(data: data, encoding: .utf8) {
-                        print("📦 Respuesta del servidor: \(errorString)")
                     }
                 }
                 
@@ -84,26 +78,19 @@ class ReporteService{
             }
             
             guard let data = data else {
-                print("❌ No data")
                 completion(.failure(NSError(domain: "No data", code: -1, userInfo: nil)))
                 return
             }
             
-            // ⭐ IMPRIMIR JSON CRUDO
-            if let jsonString = String(data: data, encoding: .utf8) {
-                print("📦 JSON Lotes recibido:")
-                print(jsonString)
-            }
-            
             do {
                 let lotes = try JSONDecoder().decode([LoteSimpleDTO].self, from: data)
-                print("✅ Lotes decodificados exitosamente: \(lotes.count)")
+                print("Lotes decodificados exitosamente: \(lotes.count)")
                 for lote in lotes {
                     print("  - ID: \(lote.loteId), Nombre: \(lote.nombre)")
                 }
                 completion(.success(lotes))
             } catch {
-                print("❌ Decoding error: \(error)")
+                print("ecoding error: \(error)")
                 if let decodingError = error as? DecodingError {
                     switch decodingError {
                     case .keyNotFound(let key, let context):
@@ -201,15 +188,13 @@ class ReporteService{
       completion: @escaping (Result<[DetalleAplicacion], Error>) -> Void
     ) {
        
-      // ⭐ USAR EL PARAMETRO granjaId, NO HARDCODEAR
       var urlComponents = URLComponents(string: "\(Constants.baseURL)registroProduccion/reporte/\(granjaId)/detalleAplicaciones")
        
       var queryItems: [URLQueryItem] = []
-       
-      //Agregamos parametros si es q el usuario manda
+
        
       if let loteId = filtros.loteId {
-        // ⭐ CONVERTIR Int a String
+
         queryItems.append(URLQueryItem(name: "lote_id", value: "\(loteId)"))
       }
        
@@ -230,57 +215,44 @@ class ReporteService{
       }
        
       guard let url = urlComponents?.url else {
-        print("❌ Invalid URL")
         completion(.failure(NSError(domain: "Invalid_URL", code: -1, userInfo: nil)))
         return
       }
-       
-      print("🌐 URL REQUEST Aplicaciones: \(url.absoluteString)")
-       
+        
       let request = crearRequestAutenticado(url: url)
        
       URLSession.shared.dataTask(with: request) { data, response, error in
         if let error = error {
-          print("❌ Network error: \(error.localizedDescription)")
           completion(.failure(error))
           return
         }
          
-        // ⭐ AGREGAR LOG DEL STATUS CODE
-        if let httpResponse = response as? HTTPURLResponse {
-          print("📊 Status Code Aplicaciones: \(httpResponse.statusCode)")
-        }
+        
          
         guard let httpResponse = response as? HTTPURLResponse else {
-          print("❌ Invalid Response")
+          
           completion(.failure(NSError(domain: "Invalid Response", code: -1, userInfo: nil)))
           return
         }
          
         guard (200...299).contains(httpResponse.statusCode) else {
-          print("❌ HTTP Error: \(httpResponse.statusCode)")
+         
           completion(.failure(NSError(domain: "HttpError", code: httpResponse.statusCode, userInfo: nil)))
           return
         }
          
-        guard let data = data else {
-          print("❌ NO DATA")
-          completion(.failure(NSError(domain: "NO DATA", code: -1, userInfo: nil)))
-          return
-        }
-         
-        // ⭐ IMPRIMIR JSON CRUDO
-        if let jsonString = String(data: data, encoding: .utf8) {
-          print("📦 JSON Aplicaciones recibido:")
-          print(jsonString)
-        }
+          guard let data = data else {
+              
+              completion(.failure(NSError(domain: "NO DATA", code: -1, userInfo: nil)))
+              return
+          }
          
         do {
           let aplicaciones = try JSONDecoder().decode([DetalleAplicacion].self, from: data)
-          print("✅ Aplicaciones decodificadas: \(aplicaciones.count)")
+       
           completion(.success(aplicaciones))
         } catch {
-          print("❌ Decoding error: \(error)")
+         
           if let decodingError = error as? DecodingError {
             switch decodingError {
             case .keyNotFound(let key, let context):
@@ -301,5 +273,326 @@ class ReporteService{
       }.resume()
     }
 
+    //MARK: - FETCH REPORTE PRODUCCION ENGORDEEEEE
+    func fetchReporteEngorde(
+        granjaId: Int,
+        filtros: ReporteProduccionFiltros = ReporteProduccionFiltros(),
+        completion: @escaping (Result<[ReporteProduccionEngordeDTO], Error>) -> Void
+      ) {
+        var urlComponents = URLComponents(string: "\(Constants.baseURL)registroProduccion/reporte/\(granjaId)/produccion")
+        
+        var queryItems: [URLQueryItem] = []
+        
+        if let loteId = filtros.loteId {
+          queryItems.append(URLQueryItem(name: "lote_id", value: "\(loteId)"))
+        }
+        
+        if let categoriaId = filtros.categoriaId {
+          queryItems.append(URLQueryItem(name: "categoria_id", value: "\(categoriaId)"))
+        }
+        
+        if let fechaInicio = filtros.fechaInicio {
+          queryItems.append(URLQueryItem(name: "fecha_inicio", value: fechaInicio))
+        }
+        
+        if let fechaFin = filtros.fechaFin {
+          queryItems.append(URLQueryItem(name: "fecha_fin", value: fechaFin))
+        }
+        
+        if !queryItems.isEmpty {
+          urlComponents?.queryItems = queryItems
+        }
+        
+        guard let url = urlComponents?.url else {
+          completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+          return
+        }
+        
+        print(" Fetching Reporte Engorde: \(url.absoluteString)")
+        
+        let request = crearRequestAutenticado(url: url)
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+          if let error = error {
+            print(" Network error: \(error.localizedDescription)")
+            completion(.failure(error))
+            return
+          }
+          
+          guard let httpResponse = response as? HTTPURLResponse else {
+            completion(.failure(NSError(domain: "Invalid Response", code: -1, userInfo: nil)))
+            return
+          }
+          
+          print(" Status Code Reporte Engorde: \(httpResponse.statusCode)")
+          
+          guard (200...299).contains(httpResponse.statusCode) else {
+            completion(.failure(NSError(domain: "HTTP Error", code: httpResponse.statusCode, userInfo: nil)))
+            return
+          }
+          
+          guard let data = data else {
+            completion(.failure(NSError(domain: "No data", code: -1, userInfo: nil)))
+            return
+          }
+          
+          if let jsonString = String(data: data, encoding: .utf8) {
+            print("JSON Reporte Engorde:")
+            print(jsonString)
+          }
+          
+          do {
+            let reporte = try JSONDecoder().decode([ReporteProduccionEngordeDTO].self, from: data)
+            print("Reporte Engorde decodificado: \(reporte.count) registros")
+            completion(.success(reporte))
+          } catch {
+            print("Decoding error: \(error)")
+            completion(.failure(error))
+          }
+        }.resume()
+      }
+    
+    //MARK: Fetch gráfico de evolución de peso (para Engorde)
+    func fetchGraficoEngorde(
+      granjaId: Int,
+      filtros: ReporteProduccionFiltros = ReporteProduccionFiltros(),
+      completion: @escaping (Result<[ReporteGrafico1], Error>) -> Void
+    ) {
+      var urlComponents = URLComponents(string: "\(Constants.baseURL)registroProduccion/grafico1/\(granjaId)/produccion")
+      
+      var queryItems: [URLQueryItem] = []
+      
+      if let loteId = filtros.loteId {
+        queryItems.append(URLQueryItem(name: "lote_id", value: "\(loteId)"))
+      }
+      
+      if let categoriaId = filtros.categoriaId {
+        queryItems.append(URLQueryItem(name: "categoria_id", value: "\(categoriaId)"))
+      }
+      
+      if let fechaInicio = filtros.fechaInicio {
+        queryItems.append(URLQueryItem(name: "fecha_inicio", value: fechaInicio))
+      }
+      
+      if let fechaFin = filtros.fechaFin {
+        queryItems.append(URLQueryItem(name: "fecha_fin", value: fechaFin))
+      }
+      
+      if !queryItems.isEmpty {
+        urlComponents?.queryItems = queryItems
+      }
+      
+      guard let url = urlComponents?.url else {
+        completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+        return
+      }
+      
+      print("🌐 Fetching Gráfico Engorde (Peso): \(url.absoluteString)")
+      
+      let request = crearRequestAutenticado(url: url)
+      
+      URLSession.shared.dataTask(with: request) { data, response, error in
+        if let error = error {
+          print("❌ Network error: \(error.localizedDescription)")
+          completion(.failure(error))
+          return
+        }
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+          completion(.failure(NSError(domain: "Invalid Response", code: -1, userInfo: nil)))
+          return
+        }
+        
+        print("📊 Status Code Gráfico Engorde: \(httpResponse.statusCode)")
+        
+        guard (200...299).contains(httpResponse.statusCode) else {
+          completion(.failure(NSError(domain: "HTTP Error", code: httpResponse.statusCode, userInfo: nil)))
+          return
+        }
+        
+        guard let data = data else {
+          completion(.failure(NSError(domain: "No data", code: -1, userInfo: nil)))
+          return
+        }
+        
+        if let jsonString = String(data: data, encoding: .utf8) {
+          print("📦 JSON Gráfico Engorde:")
+          print(jsonString)
+        }
+        
+        do {
+          let grafico = try JSONDecoder().decode([ReporteGrafico1].self, from: data)
+          print("✅ Gráfico Engorde decodificado: \(grafico.count) puntos")
+          completion(.success(grafico))
+        } catch {
+          print("❌ Decoding error: \(error)")
+          completion(.failure(error))
+        }
+      }.resume()
+    }
+    
+    //MARK: FETCH REPRODUCCION
+    func fetchReporteProduccion(
+       granjaId: Int,
+       filtros: ReporteProduccionFiltros = ReporteProduccionFiltros(),
+       completion: @escaping (Result<[ReporteProduccionReproduccion], Error>) -> Void
+     ) {
+       var urlComponents = URLComponents(string: "\(Constants.baseURL)registroProduccion/reporte/reproduccion/\(granjaId)")
+       
+       var queryItems: [URLQueryItem] = []
+       
+       if let loteId = filtros.loteId {
+         queryItems.append(URLQueryItem(name: "lote_id", value: "\(loteId)"))
+       }
+       
+       if let categoriaId = filtros.categoriaId {
+         queryItems.append(URLQueryItem(name: "categoria_id", value: "\(categoriaId)"))
+       }
+       
+       if let fechaInicio = filtros.fechaInicio {
+         queryItems.append(URLQueryItem(name: "fecha_inicio", value: fechaInicio))
+       }
+       
+       if let fechaFin = filtros.fechaFin {
+         queryItems.append(URLQueryItem(name: "fecha_fin", value: fechaFin))
+       }
+       
+       if !queryItems.isEmpty {
+         urlComponents?.queryItems = queryItems
+       }
+       
+       guard let url = urlComponents?.url else {
+         completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+         return
+       }
+       
+       print("🌐 Fetching Reporte Producción: \(url.absoluteString)")
+       
+       let request = crearRequestAutenticado(url: url)
+       
+       URLSession.shared.dataTask(with: request) { data, response, error in
+         if let error = error {
+           print("❌ Network error: \(error.localizedDescription)")
+           completion(.failure(error))
+           return
+         }
+         
+         guard let httpResponse = response as? HTTPURLResponse else {
+           completion(.failure(NSError(domain: "Invalid Response", code: -1, userInfo: nil)))
+           return
+         }
+         
+         print("📊 Status Code Reporte Producción: \(httpResponse.statusCode)")
+         
+         guard (200...299).contains(httpResponse.statusCode) else {
+           completion(.failure(NSError(domain: "HTTP Error", code: httpResponse.statusCode, userInfo: nil)))
+           return
+         }
+         
+         guard let data = data else {
+           completion(.failure(NSError(domain: "No data", code: -1, userInfo: nil)))
+           return
+         }
+         
+         if let jsonString = String(data: data, encoding: .utf8) {
+           print("📦 JSON Reporte Producción:")
+           print(jsonString)
+         }
+         
+         do {
+           let reporte = try JSONDecoder().decode([ReporteProduccionReproduccion].self, from: data)
+           print("✅ Reporte Producción decodificado: \(reporte.count) registros")
+           completion(.success(reporte))
+         } catch {
+           print("❌ Decoding error: \(error)")
+           completion(.failure(error))
+         }
+       }.resume()
+     }
+    
+    //MARK: - FETCH GRAFICO 2
+ 
+    func fetchGraficoProduccion(
+       granjaId: Int,
+       filtros: ReporteProduccionFiltros = ReporteProduccionFiltros(),
+       completion: @escaping (Result<[ReporteGrafico2], Error>) -> Void
+     ) {
+       var urlComponents = URLComponents(string: "\(Constants.baseURL)registroProduccion/grafico2/\(granjaId)/reproduccion")
+       
+       var queryItems: [URLQueryItem] = []
+       
+       if let loteId = filtros.loteId {
+         queryItems.append(URLQueryItem(name: "lote_id", value: "\(loteId)"))
+       }
+       
+       if let categoriaId = filtros.categoriaId {
+         queryItems.append(URLQueryItem(name: "categoria_id", value: "\(categoriaId)"))
+       }
+       
+       if let fechaInicio = filtros.fechaInicio {
+         queryItems.append(URLQueryItem(name: "fecha_inicio", value: fechaInicio))
+       }
+       
+       if let fechaFin = filtros.fechaFin {
+         queryItems.append(URLQueryItem(name: "fecha_fin", value: fechaFin))
+       }
+       
+       if !queryItems.isEmpty {
+         urlComponents?.queryItems = queryItems
+       }
+       
+       guard let url = urlComponents?.url else {
+         completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+         return
+       }
+       
+       print("🌐 Fetching Gráfico Producción: \(url.absoluteString)")
+       
+       let request = crearRequestAutenticado(url: url)
+       
+       URLSession.shared.dataTask(with: request) { data, response, error in
+         if let error = error {
+           print("❌ Network error: \(error.localizedDescription)")
+           completion(.failure(error))
+           return
+         }
+         
+         guard let httpResponse = response as? HTTPURLResponse else {
+           completion(.failure(NSError(domain: "Invalid Response", code: -1, userInfo: nil)))
+           return
+         }
+         
+         print("📊 Status Code Gráfico Producción: \(httpResponse.statusCode)")
+         
+         guard (200...299).contains(httpResponse.statusCode) else {
+           completion(.failure(NSError(domain: "HTTP Error", code: httpResponse.statusCode, userInfo: nil)))
+           return
+         }
+         
+         guard let data = data else {
+           completion(.failure(NSError(domain: "No data", code: -1, userInfo: nil)))
+           return
+         }
+         
+         if let jsonString = String(data: data, encoding: .utf8) {
+           print("📦 JSON Gráfico Producción:")
+           print(jsonString)
+         }
+         
+         do {
+           let grafico = try JSONDecoder().decode([ReporteGrafico2].self, from: data)
+           print("✅ Gráfico Producción decodificado: \(grafico.count) puntos")
+           completion(.success(grafico))
+         } catch {
+           print("❌ Decoding error: \(error)")
+           completion(.failure(error))
+         }
+       }.resume()
+     }
+    
+    //MARK: - FETCH REPORTE FINANCIERO
+    
+    //MARK: - FETCH GRAFICO 3
+    
     
 }

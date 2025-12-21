@@ -1,66 +1,113 @@
 import SwiftUI
 import Charts
 
-struct Gastos: Identifiable {
-    let id = UUID()
-    let mes: String
-    let monto: Int
-    
-    init(mes: String, monto: Int) {
-        self.mes = mes
-        self.monto = monto
-    }
-}
-
-
-let Gastos2022 = [
-    Gastos(mes: "Enero", monto: 100),
-    Gastos(mes: "Febrero", monto: 500),
-    Gastos(mes: "Marzo", monto: 300),
-    Gastos(mes: "Abril", monto: 700),
-    Gastos(mes: "Mayo", monto: 1000),
-    Gastos(mes: "Junio", monto: 800),
-    Gastos(mes: "Julio", monto: 200),
-]
-
-let Gastos2023 = [
-    Gastos(mes: "Enero", monto: 600),
-    Gastos(mes: "Febrero", monto: 300),
-    Gastos(mes: "Marzo", monto: 900),
-    Gastos(mes: "Abril", monto: 100),
-    Gastos(mes: "Mayo", monto: 800),
-    Gastos(mes: "Junio", monto: 400),
-    Gastos(mes: "Julio", monto: 500),
-]
-
 struct GraficoReporte1: View {
-
-    let chartData = [ (year: "2022", data: Gastos2022),
-                          (year: "2023", data: Gastos2023)]
-
-        var body: some View {
-            
-            VStack {
-                Chart {
-                    ForEach(Gastos2022) { item in
-                        LineMark(
-                            x: .value("Mes", item.mes),
-                            y: .value("Monto", item.monto)
-                        )
-                    }
-                }
-                .frame(height: 300)
-                .chartPlotStyle { plotArea in
-                    plotArea
-                }
-                .background(.gray.opacity(0.1))
-            }
-            .padding(20)
+  
+  let datos: [ReporteGrafico1]
+  
+  var body: some View {
+    VStack(alignment: .leading, spacing: 12) {
+      
+      Text("Evolución de Peso")
+        .font(.headline)
+        .foregroundColor(.primary)
+      
+      if datos.isEmpty {
+        // Estado vacío
+        VStack {
+          Image(systemName: "chart.line.uptrend.xyaxis")
+            .font(.system(size: 50))
+            .foregroundColor(.gray.opacity(0.3))
+          
+          Text("No hay datos disponibles")
+            .font(.subheadline)
+            .foregroundColor(.secondary)
         }
-    
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(height: 300)
+      } else {
+        Chart {
+          ForEach(datos) { item in
+            // Línea principal
+            LineMark(
+              x: .value("Fecha", parseDate(item.fecha) ?? Date()),
+              y: .value("Peso (kg)", item.pesoKg)
+            )
+            .foregroundStyle(.blue)
+            .lineStyle(StrokeStyle(lineWidth: 2))
+            .interpolationMethod(.catmullRom)
+            
+            // Área bajo la línea
+            AreaMark(
+              x: .value("Fecha", parseDate(item.fecha) ?? Date()),
+              y: .value("Peso (kg)", item.pesoKg)
+            )
+            .foregroundStyle(
+              .linearGradient(
+                colors: [.blue.opacity(0.3), .blue.opacity(0.05)],
+                startPoint: .top,
+                endPoint: .bottom
+              )
+            )
+            
+            // Puntos
+            PointMark(
+              x: .value("Fecha", parseDate(item.fecha) ?? Date()),
+              y: .value("Peso (kg)", item.pesoKg)
+            )
+            .foregroundStyle(.blue)
+            .symbolSize(50)
+          }
+        }
+        .chartXAxis {
+          AxisMarks(values: .stride(by: .day, count: obtenerStrideDias())) { value in
+            AxisGridLine()
+            AxisValueLabel(format: .dateTime.month().day())
+          }
+        }
+        .chartYAxis {
+          AxisMarks(position: .leading) { value in
+            AxisGridLine()
+            AxisValueLabel {
+              if let peso = value.as(Double.self) {
+                Text("\(Int(peso)) kg")
+              }
+            }
+          }
+        }
+        .frame(height: 300)
+        .padding(.horizontal, 4)
+      }
+    }
+    .padding()
+    .background(Color(.systemBackground))
+    .cornerRadius(12)
+  }
+  
+  private func parseDate(_ dateString: String) -> Date? {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    return formatter.date(from: dateString)
+  }
+  
+  private func obtenerStrideDias() -> Int {
+    // Ajustar stride según cantidad de datos
+    if datos.count > 20 {
+      return 7 // Mostrar cada 7 días
+    } else if datos.count > 10 {
+      return 3 // Mostrar cada 3 días
+    } else {
+      return 1 // Mostrar todos
+    }
+  }
 }
-
-
+	
 #Preview("GraficoReporte1") {
-    GraficoReporte1()
+    GraficoReporte1(datos: [
+        ReporteGrafico1(fecha: "2024-01-15", pesoKg: 280.50),
+        ReporteGrafico1(fecha: "2024-02-15", pesoKg: 315.00),
+        ReporteGrafico1(fecha: "2024-03-15", pesoKg: 345.75),
+        ReporteGrafico1(fecha: "2024-04-15", pesoKg: 378.20),
+        ReporteGrafico1(fecha: "2024-05-15", pesoKg: 405.00)
+      ])
 }
