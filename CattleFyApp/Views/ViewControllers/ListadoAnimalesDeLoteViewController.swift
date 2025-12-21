@@ -12,18 +12,14 @@ class ListadoAnimalesDeLoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        
     }
+
+    @IBAction func agregarNuevoAnimalButton(_ sender: UIButton) {
+            let storyboard = UIStoryboard(name: "RegistroAnimal", bundle: nil)
+            let registroVC = storyboard.instantiateViewController(withIdentifier: "RegistroAnimalViewController")
+            navigationController?.pushViewController(registroVC, animated: true)
+        }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
