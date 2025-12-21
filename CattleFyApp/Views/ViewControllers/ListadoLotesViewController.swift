@@ -212,8 +212,10 @@ class ListadoLotesViewController: UIViewController {
             let lote = lotes[indexPath.row]
             print("📌 Lote seleccionado: \(lote.nombre ?? "N/A")")
             
-            // Aquí puedes navegar a los detalles del lote
-            // performSegue(withIdentifier: "showLoteDetail", sender: lote)
+            if let detalleVC = storyboard?.instantiateViewController(withIdentifier: "DetalleLoteViewController") as? DetalleLoteViewController {
+                detalleVC.loteId = lote.idLote
+                navigationController?.pushViewController(detalleVC, animated: true)
+            }
         }
         
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
