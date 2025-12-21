@@ -6,24 +6,46 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ReporteEngordeViewController: UIViewController {
+    
+    
+    
+    @IBOutlet weak var graficoContainerOne: UIView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUpChart()
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setUpChart(){
+        
+        //Definimos o llamamos el grafico creado
+        let swiftIU = GraficoReporte1()
+        
+        
+        let hostingController = UIHostingController(rootView: swiftIU)
+        
+        
+        addChild(hostingController)
+        
+        
+        let hostedView = hostingController.view!
+        hostedView.translatesAutoresizingMaskIntoConstraints = false
+        graficoContainerOne.addSubview(hostedView)
+        
+        NSLayoutConstraint.activate([
+            hostedView.topAnchor.constraint(equalTo: graficoContainerOne.topAnchor),
+                        hostedView.bottomAnchor.constraint(equalTo: graficoContainerOne.bottomAnchor),
+                        hostedView.leadingAnchor.constraint(equalTo: graficoContainerOne.leadingAnchor),
+                        hostedView.trailingAnchor.constraint(equalTo: graficoContainerOne.trailingAnchor)
+        ])
+        
+        hostingController.didMove(toParent: self)
     }
-    */
-
+   
 }
