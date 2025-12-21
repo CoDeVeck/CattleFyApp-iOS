@@ -38,24 +38,25 @@ class DetalleLoteViewController: UIViewController {
     var loteId: Int!
     private var loteDetalle: LoteDetalleResponse?
     
-    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         alimentacionButton?.isEnabled = true
-            alimentacionButton?.isUserInteractionEnabled = true
+        alimentacionButton?.isUserInteractionEnabled = true
         self.title = "Detalle del lote"
         navigationItem.backButtonTitle = "Volver"
         ProduccionButton?.isEnabled = true
-            ProduccionButton?.isUserInteractionEnabled = true
-            
-            sanitarioButton?.isEnabled = true
-            sanitarioButton?.isUserInteractionEnabled = true
+        ProduccionButton?.isUserInteractionEnabled = true
+        
+        sanitarioButton?.isEnabled = true
+        sanitarioButton?.isUserInteractionEnabled = true
         cargarDetalleLote()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
     private func cargarDetalleLote() {
         guard loteId != nil else {
             mostrarAlerta(titulo: "Error", mensaje: "ID de lote no válido")
@@ -148,33 +149,52 @@ class DetalleLoteViewController: UIViewController {
         
     }
     @IBAction func alimentacion(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil) // Cambia "Historial" por el nombre de tu storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        // Instanciar el ViewController
         guard let historialVC = storyboard.instantiateViewController(
             withIdentifier: "HistorialAlimentacionViewController"
         ) as? HistorialAlimentacionViewController else {
-            print("❌ Error: No se pudo instanciar HistorialAlimentacionViewController")
+            print("Error: No se pudo instanciar HistorialAlimentacionViewController")
             return
         }
         
-        // Pasar el loteId
         historialVC.loteId = loteId
         
-        // Navegar
         navigationController?.pushViewController(historialVC, animated: true)
         print("Lote recibido: \(loteId ?? -1)")
 
     }
     
     @IBAction func produccionButtonTapped(_ sender: Any) {
-        guard let loteId = loteId else { return }
-        print("📌 Ir a Reproducción del lote \(loteId)")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let historialVC = storyboard.instantiateViewController(
+            withIdentifier: "HistorialProduccionViewController"
+        ) as? HistorialProduccionViewController else {
+            print(" Error: No se pudo instanciar HistorialProduccionViewController")
+            return
+        }
+        
+        historialVC.loteId = loteId
+        
+        navigationController?.pushViewController(historialVC, animated: true)
+        print("Lote recibido: \(loteId ?? -1)")
     }
     
     @IBAction func sanitarioButtonTapped(_ sender: UIButton) {
-        guard let loteId = loteId else { return }
-        print("📌 Ir a Saniatario del lote \(loteId)")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let historialVC = storyboard.instantiateViewController(
+            withIdentifier: "HistorialSanitarioViewController"
+        ) as? HistorialSanitarioViewController else {
+            print("Error: No se pudo instanciar HistorialSanitarioViewController")
+            return
+        }
+        
+        historialVC.loteId = loteId
+        
+        navigationController?.pushViewController(historialVC, animated: true)
+        print("Lote recibido: \(loteId ?? -1)")
     }
     
     

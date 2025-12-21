@@ -11,7 +11,7 @@ struct RegistroProduccionDTO: Codable {
     let produccionId: Int?
     let fechaRegistro: Date?
     let tipoProduccion: String?
-    let cantidad: Decimal?
+    let cantidad: Double?
     let loteId: Int?
     let nombreLote: String?
 }

@@ -10,7 +10,7 @@ import UIKit
 class ListadoLotesViewController: UIViewController {
     
     @IBOutlet weak var especieButton: UIButton!
-        
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var loteNombreTextField: UITextField!
@@ -23,35 +23,35 @@ class ListadoLotesViewController: UIViewController {
         super.viewDidLoad()
         
         setupTableView()
-                setupUI()
-                cargarEspecies()
-            }
-            
+        setupUI()
+        cargarEspecies()
+    }
+    
     private func setupUI() {
-            // Ocultar botón de tipo
-            
-            // Configurar TextField
-            loteNombreTextField?.placeholder = "Buscar por nombre..."
-            loteNombreTextField?.clearButtonMode = .whileEditing
-            loteNombreTextField?.returnKeyType = .search
-            loteNombreTextField?.delegate = self
-            loteNombreTextField?.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-            
-            // Configurar botón de especie
-            especieButton?.setTitle("Seleccionar Especie", for: .normal)
-            especieButton?.addTarget(self, action: #selector(especieButtonTapped), for: .touchUpInside)
-            
-            // Cargar todos los lotes inicialmente
-            buscarLotes()
-        }
+        // Ocultar botón de tipo
         
-        private func setupTableView() {
-            tableView?.delegate = self
-            tableView?.dataSource = self
-            tableView?.separatorStyle = .none
-            tableView?.backgroundColor = .systemGroupedBackground
-        }
+        // Configurar TextField
+        loteNombreTextField?.placeholder = "Buscar por nombre..."
+        loteNombreTextField?.clearButtonMode = .whileEditing
+        loteNombreTextField?.returnKeyType = .search
+        loteNombreTextField?.delegate = self
+        loteNombreTextField?.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         
+        // Configurar botón de especie
+        especieButton?.setTitle("Seleccionar Especie", for: .normal)
+        especieButton?.addTarget(self, action: #selector(especieButtonTapped), for: .touchUpInside)
+        
+        // Cargar todos los lotes inicialmente
+        buscarLotes()
+    }
+    
+    private func setupTableView() {
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        tableView?.separatorStyle = .none
+        tableView?.backgroundColor = .systemGroupedBackground
+    }
+    
     private func cargarEspecies() {
         EspecieService.shared.obtenerEspecies { [weak self] result in
             DispatchQueue.main.async {
@@ -61,21 +61,23 @@ class ListadoLotesViewController: UIViewController {
                     // insertar opción TODOS
                     let opcionTodos = EspecieResponse(especieId: nil, nombre: "Todos")
                     self?.especies = [opcionTodos] + especies
-
+                    
                     print("✅ Especies cargadas: \(especies.count + 1)")
-
+                    
                 case .failure(let error):
                     print("❌ Error: \(error.localizedDescription)")
                 }
             }
         }
     }
-
-        
-        // MARK: - IBActions
-        @IBAction func especieButtonTapped(_ sender: UIButton) {
-            mostrarEspecies()
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    // MARK: - IBActions
+    @IBAction func especieButtonTapped(_ sender: UIButton) {
+        mostrarEspecies()
+    }
         
         // MARK: - Actions
         @objc private func mostrarEspecies() {
@@ -180,11 +182,11 @@ class ListadoLotesViewController: UIViewController {
             }
         }
         
-        private func mostrarAlerta(titulo: String, mensaje: String) {
-            let alert = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            present(alert, animated: true)
-        }
+    private func mostrarAlerta(titulo: String, mensaje: String) {
+        let alert = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
 }
     // MARK: - UITableViewDataSource
     extension ListadoLotesViewController: UITableViewDataSource {
@@ -210,7 +212,6 @@ class ListadoLotesViewController: UIViewController {
     extension ListadoLotesViewController: UITableViewDelegate {
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let lote = lotes[indexPath.row]
-            print("📌 Lote seleccionado: \(lote.nombre ?? "N/A")")
             
             if let detalleVC = storyboard?.instantiateViewController(withIdentifier: "DetalleLoteViewController") as? DetalleLoteViewController {
                 detalleVC.loteId = lote.idLote

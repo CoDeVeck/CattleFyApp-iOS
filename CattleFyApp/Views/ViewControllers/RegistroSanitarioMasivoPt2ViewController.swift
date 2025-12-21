@@ -46,7 +46,10 @@ class RegistroSanitarioMasivoPt2ViewController: UIViewController {
         costoUnitTextField.addTarget(self, action: #selector(actualizarCostoTotal), for: .editingChanged)
         actualizarCostoTotal()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     @objc private func actualizarCostoTotal() {
         
         let dosis = Decimal(string: dosisTextField.text ?? "") ?? 0

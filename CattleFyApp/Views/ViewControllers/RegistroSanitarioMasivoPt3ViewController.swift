@@ -36,11 +36,12 @@ class RegistroSanitarioMasivoPt3ViewController: UIViewController {
         super.viewDidLoad()
     }
     
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         mostrarResumen()
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    
     private func mostrarResumen() {
         loteNombreLabel.text = "Lote ID: \(registroData.idLote ?? 0)"
         protocoloLabel.text = registroData.protocoloTipo

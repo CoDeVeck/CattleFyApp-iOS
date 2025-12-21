@@ -33,6 +33,12 @@ class RegistrarAlimentacionLoteViewController: UIViewController {
         cargarLotes()
         mostrarFechaActual()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     func configurarUI() {
         lotesPicker.delegate = self
         lotesPicker.dataSource = self
