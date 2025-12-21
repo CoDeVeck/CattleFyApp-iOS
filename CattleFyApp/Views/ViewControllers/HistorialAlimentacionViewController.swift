@@ -13,10 +13,12 @@ class HistorialAlimentacionViewController: UIViewController {
     
     private var registros: [RegistrarAlimentacionHistorialDTO] = []
     private let apiService = RegistroAlimentacionService.shared
-    
+    var loteId: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Historial Alimentacion"
+        navigationItem.backButtonTitle = "Volver"
         setupTableView()
                 cargarDatos()
             }
@@ -25,41 +27,52 @@ class HistorialAlimentacionViewController: UIViewController {
             private func setupTableView() {
                 tableView.delegate = self
                 tableView.dataSource = self
+                
                 tableView.separatorStyle = .none
                 tableView.backgroundColor = .clear
                 tableView.estimatedRowHeight = 140
-                tableView.rowHeight = 140
+                tableView.rowHeight = 180
             }
-            
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
             // MARK: - Data Loading
-            private func cargarDatos() {
-                apiService.obtenerHistorialAlimentacion { [weak self] result in
-                    DispatchQueue.main.async {
-                        
-                        switch result {
-                        case .success(let historial):
-                            self?.registros = historial
-                            self?.tableView.reloadData()
-                            
-                        case .failure(let error):
-                            self?.mostrarError(error.localizedDescription)
-                        }
-                    }
+    private func cargarDatos() {
+        guard let loteId = loteId else {
+            mostrarError("ID de lote no válido")
+            return
+        }
+
+        apiService.obtenerHistorialAlimentacion(loteId: loteId) { [weak self] result in
+            DispatchQueue.main.async {
+
+                switch result {
+                case .success(let historial):
+                    self?.registros = historial
+                    print("📌 Registros cargados: \(historial.count)")
+                    self?.tableView.reloadData()
+
+                case .failure(let error):
+                    self?.mostrarError(error.localizedDescription)
                 }
             }
-            
-            private func mostrarError(_ mensaje: String) {
-                let alert = UIAlertController(
-                    title: "Error",
-                    message: mensaje,
-                    preferredStyle: .alert
-                )
-                alert.addAction(UIAlertAction(title: "Reintentar", style: .default) { [weak self] _ in
-                    self?.cargarDatos()
-                })
-                alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
-                present(alert, animated: true)
-            }
+        }
+    }
+
+        
+        private func mostrarError(_ mensaje: String) {
+            let alert = UIAlertController(
+                title: "Error",
+                message: mensaje,
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "Reintentar", style: .default) { [weak self] _ in
+                self?.cargarDatos()
+            })
+            alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+            present(alert, animated: true)
+        }
             
     private func esReciente(_ registro: RegistrarAlimentacionHistorialDTO) -> Bool {
         guard let fechaString = registro.fecha else { return false }

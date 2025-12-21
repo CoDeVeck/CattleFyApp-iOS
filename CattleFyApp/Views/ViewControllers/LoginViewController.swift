@@ -58,6 +58,7 @@ class LoginViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         guard let inicioVC = storyboard.instantiateViewController(
+
             withIdentifier: "OnboardingPaso1ViewController"
         ) as? OnboardingPaso1ViewController else {
             print("Error: No se pudo castear InicioViewController")
