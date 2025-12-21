@@ -1,3 +1,55 @@
+# ─── macOS ────────────────────────────────────────────────
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# ─── Xcode ────────────────────────────────────────────────
+build/
+DerivedData/
+xcuserdata/
+xcuserstate
 *.xcuserstate
 *.xcuserdata/
+
+# ─── Swift Package Manager ───────────────────────────────
+.swiftpm/
+.packages/
+Package.resolved
+
+# ─── CocoaPods ───────────────────────────────────────────
+Pods/
+*.xcworkspace
+
+# ─── Carthage ────────────────────────────────────────────
+Carthage/
+Carthage/Build/
+
+# ─── Fastlane ────────────────────────────────────────────
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# ─── General ─────────────────────────────────────────────
+*.orig
+*.pyc
+*.swp
+.idea/
+*.iml
+*.hmap
+
+# ─── User-specific Xcode files ───────────────────────────
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# ─── Archives ────────────────────────────────────────────
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# ─── Simulator ───────────────────────────────────────────
+*.simstate
+
+# ─── Optional ───────────────────────────────────────────
+*.plist
