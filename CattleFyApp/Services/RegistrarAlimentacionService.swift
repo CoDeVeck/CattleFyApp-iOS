@@ -15,7 +15,11 @@ class RegistroAlimentacionService {
         return UserDefaults.standard.string(forKey: "authToken")
     }
     
-    func obtenerHistorialAlimentacion(completion: @escaping (Result<[RegistrarAlimentacionHistorialDTO], Error>) -> Void) {
+    func obtenerHistorialAlimentacion(
+        loteId: Int,
+        completion: @escaping (Result<[RegistrarAlimentacionHistorialDTO], Error>) -> Void
+    ) {
+        
         guard let token = getAuthToken() else {
             completion(.failure(NSError(
                 domain: "", code: 401,
@@ -24,7 +28,7 @@ class RegistroAlimentacionService {
             return
         }
 
-        guard let url = URL(string: "\(Constants.baseURL)registrarAlimentacion/listHistorial") else {
+        guard let url = URL(string: "\(Constants.baseURL)registrarAlimentacion/listHistorial/\(loteId)") else {
             completion(.failure(NSError(
                 domain: "", code: -1,
                 userInfo: [NSLocalizedDescriptionKey: "URL inválida"]

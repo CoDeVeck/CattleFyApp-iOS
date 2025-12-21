@@ -64,6 +64,92 @@ class LoteService {
         }.resume()
     }
     
+    func listarLotes(
+        granjaId: Int? = nil,
+        especieId: Int? = nil,
+        tipoLote: String? = nil,
+        completion: @escaping (Result<ResultadoResponse<[LoteResponse]>, Error>) -> Void
+    ) {
+        
+        guard let token = getAuthToken() else {
+            completion(.failure(NSError(
+                domain: "", code: 401,
+                userInfo: [NSLocalizedDescriptionKey: "No hay sesión activa"]
+            )))
+            return
+        }
+        
+        var components = URLComponents(string: "\(Constants.baseURL)lotes/listFiltro")
+        
+        var queryItems: [URLQueryItem] = []
+        
+        if let granjaId = granjaId {
+            queryItems.append(URLQueryItem(name: "granjaId", value: "\(granjaId)"))
+        }
+        
+        if let especieId = especieId {
+            queryItems.append(URLQueryItem(name: "especieId", value: "\(especieId)"))
+        }
+        
+        if let tipoLote = tipoLote {
+            queryItems.append(URLQueryItem(name: "tipoLote", value: tipoLote))
+        }
+        
+        components?.queryItems = queryItems
+        
+        guard let url = components?.url else {
+            completion(.failure(NSError(
+                domain: "", code: -1,
+                userInfo: [NSLocalizedDescriptionKey: "URL inválida"]
+            )))
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(.failure(NSError(
+                    domain: "", code: -1,
+                    userInfo: [NSLocalizedDescriptionKey: "Respuesta inválida"]
+                )))
+                return
+            }
+            
+            guard httpResponse.statusCode == 200 else {
+                completion(.failure(NSError(
+                    domain: "", code: httpResponse.statusCode,
+                    userInfo: [NSLocalizedDescriptionKey: "Error HTTP: \(httpResponse.statusCode)"]
+                )))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(NSError(
+                    domain: "", code: -1,
+                    userInfo: [NSLocalizedDescriptionKey: "No hay datos"]
+                )))
+                return
+            }
+            
+            do {
+                let result = try JSONDecoder().decode(ResultadoResponse<[LoteResponse]>.self, from: data)
+                completion(.success(result))
+            } catch {
+                completion(.failure(error))
+            }
+            
+        }.resume()
+    }
+
     // MARK: - Crear Lote (POST /create)
     func crearLote(request: LoteRequest, completion: @escaping (Result<LoteResponse, Error>) -> Void) {
         guard let token = getAuthToken() else {

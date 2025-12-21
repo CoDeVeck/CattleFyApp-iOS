@@ -18,7 +18,7 @@ class HistorialAlimentacionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-                cargarDatos()
+                //cargarDatos()
             }
             
             // MARK: - Setup
@@ -32,7 +32,7 @@ class HistorialAlimentacionViewController: UIViewController {
             }
             
             // MARK: - Data Loading
-            private func cargarDatos() {
+            /*private func cargarDatos() {
                 apiService.obtenerHistorialAlimentacion { [weak self] result in
                     DispatchQueue.main.async {
                         
@@ -59,7 +59,7 @@ class HistorialAlimentacionViewController: UIViewController {
                 })
                 alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
                 present(alert, animated: true)
-            }
+            }*/
             
     private func esReciente(_ registro: RegistrarAlimentacionHistorialDTO) -> Bool {
         guard let fechaString = registro.fecha else { return false }
