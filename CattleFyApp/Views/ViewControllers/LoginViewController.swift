@@ -51,15 +51,15 @@ class LoginViewController: UIViewController {
         }
     }
     func navegarAHome() {
-        print("Iniciando navegación a Home...")
+        print("Iniciando navegación a FarmFlow..")
         
         // Si usan el storyboard de FarmFlow dejen ese nombre si en caso esta en Main como el mio cambienlo
         // En el inicioVC Cambien por su controlador que quieran probar y ponganle su identificador
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "FarmFlow", bundle: nil)
         
         guard let inicioVC = storyboard.instantiateViewController(
-            withIdentifier: "OnboardingPaso1ViewController"
-        ) as? OnboardingPaso1ViewController else {
+            withIdentifier: "InicioViewController"
+        ) as? InicioViewController  else {
             print("Error: No se pudo castear InicioViewController")
             mostrarAlerta(mensaje: "Error al cargar la pantalla principal")
             return

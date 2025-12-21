@@ -49,7 +49,7 @@ class RegistroAlimentacionService {
                     userInfo: [NSLocalizedDescriptionKey: "Respuesta inválida"]
                 )))
                 return
-            }
+            }	
 
             guard httpResponse.statusCode == 200 else {
                 completion(.failure(NSError(
