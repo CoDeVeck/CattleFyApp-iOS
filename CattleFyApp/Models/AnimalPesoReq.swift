@@ -11,3 +11,5 @@ struct AnimalPesoReq: Codable {
     let idAnimal: Int
     let peso: Double
 }
+
+	
