@@ -1612,7 +1612,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="siguenteButtonTapped:" destination="Hzm-tg-sVz" eventType="touchUpInside" id="dWC-Hp-eOI"/>
-                                    <segue destination="1dP-wR-JQT" kind="show" id="14R-nS-vl3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O Seleccionar Manualmente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0L-zh-wff">
@@ -2022,7 +2021,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="siguienteButtonTapped:" destination="1dP-wR-JQT" eventType="touchUpInside" id="RbT-bt-qsd"/>
-                                    <segue destination="3Fn-Um-oms" kind="show" id="CSl-ES-Zgc"/>
                                 </connections>
                             </button>
                         </subviews>

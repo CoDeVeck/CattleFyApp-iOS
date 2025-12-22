@@ -83,25 +83,28 @@ class RegistroSanitarioMasivoPt3ViewController: UIViewController {
     
     private func registrarVacunacionMasiva() {
         guard let idLote = registroData.idLote else {
-            mostrarAlerta(titulo: "Error", mensaje: "No se pudo obtener el ID del lote")
-            return
-        }
-        guard let cantidadAnimales = registroData.animalesTratados else{
-            mostrarAlerta(titulo: "Error", mensaje:"No se pudo obtener los animales tratados")
-            return
-        }
-        
-        let request = RegistroSanitarioRequest(
-            qrLote: nil,
-            idLote: idLote,
-            qrAnimal: nil,
-            tipoAplicacion: registroData.tipoAplicacion,
-            protocoloTipo: registroData.protocoloTipo,
-            nombreProducto: registroData.nombreProducto,
-            costoPorDosis: registroData.costoPorDosis,
-            cantidadDosis: registroData.cantidadDosis,
-            animalesTratados: cantidadAnimales
-        )
+                mostrarAlerta(titulo: "Error", mensaje: "No se pudo obtener el ID del lote")
+                return
+            }
+            guard let cantidadAnimales = registroData.animalesTratados else{
+                mostrarAlerta(titulo: "Error", mensaje:"No se pudo obtener los animales tratados")
+                return
+            }
+            
+            let costoPorDosisDouble = registroData.costoPorDosis.map { NSDecimalNumber(decimal: $0).doubleValue }
+            let cantidadDosisDouble = registroData.cantidadDosis.map { NSDecimalNumber(decimal: $0).doubleValue }
+            
+            let request = RegistroSanitarioRequest(
+                qrLote: nil,
+                idLote: idLote,
+                qrAnimal: nil,
+                tipoAplicacion: registroData.tipoAplicacion,
+                protocoloTipo: registroData.protocoloTipo,
+                nombreProducto: registroData.nombreProducto,
+                costoPorDosis: costoPorDosisDouble,
+                cantidadDosis: cantidadDosisDouble,
+                animalesTratados: cantidadAnimales
+            )
         
         // Mostrar loading
         let loadingAlert = UIAlertController(
