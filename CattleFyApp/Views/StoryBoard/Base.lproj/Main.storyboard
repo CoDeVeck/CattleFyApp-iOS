@@ -1734,19 +1734,19 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sv-row-step2">
-                                <rect key="frame" x="20" y="367" width="353.33333333333331" height="281.33333333333326"/>
+                                <rect key="frame" x="20" y="367" width="353.33333333333331" height="291.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" id="col-d-s2">
-                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="271.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="281.33333333333331"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="scaleToFill" text="Dosis aplicada" lineBreakMode="tailTruncation" id="ld-s2">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="229.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="239.33333333333334"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ej: 10 ml" id="td-s2">
-                                                <rect key="frame" x="0.0" y="237.33333333333334" width="166.66666666666666" height="34.000000000000028"/>
+                                                <rect key="frame" x="0.0" y="247.33333333333337" width="166.66666666666666" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="four-song-4"/>
@@ -1757,16 +1757,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" id="col-c-s2">
-                                        <rect key="frame" x="186.66666666666669" y="0.0" width="166.66666666666669" height="271.33333333333331"/>
+                                        <rect key="frame" x="186.66666666666669" y="0.0" width="166.66666666666669" height="281.33333333333331"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="scaleToFill" text="Costo unitario" lineBreakMode="tailTruncation" id="lc-s2">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="229.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="239.33333333333334"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ 0.00" id="tc-s2">
-                                                <rect key="frame" x="0.0" y="237.33333333333334" width="166.66666666666666" height="34.000000000000028"/>
+                                                <rect key="frame" x="0.0" y="247.33333333333337" width="166.66666666666666" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="four-song-5"/>
@@ -1779,11 +1779,11 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Fecha de aplicación" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-date-s2">
-                                <rect key="frame" x="20" y="672.33333333333337" width="149.33333333333334" height="19.333333333333371"/>
+                                <rect key="frame" x="20" y="682.33333333333337" width="149.33333333333334" height="19.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="dp-fecha-s2">
-                                <rect key="frame" x="20" y="699.66666666666663" width="150.66666666666666" height="50"/>
+                                <rect key="frame" x="20" y="709.66666666666663" width="150.66666666666666" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="four-song-6"/>
                                 </constraints>
@@ -2216,8 +2216,8 @@
                                                 <rect key="frame" x="0.0" y="124.66666666666667" width="329" height="40.333333333333329"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" contentMode="scaleToFill" text="Dosis" lineBreakMode="tailTruncation" id="l4-key">
-                                                        <rect key="frame" x="0.0" y="10" width="100" height="20"/>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="Costo Unitario" lineBreakMode="tailTruncation" id="l4-key">
+                                                        <rect key="frame" x="0.0" y="10" width="109" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -2238,8 +2238,8 @@
                                                 <rect key="frame" x="0.0" y="166" width="329" height="40.666666666666657"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" contentMode="scaleToFill" text="Costo Unitario" lineBreakMode="tailTruncation" id="l5-key">
-                                                        <rect key="frame" x="0.0" y="10" width="100" height="20"/>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="Dosis" lineBreakMode="tailTruncation" id="l5-key">
+                                                        <rect key="frame" x="0.0" y="10" width="100" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -2323,8 +2323,8 @@
                     <navigationItem key="navigationItem" title="Registro Sanitario Individual" id="azo-Ju-KZI"/>
                     <connections>
                         <outlet property="codigoQRLabel" destination="l1-val" id="7GF-rW-pij"/>
-                        <outlet property="costoUnitarioLabel" destination="l5-val" id="D9D-9h-Lhp"/>
-                        <outlet property="dosisLabel" destination="l4-val" id="syk-fp-omQ"/>
+                        <outlet property="costoUnitarioLabel" destination="l4-val" id="X0x-ob-8VG"/>
+                        <outlet property="dosisLabel" destination="l5-val" id="H4n-x9-8Op"/>
                         <outlet property="fechaAplicacionLabel" destination="l6-val" id="bmk-d9-Bgb"/>
                         <outlet property="nombreProductoLabel" destination="l3-val" id="kcr-CU-Dzq"/>
                         <outlet property="tipoProtocoloLabel" destination="l2-val" id="O3C-Y6-0ka"/>

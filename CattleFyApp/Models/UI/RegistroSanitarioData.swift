@@ -48,12 +48,15 @@ class RegistroSanitarioData {
     
     func toRequest() -> RegistroSanitarioRequest {
         var request = RegistroSanitarioRequest()
+        
         request.qrAnimal = codigoQR
         request.tipoAplicacion = "Individual"
         request.protocoloTipo = tipoProtocolo
         request.nombreProducto = nombreProducto
-        request.costoPorDosis = costoUnitario
-        request.cantidadDosis = dosisAplicada
+        
+        request.costoPorDosis = costoUnitario.map { NSDecimalNumber(decimal: $0).doubleValue }
+        request.cantidadDosis = dosisAplicada.map { NSDecimalNumber(decimal: $0).doubleValue }
+        
         return request
     }
     

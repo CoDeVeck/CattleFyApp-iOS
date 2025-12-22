@@ -51,7 +51,7 @@ class RegistroSanitarioAnimal3ViewController: UIViewController {
         }
         
         if let costo = dataModel.costoUnitario {
-            dosisLabel.text = "S/ \(String(format: "%.2f", NSDecimalNumber(decimal: costo).doubleValue))"
+            costoUnitarioLabel.text = "S/ \(String(format: "%.2f", NSDecimalNumber(decimal: costo).doubleValue))"
         } else {
             costoUnitarioLabel.text = "-"
         }
@@ -96,7 +96,7 @@ class RegistroSanitarioAnimal3ViewController: UIViewController {
         mostrarLoading(true)
         
         // Crear request desde el modelo
-        var request = dataModel.toRequest()
+        let request = dataModel.toRequest()
         
         // Agregar fecha formateada
         if let fecha = dataModel.fechaAplicacion {
@@ -136,9 +136,6 @@ class RegistroSanitarioAnimal3ViewController: UIViewController {
     }
     
     private func navegarADetalle() {
-        // Limpiar el modelo para futuros registros
-        dataModel.reset()
-        
         // Buscar el storyboard FarmFlow
         let farmFlowStoryboard = UIStoryboard(name: "FarmFlow", bundle: nil)
         
@@ -147,16 +144,13 @@ class RegistroSanitarioAnimal3ViewController: UIViewController {
             withIdentifier: "DetalleAnimalViewController"
         ) as? DetalleAnimalViewController {
             
-            // Si el detalle necesita datos, configurarlos aquí
-            // detalleVC.animalId = dataModel.animalId
+
+            detalleVC.codigoQR = dataModel.codigoQR
             
             // Navegar
             if let navigationController = self.navigationController {
-                // Opción 1: Push al detalle
                 navigationController.pushViewController(detalleVC, animated: true)
-                
-                // Opción 2: Reemplazar todo el stack (descomentar si prefieres esto)
-                // navigationController.setViewControllers([detalleVC], animated: true)
+
             } else {
                 // Si no hay navigation controller, presentar modalmente
                 detalleVC.modalPresentationStyle = .fullScreen
@@ -166,8 +160,10 @@ class RegistroSanitarioAnimal3ViewController: UIViewController {
             // Fallback: volver al inicio
             navigationController?.popToRootViewController(animated: true)
         }
+        
+        dataModel.reset()
     }
-    
+        
     private func mostrarLoading(_ mostrar: Bool) {
         if mostrar {
             view.isUserInteractionEnabled = false
