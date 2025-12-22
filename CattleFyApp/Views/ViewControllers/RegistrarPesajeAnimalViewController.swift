@@ -10,10 +10,23 @@ import UIKit
 class RegistrarPesajeAnimalViewController: UIViewController {
     
     @IBOutlet weak var codigoQRAnimalLabel: UILabel!
+    
+    
     @IBOutlet weak var especieLabel: UILabel!
+    
+    
     @IBOutlet weak var edadEnDiasLabel: UILabel!
+    
+    
     @IBOutlet weak var nombreLoteLabel: UILabel!
+    
+    
+    
+    
+    
     @IBOutlet weak var pesoKgLabel: UILabel!
+    
+    
     @IBOutlet weak var codifoQRTextField: UITextField!
     
     private let animalesService = AnimalesService()
@@ -108,7 +121,7 @@ class RegistrarPesajeAnimalViewController: UIViewController {
             return
         }
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "FarmFlow", bundle: nil)
         guard let siguienteVC = storyboard.instantiateViewController(
             withIdentifier: "RegistrarPesajeAnimal2ViewController"
         ) as? RegistrarPesajeAnimal2ViewController else {
@@ -127,7 +140,7 @@ class RegistrarPesajeAnimalViewController: UIViewController {
         // Mostrar los datos en los labels
         codigoQRAnimalLabel.text = animal.codigoQr ?? "N/A"
         especieLabel.text = animal.especie ?? "N/A"
-        var edadDias = String(animal.edadEnDias ?? 0)
+        let edadDias = String(animal.edadEnDias ?? 0)
         edadEnDiasLabel.text = "\(edadDias) días"
         nombreLoteLabel.text = animal.lote ?? "N/A"
         

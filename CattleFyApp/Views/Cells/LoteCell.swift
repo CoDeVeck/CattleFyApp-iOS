@@ -22,7 +22,7 @@ class LoteCell: UITableViewCell {
     // MARK: - Configure
     func configure(with lote: LoteResponse) {
         loteLabelç.text = "Lote: \(lote.idLote != nil ? String(lote.idLote) : "N/A") \(lote.nombre != nil ? lote.nombre : "N/A")"
-        estadoLabel?.text = lote.estado ?? "Sin estado"
+        estadoLabel?.text = lote.estado
         
         // Configurar color según estado
         switch lote.estado.lowercased(){
@@ -49,7 +49,7 @@ class LoteCell: UITableViewCell {
         
         fechaLabel?.text = "Inicio: \(lote.fechaCreacion)"
         
-        engordeLabel?.text = lote.tipoLote ?? "Sin tipo"
+        engordeLabel?.text = lote.tipoLote
     }
     
     // MARK: - Helper
