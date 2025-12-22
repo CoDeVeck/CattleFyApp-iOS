@@ -4,9 +4,9 @@
 //
 //  Created by Rebeca on 12/7/25.
 //
-
+	
 import UIKit
-
+		
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -60,8 +60,8 @@ class LoginViewController: UIViewController {
         
         guard let inicioVC = storyboard.instantiateViewController(
 
-            withIdentifier: "ListadoLotesViewController"
-        ) as? ListadoLotesViewController else {
+            withIdentifier: "InicioViewController"
+        ) as? InicioViewController else {
 
             print("Error: No se pudo castear InicioViewController")
             mostrarAlerta(mensaje: "Error al cargar la pantalla principal")

@@ -83,6 +83,7 @@ class VentaDeLote4ViewController: UIViewController {
     }
     @IBAction func btnConfirmarVenta(_ sender: UIButton) {
         guard let datos = datosVenta else {
+            
             mostrarAlerta(titulo: "Error", mensaje: "No hay datos para registrar la venta")
             return
         }
@@ -262,9 +263,5 @@ class VentaDeLote4ViewController: UIViewController {
         }
     }
     
-    private func mostrarAlerta(titulo: String, mensaje: String) {
-        let alert = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
+   
 }

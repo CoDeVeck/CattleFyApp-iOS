@@ -39,7 +39,7 @@ class VentaLoteViewController: UIViewController {
     private func configurarUI() {
         title = "Detalles de Venta - Paso 1"
         
-        labelNombreLoteVentaLote.font = UIFont.boldSystemFont(ofSize: 24)
+
         labelNombreLoteVentaLote.textColor = .label
         
         view.subviews.compactMap { $0 as? UIButton }.forEach { button in
@@ -49,6 +49,7 @@ class VentaLoteViewController: UIViewController {
     
     // MARK: - Mostrar Datos
     private func mostrarDatos() {
+        
         labelNombreLoteVentaLote.text = ventaLoteNombreLote ?? "Sin nombre"
         labelVentaTotalAnimalesVentaLote.text = ventaLoteTotalAnimales ?? "0"
         labelPesoTotalVentaLote.text = ventaLotePesoTotal ?? "0 kg"
@@ -56,9 +57,7 @@ class VentaLoteViewController: UIViewController {
         labeCvtTotalVentaLote.text = ventaLoteCvtTotal ?? "S/ 0.00"
         labelCostoDeCompraVentaLote.text = ventaLoteCostoDeCompra ?? "S/ 0.00"
         
-        print("📋 Paso 1 - Mostrando datos:")
-        print("  - Lote: \(ventaLoteNombreLote ?? "N/A")")
-        print("  - Animales: \(ventaLoteTotalAnimales ?? "N/A")")
+       
         
         if let lote = loteData {
             print("  - Especie: \(lote.especieNombre)")
@@ -110,9 +109,5 @@ class VentaLoteViewController: UIViewController {
         }
     }
     
-    private func mostrarAlerta(titulo: String, mensaje: String) {
-        let alert = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
+   	
 }

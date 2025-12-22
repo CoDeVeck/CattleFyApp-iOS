@@ -9,6 +9,6 @@ import Foundation
 struct Constants {
     // Reemplaza con tu URL de Render
 
-    static let baseURL = "https://cattlefyapi-ss99.onrender.com/"
+    static let baseURL = "https://cattlefyapi.onrender.com/"
 
 }

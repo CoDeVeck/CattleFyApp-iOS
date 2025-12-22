@@ -59,7 +59,7 @@ class LotesDisponiblesTableViewCell: UITableViewCell {
         
         self.loteActual = lote
         labelNombreLote.text = lote.loteNombre
-        
+       
         
         labelEspecieNombre.text = "\(lote.especieNombre) - \(lote.categoriaManejoNombre)"
         
@@ -77,21 +77,21 @@ class LotesDisponiblesTableViewCell: UITableViewCell {
         labelEstadoListo.textColor = .white
         
         
-        labelAnimalesVivos.text = "\(lote.cantidadAnimalesVivos) animales vivos"
+        labelAnimalesVivos.text = "\(lote.cantidadAnimalesVivos)"
         
         
-        labelPesoPromedioKG.text = String(format: "Peso prom: %.2f kg", lote.pesoPromedioLote)
+        labelPesoPromedioKG.text = String(format: "%.2f kg", lote.pesoPromedioLote)
         
        
-        labelPesoTotalKg.text = String(format: "Peso total: %.2f kg", lote.sumaTotalPesos)
+        labelPesoTotalKg.text = String(format: "%.2f kg", lote.sumaTotalPesos)
         
         
         let costoTotal = NSDecimalNumber(decimal: lote.costoTotalAcumulado).doubleValue
-        labelCostoTotalAcumulado.text = String(format: "Costo: S/ %.2f", costoTotal)
+        labelCostoTotalAcumulado.text = String(format: "S/ %.2f", costoTotal)
         
         
         let precioSugerido = NSDecimalNumber(decimal: lote.precioSugeridoPorKgBase).doubleValue
-        labelPrecioSugeridoPorKg.text = String(format: "Precio: S/ %.2f/kg", precioSugerido)
+        labelPrecioSugeridoPorKg.text = String(format: "S/ %.2f/kg", precioSugerido)
     }
     
     func marcarComoSeleccionada(_ seleccionada: Bool) {
