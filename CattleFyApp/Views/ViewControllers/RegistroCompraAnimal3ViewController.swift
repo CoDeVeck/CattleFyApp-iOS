@@ -34,7 +34,7 @@ class RegistroCompraAnimal3ViewController: UIViewController {
     private func mostrarDatosConfirmacion() {
         guard let data = animalData else { return }
         
-        especieLabel.text = data.nombreEspecie
+        especieLabel.text = data.sexo
         pesoKgLabel.text = "\(data.peso ?? 0) kg"
         precioLabelCompra.text = "S/ \(data.precioCompra ?? 0)"
         fechaLabel.text = data.fechaNacimiento
@@ -59,7 +59,7 @@ class RegistroCompraAnimal3ViewController: UIViewController {
                 
         // Convertir RegistroAnimalData a AnimalRequest
         let animalRequest = AnimalRequest(
-            origen: data.origen,
+            origen: "Compra",
             idLote: data.idLote,
             codigoQrMadre: data.codigoQrMadre,
             idEspecie: data.idEspecie,

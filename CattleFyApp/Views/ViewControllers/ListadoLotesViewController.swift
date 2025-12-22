@@ -182,11 +182,6 @@ class ListadoLotesViewController: UIViewController {
             }
         }
         
-    private func mostrarAlerta(titulo: String, mensaje: String) {
-        let alert = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
 }
     // MARK: - UITableViewDataSource
     extension ListadoLotesViewController: UITableViewDataSource {
@@ -210,20 +205,28 @@ class ListadoLotesViewController: UIViewController {
     
     // MARK: - UITableViewDelegate
     extension ListadoLotesViewController: UITableViewDelegate {
+        
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let lote = lotes[indexPath.row]
-            
-            if let detalleVC = storyboard?.instantiateViewController(withIdentifier: "DetalleLoteViewController") as? DetalleLoteViewController {
-                detalleVC.loteId = lote.idLote
-                navigationController?.pushViewController(detalleVC, animated: true)
+            let loteSeleccionado = lotes[indexPath.row]
+            navegarAListadoAnimales(lote: loteSeleccionado)
+        }
+        
+        private func navegarAListadoAnimales(lote: LoteResponse) {
+            // Cambia "Main" por el nombre de tu storyboard si es diferente
+            if let listadoAnimalesVC = storyboard?.instantiateViewController(withIdentifier: "ListadoAnimalesDeLoteViewController") as? ListadoAnimalesDeLoteViewController {
+                
+                // Pasar datos del lote
+                listadoAnimalesVC.idLote = lote.idLote
+                listadoAnimalesVC.nombreLote = lote.nombre
+                
+                navigationController?.pushViewController(listadoAnimalesVC, animated: true)
             }
         }
         
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return UITableView.automaticDimension
         }
-    
-}
+    }
 extension ListadoLotesViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

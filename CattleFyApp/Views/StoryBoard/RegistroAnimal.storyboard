@@ -408,19 +408,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Selecciona el lote de destino para el nuevo animal." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-vf-Wke">
-                                <rect key="frame" x="20" y="234" width="353" height="42"/>
+                                <rect key="frame" x="20" y="234" width="353" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.55686274499999999" green="0.55686274499999999" blue="0.57647058799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lote de destino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeI-gs-U6c">
-                                <rect key="frame" x="20" y="296" width="353" height="21.666666666666686"/>
+                                <rect key="frame" x="20" y="308" width="353" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGv-th-6xz">
-                                <rect key="frame" x="20" y="327.66666666666669" width="353" height="120"/>
+                                <rect key="frame" x="20" y="339.66666666666669" width="353" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="uGv-height"/>
                                 </constraints>
@@ -440,27 +440,48 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proveedor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcj-Dd-XeO">
-                                <rect key="frame" x="20" y="457.66666666666669" width="353" height="26.333333333333314"/>
+                                <rect key="frame" x="20" y="469.66666666666669" width="353" height="26.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2D9-Gs-962">
-                                <rect key="frame" x="20" y="494" width="353" height="35"/>
+                                <rect key="frame" x="20" y="506" width="353" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="td3-Df-vPc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g7n-pv-CFq">
+                                <rect key="frame" x="20" y="604" width="353" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="1WL-43-nZn"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Hembra"/>
+                                    <segment title="Macho"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrI-8P-rtE">
+                                <rect key="frame" x="20" y="561" width="353" height="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QLn-Dc-uq0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="QLn-Dc-uq0" firstAttribute="trailing" secondItem="wrI-8P-rtE" secondAttribute="trailing" constant="20" id="9Ul-we-e58"/>
                             <constraint firstItem="Zcj-Dd-XeO" firstAttribute="leading" secondItem="QLn-Dc-uq0" secondAttribute="leading" constant="20" id="CQN-VX-QQm"/>
-                            <constraint firstItem="v4P-vU-dIG" firstAttribute="top" secondItem="2D9-Gs-962" secondAttribute="bottom" constant="200" id="CkE-ri-rYd"/>
+                            <constraint firstItem="wrI-8P-rtE" firstAttribute="leading" secondItem="QLn-Dc-uq0" secondAttribute="leading" constant="20" id="Dnu-Dh-K3g"/>
+                            <constraint firstItem="QLn-Dc-uq0" firstAttribute="trailing" secondItem="g7n-pv-CFq" secondAttribute="trailing" constant="20" id="Ekx-Og-pvL"/>
                             <constraint firstItem="Zcj-Dd-XeO" firstAttribute="top" secondItem="uGv-th-6xz" secondAttribute="bottom" constant="10" id="HAx-Tp-BKt"/>
                             <constraint firstItem="2D9-Gs-962" firstAttribute="leading" secondItem="QLn-Dc-uq0" secondAttribute="leading" constant="20" id="IzK-na-yR8"/>
+                            <constraint firstItem="g7n-pv-CFq" firstAttribute="leading" secondItem="QLn-Dc-uq0" secondAttribute="leading" constant="20" id="Kfz-cl-cLR"/>
+                            <constraint firstItem="g7n-pv-CFq" firstAttribute="top" secondItem="wrI-8P-rtE" secondAttribute="bottom" constant="15" id="Kqw-Ad-wGK"/>
+                            <constraint firstItem="wrI-8P-rtE" firstAttribute="top" secondItem="2D9-Gs-962" secondAttribute="bottom" constant="20" id="Ydy-OM-8aS"/>
                             <constraint firstItem="QLn-Dc-uq0" firstAttribute="bottom" secondItem="v4P-vU-dIG" secondAttribute="bottom" constant="5" id="btn-bottom"/>
                             <constraint firstItem="v4P-vU-dIG" firstAttribute="leading" secondItem="QLn-Dc-uq0" secondAttribute="leading" constant="20" id="btn-lead"/>
                             <constraint firstItem="v4P-vU-dIG" firstAttribute="trailing" secondItem="QLn-Dc-uq0" secondAttribute="trailing" constant="-20" id="btn-trail"/>
@@ -468,6 +489,7 @@
                             <constraint firstItem="cHx-vf-Wke" firstAttribute="top" secondItem="S5d-CW-DTH" secondAttribute="bottom" constant="8" id="desc-top"/>
                             <constraint firstItem="cHx-vf-Wke" firstAttribute="trailing" secondItem="S5d-CW-DTH" secondAttribute="trailing" id="desc-trail"/>
                             <constraint firstItem="QLn-Dc-uq0" firstAttribute="trailing" secondItem="2D9-Gs-962" secondAttribute="trailing" constant="20" id="gV1-iw-a7d"/>
+                            <constraint firstItem="v4P-vU-dIG" firstAttribute="top" secondItem="g7n-pv-CFq" secondAttribute="bottom" constant="80" id="ilJ-DR-HMx"/>
                             <constraint firstItem="QLn-Dc-uq0" firstAttribute="trailing" secondItem="Zcj-Dd-XeO" secondAttribute="trailing" constant="20" id="jxj-EZ-IQD"/>
                             <constraint firstItem="78h-NY-h96" firstAttribute="centerX" secondItem="VYh-gi-EN8" secondAttribute="centerX" id="lbl1-center"/>
                             <constraint firstItem="78h-NY-h96" firstAttribute="top" secondItem="VYh-gi-EN8" secondAttribute="bottom" constant="5" id="lbl1-top"/>
@@ -499,6 +521,7 @@
                     <connections>
                         <outlet property="pickerLotes" destination="uGv-th-6xz" id="XMH-Ch-nVm"/>
                         <outlet property="proveedorTextField" destination="2D9-Gs-962" id="5NM-TA-dr9"/>
+                        <outlet property="sexoSegmented" destination="g7n-pv-CFq" id="Ydz-KA-8vo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovQ-Gm-LYF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -579,13 +602,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Especie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-especie-title">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-especie-title">
                                         <rect key="frame" x="92" y="15.999999999999972" width="245" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.55686274499999999" green="0.55686274499999999" blue="0.57647058799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bovino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-especie-value">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hembra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-especie-value">
                                         <rect key="frame" x="92" y="36.999999999999972" width="245" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -660,12 +683,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ocupación: 18/30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-ocupacion">
-                                        <rect key="frame" x="230" y="280" width="107" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" red="0.55686274499999999" green="0.55686274499999999" blue="0.57647058799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -689,8 +706,6 @@
                                     <constraint firstItem="lbl-lote-title" firstAttribute="trailing" secondItem="separator-3" secondAttribute="trailing" id="lote-t-trail"/>
                                     <constraint firstItem="lbl-lote-value" firstAttribute="leading" secondItem="lbl-lote-title" secondAttribute="leading" id="lote-v-lead"/>
                                     <constraint firstItem="lbl-lote-value" firstAttribute="top" secondItem="lbl-lote-title" secondAttribute="bottom" constant="5" id="lote-v-top"/>
-                                    <constraint firstItem="lbl-ocupacion" firstAttribute="top" secondItem="lbl-lote-value" secondAttribute="top" id="ocup-top-2"/>
-                                    <constraint firstAttribute="trailing" secondItem="lbl-ocupacion" secondAttribute="trailing" constant="16" id="ocup-trail-2"/>
                                     <constraint firstItem="lbl-peso-title" firstAttribute="leading" secondItem="separator-1" secondAttribute="leading" id="peso-t-lead"/>
                                     <constraint firstItem="lbl-peso-title" firstAttribute="top" secondItem="separator-1" secondAttribute="bottom" constant="16" id="peso-t-top"/>
                                     <constraint firstItem="lbl-peso-title" firstAttribute="width" constant="150" id="peso-t-w"/>
@@ -1412,16 +1427,16 @@
             <color red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

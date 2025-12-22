@@ -11,6 +11,7 @@ class RegistroCompraAnimal2ViewController: UIViewController {
     
     @IBOutlet weak var pickerLotes: UIPickerView!
     @IBOutlet weak var proveedorTextField: UITextField!
+    @IBOutlet weak var sexoSegmented: UISegmentedControl!
     
     var animalData: RegistroAnimalData?
     
@@ -22,12 +23,22 @@ class RegistroCompraAnimal2ViewController: UIViewController {
         pickerLotes.delegate = self
         pickerLotes.dataSource = self
         
+        configurarSegmentedControl()
+        
         cargarLotes()
+    }
+    
+    private func configurarSegmentedControl() {
+        // Asegurarse de que tenga los títulos correctos
+        sexoSegmented.setTitle("Hembra", forSegmentAt: 0)
+        sexoSegmented.setTitle("Macho", forSegmentAt: 1)
+        
+        // Seleccionar "Hembra" por defecto
+        sexoSegmented.selectedSegmentIndex = 0
     }
     
     // MARK: - Cargar lotes desde el servicio
     private func cargarLotes() {
-        
         LoteService.shared.obtenerLotesSimples { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -52,7 +63,7 @@ class RegistroCompraAnimal2ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
-
+    
     @IBAction func continuarButton(_ sender: UIButton) {
         guard !lotes.isEmpty else {
             mostrarError(mensaje: "No hay lotes disponibles")
@@ -70,6 +81,8 @@ class RegistroCompraAnimal2ViewController: UIViewController {
         animalData?.idLote = loteSeleccionado.loteId
         animalData?.nombreLote = loteSeleccionado.nombre
         animalData?.proveedor = proveedor
+        
+        animalData?.sexo = sexoSegmented.selectedSegmentIndex == 0 ? "H" : "M"
         
         let storyboard = UIStoryboard(name: "RegistroAnimal", bundle: nil)
         if let confirmacionVC = storyboard.instantiateViewController(withIdentifier: "RegistroCompraAnimal3ViewController") as? RegistroCompraAnimal3ViewController {

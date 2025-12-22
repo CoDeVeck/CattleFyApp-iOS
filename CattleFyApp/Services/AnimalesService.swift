@@ -117,25 +117,32 @@ class AnimalesService {
             completion(.failure(ServiceError.urlInvalida))
             return
         }
-
+        
         let request = crearRequest(url: url, method: "GET")
-
-        URLSession.shared.dataTask(with: request) { data, _, error in
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
             }
-
+            
             guard let data = data else {
                 completion(.failure(ServiceError.sinDatos))
                 return
             }
-
+            
+            // Debug: imprimir respuesta
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print("📦 Respuesta del servidor: \(jsonString.prefix(200))...")
+            }
+            
             do {
                 let animales = try JSONDecoder()
                     .decode([AnimalResponse].self, from: data)
+                print("✅ Animales decodificados correctamente: \(animales.count)")
                 completion(.success(animales))
             } catch {
+                print("❌ Error de decodificación: \(error)")
                 completion(.failure(error))
             }
         }.resume()
@@ -250,8 +257,9 @@ class AnimalesService {
                 body.appendFormField(name: "precioCompra", value: "\(precioCompra)", boundary: boundary)
             }
             
-            if let proveedor = animal.proveedor {
-                body.appendFormField(name: proveedor, value: "\(proveedor)", boundary: boundary)
+            // ✅ CORRECCIÓN: Usar "proveedor" como nombre del campo
+            if let proveedor = animal.proveedor, !proveedor.isEmpty {
+                body.appendFormField(name: "proveedor", value: proveedor, boundary: boundary)
             }
         }
         // FLUJO NACIMIENTO: NO se envían idLote, idEspecie ni precioCompra, ni proveedor

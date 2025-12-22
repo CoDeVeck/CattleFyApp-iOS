@@ -151,7 +151,7 @@ class RegistrarPesajeAnimal2ViewController: UIViewController {
         }
         
         // Enviar el QR del animal
-        detalleVC.qrAnimal = qrAnimal
+        detalleVC.codigoQR = qrAnimal
         
         navigationController?.pushViewController(detalleVC, animated: true)
     }

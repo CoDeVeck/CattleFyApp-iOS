@@ -16,7 +16,7 @@ class RegistroCompraAnimalViewController: UIViewController {
     @IBOutlet weak var pickerFecha: UIDatePicker!
     
     var animalData = RegistroAnimalData()
-    let especies = ["Vacuno", "Porcino", "Caprino", "Ovino", "Avícola"]
+    let especies = ["Vacuno", "Porcino", "Caprino", "Pavino", "Avícola"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
