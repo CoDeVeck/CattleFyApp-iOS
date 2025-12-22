@@ -153,9 +153,5 @@ class VentaDeLoteDosViewController: UIViewController {
         present(alert, animated: true)
     }
     
-    private func mostrarAlerta(titulo: String, mensaje: String) {
-        let alert = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
+   
 }

@@ -6,12 +6,14 @@
 //
 
 struct LoteSimpleDTO: Codable {
+    
     let loteId: Int
     let nombre: String
     
     enum CodingKeys: String, CodingKey{
         case loteId = "loteId"
         case nombre = "nombre"
+        case cantidadAnimales = "cantidaAnimales"
     }
 
     let cantidadAnimales: Int?
