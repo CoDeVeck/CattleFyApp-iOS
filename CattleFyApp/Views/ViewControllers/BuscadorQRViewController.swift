@@ -6,24 +6,119 @@
 //
 
 import UIKit
+import CoreImage
 
 class BuscadorQRViewController: UIViewController {
-
+    @IBOutlet weak var buscadorTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Actions
+    @IBAction func escanearQRButton(_ sender: UIBarButtonItem) {
+        abrirGaleria()
     }
-    */
+    
+    @IBAction func buscarButton(_ sender: UIButton) {
+        guard let texto = buscadorTextField.text,
+              !texto.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            mostrarAlerta(
+                titulo: "Campo vacío",
+                mensaje: "Ingrese un código válido para buscar"
+            )
+            return
+        }
+        procesarCodigo(texto)
+    }
+}
 
+extension BuscadorQRViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    private func abrirGaleria() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        present(picker, animated: true)
+    }
+    
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
+    ) {
+        picker.dismiss(animated: true)
+        
+        guard let imagen = info[.originalImage] as? UIImage else {
+            mostrarAlerta(
+                titulo: "Error",
+                mensaje: "No se pudo obtener la imagen"
+            )
+            return
+        }
+        
+        guard let codigoQR = decodificarQR(from: imagen) else {
+            mostrarAlerta(
+                titulo: "QR no válido",
+                mensaje: "La imagen no contiene un código QR válido"
+            )
+            return
+        }
+        
+        buscadorTextField.text = codigoQR
+        procesarCodigo(codigoQR)
+    }
+}
+
+extension BuscadorQRViewController {
+    private func decodificarQR(from imagen: UIImage) -> String? {
+        guard let ciImage = CIImage(image: imagen) else { return nil }
+        
+        let detector = CIDetector(
+            ofType: CIDetectorTypeQRCode,
+            context: nil,
+            options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]
+        )
+        
+        let features = detector?.features(in: ciImage) ?? []
+        
+        for feature in features {
+            if let qrFeature = feature as? CIQRCodeFeature {
+                return qrFeature.messageString
+            }
+        }
+        
+        return nil
+    }
+}
+
+extension BuscadorQRViewController {
+    private func procesarCodigo(_ codigo: String) {
+        if codigo.hasPrefix("ANI") {
+            irAVistaAnimal(codigo)
+        } else if codigo.hasPrefix("LOT") {
+            irAVistaLote(codigo)
+        } else {
+            mostrarAlerta(
+                titulo: "Código inválido",
+                mensaje: "El código no corresponde a un animal ni a un lote"
+            )
+        }
+    }
+    
+    private func irAVistaAnimal(_ codigo: String) {
+        guard let vc = storyboard?.instantiateViewController(
+            withIdentifier: "VistaPreviaAnimalViewController"
+        ) as? VistaPreviaAnimalViewController else { return }
+        
+        vc.codigoQR = codigo
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func irAVistaLote(_ codigo: String) {
+        guard let vc = storyboard?.instantiateViewController(
+            withIdentifier: "VistaPreviaLoteViewController"
+        ) as? VistaPreviaLoteViewController else { return }
+        
+        vc.codigoQR = codigo
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
