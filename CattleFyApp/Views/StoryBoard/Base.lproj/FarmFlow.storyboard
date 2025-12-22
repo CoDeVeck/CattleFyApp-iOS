@@ -4814,57 +4814,27 @@
                                                 <rect key="frame" x="5" y="5" width="365" height="830"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Lx-RO-arb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="365" height="20.333333333333332"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="365" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Especie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1X-QQ-mnI">
-                                                                <rect key="frame" x="0.0" y="0.0" width="182.66666666666666" height="20.333333333333332"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4a-sR-4NW">
-                                                                <rect key="frame" x="182.66666666666663" y="0.0" width="182.33333333333337" height="20.333333333333332"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="365" height="30"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="e4a-sR-4NW" firstAttribute="width" secondItem="H1X-QQ-mnI" secondAttribute="width" id="btD-FH-7Dy"/>
+                                                            <constraint firstAttribute="height" constant="30" id="VRZ-iD-Kgo"/>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DCi-SJ-G37">
-                                                        <rect key="frame" x="0.0" y="30.333333333333336" width="365" height="50.000000000000007"/>
+                                                        <rect key="frame" x="0.0" y="40" width="365" height="50"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kEe-X5-0BZ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="50"/>
-                                                                <subviews>
-                                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iqe-0O-ymz">
-                                                                        <rect key="frame" x="5" y="5" width="150" height="40"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="150" id="ajq-7W-I1r"/>
-                                                                            <constraint firstAttribute="height" constant="40" id="bTj-wL-4iP"/>
-                                                                        </constraints>
-                                                                    </pickerView>
-                                                                </subviews>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="Iqe-0O-ymz" secondAttribute="bottom" constant="5" id="FNp-zP-JMO"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="Iqe-0O-ymz" secondAttribute="trailing" constant="5" id="hxG-Hv-2qb"/>
-                                                                    <constraint firstItem="Iqe-0O-ymz" firstAttribute="leading" secondItem="kEe-X5-0BZ" secondAttribute="leading" constant="5" id="lGp-bL-UWm"/>
-                                                                    <constraint firstItem="Iqe-0O-ymz" firstAttribute="top" secondItem="kEe-X5-0BZ" secondAttribute="top" constant="5" id="uOB-V1-nJR"/>
-                                                                </constraints>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                        <integer key="value" value="10"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1X-P4-pIU">
-                                                                <rect key="frame" x="176.66666666666663" y="0.0" width="188.33333333333337" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="365" height="50"/>
                                                                 <subviews>
                                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vhc-zA-Qnr">
-                                                                        <rect key="frame" x="5" y="5" width="178.33333333333334" height="40"/>
+                                                                        <rect key="frame" x="5" y="5" width="355" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="ElS-eq-aJP"/>
                                                                         </constraints>
@@ -4889,7 +4859,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rango de fechas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6G-Jn-Ijg">
-                                                        <rect key="frame" x="0.0" y="90.333333333333314" width="365" height="99.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="100" width="365" height="90"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -5186,7 +5156,6 @@
                         <outlet property="graficoContainerOne" destination="2DH-yI-U0i" id="WBL-gg-dSV"/>
                         <outlet property="labelPromedioAnimal" destination="CPO-lF-M6r" id="704-uI-WJC"/>
                         <outlet property="labelTotalKg" destination="pNx-TR-Pbw" id="0Qo-yF-zfn"/>
-                        <outlet property="pickerViewEspecie" destination="Iqe-0O-ymz" id="8po-7Q-uQZ"/>
                         <outlet property="pickerViewFechaFin" destination="q9c-L8-SbL" id="XDk-Lx-PNn"/>
                         <outlet property="pickerViewFechaInicio" destination="wCv-xu-Voj" id="ihe-fM-Ren"/>
                         <outlet property="pickerViewLote" destination="Vhc-zA-Qnr" id="n1p-HN-jXq"/>
@@ -6363,8 +6332,10 @@
                                                                                 </label>
                                                                             </subviews>
                                                                             <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                                            <directionalEdgeInsets key="directionalLayoutMargins" top="6" leading="16" bottom="6" trailing="16"/>
                                                                         </tableViewCellContentView>
                                                                         <connections>
+                                                                            <outlet property="contenedorView" destination="qbU-bg-bNz" id="VUw-Dt-jkS"/>
                                                                             <outlet property="imagenSegunAplicacion" destination="3kG-bu-QVq" id="Hmd-8C-m6f"/>
                                                                             <outlet property="labelCostoPorDosis" destination="CcL-aQ-HPL" id="hB8-B6-Wgk"/>
                                                                             <outlet property="labelFechaAplicacion" destination="dLi-6T-mYN" id="Bsm-o2-9Gp"/>
@@ -6814,57 +6785,25 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="1Bs-N1-2VR">
                                                         <rect key="frame" x="10" y="10" width="380" height="890"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngN-sG-0y4">
-                                                                <rect key="frame" x="0.0" y="0.0" width="380" height="20.333333333333332"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ngN-sG-0y4">
+                                                                <rect key="frame" x="0.0" y="0.0" width="380" height="69.666666666666671"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Especie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0va-pm-XlL">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="190" height="20.333333333333332"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKN-ZK-gI0">
-                                                                        <rect key="frame" x="190" y="0.0" width="190" height="20.333333333333332"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKN-ZK-gI0">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="380" height="69.666666666666671"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="qKN-ZK-gI0" firstAttribute="width" secondItem="0va-pm-XlL" secondAttribute="width" id="8nz-Ni-aJz"/>
-                                                                </constraints>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kJB-Ta-dWE">
-                                                                <rect key="frame" x="0.0" y="50.333333333333343" width="380" height="50"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kJB-Ta-dWE">
+                                                                <rect key="frame" x="0.0" y="99.666666666666657" width="380" height="50"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mf-hh-ffg">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="50"/>
-                                                                        <subviews>
-                                                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="10w-vP-3tB">
-                                                                                <rect key="frame" x="5" y="5" width="156.66666666666666" height="40"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="height" constant="40" id="FYi-qB-6AY"/>
-                                                                                </constraints>
-                                                                            </pickerView>
-                                                                        </subviews>
-                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                        <constraints>
-                                                                            <constraint firstItem="10w-vP-3tB" firstAttribute="leading" secondItem="4mf-hh-ffg" secondAttribute="leading" constant="5" id="BpG-tD-tgJ"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="10w-vP-3tB" secondAttribute="trailing" constant="5" id="Urb-mV-28T"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="10w-vP-3tB" secondAttribute="bottom" constant="5" id="jY0-TF-EAR"/>
-                                                                            <constraint firstItem="10w-vP-3tB" firstAttribute="top" secondItem="4mf-hh-ffg" secondAttribute="top" constant="5" id="xY4-LC-GJW"/>
-                                                                        </constraints>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                <integer key="value" value="10"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lq3-20-fui">
-                                                                        <rect key="frame" x="176.66666666666663" y="0.0" width="203.33333333333337" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="380" height="50"/>
                                                                         <subviews>
                                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZF-Mc-gY1">
-                                                                                <rect key="frame" x="5" y="5" width="193.33333333333334" height="40"/>
+                                                                                <rect key="frame" x="5" y="5" width="370" height="40"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="40" id="pPT-G4-DMW"/>
                                                                                 </constraints>
@@ -6888,8 +6827,8 @@
                                                                     <constraint firstItem="Lq3-20-fui" firstAttribute="leading" secondItem="kJB-Ta-dWE" secondAttribute="leading" constant="176.66666666666663" id="sW4-QB-hFE"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rango de fechas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzx-wc-Wje">
-                                                                <rect key="frame" x="0.0" y="130.33333333333331" width="380" height="69.666666666666686"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Rango de fechas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzx-wc-Wje">
+                                                                <rect key="frame" x="0.0" y="179.66666666666669" width="380" height="20.333333333333343"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -7191,7 +7130,6 @@
                         <outlet property="labelHuevosTotal" destination="k1t-h1-b63" id="pNP-Lp-Ujj"/>
                         <outlet property="labelLecheTotal" destination="Q0Y-LB-D4z" id="fvH-D4-9aU"/>
                         <outlet property="labelPromedioLecheHuevos" destination="USe-he-ip4" id="zYh-1B-9rP"/>
-                        <outlet property="pickerViewEspecie" destination="10w-vP-3tB" id="pfU-Au-UWW"/>
                         <outlet property="pickerViewLote" destination="nZF-Mc-gY1" id="mpG-NU-92N"/>
                     </connections>
                 </viewController>

@@ -79,8 +79,12 @@ class ReporteSanitarioViewController: UIViewController {
     private func setupTableView(){
         tableViewAplicacionesRecientes.delegate = self
         tableViewAplicacionesRecientes.dataSource = self
-        tableViewAplicacionesRecientes.rowHeight = UITableView.automaticDimension
         
+        tableViewAplicacionesRecientes.rowHeight = 180	 // Altura fija adecuada
+        tableViewAplicacionesRecientes.estimatedRowHeight = 80
+        tableViewAplicacionesRecientes.backgroundColor = .systemGroupedBackground
+        tableViewAplicacionesRecientes.separatorStyle = .none
+        tableViewAplicacionesRecientes.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
     }
     
     private func setupPickerView(){
@@ -177,10 +181,10 @@ class ReporteSanitarioViewController: UIViewController {
         labelAnimalesTratados.text = estadisticas.animalesTratados != nil
         ? "\(estadisticas.animalesTratados!)"
         : "No hay animales"
-                                    
+        
         
         labelProductosMasUsados.text = estadisticas.medicamentoMasUsado
-
+        
     }
     
     private func limpiarEstadisticas(){
@@ -195,7 +199,7 @@ class ReporteSanitarioViewController: UIViewController {
         let alert = UIAlertController(title: "Información", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Aceptar", style: .default))
         present(alert, animated: true)
-       }
+    }
 }
 
 
@@ -226,20 +230,20 @@ extension ReporteSanitarioViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? DetalleAplicacionesTableViewCell,
-                      let aplicacion = viewModel.getAplicacion(at: indexPath.row) else {
-                    return UITableViewCell()
-                }
-                
-                cell.configure(
-                    nombreProducto: aplicacion.nombreProducto,
-                    loteAnimal: viewModel.getLoteAnimalText(at: indexPath.row),
-                    costo: viewModel.getCostoText(at: indexPath.row),
-                    fecha: viewModel.getFechaFormateada(at: indexPath.row),
-                    icono: viewModel.getImagenProducto(at: indexPath.row)
-                )
-                
-                return cell
-
+              let aplicacion = viewModel.getAplicacion(at: indexPath.row) else {
+            return UITableViewCell()
+        }
+        
+        cell.configure(
+            nombreProducto: aplicacion.nombreProducto,
+            loteAnimal: viewModel.getLoteAnimalText(at: indexPath.row),
+            costo: viewModel.getCostoText(at: indexPath.row),
+            fecha: viewModel.getFechaFormateada(at: indexPath.row),
+            icono: viewModel.getImagenProducto(at: indexPath.row),
+            colorIcono: viewModel.getColorIcono(at: indexPath.row)
+        )
+        
+        return cell
     }
 }
 
