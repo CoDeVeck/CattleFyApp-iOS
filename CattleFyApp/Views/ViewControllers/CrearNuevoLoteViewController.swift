@@ -49,7 +49,7 @@ class CrearNuevoLoteViewController: UIViewController {
                     // Selección por defecto
                     if let primera = lista.first {
                         self.especieSeleccionada = primera
-                        self.cargarCategorias(especieId: primera.especieId)
+                        self.cargarCategorias(especieId: primera.especieId!)
                     }
 
                 case .failure(let error):
@@ -161,7 +161,7 @@ extension CrearNuevoLoteViewController: UIPickerViewDataSource, UIPickerViewDele
             let especie = especies[row]
             especieSeleccionada = especie
 
-            cargarCategorias(especieId: especie.especieId)
+            cargarCategorias(especieId: especie.especieId!)
 
         } else if pickerView == categoriaPicker {
             categoriaSeleccionada = categorias[row]

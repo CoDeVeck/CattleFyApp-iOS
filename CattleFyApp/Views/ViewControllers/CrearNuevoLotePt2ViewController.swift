@@ -44,7 +44,7 @@ class CrearNuevoLotePt2ViewController: UIViewController {
         let loteRequest = LoteRequest(
             idGranja: idGranja,
             nombre: nombre,
-            idEspecie: especie.especieId,
+            idEspecie: especie.especieId!,
             idCategoria: categoria.id,
             diasDesdeCreacion: 0,
             capacidadMax: capacidadMax

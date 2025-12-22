@@ -8,4 +8,5 @@
 struct LoteSimpleDTO: Codable {
     let loteId: Int
     let nombre: String
+    let cantidadAnimales: Int?
 }

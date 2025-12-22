@@ -25,6 +25,10 @@ class RegistroSanitarioMasivoViewController: UIViewController {
         
         cargarLotes()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     
     private func cargarLotes() {
         lotesPickerView.isHidden = true
@@ -53,7 +57,7 @@ class RegistroSanitarioMasivoViewController: UIViewController {
 
             var data = RegistroSanitarioUIData()
             data.idLote = lote.loteId
-
+            data.animalesTratados = lote.cantidadAnimales
             datosVC.registroData = data
             
             navigationController?.pushViewController(datosVC, animated: true)
