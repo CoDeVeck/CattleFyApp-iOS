@@ -56,21 +56,54 @@ class VistaPreviaAnimalViewController: UIViewController {
         }
     
     @IBAction func verDetalleAnimalButton(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(
+            withIdentifier: "DetalleAnimalViewController"
+        ) as? DetalleAnimalViewController else { return }
+        
+        vc.codigoQR = codigoQR
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 
     @IBAction func registrarPesajeAnimalButton(_ sender: UIButton) {
+        
+        guard let vc = storyboard?.instantiateViewController(
+            withIdentifier: "RegistrarPesajeAnimalViewController"
+        ) as? RegistrarPesajeAnimalViewController else { return }
+        
+        vc.codigoQR = codigoQR
+        navigationController?.pushViewController(vc, animated: true)
+
     }
     
     @IBAction func registrarSanitarioAnimalButton(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(
+            withIdentifier: "RegistroSanitarioAnimalViewController"
+        ) as? RegistroSanitarioAnimalViewController else { return }
+        
+        vc.codigoQR = codigoQR
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func registrarTrasladoAnimalButton(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(
+            withIdentifier: "TrasladoAnimalViewController"
+        ) as? TrasladoAnimalViewController else { return }
+        
+        vc.codigoQR = codigoQR
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
     @IBAction func registrarMuerteAnimalButton(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(
+            withIdentifier: "RegistroMuerteViewController"
+        ) as? RegistroMuerteViewController else { return }
+        
+        vc.codigoQR = codigoQR
+        navigationController?.pushViewController(vc, animated: true)
     }
+    
     
 }
 

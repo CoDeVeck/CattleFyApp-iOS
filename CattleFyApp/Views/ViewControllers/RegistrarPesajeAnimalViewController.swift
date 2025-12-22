@@ -19,6 +19,8 @@ class RegistrarPesajeAnimalViewController: UIViewController {
     private let animalesService = AnimalesService()
     private var registro = RegistroPesoAnimalData()
     
+    var codigoQR: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         limpiarLabels()
