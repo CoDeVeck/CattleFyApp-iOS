@@ -15,6 +15,9 @@ class VistaPreviaLoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if codigoQR == nil {
+            codigoQR = "QR_LOTE_002" // 👈 Pon aquí un código QR real de tu base de datos
+        }
         cargarLote()
     }
     
@@ -52,15 +55,59 @@ class VistaPreviaLoteViewController: UIViewController {
             }
         }
     }
-
+    
     @IBAction func verDetalleLoteButton(_ sender: UIButton) {
+        guard let lote = lote else {
+            mostrarAlerta(titulo: "Error", mensaje: "No hay datos del lote")
+            return
+        }
+        
+        let storyboard = UIStoryboard(name: "FarmFlow", bundle: nil)
+        
+        if let detalleVC = storyboard.instantiateViewController(
+            withIdentifier: "DetalleLoteViewController"
+        ) as? DetalleLoteViewController {
+            
+            detalleVC.loteId = lote.idLote
+            
+            navigationController?.pushViewController(detalleVC, animated: true)
+        }
     }
     
     @IBAction func registrarAlimentacionLoteButton(_ sender: UIButton) {
+        guard let lote = lote else {
+            mostrarAlerta(titulo: "Error", mensaje: "No hay datos del lote")
+            return
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let alimentacionVC = storyboard.instantiateViewController(
+            withIdentifier: "RegistrarAlimentacionLoteViewController"
+        ) as? RegistrarAlimentacionLoteViewController else {
+            mostrarAlerta(titulo: "Error", mensaje: "No se pudo cargar la vista")
+            return
+        }
+        alimentacionVC.lotePreseleccionado = LoteSimpleDTO(
+            loteId: lote.idLote,
+            nombre: lote.nombre,
+            cantidadAnimales: lote.animalesVivos
+        )
+        
+        navigationController?.pushViewController(alimentacionVC, animated: true)
     }
     
-    
     @IBAction func registrarSanitarioLoteButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            guard let sanitarioVC = storyboard.instantiateViewController(
+                withIdentifier: "RegistroSanitarioMasivoViewController"
+            ) as? RegistroSanitarioMasivoViewController else {
+                mostrarAlerta(titulo: "Error", mensaje: "No se pudo cargar la vista")
+                return
+            }
+            
+            navigationController?.pushViewController(sanitarioVC, animated: true)
     }
     
     

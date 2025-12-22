@@ -59,8 +59,8 @@ class LoginViewController: UIViewController {
         
         guard let inicioVC = storyboard.instantiateViewController(
 
-            withIdentifier: "ListadoLotesViewController"
-        ) as? ListadoLotesViewController else {
+            withIdentifier: "VistaPreviaLoteViewController"
+        ) as? VistaPreviaLoteViewController else {
             print("Error: No se pudo castear InicioViewController")
             mostrarAlerta(mensaje: "Error al cargar la pantalla principal")
             return

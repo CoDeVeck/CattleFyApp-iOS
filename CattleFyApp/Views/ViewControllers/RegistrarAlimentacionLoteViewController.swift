@@ -26,7 +26,8 @@ class RegistrarAlimentacionLoteViewController: UIViewController {
     var lotes: [LoteSimpleDTO] = []
     var loteSeleccionado: LoteSimpleDTO?
     var fechaActual = Date()
-    
+    var lotePreseleccionado: LoteSimpleDTO?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configurarUI()
@@ -65,23 +66,26 @@ class RegistrarAlimentacionLoteViewController: UIViewController {
     
     // MARK: - Cargar lotes
     func cargarLotes() {
-        
         LoteService.shared.obtenerLotesSimples { [weak self] result in
             DispatchQueue.main.async {
+                guard let self = self else { return }
                 
                 switch result {
                 case .success(let lotes):
                     print("Lotes cargados: \(lotes.count)")
-                    self?.lotes = lotes
-                    self?.lotesPicker.reloadAllComponents()
+                    self.lotes = lotes
+                    self.lotesPicker.reloadAllComponents()
                     
-                    if let primero = lotes.first {
-                        self?.loteSeleccionado = primero
+                    // 👇 AHORA SÍ FUNCIONA
+                    if let lotePreseleccionado = self.lotePreseleccionado,
+                       let index = lotes.firstIndex(where: { $0.loteId == lotePreseleccionado.loteId }) {
+                        self.lotesPicker.selectRow(index, inComponent: 0, animated: false)
+                        self.loteSeleccionado = lotes[index]
                     }
                     
                 case .failure(let error):
                     print("Error cargando lotes: \(error.localizedDescription)")
-                    self?.mostrarAlerta(mensaje: "Error al cargar lotes: \(error.localizedDescription)")
+                    self.mostrarAlerta(mensaje: "Error al cargar lotes: \(error.localizedDescription)")
                 }
             }
         }
