@@ -77,7 +77,9 @@ class VistaPreviaAnimalViewController: UIViewController {
     }
     
     @IBAction func registrarSanitarioAnimalButton(_ sender: UIButton) {
-        guard let vc = storyboard?.instantiateViewController(
+        let farmFlowStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let vc = farmFlowStoryboard.instantiateViewController(
             withIdentifier: "RegistroSanitarioAnimalViewController"
         ) as? RegistroSanitarioAnimalViewController else { return }
         

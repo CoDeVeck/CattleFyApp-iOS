@@ -212,4 +212,32 @@ class DetalleAplicacionesViewModel {
             return "syringe.fill"
         }
     }
+    func getColorIcono(at index: Int) -> UIColor {
+        guard let aplicacion = getAplicacion(at: index) else { return .systemBlue }
+        
+        let protocoloLower = aplicacion.protocoloTipo.lowercased()
+        let nombreLower = aplicacion.nombreProducto.lowercased()
+        
+        
+        if protocoloLower.contains("vacun") {
+            return .systemBlue
+        } else if protocoloLower.contains("tratamiento") {
+            
+            if nombreLower.contains("antiinflamatorio") {
+                return .systemPurple
+            } else if nombreLower.contains("antibiotico") || nombreLower.contains("antibiótico") {
+                return .systemRed
+            } else if nombreLower.contains("desparasitante") || nombreLower.contains("antiparasitario") {
+                return .systemOrange
+            } else if nombreLower.contains("vitamina") || nombreLower.contains("complejo") || nombreLower.contains("suplemento") {
+                return .systemGreen
+            } else {
+                return .systemOrange 
+            }
+        } else {
+            return .systemGray
+        }
+    }
+    
+    
 }
