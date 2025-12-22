@@ -17,6 +17,59 @@ class RegistroSanitarioService {
     private func getAuthToken() -> String? {
         return UserDefaults.standard.string(forKey: "authToken")
     }
+    
+    func obtenerRegistrosSanitarios(loteId: Int, completion: @escaping (Result<[RegistroSanitarioResponse], Error>) -> Void) {
+        guard let token = getAuthToken() else {
+            completion(.failure(NSError(
+                domain: "", code: 401,
+                userInfo: [NSLocalizedDescriptionKey: "No hay sesión activa"]
+            )))
+            return
+        }
+
+        guard let url = URL(string: "\(Constants.baseURL)registroSanitario/listarHistorial/\(loteId)") else {
+            completion(.failure(NSError(
+                domain: "", code: -1,
+                userInfo: [NSLocalizedDescriptionKey: "URL inválida"]
+            )))
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = data else {
+                completion(.failure(NSError(
+                    domain: "", code: -1,
+                    userInfo: [NSLocalizedDescriptionKey: "No hay datos"]
+                )))
+                return
+            }
+
+            do {
+                // Decodificamos la respuesta completa que viene con la estructura ResultadoResponse
+                let resultado = try JSONDecoder().decode(ResultadoResponse<RegistroSanitarioListResponse>.self, from: data)
+                if resultado.valor, let registros = resultado.data?.registros {
+                    completion(.success(registros))
+                } else {
+                    let mensaje = resultado.mensaje
+                    completion(.failure(NSError(
+                        domain: "", code: -1,
+                        userInfo: [NSLocalizedDescriptionKey: mensaje]
+                    )))
+                }
+            } catch {
+                completion(.failure(error))
+            }
+        }.resume()
+    }
     func crearRegistroSanitario(
         request: RegistroSanitarioRequest,
         completion: @escaping (Result<RegistroSanitarioResponse, Error>) -> Void

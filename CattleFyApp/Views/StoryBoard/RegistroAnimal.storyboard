@@ -12,7 +12,7 @@
         <!--Registrar Nuevo Animal-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="RegistroAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistroAnimalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="RegistroAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +74,7 @@
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="nT0-JJ-r8T" kind="show" id="SQx-BG-h9u"/>
+                                    <segue destination="nT0-JJ-r8T" kind="show" id="hvk-br-qxh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -115,7 +115,7 @@
         <!--Registrar Compra Animal-->
         <scene sceneID="SPv-5m-IkT">
             <objects>
-                <viewController id="nT0-JJ-r8T" customClass="RegistroCompraAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistroCompraAnimalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nT0-JJ-r8T" customClass="RegistroCompraAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Xl-PI-kbZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,6 +161,9 @@
                                     <color key="baseForegroundColor" red="0.16129893889999999" green="0.4519261832" blue="0.037214508540000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="baseBackgroundColor" red="0.79963820510642147" green="0.89658764155224113" blue="0.79978556655106003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="elegirFotoAnimalGaleriaButton:" destination="nT0-JJ-r8T" eventType="touchUpInside" id="okF-ZW-iUl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Especie:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LE-bK-SLp">
                                 <rect key="frame" x="24" y="314" width="65" height="21"/>
@@ -180,7 +183,7 @@
                                     <constraint firstAttribute="height" constant="45" id="RYQ-y6-wNk"/>
                                 </constraints>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de Ingreso:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duf-aJ-vOy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de Nacimiento:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duf-aJ-vOy">
                                 <rect key="frame" x="24" y="508" width="137" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -256,7 +259,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="4KO-DV-QBa" kind="show" id="eZz-ej-hWm"/>
+                                    <action selector="siguienteButton:" destination="nT0-JJ-r8T" eventType="touchUpInside" id="hAS-u2-AnO"/>
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="ObS-k2-DKt">
@@ -333,6 +336,13 @@
                     <navigationItem key="navigationItem" title="Registrar Compra Animal" id="loe-f9-Ymj">
                         <barButtonItem key="backBarButtonItem" title="Atrás" id="EbL-1B-4qz"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="especiePicker" destination="imn-o1-W0p" id="Rel-tu-7jY"/>
+                        <outlet property="imageViewAnimal" destination="spW-q4-gGC" id="r6u-2v-1hl"/>
+                        <outlet property="pesoTextField" destination="t2F-Ds-xrX" id="by2-ko-is1"/>
+                        <outlet property="pickerFecha" destination="bGf-50-zOD" id="deE-ty-CGX"/>
+                        <outlet property="precioCompraTextField" destination="OQ0-da-ppp" id="6dV-yn-cKH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lkz-SP-wrT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -341,13 +351,13 @@
         <!--Registrar Nuevo Animal-->
         <scene sceneID="iQp-6Z-6h7">
             <objects>
-                <viewController id="4KO-DV-QBa" customClass="RegistroCompraAnimal2ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistroCompraAnimal2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4KO-DV-QBa" customClass="RegistroCompraAnimal2ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K0W-ti-wBe">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="VYh-gi-EN8">
-                                <rect key="frame" x="41" y="182" width="78" height="10"/>
+                                <rect key="frame" x="41" y="138" width="78" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="VYh-height"/>
                                     <constraint firstAttribute="width" constant="78" id="VYh-width"/>
@@ -356,13 +366,13 @@
                                 <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Información" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78h-NY-h96">
-                                <rect key="frame" x="41" y="197" width="78" height="16"/>
+                                <rect key="frame" x="41" y="153" width="78" height="16"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="3tO-C3-RUL">
-                                <rect key="frame" x="157.66666666666666" y="182" width="78" height="10"/>
+                                <rect key="frame" x="157.66666666666666" y="138" width="78" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="3tO-height"/>
                                     <constraint firstAttribute="width" constant="78" id="3tO-width"/>
@@ -371,13 +381,13 @@
                                 <color key="trackTintColor" systemColor="systemGreenColor"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asignación" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtx-2Z-uVI">
-                                <rect key="frame" x="160.66666666666666" y="197" width="71.666666666666657" height="16"/>
+                                <rect key="frame" x="160.66666666666666" y="153" width="71.666666666666657" height="16"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="MTo-Em-qLt">
-                                <rect key="frame" x="274" y="182" width="78" height="10"/>
+                                <rect key="frame" x="274" y="138" width="78" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="MTo-height"/>
                                     <constraint firstAttribute="width" constant="78" id="MTo-width"/>
@@ -386,58 +396,35 @@
                                 <color key="trackTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resumen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzM-Ns-tbe">
-                                <rect key="frame" x="283" y="197" width="60" height="16"/>
+                                <rect key="frame" x="283" y="153" width="60" height="16"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paso 2: Asignar a lote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5d-CW-DTH">
-                                <rect key="frame" x="20" y="243.00000000000003" width="353" height="26.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paso 2: Asignar lote y proveedor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5d-CW-DTH">
+                                <rect key="frame" x="20" y="199" width="353" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona el lote de destino para el nuevo animal." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-vf-Wke">
-                                <rect key="frame" x="20" y="277.33333333333331" width="353" height="40.666666666666686"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Selecciona el lote de destino para el nuevo animal." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-vf-Wke">
+                                <rect key="frame" x="20" y="234" width="353" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.55686274499999999" green="0.55686274499999999" blue="0.57647058799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lote de destino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeI-gs-U6c">
-                                <rect key="frame" x="20" y="338" width="353" height="21.666666666666686"/>
+                                <rect key="frame" x="20" y="308" width="353" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGv-th-6xz">
-                                <rect key="frame" x="20" y="369.66666666666669" width="353" height="120"/>
+                                <rect key="frame" x="20" y="339.66666666666669" width="353" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="uGv-height"/>
                                 </constraints>
                             </pickerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qk-fG-Pyt">
-                                <rect key="frame" x="20" y="509.66666666666674" width="353" height="44"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ocupación: 25 / 50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcj-Dd-XeO">
-                                        <rect key="frame" x="12" y="11.999999999999941" width="329" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.94901960780000005" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="5qk-height-const"/>
-                                    <constraint firstItem="Zcj-Dd-XeO" firstAttribute="centerY" secondItem="5qk-fG-Pyt" secondAttribute="centerY" id="Zcj-center"/>
-                                    <constraint firstItem="Zcj-Dd-XeO" firstAttribute="leading" secondItem="5qk-fG-Pyt" secondAttribute="leading" constant="12" id="Zcj-lead"/>
-                                    <constraint firstAttribute="trailing" secondItem="Zcj-Dd-XeO" secondAttribute="trailing" constant="12" id="Zcj-trail"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4P-vU-dIG">
                                 <rect key="frame" x="20" y="729" width="353" height="50"/>
                                 <constraints>
@@ -449,19 +436,61 @@
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="QZA-8V-xJF" kind="show" id="r2n-JR-qmz"/>
+                                    <action selector="continuarButton:" destination="4KO-DV-QBa" eventType="touchUpInside" id="Uvw-VC-sQf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proveedor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcj-Dd-XeO">
+                                <rect key="frame" x="20" y="469.66666666666669" width="353" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2D9-Gs-962">
+                                <rect key="frame" x="20" y="506" width="353" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="td3-Df-vPc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g7n-pv-CFq">
+                                <rect key="frame" x="20" y="604" width="353" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="1WL-43-nZn"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Hembra"/>
+                                    <segment title="Macho"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrI-8P-rtE">
+                                <rect key="frame" x="20" y="561" width="353" height="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QLn-Dc-uq0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="QLn-Dc-uq0" firstAttribute="trailing" secondItem="wrI-8P-rtE" secondAttribute="trailing" constant="20" id="9Ul-we-e58"/>
+                            <constraint firstItem="Zcj-Dd-XeO" firstAttribute="leading" secondItem="QLn-Dc-uq0" secondAttribute="leading" constant="20" id="CQN-VX-QQm"/>
+                            <constraint firstItem="wrI-8P-rtE" firstAttribute="leading" secondItem="QLn-Dc-uq0" secondAttribute="leading" constant="20" id="Dnu-Dh-K3g"/>
+                            <constraint firstItem="QLn-Dc-uq0" firstAttribute="trailing" secondItem="g7n-pv-CFq" secondAttribute="trailing" constant="20" id="Ekx-Og-pvL"/>
+                            <constraint firstItem="Zcj-Dd-XeO" firstAttribute="top" secondItem="uGv-th-6xz" secondAttribute="bottom" constant="10" id="HAx-Tp-BKt"/>
+                            <constraint firstItem="2D9-Gs-962" firstAttribute="leading" secondItem="QLn-Dc-uq0" secondAttribute="leading" constant="20" id="IzK-na-yR8"/>
+                            <constraint firstItem="g7n-pv-CFq" firstAttribute="leading" secondItem="QLn-Dc-uq0" secondAttribute="leading" constant="20" id="Kfz-cl-cLR"/>
+                            <constraint firstItem="g7n-pv-CFq" firstAttribute="top" secondItem="wrI-8P-rtE" secondAttribute="bottom" constant="15" id="Kqw-Ad-wGK"/>
+                            <constraint firstItem="wrI-8P-rtE" firstAttribute="top" secondItem="2D9-Gs-962" secondAttribute="bottom" constant="20" id="Ydy-OM-8aS"/>
                             <constraint firstItem="QLn-Dc-uq0" firstAttribute="bottom" secondItem="v4P-vU-dIG" secondAttribute="bottom" constant="5" id="btn-bottom"/>
                             <constraint firstItem="v4P-vU-dIG" firstAttribute="leading" secondItem="QLn-Dc-uq0" secondAttribute="leading" constant="20" id="btn-lead"/>
                             <constraint firstItem="v4P-vU-dIG" firstAttribute="trailing" secondItem="QLn-Dc-uq0" secondAttribute="trailing" constant="-20" id="btn-trail"/>
                             <constraint firstItem="cHx-vf-Wke" firstAttribute="leading" secondItem="S5d-CW-DTH" secondAttribute="leading" id="desc-lead"/>
                             <constraint firstItem="cHx-vf-Wke" firstAttribute="top" secondItem="S5d-CW-DTH" secondAttribute="bottom" constant="8" id="desc-top"/>
                             <constraint firstItem="cHx-vf-Wke" firstAttribute="trailing" secondItem="S5d-CW-DTH" secondAttribute="trailing" id="desc-trail"/>
+                            <constraint firstItem="QLn-Dc-uq0" firstAttribute="trailing" secondItem="2D9-Gs-962" secondAttribute="trailing" constant="20" id="gV1-iw-a7d"/>
+                            <constraint firstItem="v4P-vU-dIG" firstAttribute="top" secondItem="g7n-pv-CFq" secondAttribute="bottom" constant="80" id="ilJ-DR-HMx"/>
+                            <constraint firstItem="QLn-Dc-uq0" firstAttribute="trailing" secondItem="Zcj-Dd-XeO" secondAttribute="trailing" constant="20" id="jxj-EZ-IQD"/>
                             <constraint firstItem="78h-NY-h96" firstAttribute="centerX" secondItem="VYh-gi-EN8" secondAttribute="centerX" id="lbl1-center"/>
                             <constraint firstItem="78h-NY-h96" firstAttribute="top" secondItem="VYh-gi-EN8" secondAttribute="bottom" constant="5" id="lbl1-top"/>
                             <constraint firstItem="dtx-2Z-uVI" firstAttribute="centerX" secondItem="3tO-C3-RUL" secondAttribute="centerX" id="lbl2-center"/>
@@ -471,9 +500,7 @@
                             <constraint firstItem="oeI-gs-U6c" firstAttribute="leading" secondItem="cHx-vf-Wke" secondAttribute="leading" id="lote-lead"/>
                             <constraint firstItem="oeI-gs-U6c" firstAttribute="top" secondItem="cHx-vf-Wke" secondAttribute="bottom" constant="20" id="lote-top"/>
                             <constraint firstItem="oeI-gs-U6c" firstAttribute="trailing" secondItem="cHx-vf-Wke" secondAttribute="trailing" id="lote-trail"/>
-                            <constraint firstItem="5qk-fG-Pyt" firstAttribute="leading" secondItem="uGv-th-6xz" secondAttribute="leading" id="ocup-lead"/>
-                            <constraint firstItem="5qk-fG-Pyt" firstAttribute="top" secondItem="uGv-th-6xz" secondAttribute="bottom" constant="20" id="ocup-top"/>
-                            <constraint firstItem="5qk-fG-Pyt" firstAttribute="trailing" secondItem="uGv-th-6xz" secondAttribute="trailing" id="ocup-trail"/>
+                            <constraint firstItem="2D9-Gs-962" firstAttribute="top" secondItem="Zcj-Dd-XeO" secondAttribute="bottom" constant="10" id="mAE-L6-hMd"/>
                             <constraint firstItem="uGv-th-6xz" firstAttribute="leading" secondItem="oeI-gs-U6c" secondAttribute="leading" id="pick-lead"/>
                             <constraint firstItem="uGv-th-6xz" firstAttribute="top" secondItem="oeI-gs-U6c" secondAttribute="bottom" constant="10" id="pick-top"/>
                             <constraint firstItem="uGv-th-6xz" firstAttribute="trailing" secondItem="oeI-gs-U6c" secondAttribute="trailing" id="pick-trail"/>
@@ -491,6 +518,11 @@
                     <navigationItem key="navigationItem" title="Registrar Nuevo Animal" id="OWs-DH-ZYs">
                         <barButtonItem key="backBarButtonItem" title="Atrás" id="bvO-dc-w3G"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="pickerLotes" destination="uGv-th-6xz" id="XMH-Ch-nVm"/>
+                        <outlet property="proveedorTextField" destination="2D9-Gs-962" id="5NM-TA-dr9"/>
+                        <outlet property="sexoSegmented" destination="g7n-pv-CFq" id="Ydz-KA-8vo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovQ-Gm-LYF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -499,13 +531,13 @@
         <!--Registrar Nuevo Animal-->
         <scene sceneID="sUu-Jt-wnu">
             <objects>
-                <viewController id="QZA-8V-xJF" customClass="RegistroCompraAnimal3ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistroCompraAnimal3ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QZA-8V-xJF" customClass="RegistroCompraAnimal3ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4cc-q2-ago">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="prog-info-res">
-                                <rect key="frame" x="41" y="182" width="78" height="10"/>
+                                <rect key="frame" x="41" y="138" width="78" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="prog-info-h"/>
                                     <constraint firstAttribute="width" constant="78" id="prog-info-w"/>
@@ -514,13 +546,13 @@
                                 <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Información" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-info-res">
-                                <rect key="frame" x="41" y="197" width="78" height="16"/>
+                                <rect key="frame" x="41" y="153" width="78" height="16"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="prog-asig-res">
-                                <rect key="frame" x="157.66666666666666" y="182" width="78" height="10"/>
+                                <rect key="frame" x="157.66666666666666" y="138" width="78" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="prog-asig-h"/>
                                     <constraint firstAttribute="width" constant="78" id="prog-asig-w"/>
@@ -529,13 +561,13 @@
                                 <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asignación" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-asig-res">
-                                <rect key="frame" x="160.66666666666666" y="197" width="71.666666666666657" height="16"/>
+                                <rect key="frame" x="160.66666666666666" y="153" width="71.666666666666657" height="16"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="prog-resum-res">
-                                <rect key="frame" x="274" y="182" width="78" height="10"/>
+                                <rect key="frame" x="274" y="138" width="78" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="prog-resum-h"/>
                                     <constraint firstAttribute="width" constant="78" id="prog-resum-w"/>
@@ -544,22 +576,22 @@
                                 <color key="trackTintColor" systemColor="systemGreenColor"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resumen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-resum-res">
-                                <rect key="frame" x="283" y="197" width="60" height="16"/>
+                                <rect key="frame" x="283" y="153" width="60" height="16"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resumen de datos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="title-resumen">
-                                <rect key="frame" x="20" y="248.00000000000003" width="353" height="26.333333333333343"/>
+                                <rect key="frame" x="20" y="204" width="353" height="26.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="card-container">
-                                <rect key="frame" x="20" y="294.33333333333331" width="353" height="316.99999999999994"/>
+                                <rect key="frame" x="20" y="250.33333333333337" width="353" height="317"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="img-animal">
-                                        <rect key="frame" x="16" y="17.666666666666664" width="60" height="56.999999999999993"/>
+                                        <rect key="frame" x="16" y="17.666666666666636" width="60" height="56.999999999999993"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="img-h"/>
                                             <constraint firstAttribute="width" constant="60" id="img-w"/>
@@ -570,91 +602,85 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Especie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-especie-title">
-                                        <rect key="frame" x="92" y="16" width="245" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-especie-title">
+                                        <rect key="frame" x="92" y="15.999999999999972" width="245" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.55686274499999999" green="0.55686274499999999" blue="0.57647058799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bovino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-especie-value">
-                                        <rect key="frame" x="92" y="37" width="245" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hembra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-especie-value">
+                                        <rect key="frame" x="92" y="36.999999999999972" width="245" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="separator-1">
-                                        <rect key="frame" x="16" y="92" width="321" height="1"/>
+                                        <rect key="frame" x="16" y="91.999999999999972" width="321" height="1"/>
                                         <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="sep1-h"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peso inicial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-peso-title">
-                                        <rect key="frame" x="16" y="109" width="150" height="16"/>
+                                        <rect key="frame" x="16" y="108.99999999999997" width="150" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.55686274499999999" green="0.55686274499999999" blue="0.57647058799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350 kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-peso-value">
-                                        <rect key="frame" x="16" y="130" width="150" height="21"/>
+                                        <rect key="frame" x="16" y="129.99999999999997" width="150" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precio de compra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-precio-title">
-                                        <rect key="frame" x="187" y="109" width="150" height="16"/>
+                                        <rect key="frame" x="187" y="108.99999999999997" width="150" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.55686274499999999" green="0.55686274499999999" blue="0.57647058799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-precio-value">
-                                        <rect key="frame" x="187" y="130" width="150" height="21"/>
+                                        <rect key="frame" x="187" y="129.99999999999997" width="150" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="separator-2">
-                                        <rect key="frame" x="16" y="167" width="321" height="1"/>
+                                        <rect key="frame" x="16" y="166.99999999999997" width="321" height="1"/>
                                         <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="sep2-h"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de ingreso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-fecha-title">
-                                        <rect key="frame" x="16" y="184" width="321" height="16"/>
+                                        <rect key="frame" x="16" y="183.99999999999997" width="321" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.55686274499999999" green="0.55686274499999999" blue="0.57647058799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15/07/2024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-fecha-value">
-                                        <rect key="frame" x="16" y="205" width="321" height="21"/>
+                                        <rect key="frame" x="16" y="204.99999999999997" width="321" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="separator-3">
-                                        <rect key="frame" x="16" y="242.00000000000006" width="321" height="1"/>
+                                        <rect key="frame" x="16" y="241.99999999999997" width="321" height="1"/>
                                         <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="sep3-h"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lote de destino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-lote-title">
-                                        <rect key="frame" x="16" y="259.00000000000006" width="321" height="16"/>
+                                        <rect key="frame" x="16" y="259" width="321" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.55686274499999999" green="0.55686274499999999" blue="0.57647058799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lote 03 - Recría" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-lote-value">
-                                        <rect key="frame" x="16.000000000000007" y="280.00000000000006" width="124.66666666666669" height="21"/>
+                                        <rect key="frame" x="16.000000000000007" y="280" width="124.66666666666669" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ocupación: 18/30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-ocupacion">
-                                        <rect key="frame" x="230" y="280.00000000000006" width="107" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" red="0.55686274499999999" green="0.55686274499999999" blue="0.57647058799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -680,8 +706,6 @@
                                     <constraint firstItem="lbl-lote-title" firstAttribute="trailing" secondItem="separator-3" secondAttribute="trailing" id="lote-t-trail"/>
                                     <constraint firstItem="lbl-lote-value" firstAttribute="leading" secondItem="lbl-lote-title" secondAttribute="leading" id="lote-v-lead"/>
                                     <constraint firstItem="lbl-lote-value" firstAttribute="top" secondItem="lbl-lote-title" secondAttribute="bottom" constant="5" id="lote-v-top"/>
-                                    <constraint firstItem="lbl-ocupacion" firstAttribute="top" secondItem="lbl-lote-value" secondAttribute="top" id="ocup-top-2"/>
-                                    <constraint firstAttribute="trailing" secondItem="lbl-ocupacion" secondAttribute="trailing" constant="16" id="ocup-trail-2"/>
                                     <constraint firstItem="lbl-peso-title" firstAttribute="leading" secondItem="separator-1" secondAttribute="leading" id="peso-t-lead"/>
                                     <constraint firstItem="lbl-peso-title" firstAttribute="top" secondItem="separator-1" secondAttribute="bottom" constant="16" id="peso-t-top"/>
                                     <constraint firstItem="lbl-peso-title" firstAttribute="width" constant="150" id="peso-t-w"/>
@@ -730,6 +754,9 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="registrarAnimalButton:" destination="QZA-8V-xJF" eventType="touchUpInside" id="adj-jA-Hh1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ofs-RK-HEc"/>
@@ -761,6 +788,14 @@
                     <navigationItem key="navigationItem" title="Registrar Nuevo Animal" id="Hhh-vl-YNM">
                         <barButtonItem key="backBarButtonItem" title="Atrás" id="vo1-rU-C0z"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="especieLabel" destination="lbl-especie-value" id="d0j-L6-dMt"/>
+                        <outlet property="fechaLabel" destination="lbl-fecha-value" id="5xt-n2-afL"/>
+                        <outlet property="imageViewAnimal" destination="img-animal" id="2Zc-aT-QfH"/>
+                        <outlet property="loteNombreLabel" destination="lbl-lote-value" id="yPY-VD-P8t"/>
+                        <outlet property="pesoKgLabel" destination="lbl-peso-value" id="aGA-aC-Mq7"/>
+                        <outlet property="precioLabelCompra" destination="lbl-precio-value" id="T3c-7C-flc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -769,27 +804,27 @@
         <!--Registrar Nacimiento-->
         <scene sceneID="c7V-Lg-N6o">
             <objects>
-                <viewController id="cS3-eQ-kAt" customClass="RegistroNacimientoAnimal3ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistroNacimientoAnimal3ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cS3-eQ-kAt" customClass="RegistroNacimientoAnimal3ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2kn-tq-YwZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Paso 3 de 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-step-3">
-                                <rect key="frame" x="16" y="178" width="77.666666666666671" height="17"/>
+                                <rect key="frame" x="16" y="134" width="77.666666666666671" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="pb-final-step">
-                                <rect key="frame" x="16" y="203" width="361" height="4"/>
+                                <rect key="frame" x="16" y="159" width="361" height="4"/>
                                 <color key="progressTintColor" systemColor="systemGreenColor"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Confirmación" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-confirm-title">
-                                <rect key="frame" x="16" y="223" width="107" height="20.333333333333343"/>
+                                <rect key="frame" x="16" y="179" width="107" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v-summary-card">
-                                <rect key="frame" x="16" y="263.33333333333331" width="361" height="359.99999999999994"/>
+                                <rect key="frame" x="16" y="219.33333333333337" width="361" height="360"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Resumen de la Cría" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-resumen-header">
                                         <rect key="frame" x="98.333333333333329" y="20" width="164.33333333333337" height="21.666666666666671"/>
@@ -797,7 +832,7 @@
                                         <nil key="textColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="img-placeholder">
-                                        <rect key="frame" x="110.66666666666669" y="59.333333333333343" width="140" height="87"/>
+                                        <rect key="frame" x="110.66666666666669" y="59.333333333333314" width="140" height="87"/>
                                         <color key="backgroundColor" red="0.85098039215686272" green="0.91764705882352937" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <constraints>
@@ -811,7 +846,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sv-data-rows">
-                                        <rect key="frame" x="20" y="167.66666666666669" width="321" height="172.33333333333331"/>
+                                        <rect key="frame" x="20" y="167.66666666666663" width="321" height="172.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" id="row-1">
                                                 <rect key="frame" x="0.0" y="0.0" width="321" height="75.333333333333329"/>
@@ -898,7 +933,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v-info-box">
-                                <rect key="frame" x="16" y="639.33333333333337" width="361" height="100"/>
+                                <rect key="frame" x="16" y="595.33333333333337" width="361" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="info.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="img-info">
                                         <rect key="frame" x="16" y="16.666666666666664" width="24" height="22.666666666666664"/>
@@ -946,6 +981,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="registrarNacimientoAnimal:" destination="cS3-eQ-kAt" eventType="touchUpInside" id="b8q-do-0av"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xAL-Ru-EJs"/>
@@ -972,6 +1010,14 @@
                     <navigationItem key="navigationItem" title="Registrar Nacimiento" id="OHC-zU-Ps8">
                         <barButtonItem key="backBarButtonItem" title="Atrás" id="4cw-Iy-kM1"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="especieLabel" destination="v4" id="Qem-Xv-FYy"/>
+                        <outlet property="fechaLabel" destination="v1" id="Syh-ed-WdR"/>
+                        <outlet property="imagenAnimal" destination="img-placeholder" id="Rhp-tj-yH8"/>
+                        <outlet property="loteNombreLabel" destination="lbl-lote-val" id="pVP-vq-ty7"/>
+                        <outlet property="pesoKgLabel" destination="v2" id="aDW-Ah-4pC"/>
+                        <outlet property="sexoAnimalLabel" destination="v3" id="k5Z-Za-sBd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L3H-9S-nZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -980,22 +1026,22 @@
         <!--Registrar Nacimiento Animal-->
         <scene sceneID="SWi-8v-Bz1">
             <objects>
-                <viewController id="Hiw-dx-5R1" customClass="RegistroNacimientoAnimal2ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistroNacimientoAnimal2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hiw-dx-5R1" customClass="RegistroNacimientoAnimal2ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nzI-J5-Mz7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Paso 2 de 3: Datos del animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-step-v2">
-                                <rect key="frame" x="16" y="178" width="361" height="17"/>
+                                <rect key="frame" x="16" y="134" width="361" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.6600000262260437" translatesAutoresizingMaskIntoConstraints="NO" id="pb-main-v2">
-                                <rect key="frame" x="16" y="203" width="361" height="4"/>
+                                <rect key="frame" x="16" y="159" width="361" height="4"/>
                                 <color key="progressTintColor" systemColor="systemGreenColor"/>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-next-3">
-                                <rect key="frame" x="16" y="223" width="361" height="44"/>
+                                <rect key="frame" x="16" y="179" width="361" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="h-btn-v3"/>
                                 </constraints>
@@ -1006,32 +1052,35 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="escogerFotoDeAnimal:" destination="Hiw-dx-5R1" eventType="touchUpInside" id="sxO-M2-AxP"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="img-main-v2">
-                                <rect key="frame" x="16" y="279" width="361" height="160"/>
+                                <rect key="frame" x="16" y="235" width="361" height="160"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="h-img-v2"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Fecha de nacimiento:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-date-v2">
-                                <rect key="frame" x="16" y="455" width="361" height="17"/>
+                                <rect key="frame" x="16" y="411" width="361" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <nil key="textColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="dp-main-v2">
-                                <rect key="frame" x="16" y="480" width="220" height="40"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="dp-main-v2">
+                                <rect key="frame" x="16" y="436" width="220" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="h-dp-v2"/>
                                 </constraints>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Peso (Kg):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-w-v2">
-                                <rect key="frame" x="16" y="536" width="361" height="17"/>
+                                <rect key="frame" x="16" y="492" width="361" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <nil key="textColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ej: 35" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tf-main-v2">
-                                <rect key="frame" x="16" y="561" width="361" height="45"/>
+                                <rect key="frame" x="16" y="517" width="361" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="h-tf-v2"/>
                                 </constraints>
@@ -1039,7 +1088,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sc-main-v2">
-                                <rect key="frame" x="16" y="646" width="361" height="41"/>
+                                <rect key="frame" x="16" y="602" width="361" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="h-sc-v2"/>
                                 </constraints>
@@ -1059,11 +1108,11 @@
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="cS3-eQ-kAt" kind="show" id="nNo-XP-hR3"/>
+                                    <action selector="siguienteButton:" destination="Hiw-dx-5R1" eventType="touchUpInside" id="4sP-L5-4iy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHY-wA-vZG">
-                                <rect key="frame" x="16" y="617" width="42" height="21"/>
+                                <rect key="frame" x="16" y="573" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1110,6 +1159,12 @@
                     <navigationItem key="navigationItem" title="Registrar Nacimiento Animal" id="eh2-HN-njv">
                         <barButtonItem key="backBarButtonItem" title="Atrás" id="ST0-Vz-BKl"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageViewAnimal" destination="img-main-v2" id="LTZ-pI-XPt"/>
+                        <outlet property="pesoTextField" destination="tf-main-v2" id="f9T-XI-4uw"/>
+                        <outlet property="pickerDate" destination="dp-main-v2" id="o6I-85-71d"/>
+                        <outlet property="segmentSexoAnimal" destination="sc-main-v2" id="eoN-0F-FVW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a3w-K2-Gqo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1118,7 +1173,7 @@
         <!--Registrar Nacimiento Animal-->
         <scene sceneID="Uzu-H3-yEp">
             <objects>
-                <viewController id="Gb3-S9-5Oe" customClass="RegistroNacimientoAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistroNacimientoAnimalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gb3-S9-5Oe" customClass="RegistroNacimientoAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FjJ-Y0-jS5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1154,6 +1209,9 @@
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" red="0.85098039215686272" green="0.94117647058823528" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="escanearQRMadreAnimal:" destination="Gb3-S9-5Oe" eventType="touchUpInside" id="tpK-Fa-i1b"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1297,7 +1355,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Hiw-dx-5R1" kind="show" id="k0s-DI-7wt"/>
+                                    <action selector="siguienteButton:" destination="Gb3-S9-5Oe" eventType="touchUpInside" id="ULc-q8-zYN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1327,6 +1385,12 @@
                     <navigationItem key="navigationItem" title="Registrar Nacimiento Animal" id="kUA-kr-RU7">
                         <barButtonItem key="backBarButtonItem" title="Atrás" id="m48-gU-EBe"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="codigoQRAnimalMadreLabel" destination="lbl-cow-id" id="bKK-td-EaE"/>
+                        <outlet property="imageViewAnimalMadre" destination="img-cow-profile" id="Pje-ca-Zdg"/>
+                        <outlet property="nombreLoteMadreLabel" destination="Ykh-Cn-yc0" id="GPo-jy-KBA"/>
+                        <outlet property="pesoKgMadre" destination="0p3-yf-vWh" id="5o2-PC-H3y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ji-cm-6Uc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

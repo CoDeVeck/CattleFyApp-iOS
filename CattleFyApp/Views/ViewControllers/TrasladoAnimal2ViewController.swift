@@ -9,21 +9,38 @@ import UIKit
 
 class TrasladoAnimal2ViewController: UIViewController {
 
+    
+    @IBOutlet weak var buscadorQRLoteTextField: UITextField!
+    
+    @IBOutlet weak var tablaLotesDestino: UITableView!
+    // su celda tiene identifier llamado celdaLote
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+
+    // Funciona para el buscador de qr lote manualmente
+    @IBAction func buscarButton(_ sender: UIButton) {
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func filtroTipoLoteTodos(_ sender: UIButton) {
     }
-    */
-
+    
+    
+    @IBAction func filtroTipoLoteEngorde(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func filtroTipoLoteReproduccion(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func filtroTipoLoteEnfermeria(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func filtroTipoLoteDescarte(_ sender: UIButton) {
+    }
 }
