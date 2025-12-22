@@ -16,7 +16,7 @@ class BuscadorQRViewController: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func escanearQRButton(_ sender: UIBarButtonItem) {
+    @IBAction func escanearQRButton(_ sender: UIButton) {
         abrirGaleria()
     }
     
@@ -92,17 +92,22 @@ extension BuscadorQRViewController {
 
 extension BuscadorQRViewController {
     private func procesarCodigo(_ codigo: String) {
-        if codigo.hasPrefix("ANI") {
+        // Animales: QR_BOV_001, QR_OVI_001, QR_POR_001, etc.
+        if codigo.hasPrefix("QR_") && !codigo.hasPrefix("QR_LOTE_") {
             irAVistaAnimal(codigo)
-        } else if codigo.hasPrefix("LOT") {
+        }
+        // Lotes: QR_LOTE_001, QR_LOTE_002, etc.
+        else if codigo.hasPrefix("QR_LOTE_") {
             irAVistaLote(codigo)
-        } else {
+        }
+        else {
             mostrarAlerta(
                 titulo: "Código inválido",
                 mensaje: "El código no corresponde a un animal ni a un lote"
             )
         }
     }
+
     
     private func irAVistaAnimal(_ codigo: String) {
         guard let vc = storyboard?.instantiateViewController(

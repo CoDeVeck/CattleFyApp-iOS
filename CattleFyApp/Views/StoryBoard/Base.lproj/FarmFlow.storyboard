@@ -24,8 +24,8 @@
                                         <rect key="frame" x="11" y="24" width="371" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal #ANI-000001 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0n-Nb-fWg">
-                                                <rect key="frame" x="74" y="17" width="289" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <rect key="frame" x="74" y="23" width="289" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -223,8 +223,8 @@
                                         <rect key="frame" x="11" y="19" width="371" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lote #LOT-000001 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hL0-20-kXb">
-                                                <rect key="frame" x="86" y="17" width="277" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <rect key="frame" x="86" y="23" width="277" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -418,6 +418,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="R3v-md-l3H">
+                                <rect key="frame" x="16" y="669" width="361" height="34.333333333333258"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="qrcode" catalog="system" imagePadding="0.0">
+                                    <color key="baseBackgroundColor" red="0.49448216239999998" green="0.70457473910000001" blue="0.48341781659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="escanearQRButton:" destination="JZI-Uc-Cnp" eventType="touchUpInside" id="KfF-xS-4Ba"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="j1H-To-41D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -427,6 +438,7 @@
                             <constraint firstItem="j1H-To-41D" firstAttribute="trailing" secondItem="UgU-BF-Udt" secondAttribute="trailing" constant="30" id="79S-Ss-X32"/>
                             <constraint firstItem="UgU-BF-Udt" firstAttribute="centerY" secondItem="zbk-3d-dUy" secondAttribute="centerY" id="Lo3-t0-ar1"/>
                             <constraint firstItem="j1H-To-41D" firstAttribute="trailing" secondItem="M9C-yq-yF5" secondAttribute="trailing" constant="50" id="OFq-iw-Q9v"/>
+                            <constraint firstItem="R3v-md-l3H" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QGc-v4-GG7" secondAttribute="bottom" constant="60" id="RSx-SH-cqw"/>
                             <constraint firstItem="QGc-v4-GG7" firstAttribute="leading" secondItem="j1H-To-41D" secondAttribute="leading" constant="50" id="SZq-0v-NQx"/>
                             <constraint firstItem="UgU-BF-Udt" firstAttribute="leading" secondItem="j1H-To-41D" secondAttribute="leading" constant="30" id="brF-IG-DXh"/>
                             <constraint firstItem="QGc-v4-GG7" firstAttribute="top" secondItem="UgU-BF-Udt" secondAttribute="bottom" constant="30" id="evm-N1-dol"/>
@@ -434,22 +446,9 @@
                             <constraint firstItem="j1H-To-41D" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QGc-v4-GG7" secondAttribute="bottom" constant="150" id="ncg-GC-KL1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Ingreso Manual" id="LCh-KA-68P">
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="jcn-qV-hmJ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="9Js-07-Wp5">
-                                <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="qrcode" catalog="system" imagePadding="0.0">
-                                    <color key="baseBackgroundColor" red="0.49448216239999998" green="0.70457473910000001" blue="0.48341781659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
-                            </button>
-                            <color key="tintColor" red="0.4984756488" green="0.70457473910000001" blue="0.53593016439999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="escanearQRButton:" destination="JZI-Uc-Cnp" id="90F-3l-zWm"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Ingreso Manual" id="LCh-KA-68P"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="buscadorTextField" destination="UgU-BF-Udt" id="3Vv-Tz-rWZ"/>
                     </connections>
@@ -1726,40 +1725,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="view-empty-001">
-                                <rect key="frame" x="0.0" y="221" width="393" height="563"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="img-empty-icon-001">
-                                        <rect key="frame" x="171.66666666666666" y="222.33333333333334" width="50" height="48.666666666666657"/>
-                                        <color key="tintColor" systemColor="systemGray3Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="img-empty-height-001"/>
-                                            <constraint firstAttribute="width" constant="50" id="img-empty-width-001"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No se encontraron animales" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-empty-title-001">
-                                        <rect key="frame" x="88.666666666666671" y="283.66666666666669" width="215.66666666666663" height="20"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                        <color key="textColor" systemColor="systemGray2Color"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prueba ajustando los filtros de búsqueda." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-empty-subtitle-001">
-                                        <rect key="frame" x="62.666666666666657" y="311.66666666666663" width="267.66666666666674" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" systemColor="systemGray3Color"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="lbl-empty-title-001" firstAttribute="centerX" secondItem="view-empty-001" secondAttribute="centerX" id="JIr-YV-rZ5"/>
-                                    <constraint firstItem="img-empty-icon-001" firstAttribute="centerX" secondItem="view-empty-001" secondAttribute="centerX" id="img-empty-centerX-001"/>
-                                    <constraint firstItem="img-empty-icon-001" firstAttribute="centerY" secondItem="view-empty-001" secondAttribute="centerY" constant="-35" id="img-empty-centerY-001"/>
-                                    <constraint firstItem="lbl-empty-subtitle-001" firstAttribute="top" secondItem="lbl-empty-title-001" secondAttribute="bottom" constant="8" id="lbl-empty-subtitle-top-001"/>
-                                    <constraint firstItem="lbl-empty-title-001" firstAttribute="top" secondItem="img-empty-icon-001" secondAttribute="bottom" constant="12" id="lbl-empty-title-top-001"/>
-                                    <constraint firstItem="lbl-empty-subtitle-001" firstAttribute="centerX" secondItem="view-empty-001" secondAttribute="centerX" id="umu-BX-FFQ"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-add-001">
                                 <rect key="frame" x="321" y="708" width="56" height="56"/>
                                 <color key="backgroundColor" red="0.29803921568627451" green="0.5490196078431373" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1785,13 +1750,9 @@
                         <viewLayoutGuide key="safeArea" id="6g7-Kt-d3r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="table-animales-001" firstAttribute="top" secondItem="view-empty-001" secondAttribute="top" id="7tQ-7h-47d"/>
                             <constraint firstItem="table-animales-001" firstAttribute="top" secondItem="search-bar-001" secondAttribute="bottom" constant="47" id="XPK-VW-u28"/>
                             <constraint firstItem="6g7-Kt-d3r" firstAttribute="bottom" secondItem="btn-add-001" secondAttribute="bottom" constant="20" id="btn-add-bottom-001"/>
                             <constraint firstItem="6g7-Kt-d3r" firstAttribute="trailing" secondItem="btn-add-001" secondAttribute="trailing" constant="16" id="btn-add-trailing-001"/>
-                            <constraint firstItem="view-empty-001" firstAttribute="bottom" secondItem="6g7-Kt-d3r" secondAttribute="bottom" id="empty-bottom-001"/>
-                            <constraint firstItem="view-empty-001" firstAttribute="leading" secondItem="xGS-np-GYM" secondAttribute="leading" id="empty-leading-001"/>
-                            <constraint firstAttribute="trailing" secondItem="view-empty-001" secondAttribute="trailing" id="empty-trailing-001"/>
                             <constraint firstItem="search-bar-001" firstAttribute="leading" secondItem="6g7-Kt-d3r" secondAttribute="leading" constant="16" id="search-leading-001"/>
                             <constraint firstItem="search-bar-001" firstAttribute="top" secondItem="6g7-Kt-d3r" secondAttribute="top" id="search-top-001"/>
                             <constraint firstItem="6g7-Kt-d3r" firstAttribute="trailing" secondItem="search-bar-001" secondAttribute="trailing" constant="16" id="search-trailing-001"/>
@@ -2326,7 +2287,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <segue destination="5iC-Td-oPR" kind="show" id="pkd-JV-SRO"/>
+                                                            <action selector="registrarPesoAnimalButton:" destination="7cM-Oz-brk" eventType="touchUpInside" id="RPa-zm-xuX"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-aplicar-tratamiento">
@@ -2350,6 +2311,9 @@
                                                                 <integer key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="registrarTratamientoButton:" destination="7cM-Oz-brk" eventType="touchUpInside" id="XCU-Yw-Pg3"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-trasladar">
                                                         <rect key="frame" x="0.0" y="68" width="174.66666666666666" height="56"/>
@@ -2373,7 +2337,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <segue destination="NFW-RP-muF" kind="show" id="jBN-le-Ue0"/>
+                                                            <action selector="registrarTrasladoButton:" destination="7cM-Oz-brk" eventType="touchUpInside" id="rLj-4v-xeW"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-muerte">
@@ -2397,6 +2361,9 @@
                                                                 <integer key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="registrarMuerteButton:" destination="7cM-Oz-brk" eventType="touchUpInside" id="bxq-u1-LbR"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2478,6 +2445,21 @@
                             <constraint firstItem="scroll-view" firstAttribute="trailing" secondItem="Kjf-T7-nOl" secondAttribute="trailing" id="scroll-trail"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="animalImageView" destination="animal-img" id="LpC-Td-2Ig"/>
+                        <outlet property="codigoQRLabel" destination="animal-id-lbl" id="SqK-WT-o2i"/>
+                        <outlet property="codigoQRMadreLabel" destination="lbl-madre-value" id="aYu-6z-4ot"/>
+                        <outlet property="especieLabel" destination="lbl-especie-value" id="sjU-Ss-qDu"/>
+                        <outlet property="fechaIngresoLabel" destination="lbl-fecha-ingreso-value" id="LRt-dP-Zuv"/>
+                        <outlet property="fechaNacimientoLabel" destination="lbl-fecha-nac-value" id="goE-iW-kT6"/>
+                        <outlet property="loteLabel" destination="lbl-lote-value" id="xmu-2d-q8A"/>
+                        <outlet property="origenLabel" destination="lbl-origen-value" id="90H-gB-ZfP"/>
+                        <outlet property="pesoKgLabel" destination="lbl-peso-value" id="Unq-oo-qzn"/>
+                        <outlet property="sexoLabel" destination="lbl-sexo-value" id="LE4-R3-jDS"/>
+                        <outlet property="tablaMovilidad" destination="tbl-tratamientos-list" id="FFk-Au-Rym"/>
+                        <outlet property="tablaPeso" destination="tbl-ganancia-list" id="ffX-EX-ovk"/>
+                        <outlet property="tablaSanitario" destination="tbl-padres-list" id="ctb-Ho-7FQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yz7-XG-0pi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2488,11 +2470,11 @@
             <objects>
                 <viewController storyboardIdentifier="TrasladoAnimalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NFW-RP-muF" customClass="TrasladoAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="49o-gV-xsY">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="stepIndicatorStack">
-                                <rect key="frame" x="120" y="75" width="153" height="6"/>
+                                <rect key="frame" x="120" y="134" width="153" height="6"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="step1">
                                         <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="6"/>
@@ -2527,19 +2509,19 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" contentMode="left" text="Identificar Animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="lblTitle">
-                                <rect key="frame" x="20" y="105" width="353" height="33.666666666666657"/>
+                                <rect key="frame" x="20" y="164" width="353" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" contentMode="left" text="Escanee el código QR del animal o búsquelo manualmente." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" translatesAutoresizingMaskIntoConstraints="NO" id="lblSub">
-                                <rect key="frame" x="20" y="146.66666666666666" width="353" height="38.333333333333343"/>
+                                <rect key="frame" x="20" y="205.66666666666666" width="353" height="38.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btnScan">
-                                <rect key="frame" x="20" y="215" width="353" height="55"/>
+                                <rect key="frame" x="20" y="274" width="353" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="bts-2"/>
                                 </constraints>
@@ -2552,7 +2534,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="searchStackView">
-                                <rect key="frame" x="20" y="286" width="353" height="55"/>
+                                <rect key="frame" x="20" y="345" width="353" height="55"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="searchContainer">
                                         <rect key="frame" x="0.0" y="0.0" width="271" height="55"/>
@@ -2612,7 +2594,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cardAnimal">
-                                <rect key="frame" x="20" y="371" width="353" height="215"/>
+                                <rect key="frame" x="20" y="430" width="353" height="215"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="scaleToFill" text="ANIMAL IDENTIFICADO" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lblStatus">
                                         <rect key="frame" x="20" y="20" width="150" height="15.666666666666664"/>
@@ -2635,14 +2617,14 @@
                                         </buttonConfiguration>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="separator1">
-                                        <rect key="frame" x="20" y="89.666666666666686" width="313" height="1"/>
+                                        <rect key="frame" x="20" y="89.666666666666629" width="313" height="1"/>
                                         <color key="backgroundColor" systemColor="separatorColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="bts-44"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" contentMode="scaleToFill" text="Lote Actual" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lblLote">
-                                        <rect key="frame" x="20" y="110.66666666666669" width="81.666666666666671" height="19.333333333333343"/>
+                                        <rect key="frame" x="20" y="110.66666666666663" width="81.666666666666671" height="19.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                     </label>
@@ -2712,7 +2694,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btnContinue">
-                                <rect key="frame" x="20" y="708" width="353" height="55"/>
+                                <rect key="frame" x="20" y="709" width="353" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="bts-20"/>
                                 </constraints>
@@ -5043,21 +5025,21 @@
             <objects>
                 <viewController storyboardIdentifier="RegistrarPesoAnimalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5iC-Td-oPR" customClass="RegistrarPesoAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dAF-We-yqk">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Registrar Peso de Animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-title-peso">
-                                <rect key="frame" x="20" y="70" width="353" height="33.666666666666657"/>
+                                <rect key="frame" x="20" y="129" width="353" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Paso 1: Seleccionar animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-step-peso">
-                                <rect key="frame" x="20" y="107.66666666666667" width="185.33333333333334" height="18"/>
+                                <rect key="frame" x="20" y="166.66666666666666" width="185.33333333333334" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-scan-peso">
-                                <rect key="frame" x="20" y="149.66666666666666" width="353" height="50"/>
+                                <rect key="frame" x="20" y="208.66666666666666" width="353" height="49.999999999999972"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="four-song-401"/>
                                 </constraints>
@@ -5074,7 +5056,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sv-search-row">
-                                <rect key="frame" x="20" y="223.66666666666666" width="353" height="44"/>
+                                <rect key="frame" x="20" y="282.66666666666669" width="353" height="44"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID o Arete manual" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="txt-search-peso">
                                         <rect key="frame" x="0.0" y="0.0" width="266" height="44"/>
@@ -5095,7 +5077,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v-card-info-final">
-                                <rect key="frame" x="16" y="299.66666666666669" width="361" height="220"/>
+                                <rect key="frame" x="16" y="358.66666666666669" width="361" height="220.00000000000006"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="sv-details-content">
                                         <rect key="frame" x="16" y="16" width="329" height="188"/>
@@ -5258,7 +5240,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-next-peso">
-                                <rect key="frame" x="16" y="707" width="361" height="56"/>
+                                <rect key="frame" x="16" y="708" width="361" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="four-song-409"/>
                                 </constraints>
@@ -6992,7 +6974,6 @@
         <image name="line.3.horizontal.decrease.circle" catalog="system" width="128" height="123"/>
         <image name="m.circle.fill" catalog="system" width="128" height="123"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="123"/>
         <image name="medical.thermometer.fill" catalog="system" width="128" height="120"/>
         <image name="pawprint.circle.fill" catalog="system" width="128" height="123"/>
         <image name="pawprint.fill" catalog="system" width="128" height="112"/>
@@ -7017,70 +6998,70 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="separatorColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemCyanColor">
-            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="underPageBackgroundColor">
             <color red="0.70980392156862748" green="0.71764705882352942" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
