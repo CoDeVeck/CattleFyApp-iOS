@@ -1,48 +1,46 @@
 import UIKit
 
 class VentaComercialViewController: UIViewController {
-
+    
     @IBOutlet weak var containerView: UIView!
     
-  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      
+        
+        
     }
     
     @IBAction func switchCambiarViewController(_ sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {
         case 0:
-            MostrarViewController(id:"WC_B")
-        case 1:
             MostrarViewController(id:"WC_A")
+        case 1:
+            MostrarViewController(id:"WC_B")
         default :
             break
         }
         
     }
-
-    func MostrarViewController(id:String){
+    
+    func MostrarViewController(id: String) {
         let storyboard = UIStoryboard(name: "VentaComercial", bundle: nil)
-            let nuevoVC = storyboard.instantiateViewController(withIdentifier: id)
-
-           
-            children.forEach { child in
-                child.willMove(toParent: nil)
-                child.view.removeFromSuperview()
-                child.removeFromParent()
-            }
-
-            
-            addChild(nuevoVC)
+        let nuevoVC = storyboard.instantiateViewController(withIdentifier: id)
+        
+        // Eliminar el anterior
+        children.forEach { child in
+            child.willMove(toParent: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParent()
+        }
+        
+        // Agregar el nuevo
+        addChild(nuevoVC)
+        containerView.addSubview(nuevoVC.view)
         
         nuevoVC.view.translatesAutoresizingMaskIntoConstraints = false
-        nuevoVC.view.frame = containerView.bounds
-        
-        containerView.addSubview(nuevoVC.view)
         
         NSLayoutConstraint.activate([
             nuevoVC.view.topAnchor.constraint(equalTo: containerView.topAnchor),
@@ -53,6 +51,6 @@ class VentaComercialViewController: UIViewController {
         
         nuevoVC.didMove(toParent: self)
     }
-
+    
 }
 
