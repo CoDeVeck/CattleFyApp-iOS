@@ -9,10 +9,18 @@ import UIKit
 
 class TrasladoAnimal3ViewController: UIViewController {
 
+    
+    @IBOutlet weak var codigoQRLabel: UILabel!
+    @IBOutlet weak var loteOrigenLabel: UILabel!
+    @IBOutlet weak var loteDestinoLabel: UILabel!
+    
+    @IBOutlet weak var motivoTrasladoTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
-
+    @IBAction func confirmarTrasladoButton(_ sender: UIButton) {
+    }
+    
 }

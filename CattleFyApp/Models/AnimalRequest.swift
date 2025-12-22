@@ -15,7 +15,8 @@ struct AnimalRequest: Codable {
     let fechaNacimiento: String
     let sexo: String
     let peso: Double?
-    let precioCompra: Double?      // Opcional (solo para Compra)
+    let precioCompra: Double?
+    let proveedor: String?    // Opcional (solo para Compra)
 }
 
 // MARK: - Inicializadores de conveniencia
@@ -29,7 +30,8 @@ extension AnimalRequest {
         sexo: String,
         peso: Double?,
         precioCompra: Double?,
-        codigoQrMadre: String? = nil
+        codigoQrMadre: String? = nil,
+        proveedor: String
     ) -> AnimalRequest {
         return AnimalRequest(
             origen: "Compra",
@@ -39,7 +41,8 @@ extension AnimalRequest {
             fechaNacimiento: fechaNacimiento,
             sexo: sexo,
             peso: peso,
-            precioCompra: precioCompra
+            precioCompra: precioCompra,
+            proveedor: proveedor
         )
     }
     
@@ -58,7 +61,8 @@ extension AnimalRequest {
             fechaNacimiento: fechaNacimiento,
             sexo: sexo,
             peso: peso,
-            precioCompra: nil
+            precioCompra: nil,
+            proveedor: nil
         )
     }
 }

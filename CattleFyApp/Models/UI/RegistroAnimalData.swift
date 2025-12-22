@@ -20,4 +20,5 @@ struct RegistroAnimalData {
     var peso: Double?
     var precioCompra: Double?
     var imagen: UIImage?
+    var proveedor: String?
 }

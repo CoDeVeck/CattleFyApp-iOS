@@ -9,10 +9,20 @@ import UIKit
 
 class TrasladoAnimalViewController: UIViewController {
 
+    @IBOutlet weak var buscadorQRTextField: UITextField!
+    @IBOutlet weak var especieLabel: UILabel!
+    @IBOutlet weak var loteNombreLabel: UILabel!
+    @IBOutlet weak var codigoQRLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
-
+    
+    @IBAction func escanearQRButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func buscarQRManualButton(_ sender: UIButton) {
+    }
 }

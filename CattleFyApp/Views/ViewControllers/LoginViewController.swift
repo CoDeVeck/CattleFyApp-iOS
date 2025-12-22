@@ -55,11 +55,11 @@ class LoginViewController: UIViewController {
         
         // Si usan el storyboard de FarmFlow dejen ese nombre si en caso esta en Main como el mio cambienlo
         // En el inicioVC Cambien por su controlador que quieran probar y ponganle su identificador
-        let storyboard = UIStoryboard(name: "FarmFlow", bundle: nil)
+        let storyboard = UIStoryboard(name: "RegistroAnimal", bundle: nil)
         
         guard let inicioVC = storyboard.instantiateViewController(
-            withIdentifier: "ListadoAnimalesDeLoteViewController"
-        ) as? ListadoAnimalesDeLoteViewController else {
+            withIdentifier: "RegistroAnimalViewController"
+        ) as? RegistroAnimalViewController else {
             print("Error: No se pudo castear InicioViewController")
             mostrarAlerta(mensaje: "Error al cargar la pantalla principal")
             return

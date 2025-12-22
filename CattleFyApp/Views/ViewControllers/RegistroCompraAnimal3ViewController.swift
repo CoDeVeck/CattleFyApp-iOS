@@ -56,19 +56,18 @@ class RegistroCompraAnimal3ViewController: UIViewController {
             mostrarError(mensaje: "Debe seleccionar un lote")
             return
         }
-        
-        var origen: String = "Compra"
-        
+                
         // Convertir RegistroAnimalData a AnimalRequest
         let animalRequest = AnimalRequest(
-            origen: origen,
+            origen: data.origen,
             idLote: data.idLote,
             codigoQrMadre: data.codigoQrMadre,
             idEspecie: data.idEspecie,
             fechaNacimiento: data.fechaNacimiento,
             sexo: data.sexo,
             peso: data.peso,
-            precioCompra: data.precioCompra
+            precioCompra: data.precioCompra,
+            proveedor: data.proveedor
         )
         
         // Deshabilitar botón y mostrar loading

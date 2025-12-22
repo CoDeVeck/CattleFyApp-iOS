@@ -243,14 +243,18 @@ class AnimalesService {
         // Campos condicionales según el origen
         if animal.origen == "Compra" {
             // FLUJO COMPRA: Se envían idLote, idEspecie y precioCompra
-            body.appendFormField(name: "idLote", value: "\(animal.idLote)", boundary: boundary)
-            body.appendFormField(name: "idEspecie", value: "\(animal.idEspecie)", boundary: boundary)
+            body.appendFormField(name: "idLote", value: "\(animal.idLote ?? 0)", boundary: boundary)
+            body.appendFormField(name: "idEspecie", value: "\(animal.idEspecie ?? 0)", boundary: boundary)
             
             if let precioCompra = animal.precioCompra {
                 body.appendFormField(name: "precioCompra", value: "\(precioCompra)", boundary: boundary)
             }
+            
+            if let proveedor = animal.proveedor {
+                body.appendFormField(name: proveedor, value: "\(proveedor)", boundary: boundary)
+            }
         }
-        // FLUJO NACIMIENTO: NO se envían idLote, idEspecie ni precioCompra
+        // FLUJO NACIMIENTO: NO se envían idLote, idEspecie ni precioCompra, ni proveedor
         
         // Campos opcionales comunes a ambos flujos
         if let codigoQrMadre = animal.codigoQrMadre, !codigoQrMadre.isEmpty {

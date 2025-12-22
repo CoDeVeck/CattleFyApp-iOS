@@ -10,6 +10,8 @@ import UIKit
 class RegistroCompraAnimal2ViewController: UIViewController {
     
     @IBOutlet weak var pickerLotes: UIPickerView!
+    @IBOutlet weak var proveedorTextField: UITextField!
+    
     var animalData: RegistroAnimalData?
     
     private var lotes: [LoteSimpleDTO] = []
@@ -57,11 +59,17 @@ class RegistroCompraAnimal2ViewController: UIViewController {
             return
         }
         
+        guard let proveedor = proveedorTextField.text, !proveedor.isEmpty else {
+            mostrarError(mensaje: "Debe llenar el campo proveedor")
+            return
+        }
+        
         let indiceSeleccionado = pickerLotes.selectedRow(inComponent: 0)
         let loteSeleccionado = lotes[indiceSeleccionado]
         
         animalData?.idLote = loteSeleccionado.loteId
         animalData?.nombreLote = loteSeleccionado.nombre
+        animalData?.proveedor = proveedor
         
         let storyboard = UIStoryboard(name: "RegistroAnimal", bundle: nil)
         if let confirmacionVC = storyboard.instantiateViewController(withIdentifier: "RegistroCompraAnimal3ViewController") as? RegistroCompraAnimal3ViewController {

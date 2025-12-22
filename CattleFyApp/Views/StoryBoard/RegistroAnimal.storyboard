@@ -401,53 +401,30 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paso 2: Asignar a lote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5d-CW-DTH">
-                                <rect key="frame" x="20" y="199" width="353" height="26.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paso 2: Asignar lote y proveedor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5d-CW-DTH">
+                                <rect key="frame" x="20" y="199" width="353" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona el lote de destino para el nuevo animal." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-vf-Wke">
-                                <rect key="frame" x="20" y="233.33333333333334" width="353" height="40.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Selecciona el lote de destino para el nuevo animal." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-vf-Wke">
+                                <rect key="frame" x="20" y="234" width="353" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.55686274499999999" green="0.55686274499999999" blue="0.57647058799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lote de destino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeI-gs-U6c">
-                                <rect key="frame" x="20" y="294" width="353" height="21.666666666666686"/>
+                                <rect key="frame" x="20" y="296" width="353" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGv-th-6xz">
-                                <rect key="frame" x="20" y="325.66666666666669" width="353" height="120"/>
+                                <rect key="frame" x="20" y="327.66666666666669" width="353" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="uGv-height"/>
                                 </constraints>
                             </pickerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qk-fG-Pyt">
-                                <rect key="frame" x="20" y="465.66666666666669" width="353" height="44"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ocupación: 25 / 50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcj-Dd-XeO">
-                                        <rect key="frame" x="12" y="11.999999999999998" width="329" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.94901960780000005" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="5qk-height-const"/>
-                                    <constraint firstItem="Zcj-Dd-XeO" firstAttribute="centerY" secondItem="5qk-fG-Pyt" secondAttribute="centerY" id="Zcj-center"/>
-                                    <constraint firstItem="Zcj-Dd-XeO" firstAttribute="leading" secondItem="5qk-fG-Pyt" secondAttribute="leading" constant="12" id="Zcj-lead"/>
-                                    <constraint firstAttribute="trailing" secondItem="Zcj-Dd-XeO" secondAttribute="trailing" constant="12" id="Zcj-trail"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4P-vU-dIG">
                                 <rect key="frame" x="20" y="729" width="353" height="50"/>
                                 <constraints>
@@ -462,16 +439,36 @@
                                     <action selector="continuarButton:" destination="4KO-DV-QBa" eventType="touchUpInside" id="Uvw-VC-sQf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proveedor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcj-Dd-XeO">
+                                <rect key="frame" x="20" y="457.66666666666669" width="353" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2D9-Gs-962">
+                                <rect key="frame" x="20" y="494" width="353" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="td3-Df-vPc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QLn-Dc-uq0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Zcj-Dd-XeO" firstAttribute="leading" secondItem="QLn-Dc-uq0" secondAttribute="leading" constant="20" id="CQN-VX-QQm"/>
+                            <constraint firstItem="v4P-vU-dIG" firstAttribute="top" secondItem="2D9-Gs-962" secondAttribute="bottom" constant="200" id="CkE-ri-rYd"/>
+                            <constraint firstItem="Zcj-Dd-XeO" firstAttribute="top" secondItem="uGv-th-6xz" secondAttribute="bottom" constant="10" id="HAx-Tp-BKt"/>
+                            <constraint firstItem="2D9-Gs-962" firstAttribute="leading" secondItem="QLn-Dc-uq0" secondAttribute="leading" constant="20" id="IzK-na-yR8"/>
                             <constraint firstItem="QLn-Dc-uq0" firstAttribute="bottom" secondItem="v4P-vU-dIG" secondAttribute="bottom" constant="5" id="btn-bottom"/>
                             <constraint firstItem="v4P-vU-dIG" firstAttribute="leading" secondItem="QLn-Dc-uq0" secondAttribute="leading" constant="20" id="btn-lead"/>
                             <constraint firstItem="v4P-vU-dIG" firstAttribute="trailing" secondItem="QLn-Dc-uq0" secondAttribute="trailing" constant="-20" id="btn-trail"/>
                             <constraint firstItem="cHx-vf-Wke" firstAttribute="leading" secondItem="S5d-CW-DTH" secondAttribute="leading" id="desc-lead"/>
                             <constraint firstItem="cHx-vf-Wke" firstAttribute="top" secondItem="S5d-CW-DTH" secondAttribute="bottom" constant="8" id="desc-top"/>
                             <constraint firstItem="cHx-vf-Wke" firstAttribute="trailing" secondItem="S5d-CW-DTH" secondAttribute="trailing" id="desc-trail"/>
+                            <constraint firstItem="QLn-Dc-uq0" firstAttribute="trailing" secondItem="2D9-Gs-962" secondAttribute="trailing" constant="20" id="gV1-iw-a7d"/>
+                            <constraint firstItem="QLn-Dc-uq0" firstAttribute="trailing" secondItem="Zcj-Dd-XeO" secondAttribute="trailing" constant="20" id="jxj-EZ-IQD"/>
                             <constraint firstItem="78h-NY-h96" firstAttribute="centerX" secondItem="VYh-gi-EN8" secondAttribute="centerX" id="lbl1-center"/>
                             <constraint firstItem="78h-NY-h96" firstAttribute="top" secondItem="VYh-gi-EN8" secondAttribute="bottom" constant="5" id="lbl1-top"/>
                             <constraint firstItem="dtx-2Z-uVI" firstAttribute="centerX" secondItem="3tO-C3-RUL" secondAttribute="centerX" id="lbl2-center"/>
@@ -481,9 +478,7 @@
                             <constraint firstItem="oeI-gs-U6c" firstAttribute="leading" secondItem="cHx-vf-Wke" secondAttribute="leading" id="lote-lead"/>
                             <constraint firstItem="oeI-gs-U6c" firstAttribute="top" secondItem="cHx-vf-Wke" secondAttribute="bottom" constant="20" id="lote-top"/>
                             <constraint firstItem="oeI-gs-U6c" firstAttribute="trailing" secondItem="cHx-vf-Wke" secondAttribute="trailing" id="lote-trail"/>
-                            <constraint firstItem="5qk-fG-Pyt" firstAttribute="leading" secondItem="uGv-th-6xz" secondAttribute="leading" id="ocup-lead"/>
-                            <constraint firstItem="5qk-fG-Pyt" firstAttribute="top" secondItem="uGv-th-6xz" secondAttribute="bottom" constant="20" id="ocup-top"/>
-                            <constraint firstItem="5qk-fG-Pyt" firstAttribute="trailing" secondItem="uGv-th-6xz" secondAttribute="trailing" id="ocup-trail"/>
+                            <constraint firstItem="2D9-Gs-962" firstAttribute="top" secondItem="Zcj-Dd-XeO" secondAttribute="bottom" constant="10" id="mAE-L6-hMd"/>
                             <constraint firstItem="uGv-th-6xz" firstAttribute="leading" secondItem="oeI-gs-U6c" secondAttribute="leading" id="pick-lead"/>
                             <constraint firstItem="uGv-th-6xz" firstAttribute="top" secondItem="oeI-gs-U6c" secondAttribute="bottom" constant="10" id="pick-top"/>
                             <constraint firstItem="uGv-th-6xz" firstAttribute="trailing" secondItem="oeI-gs-U6c" secondAttribute="trailing" id="pick-trail"/>
@@ -503,6 +498,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="pickerLotes" destination="uGv-th-6xz" id="XMH-Ch-nVm"/>
+                        <outlet property="proveedorTextField" destination="2D9-Gs-962" id="5NM-TA-dr9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovQ-Gm-LYF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1247,7 +1243,7 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="img-status-check">
-                                        <rect key="frame" x="315" y="24.666666666666664" width="30" height="28.666666666666679"/>
+                                        <rect key="frame" x="315" y="24.666666666666664" width="30" height="28.666666666666664"/>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="h-check"/>
