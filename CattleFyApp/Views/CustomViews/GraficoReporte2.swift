@@ -7,21 +7,38 @@ import SwiftUI
 import Charts
 
 struct GraficoReporte2: View {
-
+    
     let datos: [ReporteGrafico2]
 
     private let colores: [String: Color] = [
         "Huevos": .orange,
         "Leche": .blue,
-        "Carne": .red,
-        "Lana": .purple
+
     ]
+
+    private var tiposProduccion: [String] {
+        Array(Set(datos.map { $0.tipoProduccion })).sorted()
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
 
             Text("Producción por Tipo")
                 .font(.headline)
+            
+            // Leyenda
+            HStack(spacing: 16) {
+                ForEach(tiposProduccion, id: \.self) { tipo in
+                    HStack(spacing: 4) {
+                        Circle()
+                            .fill(colores[tipo] ?? .gray)
+                            .frame(width: 8, height: 8)
+                        Text(tipo)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
 
             if datos.isEmpty {
                 vistaVacia
@@ -34,7 +51,6 @@ struct GraficoReporte2: View {
         .cornerRadius(12)
     }
 
-    // MARK: - Vista vacía
     private var vistaVacia: some View {
         VStack {
             Image(systemName: "chart.bar.xaxis")
@@ -48,44 +64,47 @@ struct GraficoReporte2: View {
         .frame(height: 300)
     }
 
-    // MARK: - Chart
     private var chartProduccion: some View {
-        Chart {
+        Chart(datos) { item in
+            let fecha = parseDate(item.fecha) ?? Date()
+            let color = colores[item.tipoProduccion] ?? .gray
 
-            ForEach(datos) { item in
+            LineMark(
+                x: .value("Fecha", fecha),
+                y: .value("Cantidad", item.cantidadTotal)
+            )
+            .foregroundStyle(by: .value("Tipo", item.tipoProduccion))
+            .lineStyle(StrokeStyle(lineWidth: 2))
+            .interpolationMethod(.catmullRom)
 
-                let fecha = parseDate(item.fecha) ?? Date()
-                let color = colores[item.tipoProduccion] ?? .gray
-
-                LineMark(
-                    x: .value("Fecha", fecha),
-                    y: .value("Cantidad", item.cantidadTotal)
-                )
-                .foregroundStyle(color)
-                .lineStyle(StrokeStyle(lineWidth: 2))
-
-                PointMark(
-                    x: .value("Fecha", fecha),
-                    y: .value("Cantidad", item.cantidadTotal)
-                )
-                .foregroundStyle(color)
-                .symbolSize(40)
-            }
+            PointMark(
+                x: .value("Fecha", fecha),
+                y: .value("Cantidad", item.cantidadTotal)
+            )
+            .foregroundStyle(by: .value("Tipo", item.tipoProduccion))
+            .symbolSize(40)
         }
+        .chartForegroundStyleScale([
+            "Huevos": colores["Huevos"]!,
+            "Leche": colores["Leche"]!
+        ])
         .chartXAxis {
-            AxisMarks(values: .stride(by: .day, count: 3)) {
+            AxisMarks(values: .stride(by: .day, count: 5)) {
                 AxisGridLine()
                 AxisValueLabel(format: .dateTime.month().day())
             }
         }
         .chartYAxis {
-            AxisMarks(position: .leading)
+            AxisMarks(position: .leading) { value in
+                AxisGridLine()
+                AxisValueLabel()
+            }
         }
+        .chartLegend(position: .top, alignment: .leading)
         .frame(height: 300)
         .padding(.horizontal, 4)
     }
 
-    // MARK: - Helpers
     private func parseDate(_ dateString: String) -> Date? {
         let f = DateFormatter()
         f.dateFormat = "yyyy-MM-dd"

@@ -174,7 +174,10 @@ class ReporteSanitarioViewController: UIViewController {
     private func actualizarEstadisticas(_ estadisticas: SanidadEstadisticasDTO){
         labelTotalDeAplicaciones.text = String(format: "%.0f", estadisticas.cantidadTotalDosis)
         labelCostoTotal.text = String(format: "S/ %.2f", estadisticas.costoTotal)
-        labelAnimalesTratados.text = "\(estadisticas.animalesTratados)"
+        labelAnimalesTratados.text = estadisticas.animalesTratados != nil
+        ? "\(estadisticas.animalesTratados!)"
+        : "No hay animales"
+                                    
         
         labelProductosMasUsados.text = estadisticas.medicamentoMasUsado
 

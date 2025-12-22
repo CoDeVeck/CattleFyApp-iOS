@@ -11,7 +11,7 @@ struct SanidadEstadisticasDTO: Codable {
     
     let cantidadTotalDosis: Double
     let costoTotal: Double
-    let animalesTratados: Int
+    let animalesTratados: Int?
     let medicamentoMasUsado: String
     
     
