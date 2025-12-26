@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        passwordTextField.isSecureTextEntry = true
     }
 
     @IBAction func iniciarButtonTapped(_ sender: Any) {
@@ -59,8 +59,8 @@ class LoginViewController: UIViewController {
         
         guard let inicioVC = storyboard.instantiateViewController(
 
-            withIdentifier: "BuscadorQRViewController"
-        ) as? BuscadorQRViewController else {
+            withIdentifier: "InicioViewController"
+        ) as? InicioViewController else {
             print("Error: No se pudo castear InicioViewController")
             mostrarAlerta(mensaje: "Error al cargar la pantalla principal")
             return

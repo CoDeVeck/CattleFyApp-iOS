@@ -131,4 +131,62 @@ class AuthService {
         UserDefaults.standard.removeObject(forKey: "userEmail")
         print("✅ Sesión cerrada")
     }
+    
+    func obtenerContadoresDashboard(
+        granjaId: Int,
+        completion: @escaping (Result<DashboardContadores, Error>) -> Void
+    ) {
+        guard let token = UserDefaults.standard.string(forKey: "authToken") else {
+            completion(.failure(NSError(
+                domain: "", code: 401,
+                userInfo: [NSLocalizedDescriptionKey: "No hay sesión activa"]
+            )))
+            return
+        }
+
+        guard let url = URL(string: "\(Constants.baseURL)auth/contadores/\(granjaId)") else {
+            completion(.failure(ServiceError.urlInvalida))
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            // Error de red
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            // Código de estado (debug)
+            if let httpResponse = response as? HTTPURLResponse {
+                print("📊 Dashboard Status Code: \(httpResponse.statusCode)")
+            }
+
+            guard let data = data else {
+                completion(.failure(ServiceError.sinDatos))
+                return
+            }
+
+            // Debug del JSON
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print("📊 Dashboard Response: \(jsonString)")
+            }
+
+            // Decodificación
+            do {
+                let decoder = JSONDecoder()
+                let contadores = try decoder.decode(DashboardContadores.self, from: data)
+                completion(.success(contadores))
+            } catch {
+                print("❌ Error decodificando: \(error)")
+                completion(.failure(error))
+            }
+
+        }.resume()
+    }
+
 }
