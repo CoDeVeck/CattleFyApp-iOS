@@ -15,6 +15,8 @@ class ListadoLotesViewController: UIViewController {
     
     @IBOutlet weak var loteNombreTextField: UITextField!
     
+    @IBOutlet weak var crearLote: UIButton!
+    
     private var especies: [EspecieResponse] = []
     private var lotes: [LoteResponse] = []
     private var especieSeleccionada: EspecieResponse?
@@ -25,6 +27,11 @@ class ListadoLotesViewController: UIViewController {
         setupTableView()
         setupUI()
         cargarEspecies()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     private func setupUI() {
@@ -63,17 +70,13 @@ class ListadoLotesViewController: UIViewController {
                     self?.especies = [opcionTodos] + especies
                     
                     print("✅ Especies cargadas: \(especies.count + 1)")
-                    
                 case .failure(let error):
                     print("❌ Error: \(error.localizedDescription)")
                 }
             }
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
+    
     // MARK: - IBActions
     @IBAction func especieButtonTapped(_ sender: UIButton) {
         mostrarEspecies()
@@ -181,7 +184,45 @@ class ListadoLotesViewController: UIViewController {
                 }
             }
         }
+    
+    @IBAction func crearLoteTapped(_ sender: UIButton) {
+        print("Iniciando navegación a Home...")
         
+        // Si usan el storyboard de FarmFlow dejen ese nombre si en caso esta en Main como el mio cambienlo
+        // En el inicioVC Cambien por su controlador que quieran probar y ponganle su identificador
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let inicioVC = storyboard.instantiateViewController(
+
+            withIdentifier: "CrearNuevoLoteViewController"
+        ) as? CrearNuevoLoteViewController else {
+            mostrarAlerta(mensaje: "Error al cargar la pantalla principal")
+            return
+        }
+        
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first else {
+            print("Error: No se pudo obtener la ventana")
+            return
+        }
+        
+        print("Ventana obtenida")
+        
+        let navigationController = UINavigationController(rootViewController: inicioVC)
+        navigationController.setNavigationBarHidden(true, animated: false)
+        
+        window.rootViewController = navigationController
+        
+        UIView.transition(with: window,
+                         duration: 0.3,
+                         options: .transitionCrossDissolve,
+                         animations: nil,
+                         completion: { _ in
+            print("Navegación completada exitosamente")
+        })
+    }
+    
 }
     // MARK: - UITableViewDataSource
     extension ListadoLotesViewController: UITableViewDataSource {

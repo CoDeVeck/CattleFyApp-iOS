@@ -845,9 +845,6 @@
                                                         <buttonConfiguration key="configuration" style="filled">
                                                             <color key="baseBackgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                         </buttonConfiguration>
-                                                        <connections>
-                                                            <segue destination="kxo-Ih-fg4" kind="show" id="3L9-Ny-Awc"/>
-                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Reportes" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inicio-rep-label">
                                                         <rect key="frame" x="8" y="51.666666666666629" width="90" height="18.333333333333329"/>
@@ -1027,6 +1024,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6M7-Zi-Sn5"/>
+                    <connections>
+                        <outlet property="alertasLabel" destination="inicio-alertas-count" id="a8j-QL-Kgw"/>
+                        <outlet property="alimentacionView" destination="inicio-card-alimentacion" id="ItN-NH-aNr"/>
+                        <outlet property="animalesLabel" destination="inicio-animales-count" id="xfY-Ak-lHg"/>
+                        <outlet property="lotesLabel" destination="inicio-lotes-count" id="IYE-yg-dEq"/>
+                        <outlet property="lotesListadoView" destination="aPe-90-8oL" id="zHs-G5-ezJ"/>
+                        <outlet property="pesoView" destination="inicio-card-peso" id="DQz-xB-m1P"/>
+                        <outlet property="produccionView" destination="bE6-UD-Z32" id="6se-P7-eyC"/>
+                        <outlet property="reportesView" destination="inicio-card-reportes" id="MK7-X5-mBc"/>
+                        <outlet property="sanidadView" destination="inicio-card-sanidad" id="tPM-k8-kbD"/>
+                        <outlet property="ventasLabel" destination="inicio-ventas-count" id="fvY-07-o2T"/>
+                        <outlet property="ventasView" destination="inicio-card-ventas2" id="PX7-MS-vwO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1255,7 +1265,7 @@
             <objects>
                 <viewController id="McO-os-o4K" customClass="ReporteHomeViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LDb-Jd-ECT">
-                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="802"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reportes De Produccion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viU-Wu-GR7">
@@ -1265,7 +1275,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Typ-l3-zby">
-                                <rect key="frame" x="20" y="188" width="362" height="32"/>
+                                <rect key="frame" x="20" y="82" width="362" height="32"/>
                                 <segments>
                                     <segment title="Engorde"/>
                                     <segment title="Reproduccion"/>
@@ -1275,7 +1285,7 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diw-m2-TUe">
-                                <rect key="frame" x="10" y="239" width="382" height="557"/>
+                                <rect key="frame" x="10" y="133" width="382" height="659"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <connections>
                                     <segue destination="2N5-89-gHD" kind="embed" id="Wrt-4y-9SF"/>
@@ -1309,7 +1319,7 @@
         <!--Listado Lotes View Controller-->
         <scene sceneID="ufO-Tt-4XZ">
             <objects>
-                <viewController id="j6u-l9-eJ9" customClass="ListadoLotesViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListadoLotesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j6u-l9-eJ9" customClass="ListadoLotesViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bsl-ay-14g">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1346,6 +1356,9 @@
                                             <imageReference key="image" image="plus" catalog="system" symbolScale="medium"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="semibold"/>
                                         </state>
+                                        <connections>
+                                            <action selector="crearLoteTapped:" destination="j6u-l9-eJ9" eventType="touchUpInside" id="C8v-FD-Z3s"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1401,179 +1414,11 @@
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="especie-scrollview">
-                                <rect key="frame" x="0.0" y="175.66666666666666" width="402" height="40"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="especie-stack">
-                                        <rect key="frame" x="16" y="4" width="437" height="32"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="filter-vacuno">
-                                                <rect key="frame" x="0.0" y="0.0" width="82" height="32"/>
-                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
-                                                <state key="normal" title="Vacuno">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="16"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="filter-porcino">
-                                                <rect key="frame" x="90" y="0.0" width="83" height="32"/>
-                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
-                                                <state key="normal" title="Porcino">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="16"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="filter-caprino">
-                                                <rect key="frame" x="181" y="0.0" width="84" height="32"/>
-                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
-                                                <state key="normal" title="Caprino">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="16"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="filter-avicola">
-                                                <rect key="frame" x="273" y="0.0" width="80" height="32"/>
-                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
-                                                <state key="normal" title="Avícola">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="16"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="filter-pavino">
-                                                <rect key="frame" x="361" y="0.0" width="76" height="32"/>
-                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
-                                                <state key="normal" title="Pavino">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="16"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="especie-scroll-h"/>
-                                    <constraint firstItem="especie-stack" firstAttribute="bottom" secondItem="especie-scrollview" secondAttribute="bottom" constant="-4" id="especie-stack-bot"/>
-                                    <constraint firstItem="especie-stack" firstAttribute="height" secondItem="especie-scrollview" secondAttribute="height" constant="-8" id="especie-stack-h"/>
-                                    <constraint firstItem="especie-stack" firstAttribute="leading" secondItem="especie-scrollview" secondAttribute="leading" constant="16" id="especie-stack-lead"/>
-                                    <constraint firstItem="especie-stack" firstAttribute="top" secondItem="especie-scrollview" secondAttribute="top" constant="4" id="especie-stack-top"/>
-                                    <constraint firstItem="especie-stack" firstAttribute="trailing" secondItem="especie-scrollview" secondAttribute="trailing" constant="-16" id="especie-stack-trail"/>
-                                </constraints>
-                            </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tipo-label">
-                                <rect key="frame" x="16" y="223.66666666666666" width="370" height="15.666666666666657"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tipo-scrollview">
-                                <rect key="frame" x="0.0" y="247.33333333333337" width="402" height="40"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tipo-stack">
-                                        <rect key="frame" x="16" y="4" width="433" height="32"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="filter-engorde">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="32"/>
-                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
-                                                <state key="normal" title="Engorde">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="16"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="filter-reproduccion">
-                                                <rect key="frame" x="96" y="0.0" width="124" height="32"/>
-                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
-                                                <state key="normal" title="Reproducción">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="16"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="filter-enfermeria">
-                                                <rect key="frame" x="228" y="0.0" width="105" height="32"/>
-                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
-                                                <state key="normal" title="Enfermería">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="16"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="filter-descarte">
-                                                <rect key="frame" x="341" y="0.0" width="92" height="32"/>
-                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
-                                                <state key="normal" title="Descarte">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="16"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="tipo-scroll-h"/>
-                                    <constraint firstItem="tipo-stack" firstAttribute="bottom" secondItem="tipo-scrollview" secondAttribute="bottom" constant="-4" id="tipo-stack-bot"/>
-                                    <constraint firstItem="tipo-stack" firstAttribute="height" secondItem="tipo-scrollview" secondAttribute="height" constant="-8" id="tipo-stack-h"/>
-                                    <constraint firstItem="tipo-stack" firstAttribute="leading" secondItem="tipo-scrollview" secondAttribute="leading" constant="16" id="tipo-stack-lead"/>
-                                    <constraint firstItem="tipo-stack" firstAttribute="top" secondItem="tipo-scrollview" secondAttribute="top" constant="4" id="tipo-stack-top"/>
-                                    <constraint firstItem="tipo-stack" firstAttribute="trailing" secondItem="tipo-scrollview" secondAttribute="trailing" constant="-16" id="tipo-stack-trail"/>
-                                </constraints>
-                            </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lotes-tableview">
-                                <rect key="frame" x="0.0" y="295.33333333333326" width="402" height="510.66666666666674"/>
+                                <rect key="frame" x="0.0" y="242" width="402" height="584"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoteCell" rowHeight="160" id="lote-cell-proto">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoteCell" rowHeight="160" id="lote-cell-proto" customClass="LoteCell" customModule="CattleFyApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="402" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lote-cell-proto" id="lote-cell-cv">
@@ -1765,37 +1610,55 @@
                                                 <constraint firstItem="lote-card-view" firstAttribute="trailing" secondItem="lote-cell-cv" secondAttribute="trailing" constant="-16" id="card-trail-c"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cantidadLabel" destination="stat-animales-label" id="aIq-WE-qa1"/>
+                                            <outlet property="engordeLabel" destination="tag-engorde-label" id="Lhz-0o-aYV"/>
+                                            <outlet property="especieLabel" destination="tag-vacuno-label" id="64K-zn-PKt"/>
+                                            <outlet property="estadoLabel" destination="estado-text-label" id="zxB-p2-wLM"/>
+                                            <outlet property="fechaLabel" destination="fecha-label" id="jvy-Jl-Mck"/>
+                                            <outlet property="loteLabelç" destination="nombre-lote-label" id="L9G-g5-VKe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHx-8j-7V6">
+                                <rect key="frame" x="20" y="187.66666666666666" width="362" height="34.333333333333343"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Seleccionar Especie"/>
+                                <connections>
+                                    <action selector="especieButtonTapped:" destination="j6u-l9-eJ9" eventType="touchUpInside" id="ddd-L8-aaR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3cv-bV-dLa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="lotes-tableview" firstAttribute="leading" secondItem="3cv-bV-dLa" secondAttribute="leading" id="ELq-yj-f3m"/>
+                            <constraint firstItem="lotes-tableview" firstAttribute="trailing" secondItem="3cv-bV-dLa" secondAttribute="trailing" id="YN0-q5-i6a"/>
+                            <constraint firstItem="wHx-8j-7V6" firstAttribute="leading" secondItem="3cv-bV-dLa" secondAttribute="leading" constant="20" id="ZuI-V2-Jof"/>
+                            <constraint firstItem="lotes-tableview" firstAttribute="bottom" secondItem="3cv-bV-dLa" secondAttribute="bottom" constant="20" id="b3m-Qp-wir"/>
                             <constraint firstItem="especie-label" firstAttribute="leading" secondItem="3cv-bV-dLa" secondAttribute="leading" constant="16" id="esp-lbl-lead-c"/>
                             <constraint firstItem="especie-label" firstAttribute="top" secondItem="search-container" secondAttribute="bottom" constant="12" id="esp-lbl-top-c"/>
                             <constraint firstItem="especie-label" firstAttribute="trailing" secondItem="3cv-bV-dLa" secondAttribute="trailing" constant="-16" id="esp-lbl-trail-c"/>
-                            <constraint firstItem="especie-scrollview" firstAttribute="leading" secondItem="3cv-bV-dLa" secondAttribute="leading" id="esp-scroll-lead-c"/>
-                            <constraint firstItem="especie-scrollview" firstAttribute="top" secondItem="especie-label" secondAttribute="bottom" constant="8" id="esp-scroll-top-c"/>
-                            <constraint firstItem="especie-scrollview" firstAttribute="trailing" secondItem="3cv-bV-dLa" secondAttribute="trailing" id="esp-scroll-trail-c"/>
                             <constraint firstItem="lotes-nav-bar" firstAttribute="leading" secondItem="3cv-bV-dLa" secondAttribute="leading" id="nav-lead-c"/>
                             <constraint firstItem="lotes-nav-bar" firstAttribute="top" secondItem="Bsl-ay-14g" secondAttribute="top" id="nav-top-c"/>
                             <constraint firstItem="lotes-nav-bar" firstAttribute="trailing" secondItem="3cv-bV-dLa" secondAttribute="trailing" id="nav-trail-c"/>
+                            <constraint firstItem="3cv-bV-dLa" firstAttribute="trailing" secondItem="wHx-8j-7V6" secondAttribute="trailing" constant="20" id="nsa-E5-Moq"/>
                             <constraint firstItem="search-container" firstAttribute="leading" secondItem="3cv-bV-dLa" secondAttribute="leading" constant="16" id="search-lead-c"/>
                             <constraint firstItem="search-container" firstAttribute="top" secondItem="lotes-nav-bar" secondAttribute="bottom" constant="8" id="search-top-c"/>
                             <constraint firstItem="search-container" firstAttribute="trailing" secondItem="3cv-bV-dLa" secondAttribute="trailing" constant="-16" id="search-trail-c"/>
-                            <constraint firstItem="lotes-tableview" firstAttribute="bottom" secondItem="3cv-bV-dLa" secondAttribute="bottom" id="table-bot-c"/>
-                            <constraint firstItem="lotes-tableview" firstAttribute="leading" secondItem="3cv-bV-dLa" secondAttribute="leading" id="table-lead-c"/>
-                            <constraint firstItem="lotes-tableview" firstAttribute="top" secondItem="tipo-scrollview" secondAttribute="bottom" constant="8" id="table-top-c"/>
-                            <constraint firstItem="lotes-tableview" firstAttribute="trailing" secondItem="3cv-bV-dLa" secondAttribute="trailing" id="table-trail-c"/>
-                            <constraint firstItem="tipo-label" firstAttribute="leading" secondItem="3cv-bV-dLa" secondAttribute="leading" constant="16" id="tipo-lbl-lead-c"/>
-                            <constraint firstItem="tipo-label" firstAttribute="top" secondItem="especie-scrollview" secondAttribute="bottom" constant="8" id="tipo-lbl-top-c"/>
-                            <constraint firstItem="tipo-label" firstAttribute="trailing" secondItem="3cv-bV-dLa" secondAttribute="trailing" constant="-16" id="tipo-lbl-trail-c"/>
-                            <constraint firstItem="tipo-scrollview" firstAttribute="leading" secondItem="3cv-bV-dLa" secondAttribute="leading" id="tipo-scroll-lead-c"/>
-                            <constraint firstItem="tipo-scrollview" firstAttribute="top" secondItem="tipo-label" secondAttribute="bottom" constant="8" id="tipo-scroll-top-c"/>
-                            <constraint firstItem="tipo-scrollview" firstAttribute="trailing" secondItem="3cv-bV-dLa" secondAttribute="trailing" id="tipo-scroll-trail-c"/>
+                            <constraint firstItem="wHx-8j-7V6" firstAttribute="top" secondItem="especie-label" secondAttribute="bottom" constant="20" id="v9I-ud-xX9"/>
+                            <constraint firstItem="lotes-tableview" firstAttribute="top" secondItem="wHx-8j-7V6" secondAttribute="bottom" constant="20" id="xpI-Wm-mGk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="crearLote" destination="lotes-add-btn" id="lwA-ZX-wEZ"/>
+                        <outlet property="especieButton" destination="wHx-8j-7V6" id="CHO-GK-l26"/>
+                        <outlet property="loteNombreTextField" destination="search-textfield" id="XVN-Ty-Fp6"/>
+                        <outlet property="tableView" destination="lotes-tableview" id="Ly7-4d-AtI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72f-bl-YlM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2416,7 +2279,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rB1-sE-2Lk">
-                                                                    <rect key="frame" x="250" y="12" width="41.333333333333343" height="36"/>
+                                                                    <rect key="frame" x="250.66666666666666" y="12" width="41.333333333333343" height="36"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -2465,20 +2328,20 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PesajeCell" id="EqJ-ur-SS0" customClass="PesajeTableViewCell" customModule="CattleFyApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="370" height="42.666667938232422"/>
+                                                        <rect key="frame" x="0.0" y="50" width="370" height="43.333332061767578"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EqJ-ur-SS0" id="A3d-up-jBl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="370" height="42.666667938232422"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="370" height="43.333332061767578"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0o-96-yPt">
-                                                                    <rect key="frame" x="212" y="11.000000000000002" width="42" height="20.666666666666671"/>
+                                                                    <rect key="frame" x="212" y="10.999999999999998" width="42" height="21.333333333333329"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJ7-SI-Ske">
-                                                                    <rect key="frame" x="308" y="11.000000000000002" width="42" height="20.666666666666671"/>
+                                                                    <rect key="frame" x="308" y="10.999999999999998" width="42" height="21.333333333333329"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -2534,14 +2397,14 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrasladoCell" id="Kw9-M8-3dn" customClass="TrasladoTableViewCell" customModule="CattleFyApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="370" height="43"/>
+                                                        <rect key="frame" x="0.0" y="50" width="370" height="43.666667938232422"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kw9-M8-3dn" id="JWC-xy-WMm">
-                                                            <rect key="frame" x="0.0" y="0.0" width="370" height="43"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="370" height="43.666667938232422"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="im6-uk-uUr">
-                                                                    <rect key="frame" x="308" y="11" width="42" height="21"/>
+                                                                    <rect key="frame" x="308" y="11.000000000000002" width="42" height="21.666666666666671"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -2553,13 +2416,13 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYb-MP-6Tm">
-                                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                                                    <rect key="frame" x="20" y="11.000000000000002" width="42" height="21.666666666666671"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CX7-sB-mmD">
-                                                                    <rect key="frame" x="207" y="11" width="42" height="21"/>
+                                                                    <rect key="frame" x="207" y="11.000000000000002" width="42" height="21.666666666666671"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -4273,7 +4136,7 @@
         <!--Registrar Produccion View Controller-->
         <scene sceneID="I93-ZD-gHx">
             <objects>
-                <viewController id="4gS-no-jB0" customClass="RegistrarProduccionViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrarProduccionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4gS-no-jB0" customClass="RegistrarProduccionViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Z7-ob-YYP">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5724,7 +5587,7 @@
         <!--Reportes View Controller-->
         <scene sceneID="Cej-Zm-tDT">
             <objects>
-                <viewController id="kxo-Ih-fg4" customClass="ReportesViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReportesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kxo-Ih-fg4" customClass="ReportesViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="icR-Um-Xht">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5736,7 +5599,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VDy-aK-YeK">
-                                <rect key="frame" x="10" y="177.99999999999997" width="382" height="346.33333333333326"/>
+                                <rect key="frame" x="10" y="133.99999999999997" width="382" height="346.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6F7-5e-pCo">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="120"/>
@@ -6036,7 +5899,7 @@
             <objects>
                 <viewController id="O9w-dj-gNy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fdu-9r-Eie">
-                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="802"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="mW1-Nx-lGb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -6052,14 +5915,14 @@
             <objects>
                 <viewController id="Xwd-z0-KlC" customClass="ReporteSanitarioViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sKS-c2-dXG">
-                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="802"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dSe-8I-Wdl">
-                                <rect key="frame" x="0.0" y="168" width="402" height="638"/>
+                                <rect key="frame" x="0.0" y="62" width="402" height="740"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1s-b9-mQG">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="638"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="740"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bmq-rO-PE6">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
@@ -6598,14 +6461,14 @@
             <objects>
                 <viewController id="PLy-u8-jKy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y17-6g-WNZ">
-                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="802"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ofH-WX-oj5">
-                                <rect key="frame" x="0.0" y="168" width="402" height="638"/>
+                                <rect key="frame" x="0.0" y="62" width="402" height="740"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LDW-Wm-qIi">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="638"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="740"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J6s-bd-Yef">
                                                 <rect key="frame" x="0.0" y="0.0" width="402" height="879"/>
@@ -6620,14 +6483,14 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSi-sr-Vtq">
-                                                                <rect key="frame" x="0.0" y="36.333333333333343" width="382" height="50"/>
+                                                                <rect key="frame" x="0.0" y="36.333333333333329" width="382" height="50"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="56l-lh-4Em"/>
                                                                 </constraints>
                                                             </pickerView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TFD-AN-LH2">
-                                                                <rect key="frame" x="0.0" y="102.33333333333331" width="382" height="80"/>
+                                                                <rect key="frame" x="0.0" y="102.33333333333334" width="382" height="80"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fw-j6-Vho">
                                                                         <rect key="frame" x="0.0" y="0.0" width="186" height="80"/>
@@ -6642,7 +6505,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="810-a6-gsb">
-                                                                                        <rect key="frame" x="0.0" y="20.333333333333368" width="186" height="59.666666666666657"/>
+                                                                                        <rect key="frame" x="0.0" y="20.333333333333311" width="186" height="59.666666666666657"/>
                                                                                     </datePicker>
                                                                                 </subviews>
                                                                             </stackView>
@@ -6674,7 +6537,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="iIZ-Uu-vTA">
-                                                                                        <rect key="frame" x="0.0" y="20.333333333333368" width="186" height="59.666666666666657"/>
+                                                                                        <rect key="frame" x="0.0" y="20.333333333333311" width="186" height="59.666666666666657"/>
                                                                                     </datePicker>
                                                                                 </subviews>
                                                                             </stackView>
@@ -6809,7 +6672,7 @@
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12313" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oK-U4-kEr">
-                                                                                                <rect key="frame" x="0.0" y="44.999999999999943" width="179" height="45"/>
+                                                                                                <rect key="frame" x="0.0" y="45" width="179" height="45"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                                 <nil key="textColor"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -6843,7 +6706,7 @@
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12313" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pY1-h6-iSm">
-                                                                                                <rect key="frame" x="0.0" y="44.999999999999943" width="198" height="45"/>
+                                                                                                <rect key="frame" x="0.0" y="45" width="198" height="45"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                                 <nil key="textColor"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -6879,7 +6742,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UHE-pS-zV5">
-                                                                <rect key="frame" x="0.0" y="440.66666666666663" width="382" height="388.33333333333337"/>
+                                                                <rect key="frame" x="0.0" y="440.66666666666674" width="382" height="388.33333333333326"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distribución de Costos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7S-mQ-fQO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
@@ -6888,7 +6751,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nuu-US-SLp">
-                                                                        <rect key="frame" x="0.0" y="34" width="382" height="354.33333333333331"/>
+                                                                        <rect key="frame" x="0.0" y="33.999999999999943" width="382" height="354.33333333333331"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     </view>
                                                                 </subviews>
@@ -7362,70 +7225,70 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="underPageBackgroundColor">
             <color red="0.70980392156862748" green="0.71764705882352942" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

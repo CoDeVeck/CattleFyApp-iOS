@@ -44,6 +44,7 @@ class RegistroSanitarioMasivoPt2ViewController: UIViewController {
         dosisTextField.addTarget(self, action: #selector(actualizarCostoTotal), for: .editingChanged)
         animalesTextField.addTarget(self, action: #selector(actualizarCostoTotal), for: .editingChanged)
         costoUnitTextField.addTarget(self, action: #selector(actualizarCostoTotal), for: .editingChanged)
+        
         actualizarCostoTotal()
     }
     override func viewWillAppear(_ animated: Bool) {

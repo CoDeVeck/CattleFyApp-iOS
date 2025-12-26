@@ -32,6 +32,11 @@ class RegistroSanitarioAnimalViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     private func configurarVista() {
         imagenAnimal.layer.cornerRadius = 8
         imagenAnimal.clipsToBounds = true
