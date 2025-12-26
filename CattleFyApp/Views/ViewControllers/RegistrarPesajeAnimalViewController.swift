@@ -10,15 +10,40 @@ import UIKit
 class RegistrarPesajeAnimalViewController: UIViewController {
     
     @IBOutlet weak var codigoQRAnimalLabel: UILabel!
+<<<<<<< HEAD
     @IBOutlet weak var especieLabel: UILabel!
     @IBOutlet weak var edadEnDiasLabel: UILabel!
     @IBOutlet weak var nombreLoteLabel: UILabel!
     @IBOutlet weak var pesoKgLabel: UILabel!
+=======
+    
+    
+    @IBOutlet weak var especieLabel: UILabel!
+    
+    
+    @IBOutlet weak var edadEnDiasLabel: UILabel!
+    
+    
+    @IBOutlet weak var nombreLoteLabel: UILabel!
+    
+    
+    
+    
+    
+    @IBOutlet weak var pesoKgLabel: UILabel!
+    
+    
+>>>>>>> c5222b3 (Subindo ultimos cambios)
     @IBOutlet weak var codifoQRTextField: UITextField!
     
     private let animalesService = AnimalesService()
     private var registro = RegistroPesoAnimalData()
     
+<<<<<<< HEAD
+=======
+    var codigoQR: String?
+    
+>>>>>>> c5222b3 (Subindo ultimos cambios)
     override func viewDidLoad() {
         super.viewDidLoad()
         limpiarLabels()
@@ -106,7 +131,11 @@ class RegistrarPesajeAnimalViewController: UIViewController {
             return
         }
         
+<<<<<<< HEAD
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+=======
+        let storyboard = UIStoryboard(name: "FarmFlow", bundle: nil)
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         guard let siguienteVC = storyboard.instantiateViewController(
             withIdentifier: "RegistrarPesajeAnimal2ViewController"
         ) as? RegistrarPesajeAnimal2ViewController else {
@@ -125,7 +154,11 @@ class RegistrarPesajeAnimalViewController: UIViewController {
         // Mostrar los datos en los labels
         codigoQRAnimalLabel.text = animal.codigoQr ?? "N/A"
         especieLabel.text = animal.especie ?? "N/A"
+<<<<<<< HEAD
         var edadDias = String(animal.edadEnDias ?? 0)
+=======
+        let edadDias = String(animal.edadEnDias ?? 0)
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         edadEnDiasLabel.text = "\(edadDias) días"
         nombreLoteLabel.text = animal.lote ?? "N/A"
         

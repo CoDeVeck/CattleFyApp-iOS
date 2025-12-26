@@ -27,12 +27,20 @@ class DetalleAplicacionesViewModel {
     
     init(granjaId: Int) {
         self.granjaId = granjaId
+<<<<<<< HEAD
         print("✅ ViewModel inicializado con granjaId: \(granjaId)")
+=======
+        print("ViewModel inicializado con granjaId: \(granjaId)")
+>>>>>>> c5222b3 (Subindo ultimos cambios)
     }
     
     // MARK: - Lotes
     var numberOfLotes: Int {
+<<<<<<< HEAD
         print("✅ ViewModel inicializado con granjaId: \(granjaId)")
+=======
+        print("ViewModel inicializado con granjaId: \(granjaId)")
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         return lotes.count + 1
     }
     

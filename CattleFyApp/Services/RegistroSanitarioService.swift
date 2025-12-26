@@ -11,7 +11,11 @@ class RegistroSanitarioService {
     
     static let shared = RegistroSanitarioService()
     
+<<<<<<< HEAD
     private init() {}
+=======
+    public init() {}
+>>>>>>> c5222b3 (Subindo ultimos cambios)
     
     // MARK: - Obtener token
     private func getAuthToken() -> String? {

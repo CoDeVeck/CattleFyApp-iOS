@@ -26,7 +26,12 @@ class RegistrarAlimentacionLoteViewController: UIViewController {
     var lotes: [LoteSimpleDTO] = []
     var loteSeleccionado: LoteSimpleDTO?
     var fechaActual = Date()
+<<<<<<< HEAD
     
+=======
+    var lotePreseleccionado: LoteSimpleDTO?
+
+>>>>>>> c5222b3 (Subindo ultimos cambios)
     override func viewDidLoad() {
         super.viewDidLoad()
         configurarUI()
@@ -65,23 +70,44 @@ class RegistrarAlimentacionLoteViewController: UIViewController {
     
     // MARK: - Cargar lotes
     func cargarLotes() {
+<<<<<<< HEAD
         
         LoteService.shared.obtenerLotesSimples { [weak self] result in
             DispatchQueue.main.async {
+=======
+        LoteService.shared.obtenerLotesSimples { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                 
                 switch result {
                 case .success(let lotes):
                     print("Lotes cargados: \(lotes.count)")
+<<<<<<< HEAD
                     self?.lotes = lotes
                     self?.lotesPicker.reloadAllComponents()
                     
                     if let primero = lotes.first {
                         self?.loteSeleccionado = primero
+=======
+                    self.lotes = lotes
+                    self.lotesPicker.reloadAllComponents()
+                    
+                    // 👇 AHORA SÍ FUNCIONA
+                    if let lotePreseleccionado = self.lotePreseleccionado,
+                       let index = lotes.firstIndex(where: { $0.loteId == lotePreseleccionado.loteId }) {
+                        self.lotesPicker.selectRow(index, inComponent: 0, animated: false)
+                        self.loteSeleccionado = lotes[index]
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                     }
                     
                 case .failure(let error):
                     print("Error cargando lotes: \(error.localizedDescription)")
+<<<<<<< HEAD
                     self?.mostrarAlerta(mensaje: "Error al cargar lotes: \(error.localizedDescription)")
+=======
+                    self.mostrarAlerta(mensaje: "Error al cargar lotes: \(error.localizedDescription)")
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                 }
             }
         }

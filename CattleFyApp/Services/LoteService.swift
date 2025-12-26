@@ -15,6 +15,75 @@ class LoteService {
     private func getAuthToken() -> String? {
         return UserDefaults.standard.string(forKey: "authToken")
     }
+<<<<<<< HEAD
+=======
+    
+    func obtenerLotePorQR(
+        qrLote: String,
+        completion: @escaping (Result<LoteResponse, Error>) -> Void
+    ) {
+        guard let token = getAuthToken() else {
+            completion(.failure(NSError(
+                domain: "",
+                code: 401,
+                userInfo: [NSLocalizedDescriptionKey: "No hay sesión activa"]
+            )))
+            return
+        }
+        guard let url = URL(string: "\(Constants.baseURL)lotes/lote/\(qrLote)") else {
+            completion(.failure(NSError(
+                domain: "",
+                code: -1,
+                userInfo: [NSLocalizedDescriptionKey: "URL inválida"]
+            )))
+            return
+        }
+        print("🌐 URL completa: \(url.absoluteString)")
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        print("🌐 Obteniendo lote por QR: \(qrLote)")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let data = data, let httpResponse = response as? HTTPURLResponse else {
+                completion(.failure(NSError(
+                    domain: "",
+                    code: -1,
+                    userInfo: [NSLocalizedDescriptionKey: "Sin respuesta"]
+                )))
+                return
+            }
+            
+            print("📊 Status: \(httpResponse.statusCode)")
+            
+            guard httpResponse.statusCode == 200 else {
+                completion(.failure(NSError(
+                    domain: "",
+                    code: httpResponse.statusCode,
+                    userInfo: [NSLocalizedDescriptionKey: "Error al obtener lote"]
+                )))
+                return
+            }
+            
+            do {
+                let lote = try JSONDecoder().decode(LoteResponse.self, from: data)
+                print("✅ Lote obtenido: \(lote.nombre)")
+                completion(.success(lote))
+            } catch {
+                print("❌ Decode error: \(error)")
+                completion(.failure(error))
+            }
+        }.resume()
+    }
+    
+>>>>>>> c5222b3 (Subindo ultimos cambios)
     func obtenerDetalleLote(
             loteId: Int,
             completion: @escaping (Result<ResultadoResponse<LoteDetalleResponse>, Error>) -> Void

@@ -24,8 +24,13 @@
                                         <rect key="frame" x="11" y="24" width="380" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal #ANI-000001 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0n-Nb-fWg">
+<<<<<<< HEAD
                                                 <rect key="frame" x="74" y="17" width="298" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
+=======
+                                                <rect key="frame" x="74" y="23" width="298" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -223,8 +228,13 @@
                                         <rect key="frame" x="11" y="19" width="380" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lote #LOT-000001 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hL0-20-kXb">
+<<<<<<< HEAD
                                                 <rect key="frame" x="86" y="17" width="286" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
+=======
+                                                <rect key="frame" x="86" y="23" width="286" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -418,6 +428,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+<<<<<<< HEAD
+=======
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="R3v-md-l3H">
+                                <rect key="frame" x="16" y="669" width="361" height="34.333333333333258"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="qrcode" catalog="system" imagePadding="0.0">
+                                    <color key="baseBackgroundColor" red="0.49448216239999998" green="0.70457473910000001" blue="0.48341781659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="escanearQRButton:" destination="JZI-Uc-Cnp" eventType="touchUpInside" id="KfF-xS-4Ba"/>
+                                </connections>
+                            </button>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="j1H-To-41D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -427,6 +451,10 @@
                             <constraint firstItem="j1H-To-41D" firstAttribute="trailing" secondItem="UgU-BF-Udt" secondAttribute="trailing" constant="30" id="79S-Ss-X32"/>
                             <constraint firstItem="UgU-BF-Udt" firstAttribute="centerY" secondItem="zbk-3d-dUy" secondAttribute="centerY" id="Lo3-t0-ar1"/>
                             <constraint firstItem="j1H-To-41D" firstAttribute="trailing" secondItem="M9C-yq-yF5" secondAttribute="trailing" constant="50" id="OFq-iw-Q9v"/>
+<<<<<<< HEAD
+=======
+                            <constraint firstItem="R3v-md-l3H" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QGc-v4-GG7" secondAttribute="bottom" constant="60" id="RSx-SH-cqw"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                             <constraint firstItem="QGc-v4-GG7" firstAttribute="leading" secondItem="j1H-To-41D" secondAttribute="leading" constant="50" id="SZq-0v-NQx"/>
                             <constraint firstItem="UgU-BF-Udt" firstAttribute="leading" secondItem="j1H-To-41D" secondAttribute="leading" constant="30" id="brF-IG-DXh"/>
                             <constraint firstItem="QGc-v4-GG7" firstAttribute="top" secondItem="UgU-BF-Udt" secondAttribute="bottom" constant="30" id="evm-N1-dol"/>
@@ -434,6 +462,7 @@
                             <constraint firstItem="j1H-To-41D" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QGc-v4-GG7" secondAttribute="bottom" constant="150" id="ncg-GC-KL1"/>
                         </constraints>
                     </view>
+<<<<<<< HEAD
                     <navigationItem key="navigationItem" title="Ingreso Manual" id="LCh-KA-68P">
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="jcn-qV-hmJ">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="9Js-07-Wp5">
@@ -450,6 +479,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+=======
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Ingreso Manual" id="LCh-KA-68P"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                     <connections>
                         <outlet property="buscadorTextField" destination="UgU-BF-Udt" id="3Vv-Tz-rWZ"/>
                     </connections>
@@ -804,6 +838,12 @@
                                                         <buttonConfiguration key="configuration" style="filled">
                                                             <color key="baseBackgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                         </buttonConfiguration>
+<<<<<<< HEAD
+=======
+                                                        <connections>
+                                                            <action selector="btnNavegarAVentaLotePressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ikX-FE-I6E"/>
+                                                        </connections>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Ventas" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inicio-ven2-label">
                                                         <rect key="frame" x="8" y="51" width="90" height="18"/>
@@ -1805,7 +1845,11 @@
         <!--Listado Animales De Lote View Controller-->
         <scene sceneID="4uX-5N-FX5">
             <objects>
+<<<<<<< HEAD
                 <viewController id="q8S-zU-FfO" customClass="ListadoAnimalesDeLoteViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+=======
+                <viewController storyboardIdentifier="ListadoAnimalesDeLoteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q8S-zU-FfO" customClass="ListadoAnimalesDeLoteViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                     <view key="view" contentMode="scaleToFill" id="xGS-np-GYM">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1818,7 +1862,11 @@
                                 <rect key="frame" x="0.0" y="227" width="402" height="579"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
+<<<<<<< HEAD
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnimalCell" rowHeight="80" id="cell-animal-001">
+=======
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celdaAnimal" rowHeight="80" id="cell-animal-001" customClass="AnimalTableViewCell" customModule="CattleFyApp" customModuleProvider="target">
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                         <rect key="frame" x="0.0" y="50" width="402" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cell-animal-001" id="content-cell-001">
@@ -1868,6 +1916,7 @@
                                                 <constraint firstItem="lbl-estado-001" firstAttribute="leading" secondItem="lbl-info-001" secondAttribute="trailing" constant="12" id="lbl-info-trailing-001"/>
                                             </constraints>
                                         </tableViewCellContentView>
+<<<<<<< HEAD
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1905,6 +1954,17 @@
                                     <constraint firstItem="lbl-empty-subtitle-001" firstAttribute="centerX" secondItem="view-empty-001" secondAttribute="centerX" id="umu-BX-FFQ"/>
                                 </constraints>
                             </view>
+=======
+                                        <connections>
+                                            <outlet property="codigoQRLabel" destination="lbl-codigo-001" id="zdr-OT-IgP"/>
+                                            <outlet property="estadoLabel" destination="lbl-estado-001" id="caQ-cO-hPw"/>
+                                            <outlet property="fotoImageView" destination="img-animal-001" id="34C-SN-oSa"/>
+                                            <outlet property="pesoDiasLabel" destination="lbl-info-001" id="mHM-aq-qQJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-add-001">
                                 <rect key="frame" x="330" y="730" width="56" height="56"/>
                                 <color key="backgroundColor" red="0.29803921568627451" green="0.5490196078431373" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1922,11 +1982,18 @@
                                         <integer key="value" value="28"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+<<<<<<< HEAD
+=======
+                                <connections>
+                                    <action selector="agregarNuevoAnimalButton:" destination="q8S-zU-FfO" eventType="touchUpInside" id="D3r-UO-ePM"/>
+                                </connections>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6g7-Kt-d3r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+<<<<<<< HEAD
                             <constraint firstItem="table-animales-001" firstAttribute="top" secondItem="view-empty-001" secondAttribute="top" id="7tQ-7h-47d"/>
                             <constraint firstItem="table-animales-001" firstAttribute="top" secondItem="search-bar-001" secondAttribute="bottom" constant="47" id="XPK-VW-u28"/>
                             <constraint firstItem="6g7-Kt-d3r" firstAttribute="bottom" secondItem="btn-add-001" secondAttribute="bottom" constant="20" id="btn-add-bottom-001"/>
@@ -1934,6 +2001,11 @@
                             <constraint firstItem="view-empty-001" firstAttribute="bottom" secondItem="6g7-Kt-d3r" secondAttribute="bottom" id="empty-bottom-001"/>
                             <constraint firstItem="view-empty-001" firstAttribute="leading" secondItem="xGS-np-GYM" secondAttribute="leading" id="empty-leading-001"/>
                             <constraint firstAttribute="trailing" secondItem="view-empty-001" secondAttribute="trailing" id="empty-trailing-001"/>
+=======
+                            <constraint firstItem="table-animales-001" firstAttribute="top" secondItem="search-bar-001" secondAttribute="bottom" constant="47" id="XPK-VW-u28"/>
+                            <constraint firstItem="6g7-Kt-d3r" firstAttribute="bottom" secondItem="btn-add-001" secondAttribute="bottom" constant="20" id="btn-add-bottom-001"/>
+                            <constraint firstItem="6g7-Kt-d3r" firstAttribute="trailing" secondItem="btn-add-001" secondAttribute="trailing" constant="16" id="btn-add-trailing-001"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                             <constraint firstItem="search-bar-001" firstAttribute="leading" secondItem="6g7-Kt-d3r" secondAttribute="leading" constant="16" id="search-leading-001"/>
                             <constraint firstItem="search-bar-001" firstAttribute="top" secondItem="6g7-Kt-d3r" secondAttribute="top" id="search-top-001"/>
                             <constraint firstItem="6g7-Kt-d3r" firstAttribute="trailing" secondItem="search-bar-001" secondAttribute="trailing" constant="16" id="search-trailing-001"/>
@@ -1942,6 +2014,13 @@
                             <constraint firstAttribute="trailing" secondItem="table-animales-001" secondAttribute="trailing" id="table-trailing-001"/>
                         </constraints>
                     </view>
+<<<<<<< HEAD
+=======
+                    <connections>
+                        <outlet property="buscadorCodigoQRAnimal" destination="search-bar-001" id="ny4-y0-TPu"/>
+                        <outlet property="tablaAnimales" destination="table-animales-001" id="Krm-Cy-FRM"/>
+                    </connections>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RoV-Ff-wcR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2406,6 +2485,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+<<<<<<< HEAD
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tbl-padres-list">
                                                 <rect key="frame" x="16" y="653" width="370" height="150"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2415,10 +2495,86 @@
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ganancia de Peso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-ganancia-title">
                                                 <rect key="frame" x="16" y="820" width="370" height="24"/>
+=======
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cCh-Qd-TNF">
+                                                <rect key="frame" x="16" y="670" width="370" height="125"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SanitarioCell" rowHeight="60" id="4nM-cv-elo" customClass="SanitarioTableViewCell" customModule="CattleFyApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="50" width="370" height="60"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4nM-cv-elo" id="idD-52-0wo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="370" height="60"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZP-Qe-1w6">
+                                                                    <rect key="frame" x="300" y="11" width="62" height="35"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tV-Pc-ein">
+                                                                    <rect key="frame" x="21.000000000000004" y="14" width="47.333333333333343" height="32"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ime-Lo-XnT">
+                                                                    <rect key="frame" x="76.333333333333329" y="15" width="42.666666666666671" height="31"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxC-rG-qQA">
+                                                                    <rect key="frame" x="201.33333333333334" y="20" width="41.333333333333343" height="20.333333333333329"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rB1-sE-2Lk">
+                                                                    <rect key="frame" x="250.66666666666666" y="12" width="41.333333333333343" height="36"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottomMargin" secondItem="5tV-Pc-ein" secondAttribute="bottom" constant="3" id="8Pn-aD-NNX"/>
+                                                                <constraint firstItem="lZP-Qe-1w6" firstAttribute="top" secondItem="idD-52-0wo" secondAttribute="topMargin" id="CMz-Ma-QmH"/>
+                                                                <constraint firstItem="lZP-Qe-1w6" firstAttribute="leading" secondItem="rB1-sE-2Lk" secondAttribute="trailing" constant="8" symbolic="YES" id="KAl-Dc-fLc"/>
+                                                                <constraint firstItem="rB1-sE-2Lk" firstAttribute="leading" secondItem="MxC-rG-qQA" secondAttribute="trailing" constant="8" symbolic="YES" id="MUN-Jo-vEP"/>
+                                                                <constraint firstItem="MxC-rG-qQA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ime-Lo-XnT" secondAttribute="trailing" constant="8" symbolic="YES" id="Pwm-e0-Xg1"/>
+                                                                <constraint firstItem="rB1-sE-2Lk" firstAttribute="top" secondItem="idD-52-0wo" secondAttribute="topMargin" constant="1" id="TLU-By-5AL"/>
+                                                                <constraint firstAttribute="trailing" secondItem="rB1-sE-2Lk" secondAttribute="trailing" constant="78" id="WHX-8p-pAZ"/>
+                                                                <constraint firstAttribute="bottomMargin" secondItem="Ime-Lo-XnT" secondAttribute="bottom" constant="3" id="ZmH-zI-Ndq"/>
+                                                                <constraint firstItem="5tV-Pc-ein" firstAttribute="top" secondItem="idD-52-0wo" secondAttribute="topMargin" constant="3" id="bIm-aY-PGO"/>
+                                                                <constraint firstItem="Ime-Lo-XnT" firstAttribute="leading" secondItem="5tV-Pc-ein" secondAttribute="trailing" constant="8" id="bcq-u3-Yrr"/>
+                                                                <constraint firstItem="5tV-Pc-ein" firstAttribute="leading" secondItem="idD-52-0wo" secondAttribute="leadingMargin" constant="1" id="cfW-in-VeL"/>
+                                                                <constraint firstItem="lZP-Qe-1w6" firstAttribute="baseline" secondItem="Ime-Lo-XnT" secondAttribute="baseline" id="eH4-Hp-VYJ"/>
+                                                                <constraint firstItem="rB1-sE-2Lk" firstAttribute="centerY" secondItem="5tV-Pc-ein" secondAttribute="centerY" id="eLd-p4-QSP"/>
+                                                                <constraint firstItem="Ime-Lo-XnT" firstAttribute="top" secondItem="idD-52-0wo" secondAttribute="topMargin" constant="4" id="fmI-Qv-5qy"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="lZP-Qe-1w6" secondAttribute="trailing" constant="-12" id="g9l-TJ-xoa"/>
+                                                                <constraint firstItem="rB1-sE-2Lk" firstAttribute="centerY" secondItem="MxC-rG-qQA" secondAttribute="centerY" id="qUJ-uA-PSz"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="dosisLabel" destination="MxC-rG-qQA" id="o5Q-EL-Uwg"/>
+                                                            <outlet property="fechaLabel" destination="lZP-Qe-1w6" id="Lai-kC-en9"/>
+                                                            <outlet property="nombreTratLabel" destination="5tV-Pc-ein" id="dlE-f8-XZk"/>
+                                                            <outlet property="precioLabel" destination="rB1-sE-2Lk" id="8Kf-kA-lTP"/>
+                                                            <outlet property="tipoProtocoloLabel" destination="Ime-Lo-XnT" id="4BB-54-ert"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ganancia de Peso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-ganancia-title">
+                                                <rect key="frame" x="16" y="817" width="370" height="24"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+<<<<<<< HEAD
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tbl-ganancia-list">
                                                 <rect key="frame" x="16" y="852" width="370" height="150"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2428,16 +2584,149 @@
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movilidad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-tratamientos-title">
                                                 <rect key="frame" x="16" y="1019" width="370" height="24"/>
+=======
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xat-eV-YAR">
+                                                <rect key="frame" x="16" y="866" width="370" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="yNX-kW-vYU"/>
+                                                </constraints>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PesajeCell" id="EqJ-ur-SS0" customClass="PesajeTableViewCell" customModule="CattleFyApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="50" width="370" height="43"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EqJ-ur-SS0" id="A3d-up-jBl">
+                                                            <rect key="frame" x="0.0" y="0.0" width="370" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0o-96-yPt">
+                                                                    <rect key="frame" x="212" y="11" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJ7-SI-Ske">
+                                                                    <rect key="frame" x="308" y="11" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xe-98-44G">
+                                                                    <rect key="frame" x="20" y="10" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGD-vw-2hR">
+                                                                    <rect key="frame" x="113" y="9" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="3xe-98-44G" firstAttribute="top" secondItem="A3d-up-jBl" secondAttribute="topMargin" constant="-1" id="BSp-pf-7yf"/>
+                                                                <constraint firstItem="v0o-96-yPt" firstAttribute="baseline" secondItem="KJ7-SI-Ske" secondAttribute="baseline" id="Bhm-2k-Pxm"/>
+                                                                <constraint firstItem="3xe-98-44G" firstAttribute="leading" secondItem="A3d-up-jBl" secondAttribute="leading" constant="20" id="KQn-3U-Smx"/>
+                                                                <constraint firstItem="v0o-96-yPt" firstAttribute="leading" secondItem="MGD-vw-2hR" secondAttribute="trailing" constant="57" id="LFc-e1-8iP"/>
+                                                                <constraint firstItem="MGD-vw-2hR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3xe-98-44G" secondAttribute="trailing" constant="8" symbolic="YES" id="ggL-zz-8Pl"/>
+                                                                <constraint firstItem="MGD-vw-2hR" firstAttribute="leading" secondItem="A3d-up-jBl" secondAttribute="leading" constant="113" id="hrJ-TX-dVR"/>
+                                                                <constraint firstItem="v0o-96-yPt" firstAttribute="centerY" secondItem="A3d-up-jBl" secondAttribute="centerY" id="iYg-gU-W9k"/>
+                                                                <constraint firstItem="MGD-vw-2hR" firstAttribute="top" secondItem="A3d-up-jBl" secondAttribute="topMargin" constant="-2" id="mCo-0h-AaB"/>
+                                                                <constraint firstItem="KJ7-SI-Ske" firstAttribute="trailing" secondItem="A3d-up-jBl" secondAttribute="trailingMargin" id="nHG-4N-VYA"/>
+                                                                <constraint firstItem="KJ7-SI-Ske" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="v0o-96-yPt" secondAttribute="trailing" constant="8" symbolic="YES" id="qQW-Oy-4nr"/>
+                                                                <constraint firstItem="v0o-96-yPt" firstAttribute="firstBaseline" secondItem="KJ7-SI-Ske" secondAttribute="firstBaseline" id="w6f-dO-Wl4"/>
+                                                                <constraint firstItem="v0o-96-yPt" firstAttribute="top" secondItem="A3d-up-jBl" secondAttribute="topMargin" id="zqz-fe-R5z"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="dietaLabel" destination="MGD-vw-2hR" id="kLo-XY-qWP"/>
+                                                            <outlet property="fechaLabel" destination="KJ7-SI-Ske" id="Jdr-Ed-alE"/>
+                                                            <outlet property="gananciaLabel" destination="v0o-96-yPt" id="ykB-qC-tNg"/>
+                                                            <outlet property="pesoLabel" destination="3xe-98-44G" id="HBh-sO-hmW"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movilidad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-tratamientos-title">
+                                                <rect key="frame" x="16" y="1016" width="370" height="24"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+<<<<<<< HEAD
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tbl-tratamientos-list">
                                                 <rect key="frame" x="16" y="1051" width="370" height="150"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="tbl-tratamientos-h"/>
                                                 </constraints>
+=======
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ReS-kc-KpB">
+                                                <rect key="frame" x="16" y="1065" width="370" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="MzV-8X-92B"/>
+                                                </constraints>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrasladoCell" id="Kw9-M8-3dn" customClass="TrasladoTableViewCell" customModule="CattleFyApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="50" width="370" height="43.333332061767578"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kw9-M8-3dn" id="JWC-xy-WMm">
+                                                            <rect key="frame" x="0.0" y="0.0" width="370" height="43.333332061767578"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="im6-uk-uUr">
+                                                                    <rect key="frame" x="308" y="10.999999999999998" width="42" height="21.333333333333329"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNx-QP-zwP">
+                                                                    <rect key="frame" x="117" y="10" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYb-MP-6Tm">
+                                                                    <rect key="frame" x="20" y="10.999999999999998" width="42" height="21.333333333333329"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CX7-sB-mmD">
+                                                                    <rect key="frame" x="207" y="10.999999999999998" width="42" height="21.333333333333329"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="EYb-MP-6Tm" firstAttribute="baseline" secondItem="im6-uk-uUr" secondAttribute="baseline" id="3op-VV-N3m"/>
+                                                                <constraint firstItem="EYb-MP-6Tm" firstAttribute="leading" secondItem="JWC-xy-WMm" secondAttribute="leading" constant="20" id="Drh-0c-VNa"/>
+                                                                <constraint firstItem="rNx-QP-zwP" firstAttribute="top" secondItem="JWC-xy-WMm" secondAttribute="topMargin" constant="-1" id="HPW-tx-90g"/>
+                                                                <constraint firstItem="EYb-MP-6Tm" firstAttribute="firstBaseline" secondItem="im6-uk-uUr" secondAttribute="firstBaseline" id="Ho3-v0-wKj"/>
+                                                                <constraint firstItem="EYb-MP-6Tm" firstAttribute="top" secondItem="JWC-xy-WMm" secondAttribute="topMargin" id="R5m-4a-OkO"/>
+                                                                <constraint firstItem="EYb-MP-6Tm" firstAttribute="firstBaseline" secondItem="CX7-sB-mmD" secondAttribute="firstBaseline" id="S4n-qD-iN9"/>
+                                                                <constraint firstItem="CX7-sB-mmD" firstAttribute="leading" secondItem="rNx-QP-zwP" secondAttribute="trailing" constant="48" id="Z3V-gr-CvB"/>
+                                                                <constraint firstItem="rNx-QP-zwP" firstAttribute="leading" secondItem="JWC-xy-WMm" secondAttribute="leading" constant="117" id="d5y-wU-fgo"/>
+                                                                <constraint firstItem="im6-uk-uUr" firstAttribute="trailing" secondItem="JWC-xy-WMm" secondAttribute="trailingMargin" id="glc-mc-aBz"/>
+                                                                <constraint firstItem="EYb-MP-6Tm" firstAttribute="centerY" secondItem="JWC-xy-WMm" secondAttribute="centerY" id="mwa-qj-VKk"/>
+                                                                <constraint firstItem="rNx-QP-zwP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EYb-MP-6Tm" secondAttribute="trailing" constant="8" symbolic="YES" id="pSi-HN-hPE"/>
+                                                                <constraint firstItem="im6-uk-uUr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CX7-sB-mmD" secondAttribute="trailing" constant="8" symbolic="YES" id="tCd-6V-l7I"/>
+                                                                <constraint firstItem="EYb-MP-6Tm" firstAttribute="baseline" secondItem="CX7-sB-mmD" secondAttribute="baseline" id="wPX-i4-lVq"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="destinoLabel" destination="CX7-sB-mmD" id="K7B-6y-hvL"/>
+                                                            <outlet property="fechaLabel" destination="im6-uk-uUr" id="KmB-J7-mfV"/>
+                                                            <outlet property="motivoLabel" destination="EYb-MP-6Tm" id="W2e-Zu-rpz"/>
+                                                            <outlet property="origenLabel" destination="rNx-QP-zwP" id="dbG-j5-4o5"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bottom-actions">
                                                 <rect key="frame" x="16" y="1218" width="370" height="170"/>
@@ -2464,7 +2753,11 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
+<<<<<<< HEAD
                                                             <segue destination="5iC-Td-oPR" kind="show" id="pkd-JV-SRO"/>
+=======
+                                                            <action selector="registrarPesoAnimalButton:" destination="7cM-Oz-brk" eventType="touchUpInside" id="RPa-zm-xuX"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-aplicar-tratamiento">
@@ -2488,6 +2781,12 @@
                                                                 <integer key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+<<<<<<< HEAD
+=======
+                                                        <connections>
+                                                            <action selector="registrarTratamientoButton:" destination="7cM-Oz-brk" eventType="touchUpInside" id="XCU-Yw-Pg3"/>
+                                                        </connections>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-trasladar">
                                                         <rect key="frame" x="0.0" y="68" width="179.33333333333334" height="56"/>
@@ -2511,7 +2810,11 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
+<<<<<<< HEAD
                                                             <segue destination="NFW-RP-muF" kind="show" id="jBN-le-Ue0"/>
+=======
+                                                            <action selector="registrarTrasladoButton:" destination="7cM-Oz-brk" eventType="touchUpInside" id="rLj-4v-xeW"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-muerte">
@@ -2535,6 +2838,12 @@
                                                                 <integer key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+<<<<<<< HEAD
+=======
+                                                        <connections>
+                                                            <action selector="registrarMuerteButton:" destination="7cM-Oz-brk" eventType="touchUpInside" id="bxq-u1-LbR"/>
+                                                        </connections>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2557,9 +2866,22 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+<<<<<<< HEAD
                                             <constraint firstAttribute="bottom" secondItem="bottom-actions" secondAttribute="bottom" constant="12" id="actions-bottom"/>
                                             <constraint firstItem="bottom-actions" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" constant="16" id="actions-lead"/>
                                             <constraint firstItem="bottom-actions" firstAttribute="top" secondItem="tbl-tratamientos-list" secondAttribute="bottom" constant="17" id="actions-top"/>
+=======
+                                            <constraint firstItem="xat-eV-YAR" firstAttribute="top" secondItem="lbl-ganancia-title" secondAttribute="bottom" constant="25" id="0iR-mH-CQW"/>
+                                            <constraint firstAttribute="trailing" secondItem="ReS-kc-KpB" secondAttribute="trailing" constant="16" id="5Bf-8m-PCn"/>
+                                            <constraint firstItem="bottom-actions" firstAttribute="top" secondItem="ReS-kc-KpB" secondAttribute="bottom" constant="25" id="5sk-62-kvi"/>
+                                            <constraint firstItem="cCh-Qd-TNF" firstAttribute="top" secondItem="lbl-padres-title" secondAttribute="bottom" constant="25" id="8Mp-XK-PEO"/>
+                                            <constraint firstItem="ReS-kc-KpB" firstAttribute="top" secondItem="lbl-tratamientos-title" secondAttribute="bottom" constant="25" id="GiV-23-009"/>
+                                            <constraint firstItem="lbl-tratamientos-title" firstAttribute="top" secondItem="xat-eV-YAR" secondAttribute="bottom" constant="22" id="N1A-9h-qtg"/>
+                                            <constraint firstAttribute="trailing" secondItem="xat-eV-YAR" secondAttribute="trailing" constant="16" id="OgJ-Vj-zZA"/>
+                                            <constraint firstItem="xat-eV-YAR" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" constant="16" id="Zta-gT-Nbz"/>
+                                            <constraint firstAttribute="bottom" secondItem="bottom-actions" secondAttribute="bottom" constant="12" id="actions-bottom"/>
+                                            <constraint firstItem="bottom-actions" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" constant="16" id="actions-lead"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                             <constraint firstItem="bottom-actions" firstAttribute="trailing" secondItem="content-view" secondAttribute="trailing" constant="-16" id="actions-trail"/>
                                             <constraint firstItem="animal-id-lbl" firstAttribute="leading" secondItem="animal-img" secondAttribute="trailing" constant="16" id="animal-id-lead"/>
                                             <constraint firstItem="animal-id-lbl" firstAttribute="top" secondItem="content-view" secondAttribute="top" constant="44" id="animal-id-top"/>
@@ -2573,13 +2895,21 @@
                                             <constraint firstAttribute="trailing" secondItem="info-cards-container" secondAttribute="trailing" constant="16" id="cards-trail"/>
                                             <constraint firstAttribute="height" constant="1400" id="content-view-h"/>
                                             <constraint firstItem="lbl-ganancia-title" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" constant="16" id="ganancia-title-lead"/>
+<<<<<<< HEAD
                                             <constraint firstItem="lbl-ganancia-title" firstAttribute="top" secondItem="tbl-padres-list" secondAttribute="bottom" constant="17" id="ganancia-title-top"/>
                                             <constraint firstItem="lbl-ganancia-title" firstAttribute="trailing" secondItem="content-view" secondAttribute="trailing" constant="-16" id="ganancia-title-trail"/>
+=======
+                                            <constraint firstItem="lbl-ganancia-title" firstAttribute="trailing" secondItem="content-view" secondAttribute="trailing" constant="-16" id="ganancia-title-trail"/>
+                                            <constraint firstItem="cCh-Qd-TNF" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" constant="16" id="kHP-H8-lzm"/>
+                                            <constraint firstAttribute="trailing" secondItem="cCh-Qd-TNF" secondAttribute="trailing" constant="16" id="kwj-t8-d1H"/>
+                                            <constraint firstItem="ReS-kc-KpB" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" constant="16" id="odo-B6-IH4"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                             <constraint firstItem="lbl-padres-title" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" constant="16" id="padres-title-lead"/>
                                             <constraint firstItem="lbl-padres-title" firstAttribute="top" secondItem="info-cards-container" secondAttribute="bottom" constant="17" id="padres-title-top"/>
                                             <constraint firstItem="lbl-padres-title" firstAttribute="trailing" secondItem="content-view" secondAttribute="trailing" constant="-16" id="padres-title-trail"/>
                                             <constraint firstItem="status-badge" firstAttribute="leading" secondItem="animal-img" secondAttribute="trailing" constant="16" id="status-badge-lead"/>
                                             <constraint firstItem="status-badge" firstAttribute="top" secondItem="animal-id-lbl" secondAttribute="bottom" constant="8" id="status-badge-top"/>
+<<<<<<< HEAD
                                             <constraint firstItem="tbl-ganancia-list" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" constant="16" id="tbl-ganancia-lead"/>
                                             <constraint firstItem="tbl-ganancia-list" firstAttribute="top" secondItem="lbl-ganancia-title" secondAttribute="bottom" constant="8" id="tbl-ganancia-top"/>
                                             <constraint firstItem="tbl-ganancia-list" firstAttribute="trailing" secondItem="content-view" secondAttribute="trailing" constant="-16" id="tbl-ganancia-trail"/>
@@ -2592,6 +2922,11 @@
                                             <constraint firstItem="lbl-tratamientos-title" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" constant="16" id="tratamientos-title-lead"/>
                                             <constraint firstItem="lbl-tratamientos-title" firstAttribute="top" secondItem="tbl-ganancia-list" secondAttribute="bottom" constant="17" id="tratamientos-title-top"/>
                                             <constraint firstItem="lbl-tratamientos-title" firstAttribute="trailing" secondItem="content-view" secondAttribute="trailing" constant="-16" id="tratamientos-title-trail"/>
+=======
+                                            <constraint firstItem="lbl-tratamientos-title" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" constant="16" id="tratamientos-title-lead"/>
+                                            <constraint firstItem="lbl-tratamientos-title" firstAttribute="trailing" secondItem="content-view" secondAttribute="trailing" constant="-16" id="tratamientos-title-trail"/>
+                                            <constraint firstItem="lbl-ganancia-title" firstAttribute="top" secondItem="cCh-Qd-TNF" secondAttribute="bottom" constant="22" id="wyJ-iW-3VF"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -2616,21 +2951,51 @@
                             <constraint firstItem="scroll-view" firstAttribute="trailing" secondItem="Kjf-T7-nOl" secondAttribute="trailing" id="scroll-trail"/>
                         </constraints>
                     </view>
+<<<<<<< HEAD
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yz7-XG-0pi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3317" y="-15"/>
+=======
+                    <connections>
+                        <outlet property="animalImageView" destination="animal-img" id="LpC-Td-2Ig"/>
+                        <outlet property="codigoQRLabel" destination="animal-id-lbl" id="SqK-WT-o2i"/>
+                        <outlet property="codigoQRMadreLabel" destination="lbl-madre-value" id="aYu-6z-4ot"/>
+                        <outlet property="especieLabel" destination="lbl-especie-value" id="sjU-Ss-qDu"/>
+                        <outlet property="fechaIngresoLabel" destination="lbl-fecha-ingreso-value" id="LRt-dP-Zuv"/>
+                        <outlet property="fechaNacimientoLabel" destination="lbl-fecha-nac-value" id="goE-iW-kT6"/>
+                        <outlet property="loteLabel" destination="lbl-lote-value" id="xmu-2d-q8A"/>
+                        <outlet property="origenLabel" destination="lbl-origen-value" id="90H-gB-ZfP"/>
+                        <outlet property="pesoKgLabel" destination="lbl-peso-value" id="Unq-oo-qzn"/>
+                        <outlet property="sexoLabel" destination="lbl-sexo-value" id="LE4-R3-jDS"/>
+                        <outlet property="tablaMovilidad" destination="ReS-kc-KpB" id="DXr-11-MSG"/>
+                        <outlet property="tablaPeso" destination="xat-eV-YAR" id="8mw-RN-Aoz"/>
+                        <outlet property="tablaSanitario" destination="cCh-Qd-TNF" id="1Iw-Zm-BfM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yz7-XG-0pi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3316.4179104477612" y="-15.102974828375284"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         </scene>
         <!--Traslado Animal View Controller-->
         <scene sceneID="hdm-sD-5Ko">
             <objects>
                 <viewController storyboardIdentifier="TrasladoAnimalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NFW-RP-muF" customClass="TrasladoAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="49o-gV-xsY">
+<<<<<<< HEAD
                         <rect key="frame" x="0.0" y="0.0" width="402" height="802"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="stepIndicatorStack">
                                 <rect key="frame" x="122.66666666666667" y="78" width="156.66666666666663" height="6"/>
+=======
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="stepIndicatorStack">
+                                <rect key="frame" x="122.66666666666667" y="140" width="156.66666666666663" height="6"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="step1">
                                         <rect key="frame" x="0.0" y="0.0" width="47" height="6"/>
@@ -2665,19 +3030,31 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" contentMode="left" text="Identificar Animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="lblTitle">
+<<<<<<< HEAD
                                 <rect key="frame" x="20" y="108" width="362" height="33.666666666666657"/>
+=======
+                                <rect key="frame" x="20" y="170" width="362" height="33.666666666666657"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" contentMode="left" text="Escanee el código QR del animal o búsquelo manualmente." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" translatesAutoresizingMaskIntoConstraints="NO" id="lblSub">
+<<<<<<< HEAD
                                 <rect key="frame" x="20" y="149.66666666666666" width="362" height="38.333333333333343"/>
+=======
+                                <rect key="frame" x="20" y="211.66666666666666" width="362" height="38.333333333333343"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btnScan">
+<<<<<<< HEAD
                                 <rect key="frame" x="20" y="218" width="362" height="55"/>
+=======
+                                <rect key="frame" x="20" y="280" width="362" height="55"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="bts-2"/>
                                 </constraints>
@@ -2690,7 +3067,11 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="searchStackView">
+<<<<<<< HEAD
                                 <rect key="frame" x="20" y="289" width="362" height="55"/>
+=======
+                                <rect key="frame" x="20" y="351" width="362" height="55"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="searchContainer">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="55"/>
@@ -2750,7 +3131,11 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cardAnimal">
+<<<<<<< HEAD
                                 <rect key="frame" x="20" y="374" width="362" height="215"/>
+=======
+                                <rect key="frame" x="20" y="436" width="362" height="215"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <subviews>
                                     <label opaque="NO" contentMode="scaleToFill" text="ANIMAL IDENTIFICADO" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lblStatus">
                                         <rect key="frame" x="20" y="20" width="150" height="15.666666666666664"/>
@@ -2773,14 +3158,22 @@
                                         </buttonConfiguration>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="separator1">
+<<<<<<< HEAD
                                         <rect key="frame" x="20" y="89.666666666666686" width="322" height="1"/>
+=======
+                                        <rect key="frame" x="20" y="89.666666666666629" width="322" height="1"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                         <color key="backgroundColor" systemColor="separatorColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="bts-44"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" contentMode="scaleToFill" text="Lote Actual" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lblLote">
+<<<<<<< HEAD
                                         <rect key="frame" x="20" y="110.66666666666669" width="81.666666666666671" height="19.333333333333343"/>
+=======
+                                        <rect key="frame" x="20" y="110.66666666666663" width="81.666666666666671" height="19.333333333333343"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                     </label>
@@ -2850,7 +3243,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btnContinue">
+<<<<<<< HEAD
                                 <rect key="frame" x="20" y="727" width="362" height="55"/>
+=======
+                                <rect key="frame" x="20" y="731" width="362" height="55"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="bts-20"/>
                                 </constraints>
@@ -5168,6 +5565,7 @@
         <!--Registrar Peso de Animal-->
         <scene sceneID="IzX-wb-S84">
             <objects>
+<<<<<<< HEAD
                 <viewController storyboardIdentifier="RegistrarPesoAnimalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5iC-Td-oPR" customClass="RegistrarPesoAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dAF-We-yqk">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="802"/>
@@ -5175,16 +5573,33 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Registrar Peso de Animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-title-peso">
                                 <rect key="frame" x="20" y="73" width="362" height="33.666666666666657"/>
+=======
+                <viewController storyboardIdentifier="RegistrarPesajeAnimalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5iC-Td-oPR" customClass="RegistrarPesajeAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dAF-We-yqk">
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Registrar Peso de Animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-title-peso">
+                                <rect key="frame" x="20" y="135" width="362" height="33.666666666666657"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Paso 1: Seleccionar animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-step-peso">
+<<<<<<< HEAD
                                 <rect key="frame" x="20" y="110.66666666666667" width="185.33333333333334" height="18.000000000000014"/>
+=======
+                                <rect key="frame" x="20" y="172.66666666666666" width="185.33333333333334" height="18"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-scan-peso">
+<<<<<<< HEAD
                                 <rect key="frame" x="20" y="152.66666666666666" width="362" height="50"/>
+=======
+                                <rect key="frame" x="20" y="214.66666666666666" width="362" height="49.999999999999972"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="four-song-401"/>
                                 </constraints>
@@ -5197,11 +5612,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+<<<<<<< HEAD
                                     <action selector="EscanearQRAnimal:" destination="5iC-Td-oPR" eventType="touchUpInside" id="eZX-jQ-PTu"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sv-search-row">
                                 <rect key="frame" x="20" y="226.66666666666666" width="362" height="43.999999999999972"/>
+=======
+                                    <action selector="EscanearQRAnimal:" destination="5iC-Td-oPR" eventType="touchUpInside" id="N3m-cX-1k1"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sv-search-row">
+                                <rect key="frame" x="20" y="288.66666666666669" width="362" height="44"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID o Arete manual" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="txt-search-peso">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="44"/>
@@ -5213,7 +5636,11 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Buscar"/>
                                         <connections>
+<<<<<<< HEAD
                                             <action selector="buscadorManualQRButton:" destination="5iC-Td-oPR" eventType="touchUpInside" id="fK9-Zi-YZk"/>
+=======
+                                            <action selector="buscadorManualQRButton:" destination="5iC-Td-oPR" eventType="touchUpInside" id="A88-AA-gO7"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                         </connections>
                                     </button>
                                 </subviews>
@@ -5222,7 +5649,11 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v-card-info-final">
+<<<<<<< HEAD
                                 <rect key="frame" x="16" y="302.66666666666669" width="370" height="220.00000000000006"/>
+=======
+                                <rect key="frame" x="16" y="364.66666666666669" width="370" height="220.00000000000006"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="sv-details-content">
                                         <rect key="frame" x="16" y="16" width="338" height="188"/>
@@ -5385,7 +5816,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-next-peso">
+<<<<<<< HEAD
                                 <rect key="frame" x="16" y="726" width="370" height="56"/>
+=======
+                                <rect key="frame" x="16" y="730" width="370" height="56"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="four-song-409"/>
                                 </constraints>
@@ -5399,7 +5834,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+<<<<<<< HEAD
                                     <action selector="siguienteButton:" destination="5iC-Td-oPR" eventType="touchUpInside" id="WKl-kX-O7n"/>
+=======
+                                    <action selector="siguienteButton:" destination="5iC-Td-oPR" eventType="touchUpInside" id="TrG-Sk-QaZ"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                                 </connections>
                             </button>
                         </subviews>
@@ -5428,17 +5867,30 @@
                     </view>
                     <navigationItem key="navigationItem" title="Registrar Peso de Animal" id="azo-Ju-KZI"/>
                     <connections>
+<<<<<<< HEAD
                         <outlet property="categoriaDeManejoLabel" destination="f-ca" id="lci-CS-YE8"/>
                         <outlet property="codifoQRTextField" destination="txt-search-peso" id="yCF-LP-kC1"/>
                         <outlet property="codigoQRAnimalLabel" destination="v-id" id="mEu-M9-dz2"/>
                         <outlet property="especieLabel" destination="v-es" id="qNv-bk-s0W"/>
                         <outlet property="nombreLoteLabel" destination="v-lo" id="FSD-Tr-jXV"/>
                         <outlet property="pesoKgLabel" destination="v-pe" id="aT4-qp-tGW"/>
+=======
+                        <outlet property="codifoQRTextField" destination="txt-search-peso" id="qHk-Xv-ifk"/>
+                        <outlet property="codigoQRAnimalLabel" destination="v-id" id="OPm-pe-vrE"/>
+                        <outlet property="edadEnDiasLabel" destination="v-ca" id="b7h-DL-bwe"/>
+                        <outlet property="especieLabel" destination="v-es" id="nYu-33-Cqe"/>
+                        <outlet property="nombreLoteLabel" destination="v-lo" id="5CM-7t-EXG"/>
+                        <outlet property="pesoKgLabel" destination="v-pe" id="Ttd-vz-KOV"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uys-9Q-BKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="3317" y="813"/>
+=======
+            <point key="canvasLocation" x="3316" y="1429"/>
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         </scene>
         <!--Ingreso de Peso-->
         <scene sceneID="ikT-MK-xsi">
@@ -7166,7 +7618,10 @@
         <image name="line.3.horizontal.decrease.circle" catalog="system" width="128" height="123"/>
         <image name="m.circle.fill" catalog="system" width="128" height="123"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+<<<<<<< HEAD
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="123"/>
+=======
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         <image name="medical.thermometer.fill" catalog="system" width="128" height="120"/>
         <image name="pawprint.circle.fill" catalog="system" width="128" height="123"/>
         <image name="pawprint.fill" catalog="system" width="128" height="112"/>

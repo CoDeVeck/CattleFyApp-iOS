@@ -4,11 +4,19 @@
 //
 //  Created by Rebeca on 12/7/25.
 //
+<<<<<<< HEAD
 	
 import UIKit
 		
 class LoginViewController: UIViewController {
     
+=======
+
+import UIKit
+
+class LoginViewController: UIViewController {
+
+>>>>>>> c5222b3 (Subindo ultimos cambios)
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -17,9 +25,15 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         
     }
     
+=======
+
+    }
+
+>>>>>>> c5222b3 (Subindo ultimos cambios)
     @IBAction func iniciarButtonTapped(_ sender: Any) {
         guard let email = emailTextField.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty else {
@@ -51,6 +65,7 @@ class LoginViewController: UIViewController {
         }
     }
     func navegarAHome() {
+<<<<<<< HEAD
         print("Iniciando navegación a FarmFlow..")
         
         // Si usan el storyboard de FarmFlow dejen ese nombre si en caso esta en Main como el mio cambienlo
@@ -63,6 +78,18 @@ class LoginViewController: UIViewController {
             withIdentifier: "InicioViewController"
         ) as? InicioViewController else {
 
+=======
+        print("Iniciando navegación a Home...")
+        
+        // Si usan el storyboard de FarmFlow dejen ese nombre si en caso esta en Main como el mio cambienlo
+        // En el inicioVC Cambien por su controlador que quieran probar y ponganle su identificador
+        let storyboard = UIStoryboard(name: "VentaComercial", bundle: nil)
+        
+        guard let inicioVC = storyboard.instantiateViewController(
+
+            withIdentifier: "VentaComercialViewController"
+        ) as? VentaComercialViewController else {
+>>>>>>> c5222b3 (Subindo ultimos cambios)
             print("Error: No se pudo castear InicioViewController")
             mostrarAlerta(mensaje: "Error al cargar la pantalla principal")
             return
@@ -84,10 +111,17 @@ class LoginViewController: UIViewController {
         window.rootViewController = navigationController
         
         UIView.transition(with: window,
+<<<<<<< HEAD
                           duration: 0.3,
                           options: .transitionCrossDissolve,
                           animations: nil,
                           completion: { _ in
+=======
+                         duration: 0.3,
+                         options: .transitionCrossDissolve,
+                         animations: nil,
+                         completion: { _ in
+>>>>>>> c5222b3 (Subindo ultimos cambios)
             print("Navegación completada exitosamente")
         })
     }

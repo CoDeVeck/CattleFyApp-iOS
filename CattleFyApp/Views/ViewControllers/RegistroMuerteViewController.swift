@@ -17,6 +17,10 @@ class RegistroMuerteViewController: UIViewController {
     
     @IBOutlet weak var edadEnDiasLabel: UILabel!
     
+<<<<<<< HEAD
+=======
+    var codigoQR: String?
+>>>>>>> c5222b3 (Subindo ultimos cambios)
     
     override func viewDidLoad() {
         super.viewDidLoad()

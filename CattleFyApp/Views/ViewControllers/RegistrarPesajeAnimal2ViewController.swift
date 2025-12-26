@@ -142,7 +142,11 @@ class RegistrarPesajeAnimal2ViewController: UIViewController {
             return
         }
         
+<<<<<<< HEAD
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+=======
+        let storyboard = UIStoryboard(name: "FarmFlow", bundle: nil)
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         guard let detalleVC = storyboard.instantiateViewController(
             withIdentifier: "DetalleAnimalViewController"
         ) as? DetalleAnimalViewController else {
