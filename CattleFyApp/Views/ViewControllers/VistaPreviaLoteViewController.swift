@@ -10,24 +10,6 @@ import UIKit
 class VistaPreviaLoteViewController: UIViewController {
     
     @IBOutlet weak var loteCodigoLabel: UILabel!
-<<<<<<< HEAD
-    
-    var codigoQR: String?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-    
-    @IBAction func verDetalleLoteButton(_ sender: UIButton) {
-    }
-    
-    @IBAction func registrarAlimentacionLoteButton(_ sender: UIButton) {
-    }
-    
-    
-    @IBAction func registrarSanitarioLoteButton(_ sender: UIButton) {
-=======
     var codigoQR: String?
     private var lote: LoteResponse?
     
@@ -126,7 +108,6 @@ class VistaPreviaLoteViewController: UIViewController {
             }
             
             navigationController?.pushViewController(sanitarioVC, animated: true)
->>>>>>> c5222b3 (Subindo ultimos cambios)
     }
     
     
@@ -134,5 +115,4 @@ class VistaPreviaLoteViewController: UIViewController {
     }
     
 }
-
 

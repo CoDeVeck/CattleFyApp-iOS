@@ -9,9 +9,6 @@ import UIKit
 
 class DetalleAnimalViewController: UIViewController {
     
-<<<<<<< HEAD
-    var codigoQR: String?
-=======
     @IBOutlet weak var animalImageView: UIImageView!
     @IBOutlet weak var codigoQRLabel: UILabel!
     @IBOutlet weak var especieLabel: UILabel!
@@ -37,20 +34,10 @@ class DetalleAnimalViewController: UIViewController {
     
     // ID del animal (lo obtendremos del response)
     private var idAnimal: Int?
->>>>>>> c5222b3 (Subindo ultimos cambios)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-<<<<<<< HEAD
-        if let qr = codigoQR {
-            print("📍 Detalle del animal con QR: \(qr)")
-            // Aquí cargas los datos del animal
-        }
-    }
-
-}
-=======
         print("Tablas conectadas:")
         print("- tablaPeso: \(tablaPeso != nil)")
         print("- tablaSanitario: \(tablaSanitario != nil)")
@@ -316,5 +303,3 @@ extension DetalleAnimalViewController: UITableViewDelegate {
         return 100
     }
 }
-
->>>>>>> c5222b3 (Subindo ultimos cambios)

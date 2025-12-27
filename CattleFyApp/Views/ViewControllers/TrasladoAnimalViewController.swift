@@ -14,11 +14,8 @@ class TrasladoAnimalViewController: UIViewController {
     @IBOutlet weak var loteNombreLabel: UILabel!
     @IBOutlet weak var codigoQRLabel: UILabel!
     
-<<<<<<< HEAD
-=======
     var codigoQR: String?
     
->>>>>>> c5222b3 (Subindo ultimos cambios)
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -15,8 +15,6 @@ class LoteService {
     private func getAuthToken() -> String? {
         return UserDefaults.standard.string(forKey: "authToken")
     }
-<<<<<<< HEAD
-=======
     
     func obtenerLotePorQR(
         qrLote: String,
@@ -83,7 +81,6 @@ class LoteService {
         }.resume()
     }
     
->>>>>>> c5222b3 (Subindo ultimos cambios)
     func obtenerDetalleLote(
             loteId: Int,
             completion: @escaping (Result<ResultadoResponse<LoteDetalleResponse>, Error>) -> Void

@@ -4,10 +4,6 @@
 //
 //  Created by Rebeca on 12/19/25.
 //
-<<<<<<< HEAD
-
-=======
->>>>>>> c5222b3 (Subindo ultimos cambios)
 import UIKit
 import CoreImage
 
@@ -16,52 +12,34 @@ class BuscadorQRViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-    }
-    
-    // MARK: - Actions
-    @IBAction func escanearQRButton(_ sender: UIBarButtonItem) {
-=======
         print("✅ BuscadorQRViewController cargado")
     }
     
     // MARK: - Actions
     @IBAction func escanearQRButton(_ sender: UIButton) {
         print("🔍 Botón escanear presionado")
->>>>>>> c5222b3 (Subindo ultimos cambios)
         abrirGaleria()
     }
     
     @IBAction func buscarButton(_ sender: UIButton) {
-<<<<<<< HEAD
-        guard let texto = buscadorTextField.text,
-              !texto.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-=======
         print("🔍 Botón buscar presionado")
         guard let texto = buscadorTextField.text,
               !texto.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
             print("⚠️ Campo de texto vacío")
->>>>>>> c5222b3 (Subindo ultimos cambios)
             mostrarAlerta(
                 titulo: "Campo vacío",
                 mensaje: "Ingrese un código válido para buscar"
             )
             return
         }
-<<<<<<< HEAD
-=======
         print("📝 Texto ingresado: '\(texto)'")
->>>>>>> c5222b3 (Subindo ultimos cambios)
         procesarCodigo(texto)
     }
 }
 
 extension BuscadorQRViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     private func abrirGaleria() {
-<<<<<<< HEAD
-=======
         print("📱 Abriendo galería...")
->>>>>>> c5222b3 (Subindo ultimos cambios)
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.delegate = self
@@ -72,17 +50,11 @@ extension BuscadorQRViewController: UIImagePickerControllerDelegate, UINavigatio
         _ picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
     ) {
-<<<<<<< HEAD
-        picker.dismiss(animated: true)
-        
-        guard let imagen = info[.originalImage] as? UIImage else {
-=======
         print("🖼️ Imagen seleccionada de la galería")
         picker.dismiss(animated: true)
         
         guard let imagen = info[.originalImage] as? UIImage else {
             print("❌ No se pudo obtener la imagen del info")
->>>>>>> c5222b3 (Subindo ultimos cambios)
             mostrarAlerta(
                 titulo: "Error",
                 mensaje: "No se pudo obtener la imagen"
@@ -90,15 +62,11 @@ extension BuscadorQRViewController: UIImagePickerControllerDelegate, UINavigatio
             return
         }
         
-<<<<<<< HEAD
-        guard let codigoQR = decodificarQR(from: imagen) else {
-=======
         print("✅ Imagen obtenida correctamente")
         print("📐 Tamaño de imagen: \(imagen.size)")
         
         guard let codigoQR = decodificarQR(from: imagen) else {
             print("❌ No se pudo decodificar el QR de la imagen")
->>>>>>> c5222b3 (Subindo ultimos cambios)
             mostrarAlerta(
                 titulo: "QR no válido",
                 mensaje: "La imagen no contiene un código QR válido"
@@ -106,10 +74,7 @@ extension BuscadorQRViewController: UIImagePickerControllerDelegate, UINavigatio
             return
         }
         
-<<<<<<< HEAD
-=======
         print("✅ Código QR decodificado: '\(codigoQR)'")
->>>>>>> c5222b3 (Subindo ultimos cambios)
         buscadorTextField.text = codigoQR
         procesarCodigo(codigoQR)
     }
@@ -117,9 +82,6 @@ extension BuscadorQRViewController: UIImagePickerControllerDelegate, UINavigatio
 
 extension BuscadorQRViewController {
     private func decodificarQR(from imagen: UIImage) -> String? {
-<<<<<<< HEAD
-        guard let ciImage = CIImage(image: imagen) else { return nil }
-=======
         print("🔎 Iniciando decodificación de QR...")
         
         guard let ciImage = CIImage(image: imagen) else {
@@ -128,7 +90,6 @@ extension BuscadorQRViewController {
         }
         
         print("✅ CIImage creado correctamente")
->>>>>>> c5222b3 (Subindo ultimos cambios)
         
         let detector = CIDetector(
             ofType: CIDetectorTypeQRCode,
@@ -136,16 +97,6 @@ extension BuscadorQRViewController {
             options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]
         )
         
-<<<<<<< HEAD
-        let features = detector?.features(in: ciImage) ?? []
-        
-        for feature in features {
-            if let qrFeature = feature as? CIQRCodeFeature {
-                return qrFeature.messageString
-            }
-        }
-        
-=======
         guard let detector = detector else {
             print("❌ No se pudo crear el detector de QR")
             return nil
@@ -170,20 +121,12 @@ extension BuscadorQRViewController {
         }
         
         print("❌ No se encontró ningún código QR válido en la imagen")
->>>>>>> c5222b3 (Subindo ultimos cambios)
         return nil
     }
 }
 
 extension BuscadorQRViewController {
     private func procesarCodigo(_ codigo: String) {
-<<<<<<< HEAD
-        if codigo.hasPrefix("ANI") {
-            irAVistaAnimal(codigo)
-        } else if codigo.hasPrefix("LOT") {
-            irAVistaLote(codigo)
-        } else {
-=======
         print("⚙️ Procesando código: '\(codigo)'")
         
         // Animales: QR_BOV_001, QR_OVI_001, QR_POR_001, etc.
@@ -198,7 +141,6 @@ extension BuscadorQRViewController {
         }
         else {
             print("❌ Código no reconocido como animal ni lote")
->>>>>>> c5222b3 (Subindo ultimos cambios)
             mostrarAlerta(
                 titulo: "Código inválido",
                 mensaje: "El código no corresponde a un animal ni a un lote"
@@ -207,13 +149,6 @@ extension BuscadorQRViewController {
     }
     
     private func irAVistaAnimal(_ codigo: String) {
-<<<<<<< HEAD
-        guard let vc = storyboard?.instantiateViewController(
-            withIdentifier: "VistaPreviaAnimalViewController"
-        ) as? VistaPreviaAnimalViewController else { return }
-        
-        vc.codigoQR = codigo
-=======
         print("🐄 Navegando a vista de animal con código: '\(codigo)'")
         guard let vc = storyboard?.instantiateViewController(
             withIdentifier: "VistaPreviaAnimalViewController"
@@ -224,18 +159,10 @@ extension BuscadorQRViewController {
         
         vc.codigoQR = codigo
         print("✅ Código QR asignado a VistaPreviaAnimalViewController")
->>>>>>> c5222b3 (Subindo ultimos cambios)
         navigationController?.pushViewController(vc, animated: true)
     }
     
     private func irAVistaLote(_ codigo: String) {
-<<<<<<< HEAD
-        guard let vc = storyboard?.instantiateViewController(
-            withIdentifier: "VistaPreviaLoteViewController"
-        ) as? VistaPreviaLoteViewController else { return }
-        
-        vc.codigoQR = codigo
-=======
         print("📦 Navegando a vista de lote con código: '\(codigo)'")
         guard let vc = storyboard?.instantiateViewController(
             withIdentifier: "VistaPreviaLoteViewController"
@@ -246,7 +173,6 @@ extension BuscadorQRViewController {
         
         vc.codigoQR = codigo
         print("✅ Código QR asignado a VistaPreviaLoteViewController: '\(codigo)'")
->>>>>>> c5222b3 (Subindo ultimos cambios)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

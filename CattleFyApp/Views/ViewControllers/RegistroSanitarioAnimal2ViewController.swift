@@ -8,26 +8,6 @@
 import UIKit
 
 class RegistroSanitarioAnimal2ViewController: UIViewController {
-<<<<<<< HEAD
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-=======
     
     @IBOutlet weak var tipoProtocolo: UISegmentedControl!
     @IBOutlet weak var nombreProducto: UITextField!
@@ -236,5 +216,4 @@ extension RegistroSanitarioAnimal2ViewController: UITextFieldDelegate {
         
         return true
     }
->>>>>>> c5222b3 (Subindo ultimos cambios)
 }

@@ -1213,11 +1213,7 @@
         <!--Aplicación Sanitaria-->
         <scene sceneID="mVl-Qe-RbC">
             <objects>
-<<<<<<< HEAD
-                <viewController id="sBA-ze-OSW" customClass="RegistroSanitarioViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
-=======
                 <viewController storyboardIdentifier="RegistroSanitarioViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sBA-ze-OSW" customClass="RegistroSanitarioViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> c5222b3 (Subindo ultimos cambios)
                     <view key="view" contentMode="scaleToFill" id="AlT-zQ-V3b">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1246,12 +1242,9 @@
                                         <integer key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-<<<<<<< HEAD
                                 <connections>
-                                    <segue destination="nKx-sf-CHH" kind="show" id="s98-Y9-9sO"/>
+                                    <segue destination="nKx-sf-CHH" kind="show" id="6mh-Pd-e8N"/>
                                 </connections>
-=======
->>>>>>> c5222b3 (Subindo ultimos cambios)
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j4V-Ge-1bn">
                                 <rect key="frame" x="74" y="513" width="245" height="147"/>
@@ -1302,21 +1295,13 @@
         <!--Registro Sanitario Individual-->
         <scene sceneID="9xP-M8-kBg">
             <objects>
-<<<<<<< HEAD
-                <viewController id="nKx-sf-CHH" customClass="RegistroSanitarioAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
-=======
                 <viewController storyboardIdentifier="RegistroSanitarioAnimalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nKx-sf-CHH" customClass="RegistroSanitarioAnimalViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> c5222b3 (Subindo ultimos cambios)
                     <view key="view" contentMode="scaleToFill" id="8Ih-6g-har">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sv-stepper">
-<<<<<<< HEAD
                                 <rect key="frame" x="120" y="173" width="153" height="4"/>
-=======
-                                <rect key="frame" x="120" y="129" width="153" height="4"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <subviews>
                                     <view contentMode="scaleToFill" id="step1-active">
                                         <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="4"/>
@@ -1344,29 +1329,17 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Paso 1: Identificar Animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofh-RE-9si">
-<<<<<<< HEAD
                                 <rect key="frame" x="16" y="209" width="361" height="33.666666666666657"/>
-=======
-                                <rect key="frame" x="16" y="165" width="361" height="33.666666666666657"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Escanea el código QR en el arete del animal o búscalo manualmente." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9M-Jm-nlm">
-<<<<<<< HEAD
                                 <rect key="frame" x="16" y="250.66666666666666" width="361" height="40.666666666666657"/>
-=======
-                                <rect key="frame" x="16" y="206.66666666666666" width="361" height="40.666666666666657"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWq-LK-HnM">
-<<<<<<< HEAD
                                 <rect key="frame" x="16" y="315.33333333333331" width="361" height="56"/>
-=======
-                                <rect key="frame" x="16" y="271.33333333333331" width="361" height="56"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="h-scan"/>
                                 </constraints>
@@ -1374,18 +1347,12 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="baseBackgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
-<<<<<<< HEAD
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v-manual-search">
-                                <rect key="frame" x="16" y="395.33333333333331" width="361" height="80"/>
-=======
                                 <connections>
                                     <action selector="escanearCodigoQR:" destination="nKx-sf-CHH" eventType="touchUpInside" id="LbV-6u-QrO"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v-manual-search">
-                                <rect key="frame" x="16" y="351.33333333333331" width="361" height="80"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
+                                <rect key="frame" x="16" y="395.33333333333331" width="361" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Buscar por QR/Arete manualmente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-q">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="17"/>
@@ -1421,26 +1388,15 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v-animal-card">
-<<<<<<< HEAD
                                 <rect key="frame" x="16" y="499.33333333333326" width="361" height="160"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Animal Identificado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-c-t">
                                         <rect key="frame" x="16" y="16.000000000000057" width="138" height="18"/>
-=======
-                                <rect key="frame" x="16" y="455.33333333333326" width="361" height="160"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Animal Identificado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-c-t">
-                                        <rect key="frame" x="16" y="16" width="138" height="18"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="img-a">
-<<<<<<< HEAD
                                         <rect key="frame" x="16" y="47.666666666666714" width="90" height="87"/>
-=======
-                                        <rect key="frame" x="16" y="47.666666666666657" width="90" height="87"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                         <color key="tintColor" systemColor="systemGray4Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="h-i"/>
@@ -1453,11 +1409,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sv-d">
-<<<<<<< HEAD
                                         <rect key="frame" x="122" y="48.333333333333307" width="223" height="85.333333333333314"/>
-=======
-                                        <rect key="frame" x="122" y="48.333333333333364" width="223" height="85.333333333333314"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                         <subviews>
                                             <label opaque="NO" contentMode="scaleToFill" text="QR/Arete: 78B42" lineBreakMode="tailTruncation" id="d1">
                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="21.333333333333332"/>
@@ -1510,11 +1462,7 @@
                                     <color key="baseBackgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-<<<<<<< HEAD
-                                    <segue destination="Cr6-WB-qrY" kind="show" id="urs-kJ-XK2"/>
-=======
                                     <action selector="siguienteButton:" destination="nKx-sf-CHH" eventType="touchUpInside" id="hgZ-68-gFv"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 </connections>
                             </button>
                         </subviews>
@@ -1546,8 +1494,6 @@
                     <navigationItem key="navigationItem" title="Registro Sanitario Individual" id="DFC-u1-jrf">
                         <barButtonItem key="backBarButtonItem" title="Atrás" id="HPO-5I-oqb"/>
                     </navigationItem>
-<<<<<<< HEAD
-=======
                     <connections>
                         <outlet property="buscadorCodigoQR" destination="txt-code" id="ynz-y2-Pee"/>
                         <outlet property="codigoQRLabel" destination="d1" id="eCZ-Dg-9XQ"/>
@@ -1556,7 +1502,6 @@
                         <outlet property="imagenAnimal" destination="img-a" id="sLF-bB-7q4"/>
                         <outlet property="loteNombreLabel" destination="d3" id="PPe-d4-yzo"/>
                     </connections>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOV-j0-wzF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1670,10 +1615,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="siguenteButtonTapped:" destination="Hzm-tg-sVz" eventType="touchUpInside" id="dWC-Hp-eOI"/>
-<<<<<<< HEAD
-                                    <segue destination="1dP-wR-JQT" kind="show" id="14R-nS-vl3"/>
-=======
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O Seleccionar Manualmente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0L-zh-wff">
@@ -1737,21 +1678,13 @@
         <!--Registro Sanitario Individual-->
         <scene sceneID="V9B-rC-cBx">
             <objects>
-<<<<<<< HEAD
-                <viewController id="Cr6-WB-qrY" customClass="RegistroSanitarioAnimal2ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
-=======
                 <viewController storyboardIdentifier="RegistroSanitarioAnimal2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cr6-WB-qrY" customClass="RegistroSanitarioAnimal2ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> c5222b3 (Subindo ultimos cambios)
                     <view key="view" contentMode="scaleToFill" id="u9I-Ad-oSG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sv-stepper-p2">
-<<<<<<< HEAD
-                                <rect key="frame" x="19" y="173" width="153" height="4"/>
-=======
                                 <rect key="frame" x="19" y="129" width="153" height="4"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <subviews>
                                     <view contentMode="scaleToFill" id="st1-done-step">
                                         <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="4"/>
@@ -1774,20 +1707,12 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Tipo de protocolo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-proto-title">
-<<<<<<< HEAD
-                                <rect key="frame" x="20" y="209" width="150.66666666666666" height="21.666666666666657"/>
-=======
                                 <rect key="frame" x="20" y="165" width="150.66666666666666" height="21.666666666666657"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sc-protocolo-step2">
-<<<<<<< HEAD
-                                <rect key="frame" x="20" y="246.66666666666663" width="357" height="45"/>
-=======
                                 <rect key="frame" x="20" y="202.66666666666666" width="357" height="45"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="four-song-2"/>
                                 </constraints>
@@ -1799,20 +1724,12 @@
                                 <color key="selectedSegmentTintColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nombre del producto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-prod-step2">
-<<<<<<< HEAD
-                                <rect key="frame" x="20" y="315.66666666666669" width="161" height="19.333333333333314"/>
-=======
                                 <rect key="frame" x="20" y="271.66666666666669" width="161" height="19.333333333333314"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="textColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar producto" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="txt-prod-step2">
-<<<<<<< HEAD
-                                <rect key="frame" x="20" y="343" width="135.33333333333334" height="44"/>
-=======
                                 <rect key="frame" x="20" y="299" width="135.33333333333334" height="44"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="four-song-3"/>
                                 </constraints>
@@ -1820,34 +1737,19 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sv-row-step2">
-<<<<<<< HEAD
-                                <rect key="frame" x="20" y="410.99999999999994" width="353.33333333333331" height="231.33333333333331"/>
+                                <rect key="frame" x="20" y="367" width="353.33333333333331" height="301.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" id="col-d-s2">
-                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="221.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="291.33333333333331"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="scaleToFill" text="Dosis aplicada" lineBreakMode="tailTruncation" id="ld-s2">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="179.33333333333334"/>
-=======
-                                <rect key="frame" x="20" y="367" width="353.33333333333331" height="291.33333333333326"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" id="col-d-s2">
-                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="281.33333333333331"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" contentMode="scaleToFill" text="Dosis aplicada" lineBreakMode="tailTruncation" id="ld-s2">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="239.33333333333334"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
+                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="249.33333333333334"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ej: 10 ml" id="td-s2">
-<<<<<<< HEAD
-                                                <rect key="frame" x="0.0" y="187.33333333333334" width="166.66666666666666" height="34"/>
-=======
-                                                <rect key="frame" x="0.0" y="247.33333333333337" width="166.66666666666666" height="34"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
+                                                <rect key="frame" x="0.0" y="257.33333333333331" width="166.66666666666666" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="four-song-4"/>
@@ -1858,28 +1760,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" id="col-c-s2">
-<<<<<<< HEAD
-                                        <rect key="frame" x="186.66666666666669" y="0.0" width="166.66666666666669" height="221.33333333333334"/>
+                                        <rect key="frame" x="186.66666666666669" y="0.0" width="166.66666666666669" height="291.33333333333331"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="scaleToFill" text="Costo unitario" lineBreakMode="tailTruncation" id="lc-s2">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="179.33333333333334"/>
-=======
-                                        <rect key="frame" x="186.66666666666669" y="0.0" width="166.66666666666669" height="281.33333333333331"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" contentMode="scaleToFill" text="Costo unitario" lineBreakMode="tailTruncation" id="lc-s2">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="239.33333333333334"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
+                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="249.33333333333334"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ 0.00" id="tc-s2">
-<<<<<<< HEAD
-                                                <rect key="frame" x="0.0" y="187.33333333333334" width="166.66666666666666" height="34"/>
-=======
-                                                <rect key="frame" x="0.0" y="247.33333333333337" width="166.66666666666666" height="34"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
+                                                <rect key="frame" x="0.0" y="257.33333333333331" width="166.66666666666666" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="four-song-5"/>
@@ -1892,19 +1782,11 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Fecha de aplicación" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-date-s2">
-<<<<<<< HEAD
-                                <rect key="frame" x="20" y="666.33333333333337" width="149.33333333333334" height="19.333333333333371"/>
+                                <rect key="frame" x="20" y="692.33333333333337" width="149.33333333333334" height="19.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="dp-fecha-s2">
-                                <rect key="frame" x="20" y="693.66666666666663" width="150.66666666666666" height="50"/>
-=======
-                                <rect key="frame" x="20" y="682.33333333333337" width="149.33333333333334" height="19.333333333333371"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="dp-fecha-s2">
-                                <rect key="frame" x="20" y="709.66666666666663" width="150.66666666666666" height="50"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
+                                <rect key="frame" x="20" y="719.66666666666663" width="150.66666666666666" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="four-song-6"/>
                                 </constraints>
@@ -1920,11 +1802,7 @@
                                     <color key="baseBackgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-<<<<<<< HEAD
-                                    <segue destination="5iC-Td-oPR" kind="show" id="Tew-fM-nxG"/>
-=======
                                     <action selector="siguienteButton:" destination="Cr6-WB-qrY" eventType="touchUpInside" id="9Rd-az-BE5"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 </connections>
                             </button>
                         </subviews>
@@ -1962,8 +1840,6 @@
                     <navigationItem key="navigationItem" title="Registro Sanitario Individual" id="BVl-YJ-LGT">
                         <barButtonItem key="backBarButtonItem" title="Atrás" id="Hos-Zc-kZO"/>
                     </navigationItem>
-<<<<<<< HEAD
-=======
                     <connections>
                         <outlet property="costoUnitario" destination="tc-s2" id="GVX-at-VVx"/>
                         <outlet property="dosisAplicada" destination="td-s2" id="869-cz-UB9"/>
@@ -1971,7 +1847,6 @@
                         <outlet property="nombreProducto" destination="txt-prod-step2" id="MAV-DC-CZK"/>
                         <outlet property="tipoProtocolo" destination="sc-protocolo-step2" id="oI3-PR-PE1"/>
                     </connections>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5d-sk-cq1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2149,10 +2024,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="siguienteButtonTapped:" destination="1dP-wR-JQT" eventType="touchUpInside" id="RbT-bt-qsd"/>
-<<<<<<< HEAD
-                                    <segue destination="3Fn-Um-oms" kind="show" id="CSl-ES-Zgc"/>
-=======
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 </connections>
                             </button>
                         </subviews>
@@ -2239,21 +2110,13 @@
         <!--Registro Sanitario Individual-->
         <scene sceneID="IzX-wb-S84">
             <objects>
-<<<<<<< HEAD
-                <viewController id="5iC-Td-oPR" customClass="RegistroSanitarioAnimal3ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
-=======
                 <viewController storyboardIdentifier="RegistroSanitarioAnimal3ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5iC-Td-oPR" customClass="RegistroSanitarioAnimal3ViewController" customModule="CattleFyApp" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> c5222b3 (Subindo ultimos cambios)
                     <view key="view" contentMode="scaleToFill" id="dAF-We-yqk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sv-stepper-p3">
-<<<<<<< HEAD
-                                <rect key="frame" x="120" y="173" width="153" height="4"/>
-=======
                                 <rect key="frame" x="120" y="129" width="153" height="4"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <subviews>
                                     <view contentMode="scaleToFill" id="st1-fin">
                                         <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="4"/>
@@ -2276,20 +2139,12 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Resumen del Registro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-summary-title">
-<<<<<<< HEAD
-                                <rect key="frame" x="20" y="209" width="353" height="33.666666666666657"/>
-=======
                                 <rect key="frame" x="20" y="165" width="353" height="33.666666666666657"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" white="0.14999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v-card-summary">
-<<<<<<< HEAD
-                                <rect key="frame" x="16" y="266.66666666666669" width="361" height="280.00000000000006"/>
-=======
                                 <rect key="frame" x="16" y="222.66666666666663" width="361" height="280"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="sv-table-data">
                                         <rect key="frame" x="16" y="16" width="329" height="248"/>
@@ -2364,13 +2219,8 @@
                                                 <rect key="frame" x="0.0" y="124.66666666666667" width="329" height="40.333333333333329"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-<<<<<<< HEAD
-                                                    <label opaque="NO" contentMode="scaleToFill" text="Dosis" lineBreakMode="tailTruncation" id="l4-key">
-                                                        <rect key="frame" x="0.0" y="10" width="100" height="20"/>
-=======
                                                     <label opaque="NO" contentMode="scaleToFill" text="Costo Unitario" lineBreakMode="tailTruncation" id="l4-key">
                                                         <rect key="frame" x="0.0" y="10" width="109" height="21"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -2391,13 +2241,8 @@
                                                 <rect key="frame" x="0.0" y="166" width="329" height="40.666666666666657"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-<<<<<<< HEAD
-                                                    <label opaque="NO" contentMode="scaleToFill" text="Costo Unitario" lineBreakMode="tailTruncation" id="l5-key">
-                                                        <rect key="frame" x="0.0" y="10" width="100" height="20"/>
-=======
                                                     <label opaque="NO" contentMode="scaleToFill" text="Dosis" lineBreakMode="tailTruncation" id="l5-key">
                                                         <rect key="frame" x="0.0" y="10" width="100" height="21"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -2457,12 +2302,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                     <color key="baseBackgroundColor" red="0.25098039220000001" green="0.50196078430000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
-<<<<<<< HEAD
-=======
                                 <connections>
                                     <action selector="registrarButton:" destination="5iC-Td-oPR" eventType="touchUpInside" id="QcJ-Tz-3bK"/>
                                 </connections>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KCG-01-9I5"/>
@@ -2482,8 +2324,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Registro Sanitario Individual" id="azo-Ju-KZI"/>
-<<<<<<< HEAD
-=======
                     <connections>
                         <outlet property="codigoQRLabel" destination="l1-val" id="7GF-rW-pij"/>
                         <outlet property="costoUnitarioLabel" destination="l4-val" id="X0x-ob-8VG"/>
@@ -2492,7 +2332,6 @@
                         <outlet property="nombreProductoLabel" destination="l3-val" id="kcr-CU-Dzq"/>
                         <outlet property="tipoProtocoloLabel" destination="l2-val" id="O3C-Y6-0ka"/>
                     </connections>
->>>>>>> c5222b3 (Subindo ultimos cambios)
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uys-9Q-BKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3830,11 +3669,7 @@ YW5hLnJvamFzQGVtYWlsLmNvbRERERERA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZw-BM-7Dh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="2834" y="673"/>
-=======
             <point key="canvasLocation" x="1337" y="1377"/>
->>>>>>> c5222b3 (Subindo ultimos cambios)
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SWe-v0-LWA">
@@ -3877,46 +3712,46 @@ YW5hLnJvamFzQGVtYWlsLmNvbRERERERA
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
