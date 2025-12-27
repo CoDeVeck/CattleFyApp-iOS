@@ -35,19 +35,11 @@ class VentaLoteViewController: UIViewController {
         inicializarDatosVenta()
     }
     
-<<<<<<< HEAD
     // MARK: - Configuración UI
     private func configurarUI() {
         title = "Detalles de Venta - Paso 1"
         
 
-=======
-    
-    private func configurarUI() {
-        title = "Detalles de Venta - Paso 1"
-        
-        
->>>>>>> c5222b3 (Subindo ultimos cambios)
         labelNombreLoteVentaLote.textColor = .label
         
         view.subviews.compactMap { $0 as? UIButton }.forEach { button in
@@ -55,11 +47,7 @@ class VentaLoteViewController: UIViewController {
         }
     }
     
-<<<<<<< HEAD
     // MARK: - Mostrar Datos
-=======
-    
->>>>>>> c5222b3 (Subindo ultimos cambios)
     private func mostrarDatos() {
         
         labelNombreLoteVentaLote.text = ventaLoteNombreLote ?? "Sin nombre"
@@ -69,11 +57,7 @@ class VentaLoteViewController: UIViewController {
         labeCvtTotalVentaLote.text = ventaLoteCvtTotal ?? "S/ 0.00"
         labelCostoDeCompraVentaLote.text = ventaLoteCostoDeCompra ?? "S/ 0.00"
         
-<<<<<<< HEAD
        
-=======
-        
->>>>>>> c5222b3 (Subindo ultimos cambios)
         
         if let lote = loteData {
             print("  - Especie: \(lote.especieNombre)")
@@ -83,11 +67,7 @@ class VentaLoteViewController: UIViewController {
     
     private func inicializarDatosVenta() {
         guard let lote = loteData else {
-<<<<<<< HEAD
             print("⚠️ No hay datos del lote")
-=======
-            print("No hay datos del lote")
->>>>>>> c5222b3 (Subindo ultimos cambios)
             return
         }
         datosVenta = DatosVentaCompletos(loteData: lote)
@@ -100,11 +80,7 @@ class VentaLoteViewController: UIViewController {
             return
         }
         
-<<<<<<< HEAD
         print("➡️ Navegando al Paso 2")
-=======
-        print("Navegando al Paso 2")
->>>>>>> c5222b3 (Subindo ultimos cambios)
         performSegue(withIdentifier: "seguePaso2", sender: datos)
     }
     
@@ -133,9 +109,5 @@ class VentaLoteViewController: UIViewController {
         }
     }
     
-<<<<<<< HEAD
    	
-=======
-    
->>>>>>> c5222b3 (Subindo ultimos cambios)
 }

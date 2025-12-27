@@ -147,7 +147,7 @@ class InicioViewController: UIViewController {
         cargarContadores()
     }
     @objc private func alimentacionTapped() {
-        animarView(alimentacionView)
+        animarView(alimentacionView)        
         navegarA(storyboard: "Main", viewControllerID: "RegistrarAlimentacionLoteViewController")
     }
     @objc private func lotesTapped() {
@@ -194,3 +194,4 @@ class InicioViewController: UIViewController {
         }
     }
 }
+

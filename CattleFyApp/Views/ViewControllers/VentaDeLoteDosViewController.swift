@@ -106,11 +106,7 @@ class VentaDeLoteDosViewController: UIViewController {
             labelUtilidadNeta.text = String(format: "S/ %.2f", utilidadNetaDouble)
         }
         
-<<<<<<< HEAD
         print("💰 Cálculos actualizados:")
-=======
-        print(" Cálculos actualizados:")
->>>>>>> c5222b3 (Subindo ultimos cambios)
         print("  - ROI objetivo: \(roiObjetivo)%")
         print("  - Precio/kg: S/ \(precioPorKgDouble)")
         print("  - Ingreso total: S/ \(ingresoTotalDouble)")
@@ -128,11 +124,7 @@ class VentaDeLoteDosViewController: UIViewController {
             return
         }
         
-<<<<<<< HEAD
         print("➡️ Navegando al Paso 3")
-=======
-        print(" Navegando al Paso 3")
->>>>>>> c5222b3 (Subindo ultimos cambios)
         performSegue(withIdentifier: "seguePaso3", sender: datos)
     }
     
@@ -161,9 +153,5 @@ class VentaDeLoteDosViewController: UIViewController {
         present(alert, animated: true)
     }
     
-<<<<<<< HEAD
    
-=======
-    
->>>>>>> c5222b3 (Subindo ultimos cambios)
 }

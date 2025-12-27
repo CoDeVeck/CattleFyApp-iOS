@@ -29,29 +29,19 @@ class VentaDeLote3ViewController: UIViewController {
     private func configurarUI() {
         title = "Cliente y Fecha - Paso 3"
         
-<<<<<<< HEAD
         // Configurar date picker
-=======
->>>>>>> c5222b3 (Subindo ultimos cambios)
         datePickerFechaVenta.datePickerMode = .dateAndTime
         datePickerFechaVenta.minimumDate = Date()
         datePickerFechaVenta.maximumDate = Calendar.current.date(byAdding: .month, value: 3, to: Date())
         
-<<<<<<< HEAD
         // Configurar text field
-=======
->>>>>>> c5222b3 (Subindo ultimos cambios)
         labelNombreCliente.placeholder = "Nombre del cliente"
         labelNombreCliente.borderStyle = .roundedRect
         labelNombreCliente.autocapitalizationType = .words
         labelNombreCliente.returnKeyType = .done
         labelNombreCliente.delegate = self
         
-<<<<<<< HEAD
         // Agregar gesture para ocultar teclado
-=======
-        
->>>>>>> c5222b3 (Subindo ultimos cambios)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ocultarTeclado))
         view.addGestureRecognizer(tapGesture)
     }
@@ -66,21 +56,13 @@ class VentaDeLote3ViewController: UIViewController {
         let precioPorKg = NSDecimalNumber(decimal: datos.precioPorKg).doubleValue
         labelPrecioKgAcordado?.text = String(format: "Precio acordado: S/ %.2f/kg", precioPorKg)
         
-<<<<<<< HEAD
         print("📋 Paso 3 - Resumen:")
-=======
-        print("Paso 3 - Resumen:")
->>>>>>> c5222b3 (Subindo ultimos cambios)
         print("  - Lote: \(datos.loteData.loteNombre)")
         print("  - Precio/kg: S/ \(precioPorKg)")
         print("  - ROI objetivo: \(datos.roiObjetivo)%")
     }
     @IBAction func btnSiguientePaso4Pressed(_ sender: UIButton) {
-<<<<<<< HEAD
         // Validar nombre del cliente
-=======
-        
->>>>>>> c5222b3 (Subindo ultimos cambios)
         guard let nombreCliente = labelNombreCliente.text?.trimmingCharacters(in: .whitespacesAndNewlines),
               !nombreCliente.isEmpty else {
             mostrarAlerta(titulo: "Campo requerido", mensaje: "Debes ingresar el nombre del cliente")
@@ -92,7 +74,6 @@ class VentaDeLote3ViewController: UIViewController {
             return
         }
         
-<<<<<<< HEAD
         // Validar fecha
         let fechaSeleccionada = datePickerFechaVenta.date
         
@@ -101,33 +82,16 @@ class VentaDeLote3ViewController: UIViewController {
         datosVenta?.fechaVenta = fechaSeleccionada
         
         print("✅ Datos del cliente guardados:")
-=======
-        let fechaSeleccionada = datePickerFechaVenta.date
-        
-        
-        datosVenta?.clienteNombre = nombreCliente
-        datosVenta?.fechaVenta = fechaSeleccionada
-        
-        print("Datos del cliente guardados:")
->>>>>>> c5222b3 (Subindo ultimos cambios)
         print("  - Cliente: \(nombreCliente)")
         print("  - Fecha: \(fechaSeleccionada)")
         
         guard let datos = datosVenta else {
-<<<<<<< HEAD
             print("❌ ERROR: datosVenta es nil en Paso 3")
-=======
-            print(" ERROR: datosVenta es nil en Paso 3")
->>>>>>> c5222b3 (Subindo ultimos cambios)
             mostrarAlerta(titulo: "Error", mensaje: "Error interno: datos perdidos")
             return
         }
         
-<<<<<<< HEAD
         print("🚀 INTENTANDO SEGUE A PASO 4")
-=======
-        print(" INTENTANDO SEGUE A PASO 4")
->>>>>>> c5222b3 (Subindo ultimos cambios)
         print("  - Lote ID: \(datos.loteData.loteId)")
         print("  - Cliente: \(datos.clienteNombre)")
         print("  - Precio/kg: \(datos.precioPorKg)")
@@ -162,11 +126,7 @@ class VentaDeLote3ViewController: UIViewController {
         present(alert, animated: true)
     }
     
-<<<<<<< HEAD
    
-=======
-    
->>>>>>> c5222b3 (Subindo ultimos cambios)
 }
 
 

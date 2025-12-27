@@ -1,6 +1,6 @@
 //
 //  RegistrarAlimentacionLoteViewController.swift
-//
+//  
 //
 //  Created by Andy Yahir Valdivia Centeno on 11/12/25.
 //
@@ -223,3 +223,4 @@ extension RegistrarAlimentacionLoteViewController: UIPickerViewDelegate, UIPicke
     }
 
 }
+
