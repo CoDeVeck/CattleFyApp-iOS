@@ -116,4 +116,3 @@ class VistaPreviaLoteViewController: UIViewController {
     
 }
 
-

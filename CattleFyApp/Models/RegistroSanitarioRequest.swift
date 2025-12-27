@@ -15,7 +15,7 @@ struct RegistroSanitarioRequest: Codable {
     var tipoAplicacion: String?
     var protocoloTipo: String?
     var nombreProducto: String?
-    
+
     var costoPorDosis: Double?
     var cantidadDosis: Double?
     

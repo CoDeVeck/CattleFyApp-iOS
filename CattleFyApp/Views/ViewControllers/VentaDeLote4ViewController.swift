@@ -28,14 +28,24 @@ class VentaDeLote4ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+<<<<<<< HEAD
         print("🔍 DEBUG PASO 4 - viewDidLoad")
         if let datos = datosVenta {
             print("✅ datosVenta recibidos correctamente")
+=======
+        
+        if let datos = datosVenta {
+            print("datosVenta recibidos correctamente")
+>>>>>>> c5222b3 (Subindo ultimos cambios)
             print("  - Lote ID: \(datos.loteData.loteId)")
             print("  - Cliente: \(datos.clienteNombre)")
             print("  - Precio/kg: \(datos.precioPorKg)")
         } else {
+<<<<<<< HEAD
             print("❌ ERROR: datosVenta es NIL en Paso 4")
+=======
+            print("ERROR: datosVenta es NIL en Paso 4")
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         }
         
         configurarUI()
@@ -45,10 +55,13 @@ class VentaDeLote4ViewController: UIViewController {
     private func configurarUI() {
         title = "Confirmar Venta - Paso 4"
         
+<<<<<<< HEAD
         //btnConfirmarVenta.layer.cornerRadius = 12
         //btnConfirmarVenta.backgroundColor = .systemGreen
         
         // Activity indicator
+=======
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
@@ -60,13 +73,19 @@ class VentaDeLote4ViewController: UIViewController {
         
         let lote = datos.loteData
         
+<<<<<<< HEAD
         // Conversiones
+=======
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         let precioPorKg = NSDecimalNumber(decimal: datos.precioPorKg).doubleValue
         let precioTotal = NSDecimalNumber(decimal: datos.precioTotal).doubleValue
         let costoTotal = NSDecimalNumber(decimal: lote.costoTotalAcumulado).doubleValue
         let roiObjetivo = NSDecimalNumber(decimal: datos.roiObjetivo).doubleValue
         
+<<<<<<< HEAD
         // Actualizar labels
+=======
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         labelAnimalesVendidos.text = "\(lote.cantidadAnimalesVivos) animales"
         labelPesoTotal.text = String(format: "%.2f kg", lote.sumaTotalPesos)
         labelPrecioKg.text = String(format: "S/ %.2f/kg", precioPorKg)
@@ -74,7 +93,11 @@ class VentaDeLote4ViewController: UIViewController {
         labelCvt.text = String(format: "S/ %.2f", costoTotal)
         labelRoiReal.text = String(format: "%.0f%%", roiObjetivo)
         
+<<<<<<< HEAD
         print("📊 Resumen Final:")
+=======
+        print("Resumen Final:")
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         print("  - Lote: \(lote.loteNombre)")
         print("  - Cliente: \(datos.clienteNombre)")
         print("  - Animales: \(lote.cantidadAnimalesVivos)")
@@ -100,22 +123,35 @@ class VentaDeLote4ViewController: UIViewController {
             self?.registrarVenta()
         })
         
+<<<<<<< HEAD
         present(alert, animated: true)
+=======
+        
+        present(alert, animated: true)
+        volverAlInicio()
+>>>>>>> c5222b3 (Subindo ultimos cambios)
     }
     
     private func registrarVenta() {
         guard let datos = datosVenta else { return }
         
+<<<<<<< HEAD
         // Mostrar loading
         //btnConfirmarVenta.isEnabled = false
         //activityIndicator.startAnimating()
         
         // Formatear fecha a ISO8601
+=======
+        
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withInternetDateTime]
         let fechaString = formatter.string(from: datos.fechaVenta)
         
+<<<<<<< HEAD
         // Crear request
+=======
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         let request = RegistroVentaRequest(
             loteId: datos.loteData.loteId,
             tipoAlcanceVenta: datos.tipoAlcanceVenta,
@@ -130,6 +166,7 @@ class VentaDeLote4ViewController: UIViewController {
             fechaVenta: fechaString
         )
         
+<<<<<<< HEAD
         print("🚀 Registrando venta...")
         
         // Llamar al service
@@ -137,6 +174,14 @@ class VentaDeLote4ViewController: UIViewController {
             DispatchQueue.main.async {
                 self?.activityIndicator.stopAnimating()
                 //self?.btnConfirmarVenta = true
+=======
+        print("Registrando venta...")
+        
+        
+        VentaService.shared.registrarVenta(request: request) { [weak self] result in
+            DispatchQueue.main.async {
+                self?.activityIndicator.stopAnimating()
+>>>>>>> c5222b3 (Subindo ultimos cambios)
                 
                 switch result {
                 case .success(let response):
@@ -150,7 +195,11 @@ class VentaDeLote4ViewController: UIViewController {
     }
     
     private func ventaRegistradaExitosamente(response: VentaDetalleResponse) {
+<<<<<<< HEAD
         print("✅ Venta registrada - ID: \(response.ventaId)")
+=======
+        print("Venta registrada - ID: \(response.ventaId)")
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         
         let roiReal = NSDecimalNumber(decimal: response.roiReal).doubleValue
         let gananciaNeta = NSDecimalNumber(decimal: response.gananciaNeta).doubleValue
@@ -166,6 +215,7 @@ class VentaDeLote4ViewController: UIViewController {
     """
         
         if let advertencia = response.advertencia {
+<<<<<<< HEAD
             mensaje += "\n\n⚠️ \(advertencia)"
         }
         
@@ -175,6 +225,17 @@ class VentaDeLote4ViewController: UIViewController {
         
         let alert = UIAlertController(
             title: "¡Venta Exitosa! 🎉",
+=======
+            mensaje += "\n\n \(advertencia)"
+        }
+        
+        if let recomendacion = response.recomendacion {
+            mensaje += "\n\n \(recomendacion)"
+        }
+        
+        let alert = UIAlertController(
+            title: "¡Venta Exitosa!",
+>>>>>>> c5222b3 (Subindo ultimos cambios)
             message: mensaje,
             preferredStyle: .alert
         )
@@ -202,21 +263,37 @@ class VentaDeLote4ViewController: UIViewController {
     Lote: \(response.loteNombre)
     Tipo: \(response.tipoVenta)
     
+<<<<<<< HEAD
     💰 FINANCIERO:
+=======
+    FINANCIERO:
+>>>>>>> c5222b3 (Subindo ultimos cambios)
     • Ingreso Total: S/ \(String(format: "%.2f", precioTotal))
     • Costo Total: S/ \(String(format: "%.2f", costoTotal))
     • Ganancia Neta: S/ \(String(format: "%.2f", gananciaNeta))
     
+<<<<<<< HEAD
     📊 ROI:
+=======
+     ROI:
+>>>>>>> c5222b3 (Subindo ultimos cambios)
     • ROI Objetivo: \(response.roiObjetivo)%
     • ROI Real: \(String(format: "%.2f%%", roiReal))
     • Diferencia: \(response.diferenciaRoi)%
     
+<<<<<<< HEAD
     🐄 ANIMALES:
     • Vendidos: \(response.cantidadAnimalesVendidos)
     • Peso Total: \(response.pesoTotalKg) kg
     
     👤 CLIENTE:
+=======
+     ANIMALES:
+    • Vendidos: \(response.cantidadAnimalesVendidos)
+    • Peso Total: \(response.pesoTotalKg) kg
+    
+     CLIENTE:
+>>>>>>> c5222b3 (Subindo ultimos cambios)
     • Nombre: \(response.clienteNombre)
     • Fecha: \(response.fechaVenta)
     """
@@ -235,7 +312,11 @@ class VentaDeLote4ViewController: UIViewController {
     }
     
     private func mostrarError(error: Error) {
+<<<<<<< HEAD
         print("❌ Error al registrar venta: \(error.localizedDescription)")
+=======
+        print(" Error al registrar venta: \(error.localizedDescription)")
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         
         let alert = UIAlertController(
             title: "Error al Registrar",
@@ -253,15 +334,27 @@ class VentaDeLote4ViewController: UIViewController {
     }
     
     private func volverAlInicio() {
+<<<<<<< HEAD
         // Navegar al VentaComercialViewController
         if let ventaVC = storyboard?.instantiateViewController(withIdentifier: "VentaComercialViewController") {
             navigationController?.setViewControllers([ventaVC], animated: true)
             print("✅ Navegando al inicio")
         } else {
             // Fallback: volver al root
+=======
+        
+        if let ventaVC = storyboard?.instantiateViewController(withIdentifier: "VentaComercialViewController") {
+            navigationController?.setViewControllers([ventaVC], animated: true)
+            print(" Navegando al inicio")
+        } else {
+>>>>>>> c5222b3 (Subindo ultimos cambios)
             navigationController?.popToRootViewController(animated: true)
         }
     }
     
+<<<<<<< HEAD
    
+=======
+    
+>>>>>>> c5222b3 (Subindo ultimos cambios)
 }

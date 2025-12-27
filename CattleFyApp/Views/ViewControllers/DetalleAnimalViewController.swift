@@ -303,4 +303,3 @@ extension DetalleAnimalViewController: UITableViewDelegate {
         return 100
     }
 }
-

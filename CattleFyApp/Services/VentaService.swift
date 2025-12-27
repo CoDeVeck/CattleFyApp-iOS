@@ -16,6 +16,7 @@ class VentaService {
         return UserDefaults.standard.string(forKey: "authToken")
     }
     
+<<<<<<< HEAD
     
     /* // MARK: - Helper para crear request autenticado
      private func crearRequestAutenticado(url: URL) -> URLRequest {
@@ -39,13 +40,25 @@ class VentaService {
         var request = URLRequest(url: url)
         request.httpMethod = metodo
         request.timeoutInterval = 120  // 2 minutos para Render
+=======
+    private func crearRequestAutenticado(url: URL, metodo: String = "GET") -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = metodo
+        request.timeoutInterval = 120
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         if let token = getAuthToken() {
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+<<<<<<< HEAD
             print("✅ Token agregado: Bearer \(token.prefix(20))...")
         } else {
             print("⚠️ No hay token disponible")
+=======
+            print("Token agregado: Bearer \(token.prefix(20))...")
+        } else {
+            print("No hay token disponible")
+>>>>>>> c5222b3 (Subindo ultimos cambios)
         }
         
         return request
@@ -290,4 +303,226 @@ class VentaService {
         task.resume()
     }
     
+<<<<<<< HEAD
+=======
+    
+    
+    // MARK: - Listar Ventas Realizadas
+    func listarVentas(
+        granjaId: Int,
+        tipoVenta: String? = nil,
+        fechaDesde: Date? = nil,
+        fechaHasta: Date? = nil,
+        completion: @escaping (Result<[VentaListadoResponse], Error>) -> Void
+    ) {
+        var urlString = "\(Constants.baseURL)ventas/granja/\(granjaId)"
+        
+        var queryItems: [String] = []
+        
+        if let tipo = tipoVenta, !tipo.isEmpty {
+            if let encodedTipo = tipo.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+                queryItems.append("tipoVenta=\(encodedTipo)")
+            }
+        }
+        
+        let isoFormatter = ISO8601DateFormatter()
+        isoFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        
+        if let desde = fechaDesde {
+            let fechaString = isoFormatter.string(from: desde)
+            if let encoded = fechaString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+                queryItems.append("fechaDesde=\(encoded)")
+            }
+        }
+        
+        if let hasta = fechaHasta {
+            let fechaString = isoFormatter.string(from: hasta)
+            if let encoded = fechaString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+                queryItems.append("fechaHasta=\(encoded)")
+            }
+        }
+        
+        if !queryItems.isEmpty {
+            urlString += "?" + queryItems.joined(separator: "&")
+        }
+        
+        guard let url = URL(string: urlString) else {
+            let error = NSError(domain: "VentaService", code: -1, userInfo: [NSLocalizedDescriptionKey: "URL inválida: \(urlString)"])
+            completion(.failure(error))
+            return
+        }
+        
+        let request = crearRequestAutenticado(url: url)
+        
+        print("📋 Listando ventas desde: \(urlString)")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("❌ Error en request: \(error.localizedDescription)")
+                completion(.failure(error))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                let error = NSError(domain: "VentaService", code: -1, userInfo: [NSLocalizedDescriptionKey: "Respuesta inválida"])
+                completion(.failure(error))
+                return
+            }
+            
+            print("📊 Status Code: \(httpResponse.statusCode)")
+            
+            if let totalCount = httpResponse.value(forHTTPHeaderField: "X-Total-Count") {
+                print("📈 Total de ventas: \(totalCount)")
+            }
+            
+            if let filtros = httpResponse.value(forHTTPHeaderField: "X-Filter-Applied") {
+                print("🔎 Filtros aplicados: \(filtros)")
+            }
+            
+            guard let data = data else {
+                let error = NSError(domain: "VentaService", code: -1, userInfo: [NSLocalizedDescriptionKey: "No hay datos"])
+                completion(.failure(error))
+                return
+            }
+            
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print("📄 Response JSON (\(data.count) bytes):")
+                print(jsonString.prefix(500))
+            }
+            
+            guard (200...299).contains(httpResponse.statusCode) else {
+                var errorMessage = "Error del servidor (\(httpResponse.statusCode))"
+                if let serverMessage = String(data: data, encoding: .utf8) {
+                    errorMessage = serverMessage
+                }
+                let error = NSError(domain: "VentaService", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: errorMessage])
+                completion(.failure(error))
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .custom { decoder in
+                    let container = try decoder.singleValueContainer()
+                    let dateString = try container.decode(String.self)
+                    
+                  
+                    let customFormatter = DateFormatter()
+                    customFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                    customFormatter.locale = Locale(identifier: "en_US_POSIX")
+                    customFormatter.timeZone = TimeZone(identifier: "America/Lima")
+                    
+                    if let date = customFormatter.date(from: dateString) {
+                        return date
+                    }
+                    
+                    throw DecodingError.dataCorruptedError(
+                        in: container,
+                        debugDescription: "No se pudo decodificar la fecha: \(dateString)"
+                    )
+                }
+                
+                let ventas = try decoder.decode([VentaListadoResponse].self, from: data)
+                
+                print("✅ Ventas decodificadas: \(ventas.count)")
+                completion(.success(ventas))
+                
+            } catch {
+                print("❌ Error al decodificar: \(error)")
+                completion(.failure(error))
+            }
+           
+        }
+        
+        task.resume()
+    }
+    
+    //MARK: Detalle de la venta Realizada
+    
+    func obtenerDetalleVenta(ventaId: Int, completion: @escaping (Result<VentaDetalleResponse, Error>) -> Void) {
+        let urlString = "\(Constants.baseURL)ventas/\(ventaId)"
+        
+        guard let url = URL(string: urlString) else {
+            let error = NSError(domain: "VentaService", code: -1, userInfo: [NSLocalizedDescriptionKey: "URL inválida: \(urlString)"])
+            completion(.failure(error))
+            return
+        }
+        
+        let request = crearRequestAutenticado(url: url)
+        
+        print("📄 Obteniendo detalle de venta ID: \(ventaId)")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("❌ Error en request: \(error.localizedDescription)")
+                completion(.failure(error))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                let error = NSError(domain: "VentaService", code: -1, userInfo: [NSLocalizedDescriptionKey: "Respuesta inválida"])
+                completion(.failure(error))
+                return
+            }
+            
+            print("📊 Status Code: \(httpResponse.statusCode)")
+            
+            if let message = httpResponse.value(forHTTPHeaderField: "X-Message") {
+                print("💬 Mensaje: \(message)")
+            }
+            
+            guard let data = data else {
+                let error = NSError(domain: "VentaService", code: -1, userInfo: [NSLocalizedDescriptionKey: "No hay datos"])
+                completion(.failure(error))
+                return
+            }
+            
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print("📄 Response JSON (\(data.count) bytes):")
+                print(jsonString.prefix(500))
+            }
+            
+            guard (200...299).contains(httpResponse.statusCode) else {
+                var errorMessage = "Error del servidor (\(httpResponse.statusCode))"
+                if let serverMessage = String(data: data, encoding: .utf8) {
+                    errorMessage = serverMessage
+                }
+                let error = NSError(domain: "VentaService", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: errorMessage])
+                completion(.failure(error))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .custom { decoder in
+                    let container = try decoder.singleValueContainer()
+                    let dateString = try container.decode(String.self)
+                    
+                    let formatter = ISO8601DateFormatter()
+                    formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+                    
+                    if let date = formatter.date(from: dateString) {
+                        return date
+                    }
+                    
+                    formatter.formatOptions = [.withInternetDateTime]
+                    if let date = formatter.date(from: dateString) {
+                        return date
+                    }
+                    
+                    throw DecodingError.dataCorruptedError(in: container, debugDescription: "Fecha inválida: \(dateString)")
+                }
+                
+                let detalle = try decoder.decode(VentaDetalleResponse.self, from: data)
+                print("✅ Detalle de venta obtenido exitosamente")
+                completion(.success(detalle))
+                
+            } catch {
+                print("❌ Error al decodificar: \(error)")
+                completion(.failure(error))
+            }
+        }
+        
+        task.resume()
+    }
+>>>>>>> c5222b3 (Subindo ultimos cambios)
 }
